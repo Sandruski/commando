@@ -1,0 +1,14 @@
+﻿  Application.cpp
+  ModuleAudio.cpp
+  ModuleEND.cpp
+  ModuleMenu.cpp
+  ModulePlayer.cpp
+  ModuleScene1.cpp
+  ModuleScene2.cpp
+  Generando código
+  7 of 145 functions ( 4.8%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+  SDL Game.vcxproj -> F:\Projecte I\PROGRAMACIO\Commando v0.3\Release\SDL5 Handout.exe
+  SDL Game.vcxproj -> F:\Projecte I\PROGRAMACIO\Commando v0.3\Release\SDL5 Handout.pdb (Full PDB)
