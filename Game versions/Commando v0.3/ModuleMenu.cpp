@@ -56,19 +56,20 @@ update_status ModuleMenu::Update()
 	if (!App->render->Blit(graphics, 0, SCREEN_HEIGHT - 224, &background, 0.75f))
 		ret = UPDATE_ERROR;
 
-	if ((App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_DOWN)) {
-		if (move_y != 116)
-			move_y -= 17;
+	if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN) {
+		
+		App->audio->play_fx2(); 
+		move_y += 16;
+		
+		if (move_y == 182) {
+			move_y -= 16 * 4;
+		}
 	}
-	else if ((App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_DOWN)) {
-		if (move_y != 167)
-			move_y += 17;
-	}
 
-	App->render->Blit(grenade, 70, move_y, &grenades, 0.75f);
+	App->render->Blit(grenade, 71, move_y, &grenades, 0.75f);
 
 
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN) {
+	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN && move_y == 118) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->scene_1, 3);
 		

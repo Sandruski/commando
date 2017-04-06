@@ -19,6 +19,7 @@ public:
 	bool pause_music();
 
 	bool play_fx1();
+	bool play_fx2();
 
 public:
 	Mix_Music* music[MAX_MUSIC];

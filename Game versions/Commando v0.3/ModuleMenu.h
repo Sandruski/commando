@@ -24,6 +24,6 @@ public:
 	SDL_Rect background;
 	SDL_Rect grenades;
 
-	int move_y = 116;
+	int move_y = 118;
 };
 #endif

@@ -27,7 +27,8 @@ bool ModuleAudio::Init() {
 
 	//Load FX
 	fx[0] = Mix_LoadWAV("Commando_Effect-02-Principal-Shoot.wav");
-	
+	fx[1] = Mix_LoadWAV("Commando_Effect-01-Choose-Menu.wav");
+
 	return true;
 }
 
@@ -51,6 +52,10 @@ bool ModuleAudio::pause_music() {
 }
 bool ModuleAudio::play_fx1() {
 	Mix_PlayChannel(-1, fx[0], 1);
+	return true;
+}
+bool ModuleAudio::play_fx2() {
+	Mix_PlayChannel(-1, fx[1], 1);
 	return true;
 }
 
