@@ -25,10 +25,12 @@ public:
 	Animation moto_go;
 	Animation moto_stop;
 	SDL_Rect background;
-	
+	SDL_Rect r;
+	Animation* current_animation = nullptr;
+
 	bool check = true;
 	int w = 0, h = SCREEN_HEIGHT - 2880;
-	int w_m = 220, h_m = 20;
+	int w_m = 255, h_m = 20;
 
 	//w_m = 255;
 };
