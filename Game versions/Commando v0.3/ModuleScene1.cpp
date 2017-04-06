@@ -55,17 +55,33 @@ update_status ModuleScene1::Update()
 {
 	update_status ret = UPDATE_CONTINUE;
 
-	//Animation* current_animation = &moto_go;
-	Animation* current_animation = &moto_stop;
+	
+	//Animation* current_animation = &moto_stop;
 
 	if (!App->render->Blit(graphics, w, h, &background, 0.75f))
 		ret = UPDATE_ERROR;
 	
-	SDL_Rect r = current_animation->GetCurrentFrame();
 
-	if (h >= SCREEN_HEIGHT - 1550) {
-		App->render->Blit(moto, w_m, h_m, &r, 0.75f);
+	if (h >= SCREEN_HEIGHT - 1550 && h <= SCREEN_HEIGHT - 1450) {
+		if (w_m > 105) {
+			current_animation = &moto_go;
+			r = current_animation->GetCurrentFrame();
+			App->render->Blit(moto, w_m, h_m, &r, 0.75f);
+			w_m--;
+		}
+		if (w_m == 105) {
+			current_animation = &moto_stop;
+			r = current_animation->GetCurrentFrame();
+			App->render->Blit(moto, w_m, h_m, &r, 0.75f);
+		}
 	}
+		else if (h > SCREEN_HEIGHT - 1450 && h < SCREEN_HEIGHT - 1200) {
+			Animation* current_animation = &moto_go;
+			r = current_animation->GetCurrentFrame();
+			App->render->Blit(moto, w_m, h_m, &r, 0.75f);
+			w_m--;			
+	}
+	
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN) {
 		App->render->UP = false;
