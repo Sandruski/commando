@@ -18,9 +18,12 @@ public:
 	bool CleanUp();
 
 public:
-
 	SDL_Texture* graphics = nullptr;
+	SDL_Texture* grenade = nullptr;
 	SDL_Rect foreground;
 	SDL_Rect background;
+	SDL_Rect grenades;
+
+	int move_y = 116;
 };
 #endif
