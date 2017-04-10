@@ -55,10 +55,11 @@ update_status ModuleRender::PreUpdate()
 	return update_status::UPDATE_CONTINUE;
 }
 
-update_status ModuleRender::Update()	
+update_status ModuleRender::Update()
 {
-	int speed = 1;
-	
+	int speed = 3;
+
+	/*
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && App->player->position.y < 150) {
 		if (App->fade->on == App->scene_1) {
 			if (App->scene_1->h != 0)
@@ -72,12 +73,34 @@ update_status ModuleRender::Update()
 				App->scene_2->h += speed;
 		}
 	}
+	*/ //abs(App->player->position.y - 150) == camera.y
+
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT) {
+		if (App->fade->on == App->scene_1 && camera.y <= 10622) {
+			if (App->player->position.y <= 150 && abs(App->player->position.y) == abs(h)) {
+				camera.y += speed;
+				h -= 1;
+				two -= 1;
+			}
+		}
+	}
+
+
+		/*
+
+			&& App->player->position.y < camera.y - 150) {
+		if (App->fade->on == App->scene_1) {
+			camera.y += speed;
+		}
+		*/
+	
 	
 	return update_status::UPDATE_CONTINUE;
 }
 
 update_status ModuleRender::PostUpdate()
 {
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
 	SDL_RenderPresent(renderer);
 	return update_status::UPDATE_CONTINUE;
 }

@@ -5,16 +5,16 @@
 #include "Animation.h"
 #include "Globals.h"
 #include "p2Point.h"
-#include "ModuleCollision.h"
+//#include "ModuleCollision.h"
 
 
 struct SDL_Texture;
-struct Collider;
-enum COLLIDER_TYPE;
+//struct Collider;
+//enum COLLIDER_TYPE;
 
 struct Particle
 {
-	Collider* collider = nullptr;
+	//Collider* collider = nullptr;
 	Animation anim;
 	uint fx = 0;
 	iPoint position;
@@ -38,9 +38,9 @@ public:
 	bool Start();
 	update_status Update();
 	bool CleanUp();
-	void OnCollision(Collider* c1, Collider* c2);
+	//void OnCollision(Collider* c1, Collider* c2);
 
-	void AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, Uint32 delay);
+	//void AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, Uint32 delay);
 
 
 private:

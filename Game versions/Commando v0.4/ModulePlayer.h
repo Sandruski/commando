@@ -25,6 +25,7 @@ public:
 	Animation* current_animation = &idleF;
 	Collider* coll;
 
+
 };
 
 #endif

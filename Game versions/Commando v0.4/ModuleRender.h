@@ -27,6 +27,7 @@ public:
 	SDL_Rect camera;
 	bool UP = false;
 	bool black = true;
+	int h = 150, two = 220;
 };
 
 #endif //__ModuleRenderer_H__

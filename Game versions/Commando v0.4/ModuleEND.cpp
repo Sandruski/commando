@@ -27,7 +27,7 @@ ModuleEND::~ModuleEND()
 bool ModuleEND::Start()
 {
 	App->player->Enable();
-	App->collision->Disable();
+//	App->collision->Disable();
 	LOG("Loading end scene");
 	graphics = App->textures->Load("highscore.png");
 	App->audio->pause_music();

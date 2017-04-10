@@ -3,6 +3,7 @@
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
 
+
 ModuleCollision::ModuleCollision()
 {
 	for (uint i = 0; i < MAX_COLLIDERS; ++i)
@@ -187,8 +188,6 @@ bool ModuleCollision::EraseCollider(Collider* collider)
 
 bool Collider::CheckCollision(const SDL_Rect& r) const
 {
-
-	// TODO 0: Return true if there is an overlap
 	if (r.x + r.w < rect.x || r.y + r.h < rect.y || r.y > rect.y + rect.h || r.x > rect.x + rect.w)
 		// between argument "r" and property "rect"
 		return false;

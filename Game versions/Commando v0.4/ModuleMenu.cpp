@@ -31,7 +31,7 @@ ModuleMenu::~ModuleMenu()
 bool ModuleMenu::Start()
 {
 	App->player->Disable();
-	App->collision->Disable();
+//	App->collision->Disable();
 	LOG("Loading menu scene");
 
 	graphics = App->textures->Load("menu.png");

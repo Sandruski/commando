@@ -64,7 +64,7 @@ bool ModulePlayer::Start()
 	LOG("Loading player textures");
 	graphics = App->textures->Load("spritesheet_humanos.png");
 
-	coll = App->collision->AddCollider({ 0, 0, 16, 24 }, COLLIDER_PLAYER);
+	//coll = App->collision->AddCollider({ 0, 0, 16, 24 }, COLLIDER_PLAYER);
 	return true;
 }
 
@@ -78,10 +78,15 @@ update_status ModulePlayer::Update()
 		current_animation = &forward;
 		forward.Start();
 
+		position.y -= speed;
+	
+		
+		/*
 		if (position.y >= 150)
 			position.y -= speed;
 		else if (App->scene_1->h == 0 && position.y > 25)
 			position.y -= speed;
+		*/
 	}
 
 	else if (App->input->keyboard[SDL_SCANCODE_W] == KEY_UP)
@@ -94,9 +99,15 @@ update_status ModulePlayer::Update()
 		current_animation = &backward;
 		backward.Start();
 
+	
+		if (position.y <= App->render->two) {
+			position.y += speed;
+		}
+		/*
 		if (position.y < 220) {
 			position.y += speed;
 		}
+		*/
 	}
 
 	else if (App->input->keyboard[SDL_SCANCODE_S] == KEY_UP)
@@ -167,6 +178,8 @@ update_status ModulePlayer::Update()
 	}
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	/*
+
 	if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT) //Esquerra Abaix
 	{
 		App->particles->bala.speed.y = +6;
@@ -231,12 +244,14 @@ update_status ModulePlayer::Update()
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
 	}
+	*/
+	SDL_Rect r = current_animation->GetCurrentFrame();
 
-	//SDL_Rect r = current_animation->GetCurrentFrame();
+//	coll->SetPos(position.x, position.y);
 
-	coll->SetPos(position.x, position.y);
+	//App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 
-	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
+	App->render->Blit(graphics, position.x, position.y - r.h, &r);
 
 	return UPDATE_CONTINUE;
 }

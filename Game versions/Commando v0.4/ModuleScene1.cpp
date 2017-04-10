@@ -35,14 +35,14 @@ ModuleScene1::~ModuleScene1()
 bool ModuleScene1::Start()
 {
 	App->player->Enable();
-	App->collision->Enable();
+	//App->collision->Enable();
 	LOG("Loading 1st scene");
 	graphics = App->textures->Load("1-1.png");
 	moto = App->textures->Load("vehicles.png");
 	App->audio->pause_music();
 	App->audio->play_music2();
 
-	App->collision->AddCollider({ 50, 50, 29, 23 }, COLLIDER_WALL);
+//	App->collision->AddCollider({ 50, 50, 29, 23 }, COLLIDER_WALL);
 	/*App->collision->AddCollider({ 40, 40, 27, 22 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 60, 60, 27, 24 }, COLLIDER_WALL);*/
 	return true;
@@ -53,7 +53,7 @@ bool ModuleScene1::Start()
 bool ModuleScene1::CleanUp()
 {
 	App->player->Disable();
-	App->collision->Disable();
+	//App->collision->Disable();
 	LOG("Unloading 1st scene");
 	return true;
 }
@@ -63,7 +63,6 @@ update_status ModuleScene1::Update()
 {
 	update_status ret = UPDATE_CONTINUE;
 
-	
 	//Animation* current_animation = &moto_stop;
 
 	if (!App->render->Blit(graphics, w, h, &background, 0.75f))

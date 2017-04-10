@@ -38,7 +38,7 @@ public:
 			enabled = false;
 			Start();
 		}
-		// TODO 0: Call CleanUp() for disabling a module
+
 	}
 	virtual void OnCollision(Collider*, Collider*) {}
 };
