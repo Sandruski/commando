@@ -187,7 +187,7 @@ update_status ModulePlayer::Update()
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &diagSD//Dreta Abaix
+	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &diagSD)//Dreta Abaix
 	{
 		App->particles->bala.speed.y = +6;
 		App->particles->bala.speed.x = +6;
