@@ -35,7 +35,7 @@ ModuleScene1::~ModuleScene1()
 bool ModuleScene1::Start()
 {
 	App->player->Enable();
-	//App->collision->Enable();
+	App->collision->Enable();
 	LOG("Loading 1st scene");
 	graphics = App->textures->Load("1-1.png");
 	moto = App->textures->Load("vehicles.png");

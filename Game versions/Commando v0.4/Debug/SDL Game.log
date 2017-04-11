@@ -1,3 +1,16 @@
-﻿  ModuleRender.cpp
-  SDL Game.vcxproj -> C:\Users\Sandra\Desktop\gets-name-\Game versions\Commando v0.4\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Sandra\Desktop\gets-name-\Game versions\Commando v0.4\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  Application.cpp
+  Generando código...
+  Compilando...
+  ModuleScene1.cpp
+  ModulePlayer.cpp
+  ModuleParticles.cpp
+  Generando código...
+  Omitiendo... (no se detectaron cambios relevantes)
+  ModuleScene2.cpp
+  ModuleRender.cpp
+  ModuleMenu.cpp
+  ModuleFadeToBlack.cpp
+  ModuleEND.cpp
+  ModuleAudio.cpp
+  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\Commando v0.4\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\Commando v0.4\Debug\SDL5 Handout.pdb (Full PDB)

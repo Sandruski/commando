@@ -27,7 +27,7 @@ ModuleScene2::~ModuleScene2()
 bool ModuleScene2::Start()
 {
 	App->player->Enable();
-	//App->collision->Enable();
+	App->collision->Enable();
 	LOG("Loading 2nd scene");
 	graphics = App->textures->Load("1-2.png");
 	App->audio->pause_music();
@@ -40,7 +40,7 @@ bool ModuleScene2::Start()
 bool ModuleScene2::CleanUp()
 {
 	App->player->Disable();
-	//App->collision->Disable();
+	App->collision->Disable();
 	LOG("Unloading 2nd scene");
 	return true;
 }

@@ -83,7 +83,7 @@ update_status ModuleParticles::Update()
 	return UPDATE_CONTINUE;
 }
 
-/*
+
 void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, Uint32 delay)
 {
 	for(uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
@@ -108,15 +108,15 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
 		// Always destroy particles that collide
-//		if (active[i] != nullptr && active[i]->collider == c1)
-//		{
-//			delete active[i];
-//			active[i] = nullptr;
-//			break;
-//		}
+		if (active[i] != nullptr && active[i]->collider == c1)
+		{
+			delete active[i];
+			active[i] = nullptr;
+			break;
+		}
 	}
 }
-*/
+
 
 // -------------------------------------------------------------
 // -------------------------------------------------------------
@@ -134,8 +134,8 @@ Particle::Particle(const Particle& p) :
 
 Particle::~Particle()
 {
-	//if (collider != nullptr)
-	//	App->collision->EraseCollider(collider);
+	if (collider != nullptr)
+		App->collision->EraseCollider(collider);
 }
 
 bool Particle::Update()
@@ -154,7 +154,7 @@ bool Particle::Update()
 	position.x += speed.x;
 	position.y += speed.y;
 
-	//if (collider != nullptr)
-	//	collider->SetPos(position.x, position.y);
+	if (collider != nullptr)
+		collider->SetPos(position.x, position.y);
 	return ret;
 }

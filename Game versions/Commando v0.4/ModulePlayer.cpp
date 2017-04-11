@@ -64,7 +64,7 @@ bool ModulePlayer::Start()
 	LOG("Loading player textures");
 	graphics = App->textures->Load("spritesheet_humanos.png");
 
-	//coll = App->collision->AddCollider({ 0, 0, 16, 24 }, COLLIDER_PLAYER);
+	coll = App->collision->AddCollider({ 0, 0, 16, 24 }, COLLIDER_PLAYER);
 	return true;
 }
 
@@ -178,7 +178,7 @@ update_status ModulePlayer::Update()
 	}
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	/*
+	
 
 	if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT) //Esquerra Abaix
 	{
@@ -244,14 +244,13 @@ update_status ModulePlayer::Update()
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
 	}
-	*/
+	
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
-//	coll->SetPos(position.x, position.y);
+	coll->SetPos(position.x, position.y);
 
-	//App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
+	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 
-	App->render->Blit(graphics, position.x, position.y - r.h, &r);
 
 	return UPDATE_CONTINUE;
 }
