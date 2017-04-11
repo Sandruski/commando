@@ -180,35 +180,35 @@ update_status ModulePlayer::Update()
 
 	
 
-	if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT) //Esquerra Abaix
+	if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &diagSA) //Esquerra Abaix
 	{
 		App->particles->bala.speed.y = +6;
 		App->particles->bala.speed.x = -6;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT)//Dreta Abaix
+	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &diagSD//Dreta Abaix
 	{
 		App->particles->bala.speed.y = +6;
 		App->particles->bala.speed.x = +6;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT  && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT)//Dreta Adalt
+	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &diagWD)//Dreta Adalt
 	{
 		App->particles->bala.speed.y = -6;
 		App->particles->bala.speed.x = +6;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT) //Esquerra Adalt
+	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &diagWA) //Esquerra Adalt
 	{
 		App->particles->bala.speed.y = -6;
 		App->particles->bala.speed.y = -6;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT) //Adalt
+	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &forward) //Adalt
 	{
 		App->particles->bala.speed.y = -6;
 		App->particles->bala.speed.x = 0;
@@ -216,21 +216,21 @@ update_status ModulePlayer::Update()
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
 	}
 
-	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT) //Abaix
+	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &backward) //Abaix
 	{
 		App->particles->bala.speed.y = +6;
 		App->particles->bala.speed.x = 0;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT) //Dreta
+	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &right) //Dreta
 	{
 		App->particles->bala.speed.x = +6;
 		App->particles->bala.speed.y = 0;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT) //Esquer0a
+	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &left) //Esquer0a
 	{
 		App->particles->bala.speed.x = -6;
 		App->particles->bala.speed.y = 0;
