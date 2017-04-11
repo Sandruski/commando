@@ -1,58 +1,58 @@
 WALL
-(131,2817,29,23)
-(148,2800,28,20)
-(166,2817,26,24)
-(22,2769,26,23)
-(193,2705,61,26)
-(84,2640,29,25)
-(0,2642,43,25)
-(133,2594,26,23)
-(165,2594,27,23)
-(150,2577,24,20)
-(84,2528,59,51)
-(5,2418,24,22)
-(38,2418,24,22)
-(22,2402,24,22)
-(133,2385,55,8)
-(85,2339,24,22)
-(149,2289,24,22)
-(0,2262,57,50)
-(213,2226,24,22)
-(0,1989,121,51)
-(256,1927,58,48)
-(71,1861,81,51)
-(256,1750,57,50)
-(0,1702,57,79)
-(70,1698,24,22)
-(102,1698,24,22)
-(86,1682,24,22)
-(22,1538,24,22)
-(149,1538,24,22)
-(86,1472,24,22)
-(195,1470,57,8)
-(0,1343,100,81)   //Pont
-(156,1343,100,81) //Pont
+App->collision->AddCollider({0, 224, 3930, 16}, COLLIDER_WALL);
+App->collision->AddCollider({148,2800,28,20}, COLLIDER_WALL);
+App->collision->AddCollider({166,2817,26,24}, COLLIDER_WALL);
+App->collision->AddCollider({22,2769,26,23}, COLLIDER_WALL);
+App->collision->AddCollider({193,2705,61,26}, COLLIDER_WALL);
+App->collision->AddCollider({84,2640,29,25}, COLLIDER_WALL);
+App->collision->AddCollider({0,2642,43,25}, COLLIDER_WALL);
+App->collision->AddCollider({133,2594,26,23}, COLLIDER_WALL);
+App->collision->AddCollider({165,2594,27,23}, COLLIDER_WALL);
+App->collision->AddCollider({150,2577,24,20}, COLLIDER_WALL);
+App->collision->AddCollider({84,2528,59,51}, COLLIDER_WALL);
+App->collision->AddCollider({5,2418,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({38,2418,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({22,2402,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({133,2385,55,8}, COLLIDER_WALL);
+App->collision->AddCollider({85,2339,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({149,2289,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({0,2262,57,50}, COLLIDER_WALL);
+App->collision->AddCollider({213,2226,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({0,1989,121,51}, COLLIDER_WALL);
+App->collision->AddCollider({256,1927,58,48}, COLLIDER_WALL);
+App->collision->AddCollider({71,1861,81,51}, COLLIDER_WALL);
+App->collision->AddCollider({256,1750,57,50}, COLLIDER_WALL);
+App->collision->AddCollider({0,1702,57,79}, COLLIDER_WALL);
+App->collision->AddCollider({70,1698,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({102,1698,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({86,1682,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({22,1538,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({149,1538,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({86,1472,24,22}, COLLIDER_WALL);
+App->collision->AddCollider({195,1470,57,8}, COLLIDER_WALL);
+App->collision->AddCollider({0,1343,100,81}, COLLIDER_WALL);  //Pont
+App->collision->AddCollider({156,1343,100,81}, COLLIDER_WALL); //Pont
 //-------------- Pedres
-(0,1204,32,15)
-(49,1140,32,15)
-(161,1140,32,15)
-(196,1087,56,8)
-(33,1060,32,15)
-(113,1029,32,15)
-(178,997,32,15)
-(0,1007,56,8)
-(160,933,32,15)
-(16,853,32,15)
-(113,853,32,15)
-(209,853,32,15)
-(256,718,45,81)
-(6,737,24,22) 
-(38,737,24,22)
-(22,721,24,22)
-(67,752,56,8)
-(147,671,73,8)
-(0,639,56,8)
-(100,575,56,8)
+App->collision->AddCollider({0,1204,32,15}, COLLIDER_WALL);
+App->collision->AddCollider({49,1140,32,15}, COLLIDER_WALL);
+App->collision->AddCollider({161,1140,32,15}, COLLIDER_WALL);
+App->collision->AddCollider({196,1087,56,8}, COLLIDER_WALL);
+App->collision->AddCollider({33,1060,32,15}, COLLIDER_WALL);
+App->collision->AddCollider({113,1029,32,15}, COLLIDER_WALL);
+App->collision->AddCollider({178,997,32,15}, COLLIDER_WALL);
+App->collision->AddCollider({0,1007,56,8}, COLLIDER_WALL);
+App->collision->AddCollider({160,933,32,15);
+App->collision->AddCollider({16,853,32,15);
+App->collision->AddCollider({113,853,32,15);
+App->collision->AddCollider({209,853,32,15)
+App->collision->AddCollider({256,718,45,81)
+App->collision->AddCollider({6,737,24,22) 
+App->collision->AddCollider({38,737,24,22)
+App->collision->AddCollider({22,721,24,22)
+App->collision->AddCollider({67,752,56,8)
+App->collision->AddCollider({147,671,73,8)
+App->collision->AddCollider({0,639,56,8)
+App->collision->AddCollider({100,575,56,8)
 (0,511,75,8)
 (256,389,45,72)
 (0,420,32,15)
