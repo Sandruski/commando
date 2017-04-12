@@ -9,6 +9,7 @@
 #include "ModuleAudio.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleMenu.h"
+#include "ModuleParticles.h"
 #include "ModuleCollision.h"
 
 ModuleMenu::ModuleMenu()
@@ -32,6 +33,7 @@ bool ModuleMenu::Start()
 {
 	App->player->Disable();
 	App->collision->Disable();
+	App->particles->Disable();
 	LOG("Loading menu scene");
 
 	graphics = App->textures->Load("menu.png");
@@ -44,7 +46,8 @@ bool ModuleMenu::Start()
 // UnLoad assets
 bool ModuleMenu::CleanUp()
 {
-	App->player->Disable();
+	App->player->Enable();
+	App->player->destroyed = false;
 	LOG("Unloading menu scene");
 	return true;
 }

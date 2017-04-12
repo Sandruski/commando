@@ -11,6 +11,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleAudio.h"
 #include "ModuleCollision.h"
+#include "ModuleParticles.h"
 
 ModuleScene1::ModuleScene1()
 {
@@ -36,13 +37,14 @@ bool ModuleScene1::Start()
 {
 	App->player->Enable();
 	App->collision->Enable();
+	App->particles->Enable();
 	LOG("Loading 1st scene");
 	graphics = App->textures->Load("1-1.png");
 	moto = App->textures->Load("vehicles.png");
 	App->audio->pause_music();
 	App->audio->play_music2();
 
-	App->collision->AddCollider({ 131,(2817 - 2656),29,23 }, COLLIDER_WALL,this);
+	App->collision->AddCollider({ 131,(2817 - 2656),29,23 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 148,2800 - 2656,28,20 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 166,2817 - 2656,26,24 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 22,2769 - 2656,26,23 }, COLLIDER_WALL, this);
@@ -108,14 +110,14 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 35,79 - 2656,56,8 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 163,79 - 2656,56,8 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 0,0 - 2656,94,39 }, COLLIDER_WALL);//Muralla
-	App->collision->AddCollider({ 256,0 - 2656,95,39 }, COLLIDER_WALL);//Muralla
+	App->collision->AddCollider({ 256,0 - 2656,95,39 }, COLLIDER_WALL);//Muralla*/
 
 																//AIGUA
 
-	App->collision->AddCollider({ 0,2466 - 2656,63,48 }, COLLIDER_WATER);
-	App->collision->AddCollider({ 32,1248 - 2656,33,33 }, COLLIDER_WATER);
-	App->collision->AddCollider({ 256,1200 - 2656,94,81 }, COLLIDER_WATER);
-	App->collision->AddCollider({ 0,241 - 2656,95,64 }, COLLIDER_WATER);*/
+	App->collision->AddCollider({ 0,2466 - 2656,63,48 }, COLLIDER_WATER,this);
+	App->collision->AddCollider({ 32,1248 - 2656,33,33 }, COLLIDER_WATER, this);
+	App->collision->AddCollider({ 256,1200 - 2656,94,81 }, COLLIDER_WATER, this);
+	App->collision->AddCollider({ 0,241 - 2656,95,64 }, COLLIDER_WATER, this);
 
 	return true;
 

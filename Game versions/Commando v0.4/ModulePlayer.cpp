@@ -272,12 +272,17 @@ update_status ModulePlayer::Update()
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-	if (c1 == coll && destroyed == false)
+	if (c1 == coll && destroyed == false && App->fade->IsFading() == false)
 	{
 		App->fade->FadeToBlack (App->scene_1, App->Menu);
 
-		App->particles->AddParticle(App->particles->explosion, position.x, position.y, COLLIDER_NONE, 150);
+		App->particles->AddParticle(App->particles->explosion, position.x, position.y, COLLIDER_NONE, 0);
 
 		destroyed = true;
 	}
+}
+
+void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
+{
+
 }

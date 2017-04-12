@@ -16,6 +16,8 @@ public:
 
 	bool Start();
 	void OnCollision(Collider* c1, Collider* c2);
+	void OnCollisionWall(Collider* c1, Collider* c2);
+
 	update_status Update();
 	bool CleanUp();
 
@@ -27,6 +29,7 @@ public:
 	Animation* current_animation = &idleF;
 	Collider* coll;
 	bool destroyed = false;
+	bool Wall = true;
 
 
 };
