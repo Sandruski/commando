@@ -24,9 +24,9 @@ struct Collider
 	SDL_Rect rect;
 	bool to_delete = false;
 	COLLIDER_TYPE type;
-	Module* callback = nullptr;
+	Module* callback /*= nullptr*/;
 
-	Collider(SDL_Rect rectangle, COLLIDER_TYPE type, Module* callback = nullptr) :
+	Collider(SDL_Rect rectangle, COLLIDER_TYPE type, Module* callback /*= nullptr*/) :
 		rect(rectangle),
 		type(type),
 		callback(callback)
@@ -53,7 +53,7 @@ public:
 	//update_status PostUpdate();
 	bool CleanUp();
 
-	Collider* AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module* callback = nullptr);
+	Collider* AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module* /*callback = nullptr*/);
 	bool EraseCollider(Collider* collider);
 	void DebugDraw();
 

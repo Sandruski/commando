@@ -7,7 +7,7 @@
 #include "ModulePlayer.h"
 #include "ModuleInput.h"
 #include "SDL/include/SDL.h"
-#include "ModuleScene2.h"
+#include "ModuleEND.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleAudio.h"
 #include "ModuleCollision.h"
@@ -42,16 +42,16 @@ bool ModuleScene1::Start()
 	App->audio->pause_music();
 	App->audio->play_music2();
 
-	App->collision->AddCollider({ 131,(2817 - 2656),29,23 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 148,2800 - 2656,28,20 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 166,2817 - 2656,26,24 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 22,2769 - 2656,26,23 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 193,2705 - 2656,61,26 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 84,2640 - 2656,29,25 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 0,2642 - 2656,43,25 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 133,2594 - 2656,26,23 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 165,2594 - 2656,27,23 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 150,2577 - 2656,24,20 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 131,(2817 - 2656),29,23 }, COLLIDER_WALL,this);
+	App->collision->AddCollider({ 148,2800 - 2656,28,20 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 166,2817 - 2656,26,24 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 22,2769 - 2656,26,23 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 193,2705 - 2656,61,26 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 84,2640 - 2656,29,25 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 0,2642 - 2656,43,25 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 133,2594 - 2656,26,23 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 165,2594 - 2656,27,23 }, COLLIDER_WALL, this);
+	/*App->collision->AddCollider({ 150,2577 - 2656,24,20 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 84,2528 - 2656, 24, 22 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 5,2418 - 2656,24,22 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 38,2418 - 2656,24,22 }, COLLIDER_WALL);
@@ -115,7 +115,7 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 0,2466 - 2656,63,48 }, COLLIDER_WATER);
 	App->collision->AddCollider({ 32,1248 - 2656,33,33 }, COLLIDER_WATER);
 	App->collision->AddCollider({ 256,1200 - 2656,94,81 }, COLLIDER_WATER);
-	App->collision->AddCollider({ 0,241 - 2656,95,64 }, COLLIDER_WATER);
+	App->collision->AddCollider({ 0,241 - 2656,95,64 }, COLLIDER_WATER);*/
 
 	return true;
 
@@ -165,7 +165,7 @@ update_status ModuleScene1::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN) {
 		App->render->UP = false;
-		App->fade->FadeToBlack(this, App->scene_2, 3);
+		App->fade->FadeToBlack(this, App->END, 3);
 	}
 
 	return ret;

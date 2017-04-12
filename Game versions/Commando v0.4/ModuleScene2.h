@@ -1,7 +1,7 @@
 #ifndef __MODULESCENE2_H__
 #define __MODULESCENE2_H__
 
-#include "Module.h"
+/*#include "Module.h"
 #include "Animation.h"
 #include "Globals.h"
 
@@ -28,5 +28,5 @@ public:
 
 };
 
-
+*/
 #endif // __MODULESCENE2_H__

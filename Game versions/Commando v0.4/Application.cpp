@@ -19,15 +19,15 @@ Application::Application()
 	modules[1] = render = new ModuleRender();
 	modules[2] = input = new ModuleInput();
 	modules[3] = textures = new ModuleTextures();
-	modules[4] = scene_2 = new ModuleScene2();
-	modules[5] = scene_1 = new ModuleScene1();
-	modules[6] = player = new ModulePlayer();
-	modules[7] = Menu = new ModuleMenu();
-	modules[8] = particles = new ModuleParticles();
-	modules[9] = END = new ModuleEND();
-	modules[10] = collision = new ModuleCollision();
-	modules[11] = fade = new ModuleFadeToBlack();
-	modules[12] = audio = new ModuleAudio();
+	//modules[4] = scene_2 = new ModuleScene2();
+	modules[4] = scene_1 = new ModuleScene1();
+	modules[5] = player = new ModulePlayer();
+	modules[6] = Menu = new ModuleMenu();
+	modules[7] = particles = new ModuleParticles();
+	modules[8] = END = new ModuleEND();
+	modules[9] = collision = new ModuleCollision();
+	modules[10] = fade = new ModuleFadeToBlack();
+	modules[11] = audio = new ModuleAudio();
 }	
 
 Application::~Application()
@@ -45,7 +45,7 @@ bool Application::Init()
 	// Disable the map that you do not start with
 	END->Disable();
 	scene_1->Disable();
-	scene_2->Disable();
+//	scene_2->Disable();
 
 	for(int i = 0; i < NUM_MODULES && ret == true; ++i)
 		ret = modules[i]->Init();

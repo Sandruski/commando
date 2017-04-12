@@ -9,6 +9,7 @@
 #include "ModulePlayer.h"
 #include "ModuleCollision.h"
 #include "ModuleFadeToBlack.h"
+#include "ModuleMenu.h"
 
 
 ModulePlayer::ModulePlayer()
@@ -66,7 +67,7 @@ bool ModulePlayer::Start()
 	LOG("Loading player textures");
 	graphics = App->textures->Load("spritesheet_humanos.png");
 
-	coll = App->collision->AddCollider({ 0, 0, 16, 24 }, COLLIDER_PLAYER);
+	coll = App->collision->AddCollider({ 0, 0, 16, 24 }, COLLIDER_PLAYER,this);
 	return true;
 }
 
@@ -271,9 +272,9 @@ update_status ModulePlayer::Update()
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-	if (c1 == coll)
+	if (c1 == coll && destroyed == false)
 	{
-		App->fade->FadeToBlack((Module*)App->scene_1, (Module*)App->Menu);
+		App->fade->FadeToBlack (App->scene_1, App->Menu);
 
 		App->particles->AddParticle(App->particles->explosion, position.x, position.y, COLLIDER_NONE, 150);
 
