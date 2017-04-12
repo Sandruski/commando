@@ -79,7 +79,7 @@ update_status ModulePlayer::Update()
 {
 	int speed = 1;
 
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT)
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT /*&& Wall == true*/)
 	{
 		current_animation = &forward;
 		forward.Start();
@@ -276,5 +276,5 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 {
-
+	Wall = false;
 }
