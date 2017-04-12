@@ -26,12 +26,9 @@ bool ModuleParticles::Start()
 
 
 	bala.anim.PushBack({ 32, 16, 7, 7 });
-	bala.anim.speed = 0.3f;
+	explosion.anim.PushBack({ 16,34,11,11 });
 	bala.speed.y = -6;
 	bala.life = 250;
-
-
-
 	return true;
 }
 
@@ -135,9 +132,8 @@ Particle::Particle(const Particle& p) :
 Particle::~Particle()
 {
 	if (collider != nullptr)
-		App->collision->EraseCollider(collider);
+		collider->to_delete = true;
 }
-
 bool Particle::Update()
 {
 	bool ret = true;

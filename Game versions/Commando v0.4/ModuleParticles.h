@@ -50,7 +50,7 @@ private:
 
 public:
 	Particle bala;
-	//Particle laser; for another different particle
+	Particle explosion;
 };
 
 #endif

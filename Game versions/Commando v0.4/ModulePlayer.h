@@ -15,7 +15,9 @@ public:
 	~ModulePlayer();
 
 	bool Start();
+	void OnCollision(Collider* c1, Collider* c2);
 	update_status Update();
+	bool CleanUp();
 
 	SDL_Texture* graphics = nullptr;
 	SDL_Texture* bullets = nullptr;
@@ -24,6 +26,7 @@ public:
 	iPoint position;
 	Animation* current_animation = &idleF;
 	Collider* coll;
+	bool destroyed = false;
 
 
 };

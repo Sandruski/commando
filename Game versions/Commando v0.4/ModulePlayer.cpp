@@ -8,6 +8,8 @@
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
 #include "ModuleCollision.h"
+#include "ModuleFadeToBlack.h"
+
 
 ModulePlayer::ModulePlayer()
 {
@@ -68,6 +70,16 @@ bool ModulePlayer::Start()
 	return true;
 }
 
+bool ModulePlayer::CleanUp()
+{
+	LOG("Unloading player");
+
+	App->textures->Unload(graphics);
+	if (coll != nullptr)
+		coll->to_delete = true;
+
+	return true;
+}
 // Update: draw background
 update_status ModulePlayer::Update()
 {
@@ -185,35 +197,35 @@ update_status ModulePlayer::Update()
 		App->particles->bala.speed.y = +6;
 		App->particles->bala.speed.x = -6;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
+		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &diagSD)//Dreta Abaix
 	{
 		App->particles->bala.speed.y = +6;
 		App->particles->bala.speed.x = +6;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
+		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &diagWD)//Dreta Adalt
 	{
 		App->particles->bala.speed.y = -6;
 		App->particles->bala.speed.x = +6;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
+		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &diagWA) //Esquerra Adalt
 	{
 		App->particles->bala.speed.y = -6;
 		App->particles->bala.speed.y = -6;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
+		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &forward) //Adalt
 	{
 		App->particles->bala.speed.y = -6;
 		App->particles->bala.speed.x = 0;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
+		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 
 	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &backward) //Abaix
@@ -221,36 +233,50 @@ update_status ModulePlayer::Update()
 		App->particles->bala.speed.y = +6;
 		App->particles->bala.speed.x = 0;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
+		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &right) //Dreta
 	{
 		App->particles->bala.speed.x = +6;
 		App->particles->bala.speed.y = 0;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
+		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && current_animation == &left) //Esquer0a
 	{
 		App->particles->bala.speed.x = -6;
 		App->particles->bala.speed.y = 0;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
+		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 
 	}
 
 	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN)
 	{
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER, NULL);
+		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
 	coll->SetPos(position.x, position.y);
 
+
+	if (destroyed == false)
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 
 
 	return UPDATE_CONTINUE;
+}
+
+void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
+{
+	if (c1 == coll)
+	{
+		App->fade->FadeToBlack((Module*)App->scene_1, (Module*)App->Menu);
+
+		App->particles->AddParticle(App->particles->explosion, position.x, position.y, COLLIDER_NONE, 150);
+
+		destroyed = true;
+	}
 }
