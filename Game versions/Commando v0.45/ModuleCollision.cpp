@@ -178,14 +178,14 @@ void ModuleCollision::DebugDraw()
 		case COLLIDER_ENEMY_SHOT: // magenta
 			App->render->DrawQuad(colliders[i]->rect, 0, 255, 255, alpha);
 			break;
-		case COLLIDER_WATER: //negre
-			App->render->DrawQuad(colliders[i]->rect, 0, 0, 0, alpha);
+		case COLLIDER_WATER: //orange
+			App->render->DrawQuad(colliders[i]->rect, 255, 90, 0, alpha);
 			break;
 		case COLLIDER_PLAYER_FEET: //verd
 			App->render->DrawQuad(colliders[i]->rect, 0, 255, 0, alpha);
 			break;
-		case COLLIDER_ITEM: //gris
-			App->render->DrawQuad(colliders[i]->rect, 200, 200, 200, alpha);
+		case COLLIDER_ITEM: //black
+			App->render->DrawQuad(colliders[i]->rect, 0, 0, 0, alpha);
 			break;
 
 		}

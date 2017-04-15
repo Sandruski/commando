@@ -62,8 +62,8 @@ bool ModulePlayer::Start()
 	position.x = 100;
 	position.y = 220;
 
-	coll = App->collision->AddCollider({ 300, 300, 16, 24 }, COLLIDER_PLAYER, this); //the collider is out of the screen!
-	feetC = App->collision->AddCollider({ 300, 300, 16, 5 }, COLLIDER_PLAYER, this);
+	coll = App->collision->AddCollider({ 300, 300, 16, 19 }, COLLIDER_PLAYER, this); //the collider is out of the screen!
+	feetC = App->collision->AddCollider({ 300, 300, 10, 5 }, COLLIDER_PLAYER, this);
 	return true;
 }
 
@@ -290,7 +290,7 @@ update_status ModulePlayer::Update()
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
 	coll->SetPos(position.x, position.y - 24);
-	feetC->SetPos(position.x, position.y - 5);
+	feetC->SetPos(position.x + 3, position.y - 5);
 
 
 	if (destroyed == false)

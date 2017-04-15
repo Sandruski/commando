@@ -137,13 +137,28 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 168,1202 - 2656,94,75 }, COLLIDER_WATER, this);
 	App->collision->AddCollider({ 0,241 - 2656,90,59 }, COLLIDER_WATER, this);
 
-	App->collision->AddCollider({ 153, 2464 - 2656,30,17 }, COLLIDER_ITEM, this);
-	App->collision->AddCollider({ 33, 1936 - 2656,30,17 }, COLLIDER_ITEM, this);
-	App->collision->AddCollider({ 30, 944 - 2656,30,17 }, COLLIDER_ITEM, this);
-	App->collision->AddCollider({ 44, 706 - 2656,30,17 }, COLLIDER_ITEM, this);
-	App->collision->AddCollider({ 1, 464 - 2656,30,17 }, COLLIDER_ITEM, this);
-	App->collision->AddCollider({ 155, 218 - 2656,30,17 }, COLLIDER_ITEM, this);
-	App->collision->AddCollider({ 151, 2625 - 2656,17,17 }, COLLIDER_ITEM, this);
+																					//ITEMS
+
+	App->collision->AddCollider({ 157, 2473 - 2656,13,7 }, COLLIDER_ITEM, this);
+	App->collision->AddCollider({ 169, 2465 - 2656,13,7 }, COLLIDER_ITEM, this);
+
+	App->collision->AddCollider({ 37, 1945 - 2656,13,7 }, COLLIDER_ITEM, this);
+	App->collision->AddCollider({ 49, 1937 - 2656,13,7 }, COLLIDER_ITEM, this);
+
+	App->collision->AddCollider({ 34, 953 - 2656,13,7 }, COLLIDER_ITEM, this);
+	App->collision->AddCollider({ 46, 945 - 2656,13,7 }, COLLIDER_ITEM, this);
+
+	App->collision->AddCollider({ 48, 715 - 2656,13,7 }, COLLIDER_ITEM, this);
+	App->collision->AddCollider({ 60, 707 - 2656,13,7 }, COLLIDER_ITEM, this);
+
+	App->collision->AddCollider({ 5, 473 - 2656,13,7 }, COLLIDER_ITEM, this);
+	App->collision->AddCollider({ 17, 465 - 2656,13,7 }, COLLIDER_ITEM, this);
+
+	App->collision->AddCollider({ 157, 227 - 2656,13,7 }, COLLIDER_ITEM, this);
+	App->collision->AddCollider({ 171, 219 - 2656,13,7 }, COLLIDER_ITEM, this);
+
+
+	App->collision->AddCollider({ 151, 2625 - 2656,17,17 }, COLLIDER_ITEM, this); //Granades
 	App->collision->AddCollider({ 185, 1149 - 2656,17,17 }, COLLIDER_ITEM, this);
 
 
