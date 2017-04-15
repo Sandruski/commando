@@ -1,3 +1,18 @@
 ﻿  ModuleScene1.cpp
+  ModulePlayer.cpp
+  ModuleCollision.cpp
+  Generando código...
+  Compilando...
+  ModuleWindow.cpp
+  ModuleTextures.cpp
+  ModuleRender.cpp
+  ModuleParticles.cpp
+  ModuleMenu.cpp
+  ModuleInput.cpp
+  ModuleFadeToBlack.cpp
+  ModuleEND.cpp
+  ModuleAudio.cpp
+  Application.cpp
+  Generando código...
   SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\Commando v0.45\Debug\SDL5 Handout.exe
   SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\Commando v0.45\Debug\SDL5 Handout.pdb (Full PDB)

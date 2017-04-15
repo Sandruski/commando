@@ -302,15 +302,17 @@ update_status ModulePlayer::Update()
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-	if (/*c1 == coll &&*/ destroyed == false && App->fade->IsFading() == false)
-	{
-		App->fade->FadeToBlack (App->scene_1, App->Menu);
-
-		App->particles->AddParticle(App->particles->explosion, position.x, position.y, COLLIDER_NONE, 0);
-
-		destroyed = true;
-	}
+	if (App->collision->matrix[c1->type][c2->type] == 1)
+		OnCollisionWater(c1, c2);
+	else if (App->collision->matrix[c1->type][c2->type] == 2)
+		OnCollisionWall();
+	else if (App->collision->matrix[c1->type][c2->type] == 3)
+		OnCollisionItem(c1, c2);
+	else if (App->collision->matrix[c1->type][c2->type] == 4)
+		OnCollisionEnemy(c1, c2);
 }
+
+
 
 void ModulePlayer::OnCollisionWall()
 {
@@ -326,6 +328,26 @@ void ModulePlayer::OnCollisionWall()
 
 
 void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
+
+
+
+}
+
+void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
+
+	if (destroyed == false && App->fade->IsFading() == false)
+	{
+
+		//App->particles->AddParticle(WaterD, position.x, position.y, COLLIDER_NONE, NULL);
+		App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, NULL);
+		App->fade->FadeToBlack(App->scene_1, App->Menu);
+
+		destroyed = true;
+	}
+
+}
+void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
+
 
 
 }

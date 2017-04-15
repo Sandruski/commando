@@ -18,6 +18,8 @@ public:
 	void OnCollision(Collider* c1, Collider* c2);
 	void OnCollisionWall();
 	void OnCollisionItem(Collider* c1, Collider* c2);
+	void OnCollisionWater(Collider* c1, Collider* c2);
+	void OnCollisionEnemy(Collider* c1, Collider* c2);
 
 	update_status Update();
 	bool CleanUp();

@@ -9,7 +9,6 @@ ModuleCollision::ModuleCollision()
 	for (uint i = 0; i < MAX_COLLIDERS; ++i)
 		colliders[i] = nullptr;
 
-
 	matrix[COLLIDER_WALL][COLLIDER_WALL] = 0;
 	matrix[COLLIDER_WALL][COLLIDER_PLAYER] = 2;
 	matrix[COLLIDER_WALL][COLLIDER_ENEMY] = 2;
@@ -21,15 +20,15 @@ ModuleCollision::ModuleCollision()
 
 	matrix[COLLIDER_PLAYER][COLLIDER_WALL] = 2;
 	matrix[COLLIDER_PLAYER][COLLIDER_PLAYER] = 0;
-	matrix[COLLIDER_PLAYER][COLLIDER_ENEMY] = 1;
+	matrix[COLLIDER_PLAYER][COLLIDER_ENEMY] = 4;
 	matrix[COLLIDER_PLAYER][COLLIDER_PLAYER_SHOT] = 0;
-	matrix[COLLIDER_PLAYER][COLLIDER_ENEMY_SHOT] = 1;
+	matrix[COLLIDER_PLAYER][COLLIDER_ENEMY_SHOT] = 4;
 	matrix[COLLIDER_PLAYER][COLLIDER_WATER] = 1;
 	matrix[COLLIDER_PLAYER][COLLIDER_PLAYER_FEET] = 0;
 	matrix[COLLIDER_PLAYER][COLLIDER_ITEM] = 0;
 
 	matrix[COLLIDER_ENEMY][COLLIDER_WALL] = 2;
-	matrix[COLLIDER_ENEMY][COLLIDER_PLAYER] = 1;
+	matrix[COLLIDER_ENEMY][COLLIDER_PLAYER] = 4;
 	matrix[COLLIDER_ENEMY][COLLIDER_ENEMY] = 0;
 	matrix[COLLIDER_ENEMY][COLLIDER_PLAYER_SHOT] = 1;
 	matrix[COLLIDER_ENEMY][COLLIDER_ENEMY_SHOT] = 0;
@@ -47,7 +46,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_ITEM] = 0;
 
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_WALL] = 1;
-	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_PLAYER] = 1;
+	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_PLAYER] = 4;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_ENEMY] = 0;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_PLAYER_SHOT] = 0;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_ENEMY_SHOT] = 0;
@@ -65,9 +64,9 @@ ModuleCollision::ModuleCollision()
 
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_WALL] = 2;
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_PLAYER] = 0;
-	matrix[COLLIDER_PLAYER_FEET][COLLIDER_ENEMY] = 1;
+	matrix[COLLIDER_PLAYER_FEET][COLLIDER_ENEMY] = 0;
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_PLAYER_SHOT] = 0;
-	matrix[COLLIDER_PLAYER_FEET][COLLIDER_ENEMY_SHOT] = 1;
+	matrix[COLLIDER_PLAYER_FEET][COLLIDER_ENEMY_SHOT] = 0;
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_WATER] = 1;
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_ITEM] = 3;
 
@@ -124,13 +123,8 @@ update_status ModuleCollision::Update()
 
 			if (c1->CheckCollision(c2->rect) == true)
 			{
-				if (matrix[c1->type][c2->type] == 2)
-					c1->callback->OnCollisionWall();
-
-				else if (matrix[c1->type][c2->type] == 3)
-					c1->callback->OnCollisionItem(c1, c2);
 				
-				else if (matrix[c1->type][c2->type] && c1->callback)
+				if (matrix[c1->type][c2->type] && c1->callback)
 					c1->callback->OnCollision(c1, c2);
 
 				else if (matrix[c2->type][c1->type] && c2->callback)
