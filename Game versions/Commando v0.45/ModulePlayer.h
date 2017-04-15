@@ -29,7 +29,7 @@ public:
 	Animation* current_animation = &idleF;
 	Collider* coll;
 	bool destroyed = false;
-	bool Wall = true;
+	int speed;
 
 
 };

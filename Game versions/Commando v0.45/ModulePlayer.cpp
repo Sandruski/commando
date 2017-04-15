@@ -77,7 +77,7 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
-	int speed = 1;
+	speed = 1;
 
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT /*&& Wall == true*/)
 	{
@@ -276,5 +276,12 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 {
-	Wall = false;
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT)
+		position.y += speed;
+	else if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT)
+		position.y -= speed;
+	else if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT)
+		position.x += speed;
+	else if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT)
+		position.x -= speed;
 }
