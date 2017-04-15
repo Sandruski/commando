@@ -179,7 +179,7 @@ update_status ModuleScene1::Update()
 
 
 	//-2656
-	if (App->player->position.y <= 1450 - 2656 && App->player->position.y >= 1300 - 2656) {
+	if (App->player->position.y <= 1550 - 2656 && contador < 120) { /* && App->player->position.y >= 1300 - 2656 */
 		if (w_m > 105) {
 			current_animation = &moto_go;
 			r = current_animation->GetCurrentFrame();
@@ -191,15 +191,16 @@ update_status ModuleScene1::Update()
 			current_animation = &moto_stop;
 			r = current_animation->GetCurrentFrame();
 			App->render->Blit(moto, w_m, 1345 - 2656, &r);
+			contador++;
 		}
 	}
-	
-	else if (App->player->position.y <=  1299 - 2656 && App->player->position.y >= 1056 - 2656) {
-	Animation* current_animation = &moto_go;
-	r = current_animation->GetCurrentFrame();
-	App->render->Blit(moto, w_m, 1345 - 2656, &r);
-	w_m--;			
-	}	
+
+	else if (contador >= 120) {
+		Animation* current_animation = &moto_go;
+		r = current_animation->GetCurrentFrame();
+		App->render->Blit(moto, w_m, 1345 - 2656, &r);
+		w_m--;
+	}
 	
 	
 	

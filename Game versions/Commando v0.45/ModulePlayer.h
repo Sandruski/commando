@@ -24,7 +24,7 @@ public:
 	SDL_Texture* graphics = nullptr;
 	SDL_Texture* bullets = nullptr;
 	Animation idleF;
-	Animation forward, right, backward, left, diagWD, diagWA, diagSD, diagSA;
+	Animation forward, right, backward, left, diagWD, diagWA, diagSD, diagSA, invisible;
 	iPoint position;
 	Animation* current_animation = &idleF;
 	Collider* coll;

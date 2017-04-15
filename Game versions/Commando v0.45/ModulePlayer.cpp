@@ -46,6 +46,8 @@ ModulePlayer::ModulePlayer()
 	diagSD.PushBack({ 80, 15, 17, 25 });
 	diagSD.PushBack({ 97, 16, 17, 24 });
 
+	invisible.PushBack({ 209, 202, 17, 24 });
+
 }
 
 ModulePlayer::~ModulePlayer()
@@ -79,10 +81,19 @@ update_status ModulePlayer::Update()
 {
 	speed = 1;
 
+	if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656) {
+		current_animation = &invisible;
+
+	}
+
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT /*&& Wall == true*/)
 	{
+		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+			current_animation = &invisible;
+		else {
 		current_animation = &forward;
 		forward.Start();
+		}
 
 		if (position.y > App->render->two - 210) {
 			position.y -= speed;
@@ -102,9 +113,12 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT)
 	{
+		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+			current_animation = &invisible;
+		else {
 		current_animation = &backward;
 		backward.Start();
-
+		}
 	
 		if (position.y <= App->render->two) {
 			position.y += speed;
@@ -123,8 +137,12 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && position.x < (SCREEN_WIDTH - right.frames->w))
 	{
+		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+			current_animation = &invisible;
+		else {
 		current_animation = &right;
 		right.Start();
+		}
 		position.x += speed;
 	}
 
@@ -134,8 +152,12 @@ update_status ModulePlayer::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && position.x > 0)
 	{
+		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+			current_animation = &invisible;
+		else {
 		current_animation = &left;
 		left.Start();
+		}
 		position.x -= speed;
 	}
 	else if (App->input->keyboard[SDL_SCANCODE_A] == KEY_UP)
@@ -144,8 +166,12 @@ update_status ModulePlayer::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT) {
 
+		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+			current_animation = &invisible;
+		else {
 		current_animation = &diagWD;
 		diagWD.Start();
+		}
 
 
 	}
@@ -154,8 +180,11 @@ update_status ModulePlayer::Update()
 		diagWD.Stop();
 	}
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT) {
-
+		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+			current_animation = &invisible;
+		else {
 		current_animation = &diagWA;
+		}
 		diagWA.Start();
 
 	}
@@ -164,8 +193,11 @@ update_status ModulePlayer::Update()
 		diagWA.Stop();
 	}
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT) {
-
+		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+			current_animation = &invisible;
+		else {
 		current_animation = &diagSD;
+		}
 		diagSD.Start();
 
 	}
@@ -174,8 +206,11 @@ update_status ModulePlayer::Update()
 		diagSD.Stop();
 	}
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT) {
-
+			if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+				current_animation = &invisible;
+			else {
 		current_animation = &diagSA;
+			}
 		diagSA.Start();
 	}
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_UP && App->input->keyboard[SDL_SCANCODE_A] == KEY_UP)
