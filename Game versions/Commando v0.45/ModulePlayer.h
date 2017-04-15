@@ -16,7 +16,8 @@ public:
 
 	bool Start();
 	void OnCollision(Collider* c1, Collider* c2);
-	void OnCollisionWall(Collider* c1, Collider* c2);
+	void OnCollisionWall();
+	void OnCollisionItem(Collider* c1, Collider* c2);
 
 	update_status Update();
 	bool CleanUp();
@@ -28,6 +29,7 @@ public:
 	iPoint position;
 	Animation* current_animation = &idleF;
 	Collider* coll;
+	Collider* feetC;
 	bool destroyed = false;
 	int speed;
 

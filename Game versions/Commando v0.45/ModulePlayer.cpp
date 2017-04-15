@@ -63,6 +63,7 @@ bool ModulePlayer::Start()
 	position.y = 220;
 
 	coll = App->collision->AddCollider({ 300, 300, 16, 24 }, COLLIDER_PLAYER, this); //the collider is out of the screen!
+	feetC = App->collision->AddCollider({ 300, 300, 16, 5 }, COLLIDER_PLAYER, this);
 	return true;
 }
 
@@ -289,6 +290,8 @@ update_status ModulePlayer::Update()
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
 	coll->SetPos(position.x, position.y - 24);
+	feetC->SetPos(position.x, position.y - 5);
+
 
 	if (destroyed == false)
 		App->render->Blit(graphics, position.x, position.y - 24, &r);
@@ -299,7 +302,7 @@ update_status ModulePlayer::Update()
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-	if (c1 == coll && destroyed == false && App->fade->IsFading() == false)
+	if (/*c1 == coll &&*/ destroyed == false && App->fade->IsFading() == false)
 	{
 		App->fade->FadeToBlack (App->scene_1, App->Menu);
 
@@ -309,7 +312,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	}
 }
 
-void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
+void ModulePlayer::OnCollisionWall()
 {
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT)
 		position.y += speed;
@@ -319,4 +322,10 @@ void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 		position.x += speed;
 	else if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT)
 		position.x -= speed;
+}
+
+
+void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
+
+
 }

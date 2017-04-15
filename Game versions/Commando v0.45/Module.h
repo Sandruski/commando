@@ -41,7 +41,8 @@ public:
 
 	}
 	virtual void OnCollision(Collider*, Collider*) {}
-	virtual void OnCollisionWall(Collider*, Collider*) {}
+	virtual void OnCollisionWall() {}
+	virtual void OnCollisionItem(Collider*, Collider*) {}
 };
 
 #endif // __MODULE_H__
