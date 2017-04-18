@@ -302,22 +302,35 @@ update_status ModulePlayer::Update()
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-	if (App->collision->matrix[c1->type][c2->type] == 1)
+
+	switch (App->collision->matrix[c1->type][c2->type])
+	{
+	case 1:
 		OnCollisionWater(c1, c2);
-	else if (App->collision->matrix[c1->type][c2->type] == 2)
+		break;
+	case 2:
 		OnCollisionWall();
-	else if (App->collision->matrix[c1->type][c2->type] == 3)
+		break;
+	case 3:
 		OnCollisionItem(c1, c2);
-	else if (App->collision->matrix[c1->type][c2->type] == 4)
+		break;
+	case 4:
 		OnCollisionEnemy(c1, c2);
+		break;
+
+	default:
+		break;
+	}
 }
 
 
 
 void ModulePlayer::OnCollisionWall()
 {
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT)
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT){
 		position.y += speed;
+		W = false;
+	}
 	else if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT)
 		position.y -= speed;
 	else if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT)

@@ -1,18 +1,11 @@
-﻿  ModuleScene1.cpp
-  ModulePlayer.cpp
-  ModuleCollision.cpp
+﻿  ModulePlayer.cpp
   Generando código...
-  Compilando...
-  ModuleWindow.cpp
-  ModuleTextures.cpp
+  Omitiendo... (no se detectaron cambios relevantes)
+  ModuleScene1.cpp
   ModuleRender.cpp
   ModuleParticles.cpp
   ModuleMenu.cpp
-  ModuleInput.cpp
   ModuleFadeToBlack.cpp
   ModuleEND.cpp
-  ModuleAudio.cpp
-  Application.cpp
-  Generando código...
-  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\Commando v0.45\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\Commando v0.45\Debug\SDL5 Handout.pdb (Full PDB)
+  SDL Game.vcxproj -> C:\Users\perso\Desktop\gets-name-\Game versions\Commando v0.45\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\perso\Desktop\gets-name-\Game versions\Commando v0.45\Debug\SDL5 Handout.pdb (Full PDB)

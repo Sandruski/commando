@@ -34,6 +34,7 @@ public:
 	Collider* feetC;
 	bool destroyed = false;
 	int speed;
+	bool W = true;
 
 
 };

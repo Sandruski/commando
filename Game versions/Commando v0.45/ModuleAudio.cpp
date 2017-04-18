@@ -51,11 +51,11 @@ bool ModuleAudio::pause_music() {
 	return true;
 }
 bool ModuleAudio::play_fx1() {
-	Mix_PlayChannel(-1, fx[0], 1);
+	Mix_PlayChannel(-1, fx[0], 0);
 	return true;
 }
 bool ModuleAudio::play_fx2() {
-	Mix_PlayChannel(-1, fx[1], 1);
+	Mix_PlayChannel(-1, fx[1], 0);
 	return true;
 }
 
