@@ -51,12 +51,18 @@ bool ModuleScene1::Start()
 	moto = App->textures->Load("vehicles.png");
 	items = App->textures->Load("items&HUD&snake.png");
 	graphics = App->textures->Load("1-1.png");
-
+	App->player->Disable();
+	App->collision->Disable();
 	App->player->Enable();
 	App->particles->Enable();
 	App->collision->Enable();
 	App->enemies->Enable();
-	
+	App->player->destroyed = false;
+	App->render->camera.y = 0;
+	App->render->h = 150;
+	App->render->two = 220;
+	App->player->position.x = 100;
+	App->player->position.y = 220;
 	App->audio->pause_music();
 	App->audio->play_music2();
 
