@@ -33,7 +33,7 @@ Enemy_SoldierShield::Enemy_SoldierShield(int x, int y) : Enemy(x, y)
 
 	animation = &move1;
 
-	collider = App->collision->AddCollider({ 0, 0, 18, 18 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	//collider = App->collision->AddCollider({ 0, 0, 18, 18 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_SoldierShield::Move()

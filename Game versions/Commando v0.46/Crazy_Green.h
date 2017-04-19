@@ -13,8 +13,9 @@ private:
 	int original_y = 0;
 	int original_x = 0;
 
-	Animation run;
+	Animation run1, run2;
 	Animation die;
+	int cont = 0;
 
 public:
 
