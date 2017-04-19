@@ -13,8 +13,11 @@ private:
 	int original_y = 0;
 	int original_x = 0;
 
-	Animation move;
+	Animation move1, move2, move3, move4;
 	Animation surrender;
+	int aleatori;
+	int cont;
+	int cont2;
 
 public:
 
