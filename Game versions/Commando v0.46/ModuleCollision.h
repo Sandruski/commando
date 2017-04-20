@@ -59,7 +59,7 @@ public:
 	Collider* AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module* /*callback = nullptr*/);
 	bool EraseCollider(Collider* collider);
 	void DebugDraw();
-	int matrix[COLLIDER_MAX][COLLIDER_MAX];
+	bool matrix[COLLIDER_MAX][COLLIDER_MAX];
 
 private:
 

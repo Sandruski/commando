@@ -302,40 +302,29 @@ update_status ModulePlayer::Update()
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-
-	switch (App->collision->matrix[c1->type][c2->type])
-	{
-	case 1:
+	if (c1->type == COLLIDER_PLAYER && c2->type == COLLIDER_WALL)
+		OnCollisionWall(c1, c2);
+	else if (c1->type == COLLIDER_PLAYER && c2->type == COLLIDER_WATER)
 		OnCollisionWater(c1, c2);
-		break;
-	case 2:
-		OnCollisionWall();
-		break;
-	case 3:
+	else if (c1->type == COLLIDER_PLAYER_FEET && c2->type == COLLIDER_ITEM)
 		OnCollisionItem(c1, c2);
-		break;
-	case 4:
+	else if (c1->type == COLLIDER_PLAYER && c2->type == COLLIDER_ITEM)
 		OnCollisionEnemy(c1, c2);
-		break;
 
-	default:
-		break;
-	}
 }
 
 
 
-void ModulePlayer::OnCollisionWall()
+void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 {
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT){
 		position.y += speed;
-		W = false;
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT)
+	/*else*/ if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT)
 		position.y -= speed;
-	else if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT)
+	/*else*/ if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT)
 		position.x += speed;
-	else if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT)
+	/*else*/ if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT)
 		position.x -= speed;
 }
 
@@ -367,6 +356,9 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 }
 void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 
+	/*c1->type == COLLIDER_WALL;
+	c2->type == COLLIDER_PLAYER;
 
+	c1->rect.*/
 
 }

@@ -41,7 +41,7 @@ public:
 
 	}
 	virtual void OnCollision(Collider*, Collider*) {}
-	virtual void OnCollisionWall() {}
+	virtual void OnCollisionWall(Collider*, Collider*) {}
 	virtual void OnCollisionItem(Collider*, Collider*) {}
 	virtual void OnCollisionWater(Collider*, Collider*) {}
 	virtual void OnCollisionEnemy(Collider*, Collider*) {}
