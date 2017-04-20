@@ -15,6 +15,9 @@
 #include "ModuleParticles.h"
 #include "ModuleCinematic.h"
 #include "ModuleUI.h"
+#include "ModuleFonts.h"
+
+#include<stdio.h>
 
 ModuleScene1::ModuleScene1()
 {
@@ -48,7 +51,7 @@ ModuleScene1::~ModuleScene1()
 bool ModuleScene1::Start()
 {
 	LOG("Loading 1st scene");
-
+	font_score = App->fonts->Load("fonts/rtype_font.png", "0123456789", 1);
 	moto = App->textures->Load("vehicles.png");
 	items = App->textures->Load("items&HUD&snake.png");
 	graphics = App->textures->Load("1-1.png");
@@ -300,6 +303,10 @@ update_status ModuleScene1::Update()
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->END, 3);
 	}
+
+	App->fonts->BlitText(50, 50, font_score, "0123456789");
+	char str[10];
+	sprintf_s(str, "%i", score);
 
 	return ret;
 }

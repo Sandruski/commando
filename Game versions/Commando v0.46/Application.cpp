@@ -15,6 +15,7 @@
 #include "ModuleParticlesEnemies.h"
 #include "ModuleEnemies.h"
 #include "ModuleCinematic.h"
+#include "ModuleFonts.h"
 #include "ModuleUI.h"
 
 Application::Application()
@@ -25,6 +26,7 @@ Application::Application()
 	modules[index_module++] = render = new ModuleRender();
 	modules[index_module++] = input = new ModuleInput();
 	modules[index_module++] = textures = new ModuleTextures();
+	modules[index_module++] = fonts = new ModuleFonts();
 	//modules[4] = scene_2 = new ModuleScene2();
 
 	modules[index_module++] = Menu = new ModuleMenu();
