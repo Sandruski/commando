@@ -167,7 +167,7 @@ update_status ModuleCinematic::Update()
 	}
 
 
-	if (sj_x == 125) {
+	if (sj_x == 125 || App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->scene_1, 1);
 	}

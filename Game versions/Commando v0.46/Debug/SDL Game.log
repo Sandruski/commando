@@ -1,3 +1,4 @@
-﻿  ModuleEND.cpp
-  SDL Game.vcxproj -> C:\Users\aleixca1\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\aleixca1\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  ModuleCinematic.cpp
+c:\users\aleixgm\desktop\gets-name-\game versions\commando v0.46\modulecinematic.cpp(142): warning C4804: '<': unsafe use of type 'bool' in operation
+  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.pdb (Full PDB)

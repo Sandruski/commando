@@ -304,7 +304,7 @@ update_status ModulePlayer::Update()
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
 	coll->SetPos(position.x, position.y + 3);
-	feetC->SetPos(position.x + 3, position.y + 21);
+	feetC->SetPos(position.x + 3, position.y + 22);
 
 
 	if (destroyed == false)
@@ -316,13 +316,14 @@ update_status ModulePlayer::Update()
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-	if (c1->type == COLLIDER_PLAYER && c2->type == COLLIDER_WALL)
+
+	if (((c1->type == COLLIDER_PLAYER) || (c1->type == COLLIDER_PLAYER_FEET) || (c1->type == COLLIDER_ENEMY) || (c2->type == COLLIDER_PLAYER) || (c2->type == COLLIDER_PLAYER_FEET) || (c2->type == COLLIDER_ENEMY)) && (c1->type == COLLIDER_WALL || c2->type == COLLIDER_WALL))
 		OnCollisionWall(c1, c2);
-	else if (c1->type == COLLIDER_PLAYER && c2->type == COLLIDER_WATER)
+	if (((c1->type == COLLIDER_PLAYER) || (c1->type == COLLIDER_PLAYER_FEET) || (c1->type == COLLIDER_ENEMY) || (c2->type == COLLIDER_PLAYER) || (c2->type == COLLIDER_PLAYER_FEET) || (c2->type == COLLIDER_ENEMY)) && (c1->type == COLLIDER_WATER || c2->type == COLLIDER_WATER))
 		OnCollisionWater(c1, c2);
-	else if (c1->type == COLLIDER_PLAYER_FEET && c2->type == COLLIDER_ITEM)
+	if ((c1->type == COLLIDER_PLAYER_FEET || c2->type == COLLIDER_PLAYER_FEET /*|| c1->type == COLLIDER_PLAYER || c2->type == COLLIDER_PLAYER*/) && (c1->type == COLLIDER_ITEM || c2->type == COLLIDER_ITEM))
 		OnCollisionItem(c1, c2);
-	else if (c1->type == COLLIDER_PLAYER && c2->type == COLLIDER_ITEM)
+	if ((c1->type == (COLLIDER_PLAYER || COLLIDER_PLAYER_SHOT) || c2->type == (COLLIDER_PLAYER || COLLIDER_PLAYER_SHOT)) && (c1->type == COLLIDER_ENEMY || c2->type == COLLIDER_ENEMY))
 		OnCollisionEnemy(c1, c2);
 
 }
@@ -331,9 +332,9 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 {
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT){
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT)
 		position.y += speed;
-	}
+
 	/*else*/ if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT)
 		position.y -= speed;
 	/*else*/ if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT)
@@ -345,8 +346,7 @@ void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 
 void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
 
-
-
+	c2->to_delete = true;
 }
 
 void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
@@ -361,21 +361,17 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 
 			destroyed = true;
 		}
-	
-	else if (vides == 0) {
-		App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, NULL);
-		App->fade->FadeToBlack(App->scene_1, App->Menu);
-		App->UI->Disable();
-		destroyed = true;
-		vides = 3;
+
+		else if (vides == 0) {
+			App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, NULL);
+			App->fade->FadeToBlack(App->scene_1, App->Menu);
+			destroyed = true;
+			vides = 3;
+		}
 	}
-}
 }
 void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 
-	/*c1->type == COLLIDER_WALL;
-	c2->type == COLLIDER_PLAYER;
 
-	c1->rect.*/
 
 }
