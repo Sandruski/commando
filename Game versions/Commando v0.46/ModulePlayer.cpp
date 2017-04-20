@@ -59,11 +59,24 @@ bool ModulePlayer::Start()
 	LOG("Loading player textures");
 	graphics = App->textures->Load("spritesheet_humanos.png");
 
-	position.x = 100;
-	position.y = 220;
+	position.x = 130;
+	position.y = 110;
 
 	coll = App->collision->AddCollider({ 300, 300, 16, 19 }, COLLIDER_PLAYER, this); //the collider is out of the screen!
-	feetC = App->collision->AddCollider({ 300, 300, 10, 5 }, COLLIDER_PLAYER, this);
+	feetC = App->collision->AddCollider({ 300 - 16, 300 - 19, 10, 5 }, COLLIDER_PLAYER, this);
+	
+	x1.x = position.x - 30;
+	x1.y = position.y;
+
+	x2.x = position.x;
+	x2.y = position.y - 30;
+
+	x3.x = position.x + 30;
+	x3.y = position.y;
+
+	x4.x = position.x;
+	x4.y = position.y + 30;
+	
 	return true;
 }
 
@@ -289,12 +302,12 @@ update_status ModulePlayer::Update()
 	
 	SDL_Rect r = current_animation->GetCurrentFrame();
 
-	coll->SetPos(position.x, position.y - 24);
-	feetC->SetPos(position.x + 3, position.y - 5);
+	coll->SetPos(position.x, position.y + 3);
+	feetC->SetPos(position.x + 3, position.y + 21);
 
 
 	if (destroyed == false)
-		App->render->Blit(graphics, position.x, position.y - 24, &r);
+		App->render->Blit(graphics, position.x, position.y, &r);
 
 
 	return UPDATE_CONTINUE;

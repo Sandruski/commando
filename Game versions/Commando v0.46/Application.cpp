@@ -18,28 +18,32 @@
 
 Application::Application()
 {
-	modules[0] = window = new ModuleWindow();
-	modules[1] = render = new ModuleRender();
-	modules[2] = input = new ModuleInput();
-	modules[3] = textures = new ModuleTextures();
+	unsigned int index_module = 0;
+
+	modules[index_module++] = window = new ModuleWindow();
+	modules[index_module++] = render = new ModuleRender();
+	modules[index_module++] = input = new ModuleInput();
+	modules[index_module++] = textures = new ModuleTextures();
 	//modules[4] = scene_2 = new ModuleScene2();
 
-	modules[4] = Menu = new ModuleMenu();
-	modules[5] = cinematic = new ModuleCinematic();
-	modules[6] = scene_1 = new ModuleScene1();
-	modules[7] = END = new ModuleEND();
-
-	modules[8] = enemies = new ModuleEnemies();
-	modules[9] = player = new ModulePlayer();
+	modules[index_module++] = Menu = new ModuleMenu();
+	modules[index_module++] = cinematic = new ModuleCinematic();
+	modules[index_module++] = scene_1 = new ModuleScene1();
+	modules[index_module++] = END = new ModuleEND();
 
 
-	modules[10] = particles = new ModuleParticles();
-	modules[11] = particlesenemies = new ModuleParticlesEnemies();
+	modules[index_module++] = player = new ModulePlayer();
+	modules[index_module++] = collision = new ModuleCollision();
 
-	modules[12] = collision = new ModuleCollision();
+	modules[index_module++] = particles = new ModuleParticles();
+	modules[index_module++] = particlesenemies = new ModuleParticlesEnemies();
 
-	modules[13] = fade = new ModuleFadeToBlack();
-	modules[14] = audio = new ModuleAudio();
+
+	modules[index_module++] = enemies = new ModuleEnemies();
+
+	modules[index_module++] = fade = new ModuleFadeToBlack();
+	modules[index_module++] = audio = new ModuleAudio();
+
 }	
 
 Application::~Application()

@@ -77,7 +77,7 @@ update_status ModuleRender::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT) {
 		if (App->fade->on == App->scene_1 && camera.y <= 7964) {
-			if (App->player->position.y <= 150 && abs(App->player->position.y) == abs(h)) {
+			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(h)) {
 				camera.y += speed;
 				h -= 1;
 				two -= 1;

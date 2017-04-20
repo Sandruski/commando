@@ -45,10 +45,10 @@ bool ModuleMenu::Start()
 
 	//Initialize camera and others (prepare it for use)
 	App->render->camera.y = 0;
-	App->render->h = 150;
-	App->render->two = 220;
-	App->player->position.x = 100;
-	App->player->position.y = 220;
+	App->render->h = 110;
+	App->render->two = 197;
+	App->player->position.x = App->fade->start_x;
+	App->player->position.y = App->fade->start_y;
 
 	return true;
 }

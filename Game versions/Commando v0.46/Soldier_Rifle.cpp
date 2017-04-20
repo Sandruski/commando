@@ -51,79 +51,36 @@ void Enemy_SoldierRifle::Move()
 
 	num_shots = rand() % 4;
 
+	if (rand1 == 3 && App->player->position.y > position.y + 24) {
 
-	if (rand1 == 3 && App->player->position.y > position.y - 24) {
-
-		for (int i = 0; i <= num_shots; i++) {
-			App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, position.y + 30 + space, COLLIDER_NONE, NULL);
-			space = rand() % 10 + 5;
+		for (int i = 0; i <= 4; i++) {
+			App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, position.y, COLLIDER_NONE, NULL); //position.y+30+space
+																														  //space = rand() % 10 + 5;
 		}
 
-		//App->particlesenemies->bala.speed.y = +1;
-		//App->particlesenemies->bala.speed.x = -1;
+		enemyplayer.x = App->player->position.x - position.x;
+		enemyplayer.y = abs(position.y) - abs(App->player->position.y);
 
-		App->particlesenemies->bala.speed.y = +1;
-		App->particlesenemies->bala.speed.x = 0;
+		App->particlesenemies->bala.speed.x = (enemyplayer.x * 0.01f);
+		App->particlesenemies->bala.speed.y = (enemyplayer.y * 0.01f);
+
+		App->particlesenemies->bala.position.x = int(position.x + App->particlesenemies->bala.speed.x);
+		App->particlesenemies->bala.position.y = int(position.y + App->particlesenemies->bala.speed.y);
+
+
+		//y = abs(App->player->position.y) - abs(position.y);
+		//x = App->player->position.x - position.x;
+
+		//App->particlesenemies->bala.speed.y = sin(atan(y / x)) * 2;
+		//App->particlesenemies->bala.speed.x = cos(atan(y / x)) * 2;
 
 
 
-
-
-		/*
-		if (App->player->position.x <= position.x - 22) { //left
-
-		for (int i = 0; i <= num_shots; i++) {
-		App->particles->bala.born = 0;
-		App->particles->bala.life = 1000;
-		App->particles->bala.speed.y = -0.2;
-		App->particles->bala.speed.x = +0.2;
-		App->particles->AddParticle(App->particles->bala, position.x, position.y + 30, COLLIDER_ENEMY_SHOT, NULL);
-		}
-		}
-		else if (App->player->position.x >= position.x + 22) { //right
-
-		for (int i = 0; i <= num_shots; i++) {
-		App->particles->bala.born = 0;
-		App->particles->bala.life = 1000;
-		App->particles->bala.speed.y = -0.2;
-		App->particles->bala.speed.x = -0.2;
-		App->particles->AddParticle(App->particles->bala, position.x, position.y + 30, COLLIDER_ENEMY_SHOT, NULL);
-		}
-		}
-		else if (App->player->position.x > position.x - 22 && App->player->position.x < position.x - 2) { //left
-
-		for (int i = 0; i <= num_shots; i++) {
-		App->particles->bala.born = 0;
-		App->particles->bala.life = 1000;
-		App->particles->bala.speed.y = -0.2;
-		App->particles->bala.speed.x = +0.2;
-		App->particles->AddParticle(App->particles->bala, position.x, position.y + 30, COLLIDER_ENEMY_SHOT, NULL);
-		}
-		}
-		else if (App->player->position.x < position.x + 22 && App->player->position.x > position.x + 2) { //right
-
-		for (int i = 0; i <= num_shots; i++) {
-		App->particles->bala.life = 1000;
-		App->particles->bala.speed.y = -0.2;
-		App->particles->bala.speed.x = -0.2;
-		App->particles->AddParticle(App->particles->bala, position.x, position.y + 30, COLLIDER_ENEMY_SHOT, NULL);
-		}
-		}
-		else if (App->player->position.x >= position.x - 2 && App->player->position.x <= position.x + 2) { //center
-
-		for (int i = 0; i <= num_shots; i++) {
-		App->particles->bala.life = 1000;
-		App->particles->bala.speed.y = -0.2;
-		App->particles->bala.speed.x = 0;
-		App->particles->AddParticle(App->particles->bala, position.x, position.y + 30, COLLIDER_ENEMY_SHOT, NULL);
-		}
-		}
-		*/
 		space = 0;
 
 	}
 
-	rand1 = rand() % 500;
+	rand1 = rand() % 200;
 
 	//Change of behaviour. Soldier walks backwards
 	/*

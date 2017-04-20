@@ -19,6 +19,10 @@ public:
 	Module* off;
 	Module* on;
 	bool black = true;
+
+	int start_x = 130;
+	int start_y = 110;
+
 private:
 
 	enum fade_step

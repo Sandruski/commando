@@ -37,7 +37,7 @@ public:
 	int speed;
 	bool W = true;
 
-
+	iPoint x1, x2, x3, x4;
 };
 
 #endif
