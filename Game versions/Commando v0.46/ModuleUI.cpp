@@ -5,6 +5,9 @@
 #include "ModulePlayer.h"
 #include "ModuleInput.h"
 #include "ModuleUI.h"
+#include "ModuleFonts.h"
+
+#include<stdio.h>
 
 ModuleUI::ModuleUI()
 {
@@ -52,6 +55,7 @@ bool ModuleUI::Start()
 	bool ret = true;
 
 	LOG("Loading screen UI");
+	font_score = App->fonts->Load("fonts/rtype_font.png", "0123456789", 1);
 	Hud = App->textures->Load("items&HUD&snake.png");
 	Hud2 = App->textures->Load("Alphabet&Numbers&Extra.png");
 
@@ -106,7 +110,12 @@ update_status ModuleUI::Update()
 		if (App->player->vides == 3) {
 
 			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
-
+			App->fonts->BlitText(130, 215 - var, font_score, ("%i", grenades));
+			char str[10];
+			App->fonts->BlitText(58, 5 - var, font_score, ("%i", points));
+			char str2[10];
+			sprintf_s(str2, "%i", score);
+			sprintf_s(str, "%i", score);
 			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
 				if (var2 != App->player->position.y)
 					var += 1;
@@ -146,7 +155,12 @@ update_status ModuleUI::Update()
 		if (App->player->vides == 2) {
 
 			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
-
+			App->fonts->BlitText(130, 215 - var, font_score, ("%i", grenades));
+			char str[10];
+			App->fonts->BlitText(58, 5 - var, font_score, ("%i", points));
+			char str2[10];
+			sprintf_s(str2, "%i", score);
+			sprintf_s(str, "%i", score);
 			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
 				if (var2 != App->player->position.y)
 					var += 1;
@@ -188,7 +202,12 @@ update_status ModuleUI::Update()
 		if (App->player->vides == 1) {
 
 			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
-
+			App->fonts->BlitText(130, 215 - var, font_score, ("%i", grenades));
+			char str[10];
+			sprintf_s(str, "%i", score);
+			App->fonts->BlitText(58, 5 - var, font_score, ("%i", points));
+			char str2[10];
+			sprintf_s(str2, "%i", score);
 			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
 				if (var2 != App->player->position.y)
 					var += 1;
@@ -203,7 +222,7 @@ update_status ModuleUI::Update()
 
 	}
 
-
+	
 
 	return UPDATE_CONTINUE;
 }

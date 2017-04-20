@@ -32,6 +32,11 @@ public:
 	SDL_Rect vida2;
 	SDL_Rect vida3;
 	SDL_Rect MarcadorGranada;
+	int font_score = -1;
+	char score_text[10];
+	uint score = 0;
+	char* grenades = "0";
+	char* points = "000000";
 	//bool characterselection_ui;
 private:
 

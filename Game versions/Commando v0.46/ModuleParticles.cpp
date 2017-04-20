@@ -68,6 +68,7 @@ update_status ModuleParticles::Update()
 		else if (SDL_GetTicks() >= p->born)
 		{
 			if (p->position.y <= 1405 - 2656 && p->position.y >= 1338 - 2656) {}
+
 			else {
 				App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()));
 			}

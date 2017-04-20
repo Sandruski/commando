@@ -22,9 +22,6 @@ public:
 	SDL_Texture* graphics = nullptr;
 	SDL_Texture* moto = nullptr;
 	SDL_Texture* items = nullptr;
-	int font_score = -1;
-	char score_text[10];
-	uint score = 0;
 	SDL_Rect foreground;
 	Animation ammo_grenades_colours;
 	Animation ammo_specialgrenade1;
