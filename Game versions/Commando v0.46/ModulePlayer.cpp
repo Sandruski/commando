@@ -350,14 +350,20 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 
 	if (destroyed == false && App->fade->IsFading() == false)
 	{
+		vides--;
+		if (vides != 0) {
+			//App->particles->AddParticle(WaterD, position.x, position.y, COLLIDER_NONE, NULL);
+			App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, NULL);
+			App->fade->FadeToBlack(App->scene_1, App->scene_1);
 
-		//App->particles->AddParticle(WaterD, position.x, position.y, COLLIDER_NONE, NULL);
+			destroyed = true;
+		}
+	
+	else if (vides == 0) {
 		App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, NULL);
-		App->fade->FadeToBlack(App->scene_1, App->scene_1);
-
-		destroyed = true;
+		App->fade->FadeToBlack(App->scene_1, App->Menu);
 	}
-
+}
 }
 void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 

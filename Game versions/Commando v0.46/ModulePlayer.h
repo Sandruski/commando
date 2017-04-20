@@ -32,6 +32,7 @@ public:
 	Animation* current_animation = &idleF;
 	Collider* coll;
 	Collider* feetC;
+	int vides = 3;
 	bool destroyed = false;
 	int speed;
 	bool W = true;
