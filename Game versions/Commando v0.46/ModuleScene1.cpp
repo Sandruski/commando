@@ -14,6 +14,7 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModuleCinematic.h"
+#include "ModuleUI.h"
 
 ModuleScene1::ModuleScene1()
 {
@@ -51,7 +52,8 @@ bool ModuleScene1::Start()
 	moto = App->textures->Load("vehicles.png");
 	items = App->textures->Load("items&HUD&snake.png");
 	graphics = App->textures->Load("1-1.png");
-	
+	App->UI->Disable();
+	App->UI->Enable();
 	App->player->Disable();
 	App->collision->Disable();
 	App->player->Enable();

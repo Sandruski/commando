@@ -10,6 +10,7 @@
 #include "ModuleCollision.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleMenu.h"
+#include "ModuleUI.h"
 
 
 ModulePlayer::ModulePlayer()
@@ -364,6 +365,9 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 	else if (vides == 0) {
 		App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, NULL);
 		App->fade->FadeToBlack(App->scene_1, App->Menu);
+		App->UI->Disable();
+		destroyed = true;
+		vides = 3;
 	}
 }
 }

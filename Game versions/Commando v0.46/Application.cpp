@@ -15,6 +15,7 @@
 #include "ModuleParticlesEnemies.h"
 #include "ModuleEnemies.h"
 #include "ModuleCinematic.h"
+#include "ModuleUI.h"
 
 Application::Application()
 {
@@ -44,6 +45,7 @@ Application::Application()
 	modules[index_module++] = fade = new ModuleFadeToBlack();
 	modules[index_module++] = audio = new ModuleAudio();
 
+	modules[index_module] = UI = new ModuleUI();
 }	
 
 Application::~Application()

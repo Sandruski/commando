@@ -11,6 +11,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleEND.h"
 #include "ModuleCollision.h"
+#include"ModuleUI.h"
 
 ModuleEND::ModuleEND()
 {
@@ -28,7 +29,7 @@ bool ModuleEND::Start()
 {
 	App->player->Disable();
 	App->collision->Disable();
-
+	App->UI->Disable();
 	LOG("Loading end scene");
 	graphics = App->textures->Load("highscore.png");
 	App->audio->pause_music();

@@ -12,6 +12,7 @@
 #include "ModuleParticles.h"
 #include "ModuleCollision.h"
 #include "ModuleCinematic.h"
+#include "ModuleUI.h"
 
 ModuleMenu::ModuleMenu()
 {
@@ -32,6 +33,8 @@ ModuleMenu::~ModuleMenu()
 // Load assets
 bool ModuleMenu::Start()
 {
+
+	App->UI->Disable();
 	App->player->Disable();
 	App->collision->Disable();
 	App->particles->Disable();
