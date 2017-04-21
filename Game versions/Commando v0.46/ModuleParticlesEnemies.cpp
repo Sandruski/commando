@@ -28,7 +28,7 @@ bool ModuleParticlesEnemies::Start()
 	bala.anim.PushBack({ 32, 16, 7, 7 });
 	explosion.anim.PushBack({ 16,34,11,11 });
 	bala.speed.y = -6;
-	bala.life = 1300;
+	bala.life = 1500;
 	return true;
 }
 

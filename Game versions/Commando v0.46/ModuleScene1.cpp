@@ -106,7 +106,7 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 22,1538 - 2656,24,22 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 149,1538 - 2656,24,22 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 86,1472 - 2656,24,22 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 195,1470 - 2656,57,8 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 192,1473 - 2656,57,6 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,1343 - 2656,100,81 }, COLLIDER_WALL, this);  //Pont
 	App->collision->AddCollider({ 156,1343 - 2656,100,81 }, COLLIDER_WALL, this); //Pont
 																				  //-------------- Pedres
@@ -128,7 +128,7 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 22,721 - 2656,24,22 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 67,752 - 2656,56,8 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 147,671 - 2656,73,8 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 209,1456 - 2656,19,18 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 209,1456 - 2656,14,14 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,639 - 2656,56,8 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 100,575 - 2656,56,8 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,511 - 2656,75,8 }, COLLIDER_WALL, this);
@@ -152,7 +152,7 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 168,1202 - 2656,94,75 }, COLLIDER_WATER, this);
 	App->collision->AddCollider({ 0,241 - 2656,90,59 }, COLLIDER_WATER, this);
 
-																					//ITEMS
+	//ITEMS
 
 	App->collision->AddCollider({ 157, 2473 - 2656,13,7 }, COLLIDER_ITEM, this);
 	App->collision->AddCollider({ 169, 2465 - 2656,13,7 }, COLLIDER_ITEM, this);
@@ -193,7 +193,7 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 234, 835 - 2656);
 
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 6, 407 - 2656);
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 6, 405 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 70, 359 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 134, 327 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 199, 295 - 2656);

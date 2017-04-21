@@ -14,11 +14,10 @@ private:
 	int original_x = 0;
 
 	Animation turn, center, left, more_left, right, more_right;
-	fPoint enemyplayer;
+	fPoint enemyplayer, enemyplayeru;
+	float module, angle;
 
 	int rand1 = 3, num_shots, space = 0;
-
-
 
 public:
 

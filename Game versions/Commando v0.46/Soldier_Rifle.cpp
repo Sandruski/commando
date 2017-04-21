@@ -53,34 +53,30 @@ void Enemy_SoldierRifle::Move()
 
 	if (rand1 == 3 && App->player->position.y > position.y + 24) {
 
-		for (int i = 0; i <= 4; i++) {
-			App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, position.y, COLLIDER_NONE, NULL); //position.y+30+space
-																														  //space = rand() % 10 + 5;
+		for (int i = 0; i <= num_shots; i++) {
+			App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL); //position.y+30+space
+			space = rand() % 10 + 5;
 		}
 
-		enemyplayer.x = App->player->position.x - position.x;
-		enemyplayer.y = abs(position.y) - abs(App->player->position.y);
+		enemyplayer.x = (App->player->position.x + 5) - position.x;
+		enemyplayer.y = abs(position.y + 25) - abs(App->player->position.y + 10);
 
-		App->particlesenemies->bala.speed.x = (enemyplayer.x * 0.01f);
-		App->particlesenemies->bala.speed.y = (enemyplayer.y * 0.01f);
+		module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
+		enemyplayeru.x = enemyplayer.x / module;
+		enemyplayeru.y = enemyplayer.y / module;
 
-		App->particlesenemies->bala.position.x = int(position.x + App->particlesenemies->bala.speed.x);
-		App->particlesenemies->bala.position.y = int(position.y + App->particlesenemies->bala.speed.y);
+		//angle = atan(enemyplayer.x / enemyplayer.y); do not use. Only if needed
 
+		App->particlesenemies->bala.speed.x = enemyplayeru.x;
+		App->particlesenemies->bala.speed.y = enemyplayeru.y;
 
-		//y = abs(App->player->position.y) - abs(position.y);
-		//x = App->player->position.x - position.x;
-
-		//App->particlesenemies->bala.speed.y = sin(atan(y / x)) * 2;
-		//App->particlesenemies->bala.speed.x = cos(atan(y / x)) * 2;
-
-
+		App->particlesenemies->bala.position.x = (position.x + App->particlesenemies->bala.speed.x);
+		App->particlesenemies->bala.position.y = ((position.y + 25) + App->particlesenemies->bala.speed.y);
 
 		space = 0;
-
 	}
 
-	rand1 = rand() % 200;
+	rand1 = rand() % 500;
 
 	//Change of behaviour. Soldier walks backwards
 	/*
