@@ -1,4 +1,3 @@
-﻿  ModulePlayer.cpp
-c:\users\perso\desktop\gets-name-\game versions\commando v0.46\moduleplayer.cpp(326): warning C4805: '==': combinación no segura del tipo 'COLLIDER_TYPE' y el tipo 'bool' en la operación
-  SDL Game.vcxproj -> C:\Users\perso\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\perso\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  Crazy_Green.cpp
+  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.pdb (Full PDB)

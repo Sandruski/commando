@@ -22,7 +22,7 @@ Enemy_CrazyGreen::Enemy_CrazyGreen(int x, int y) : Enemy(x, y)
 
 	animation = &run2;
 
-	//collider = App->collision->AddCollider({ 0, 0, 18, 18 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 18, 18 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_CrazyGreen::Move()
