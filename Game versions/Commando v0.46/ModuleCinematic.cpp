@@ -71,7 +71,7 @@ bool ModuleCinematic::CleanUp()
 	LOG("Unloading 1st scene");
 	App->textures->Unload(graphics2);
 	App->player->Enable();
-	App->player->destroyed = false;
+	App->player->move = false;
 	helicont = 0;
 
 	return true;

@@ -168,7 +168,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
-		if (c1->type != COLLIDER_WALL && c2->type != COLLIDER_WALL) {
+		if (c1->type != COLLIDER_WALL && c2->type != COLLIDER_WALL && c1->type != COLLIDER_PLAYER && c2->type != COLLIDER_PLAYER) {
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 			{
 				enemies[i]->OnCollision(c2);

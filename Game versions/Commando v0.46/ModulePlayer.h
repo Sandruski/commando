@@ -27,13 +27,17 @@ public:
 	SDL_Texture* graphics = nullptr;
 	SDL_Texture* bullets = nullptr;
 	Animation idleF;
-	Animation forward, right, backward, left, diagWD, diagWA, diagSD, diagSA, invisible;
+	Animation forward, right, backward, left, diagWD, diagWA, diagSD, diagSA, invisible, PlayerDie, waterDie;
 	iPoint position;
 	Animation* current_animation = &idleF;
 	Collider* coll;
 	Collider* feetC;
+	SDL_Rect r;
 	int vides = 3;
-	bool destroyed = false;
+	bool move = true;
+	bool waterB = true;
+	bool enemyB = true;
+	bool GOD = false;
 	int speed;
 	bool W = true;
 

@@ -60,7 +60,10 @@ bool ModuleScene1::Start()
 	App->particles->Enable();
 	App->collision->Enable();
 	App->enemies->Enable();
-	App->player->destroyed = false;
+	App->player->move = true;
+	App->player->enemyB = true;
+	App->player->waterB = true;
+	App->player->current_animation = &App->player->idleF;
 
 	//Initialize camera and others (prepare it for use)
 	App->render->camera.y = 0;
