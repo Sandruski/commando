@@ -17,6 +17,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_WALL][COLLIDER_WATER] = false;
 	matrix[COLLIDER_WALL][COLLIDER_PLAYER_FEET] = false;
 	matrix[COLLIDER_WALL][COLLIDER_ITEM] = false;
+	matrix[COLLIDER_WALL][COLLIDER_PLAYER_GRENADE] = false;
 
 	matrix[COLLIDER_PLAYER][COLLIDER_WALL] = true;
 	matrix[COLLIDER_PLAYER][COLLIDER_PLAYER] = false;
@@ -26,6 +27,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER][COLLIDER_WATER] = true;
 	matrix[COLLIDER_PLAYER][COLLIDER_PLAYER_FEET] = false;
 	matrix[COLLIDER_PLAYER][COLLIDER_ITEM] = false;
+	matrix[COLLIDER_PLAYER][COLLIDER_PLAYER_GRENADE] = false;
 
 	matrix[COLLIDER_ENEMY][COLLIDER_WALL] = true;
 	matrix[COLLIDER_ENEMY][COLLIDER_PLAYER] = true;
@@ -35,6 +37,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ENEMY][COLLIDER_WATER] = true;
 	matrix[COLLIDER_ENEMY][COLLIDER_PLAYER_FEET] = false;
 	matrix[COLLIDER_ENEMY][COLLIDER_ITEM] = false;
+	matrix[COLLIDER_ENEMY][COLLIDER_PLAYER_GRENADE] = true;
 
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_WALL] = true;
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_PLAYER] = false;
@@ -44,6 +47,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_WATER] = false;
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_PLAYER_FEET] = false;
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_ITEM] = false;
+	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_PLAYER_GRENADE] = false;
 
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_WALL] = false;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_PLAYER] = true;
@@ -53,6 +57,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_WATER] = false;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_PLAYER_FEET] = false;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_ITEM] = false;
+	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_PLAYER_GRENADE] = false;
 
 	matrix[COLLIDER_WATER][COLLIDER_WALL] = false;
 	matrix[COLLIDER_WATER][COLLIDER_PLAYER] = true;
@@ -61,6 +66,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_WATER][COLLIDER_ENEMY_SHOT] = false;
 	matrix[COLLIDER_WATER][COLLIDER_PLAYER_FEET] = false;
 	matrix[COLLIDER_WATER][COLLIDER_ITEM] = false;
+	matrix[COLLIDER_WATER][COLLIDER_PLAYER_GRENADE] = false;
 
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_WALL] = true;
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_PLAYER] = false;
@@ -69,6 +75,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_ENEMY_SHOT] = false;
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_WATER] = true;
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_ITEM] = true;
+	matrix[COLLIDER_PLAYER_FEET][COLLIDER_PLAYER_GRENADE] = false;
 
 	matrix[COLLIDER_ITEM][COLLIDER_WALL] = false;
 	matrix[COLLIDER_ITEM][COLLIDER_PLAYER] = false;
@@ -77,6 +84,16 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ITEM][COLLIDER_ENEMY_SHOT] = false;
 	matrix[COLLIDER_ITEM][COLLIDER_WATER] = false;
 	matrix[COLLIDER_ITEM][COLLIDER_PLAYER_FEET] = true;
+	matrix[COLLIDER_ITEM][COLLIDER_PLAYER_GRENADE] = false;
+
+	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_PLAYER_FEET] = false;
+	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_PRISONER] = false;
+	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_PLAYER] = false;
+	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_ENEMY] = true;
+	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_PLAYER_SHOT] = false;
+	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_ENEMY_SHOT] = false;
+	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_WATER] = false;
+	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_ITEM] = false;
 }
 
 // Destructor
@@ -180,6 +197,9 @@ void ModuleCollision::DebugDraw()
 			break;
 		case COLLIDER_ITEM: //black
 			App->render->DrawQuad(colliders[i]->rect, 0, 0, 0, alpha);
+			break;
+		case COLLIDER_PLAYER_GRENADE: //rainbowsinthesky
+			App->render->DrawQuad(colliders[i]->rect, 23, 12, 3, alpha);
 			break;
 
 		}

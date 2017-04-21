@@ -1,5 +1,4 @@
 #include "Globals.h"
-#include "SDL/include/SDL_timer.h"
 #include "Application.h"
 #include "ModuleTextures.h"
 #include "ModuleInput.h"
@@ -12,6 +11,9 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleMenu.h"
 #include "ModuleUI.h"
+#include "ModuleParticlesGrenade.h"
+#include "ModuleParticlesGrenade1.h"
+#include "SDL/include/SDL_timer.h"
 
 
 ModulePlayer::ModulePlayer()
@@ -53,10 +55,14 @@ ModulePlayer::ModulePlayer()
 
 	waterDie.PushBack({ 239, 16, 13, 16 });
 
-	PlayerDie.PushBack({ 42,43,18,29 });
-	PlayerDie.PushBack({ 62,43,18,29 });
-	PlayerDie.PushBack({ 79,43,18,29 });
-	PlayerDie.speed = 0.03f;
+	grenade.PushBack({ 170, 44, 15, 22 });
+	grenade.PushBack({ 188, 44, 16, 24 });
+	grenade.speed = 0.04;
+
+	die.PushBack({ 43, 44, 16, 27 });
+	die.PushBack({ 44, 62, 15, 19 });
+	die.PushBack({ 44, 80, 17, 27 });
+	die.speed = 0.02;
 }
 
 ModulePlayer::~ModulePlayer()
@@ -103,6 +109,7 @@ bool ModulePlayer::CleanUp()
 update_status ModulePlayer::Update()
 {
 	speed = 1;
+
 	if (App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN && GOD == false)
 		GOD = true;
 	if (App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN && GOD == true)
@@ -110,10 +117,47 @@ update_status ModulePlayer::Update()
 
 	if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656) {
 		current_animation = &invisible;
-
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && move == true)
+		//GRENADE
+		if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN)
+		{
+			check_grenade = 0;
+			update_position_grenade = 0;
+
+			//Reset player animation throwing a grenade
+			grenade.Reset();
+			grenade.loops = 0;
+
+			current_animation = &grenade;
+
+			//Reset grenade
+			App->particlesgrenade->grenade.anim.Reset();
+			App->particlesgrenade->grenade.anim.loops = 0;
+
+			App->particlesgrenade->grenade.speed.x = 0;
+			App->particlesgrenade->grenade.speed.y = -2;
+
+			App->particlesgrenade->AddParticle(App->particlesgrenade->grenade, position.x, position.y, COLLIDER_NONE, NULL);
+		}
+
+		update_position_grenade += App->particlesgrenade->grenade.speed.y;
+
+		if (update_position_grenade == -110) {
+			App->particlesgrenade1->grenade.speed.x = 0;
+			App->particlesgrenade1->grenade.speed.y = +1;
+			App->particlesgrenade1->AddParticle(App->particlesgrenade1->grenade, position.x, position.y - 110, COLLIDER_PLAYER_GRENADE, NULL);
+		}
+
+		if (grenade.loops == 1) {
+			current_animation = &forward;
+			grenade.loops = 0;
+			check_grenade = 1;
+		}
+		//_grenade_end
+	
+
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && move == true && check_grenade == 1)
 	{
 		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
 			current_animation = &invisible;
@@ -138,7 +182,7 @@ update_status ModulePlayer::Update()
 		forward.Stop();
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && move == true)
+	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && move == true && check_grenade == 1)
 	{
 		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
 			current_animation = &invisible;
@@ -162,7 +206,7 @@ update_status ModulePlayer::Update()
 		backward.Stop();
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && position.x < (SCREEN_WIDTH - right.frames->w) && move == true)
+	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && position.x < (SCREEN_WIDTH - right.frames->w) && move == true && check_grenade == 1)
 	{
 		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
 			current_animation = &invisible;
@@ -177,7 +221,7 @@ update_status ModulePlayer::Update()
 	{
 		right.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && position.x > 0 && move == true)
+	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && position.x > 0 && move == true && check_grenade == 1)
 	{
 		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
 			current_animation = &invisible;
@@ -191,7 +235,7 @@ update_status ModulePlayer::Update()
 	{
 		left.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && move == true) {
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && move == true && check_grenade == 1) {
 
 		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
 			current_animation = &invisible;
@@ -206,7 +250,7 @@ update_status ModulePlayer::Update()
 	{
 		diagWD.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && move == true) {
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && move == true && check_grenade == 1) {
 		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
 			current_animation = &invisible;
 		else {
@@ -219,7 +263,7 @@ update_status ModulePlayer::Update()
 	{
 		diagWA.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && move == true) {
+	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && move == true && check_grenade == 1) {
 		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
 			current_animation = &invisible;
 		else {
@@ -232,7 +276,7 @@ update_status ModulePlayer::Update()
 	{
 		diagSD.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && move == true) {
+	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && move == true && check_grenade == 1) {
 		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
 			current_animation = &invisible;
 		else {
@@ -323,7 +367,7 @@ update_status ModulePlayer::Update()
 		move = false;
 	}
 	if (enemyB == false) {
-		current_animation = &PlayerDie;
+		current_animation = &die;
 		//PlayerDie.DieA();
 		move = false;
 	}

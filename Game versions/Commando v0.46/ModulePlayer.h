@@ -27,7 +27,7 @@ public:
 	SDL_Texture* graphics = nullptr;
 	SDL_Texture* bullets = nullptr;
 	Animation idleF;
-	Animation forward, right, backward, left, diagWD, diagWA, diagSD, diagSA, invisible, PlayerDie, waterDie;
+	Animation forward, right, backward, left, diagWD, diagWA, diagSD, diagSA, invisible, grenade, die, waterDie;
 	iPoint position;
 	Animation* current_animation = &idleF;
 	Collider* coll;
@@ -42,6 +42,7 @@ public:
 	bool W = true;
 
 	iPoint x1, x2, x3, x4;
+	int check_grenade = 1, check_nonshoot = 1, update_position_grenade = 0;
 };
 
 #endif

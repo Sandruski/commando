@@ -1,2 +1,41 @@
-﻿  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  ModulePlayer.cpp
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\moduleplayer.cpp(60): warning C4305: '=': truncation from 'double' to 'float'
+  Generating Code...
+  Compiling...
+  Soldier_Shield.cpp
+  Soldier_Rifle.cpp
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\soldier_rifle.cpp(61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\soldier_rifle.cpp(62): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\soldier_rifle.cpp(64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Soldier_Knife.cpp
+  Soldier_Grenade.cpp
+  Soldier.cpp
+  Prisoner.cpp
+  ModuleUI.cpp
+  ModuleScene1.cpp
+  ModuleRender.cpp
+  ModuleParticlesGrenade1.cpp
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\moduleparticlesgrenade1.cpp(29): warning C4305: '=': truncation from 'double' to 'float'
+  ModuleParticlesGrenade.cpp
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\moduleparticlesgrenade.cpp(29): warning C4305: '=': truncation from 'double' to 'float'
+  ModuleParticlesEnemies.cpp
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\moduleparticlesenemies.cpp(70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\moduleparticlesenemies.cpp(92): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\moduleparticlesenemies.cpp(93): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\moduleparticlesenemies.cpp(155): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  ModuleParticles.cpp
+  ModuleMenu.cpp
+  ModuleFadeToBlack.cpp
+  ModuleEnemies.cpp
+  ModuleEND.cpp
+  ModuleCinematic.cpp
+c:\users\sandra\documents\github\gets-name-\game versions\commando v0.46\modulecinematic.cpp(142): warning C4804: '<': unsafe use of type 'bool' in operation
+  ModuleAudio.cpp
+  Enemy.cpp
+  Generating Code...
+  Compiling...
+  Crazy_Green.cpp
+  Application.cpp
+  Generating Code...
+  SDL Game.vcxproj -> C:\Users\Sandra\Documents\GitHub\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Sandra\Documents\GitHub\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.pdb (Full PDB)

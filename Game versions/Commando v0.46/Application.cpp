@@ -1,4 +1,4 @@
- #include "Application.h"
+#include "Application.h"
 #include "ModuleWindow.h"
 #include "ModuleRender.h"
 #include "ModuleInput.h"
@@ -15,6 +15,8 @@
 #include "ModuleParticlesEnemies.h"
 #include "ModuleEnemies.h"
 #include "ModuleCinematic.h"
+#include "ModuleParticlesGrenade.h"
+#include "ModuleParticlesGrenade1.h"
 #include "ModuleFonts.h"
 #include "ModuleUI.h"
 
@@ -40,7 +42,8 @@ Application::Application()
 
 	modules[index_module++] = particles = new ModuleParticles();
 	modules[index_module++] = particlesenemies = new ModuleParticlesEnemies();
-
+	modules[index_module++] = particlesgrenade = new ModuleParticlesGrenade();
+	modules[index_module++] = particlesgrenade1 = new ModuleParticlesGrenade1();
 
 	modules[index_module++] = enemies = new ModuleEnemies();
 
@@ -48,7 +51,7 @@ Application::Application()
 	modules[index_module++] = audio = new ModuleAudio();
 
 	modules[index_module] = UI = new ModuleUI();
-}	
+}
 
 Application::~Application()
 {
