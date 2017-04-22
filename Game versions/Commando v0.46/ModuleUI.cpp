@@ -8,6 +8,7 @@
 #include "ModuleFonts.h"
 
 #include<stdio.h>
+#include<string.h>
 
 ModuleUI::ModuleUI()
 {
@@ -110,12 +111,16 @@ update_status ModuleUI::Update()
 		if (App->player->vides == 3) {
 
 			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
-			App->fonts->BlitText(130, 215 - var, font_score, ("%i", grenades));
-			char str[10];
-			App->fonts->BlitText(58, 5 - var, font_score, ("%i", points));
+			//
+			cont = 0;
 			char str2[10];
 			sprintf_s(str2, "%i", score);
-			sprintf_s(str, "%i", score);
+			App->fonts->BlitText(37, 5 - var, font_score, str2);
+			//grenades
+			cont = 1;
+			char str1[10];
+			sprintf_s(str1, "%i", grenade);
+			App->fonts->BlitText(129, 215 - var, font_score, str1);
 			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
 				if (var2 != App->player->position.y)
 					var += 1;
@@ -155,12 +160,16 @@ update_status ModuleUI::Update()
 		if (App->player->vides == 2) {
 
 			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
-			App->fonts->BlitText(130, 215 - var, font_score, ("%i", grenades));
-			char str[10];
-			App->fonts->BlitText(58, 5 - var, font_score, ("%i", points));
+			//
+			cont = 0;
 			char str2[10];
 			sprintf_s(str2, "%i", score);
-			sprintf_s(str, "%i", score);
+			//grenades
+			cont = 1;
+			char str1[10];
+			sprintf_s(str1, "%i", grenade);
+			App->fonts->BlitText(129, 215 - var, font_score, str1);
+			App->fonts->BlitText(37, 5 - var, font_score, str2);
 			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
 				if (var2 != App->player->position.y)
 					var += 1;
@@ -202,12 +211,16 @@ update_status ModuleUI::Update()
 		if (App->player->vides == 1) {
 
 			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
-			App->fonts->BlitText(130, 215 - var, font_score, ("%i", grenades));
-			char str[10];
-			sprintf_s(str, "%i", score);
-			App->fonts->BlitText(58, 5 - var, font_score, ("%i", points));
+			//score
+			cont = 0;
 			char str2[10];
 			sprintf_s(str2, "%i", score);
+			App->fonts->BlitText(37, 5 - var, font_score, str2);
+			//grenades
+			cont = 1;
+			char str1[10];
+			sprintf_s(str1, "%i", grenade);
+			App->fonts->BlitText(129, 215 - var, font_score, str1);
 			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
 				if (var2 != App->player->position.y)
 					var += 1;
@@ -221,6 +234,7 @@ update_status ModuleUI::Update()
 
 
 	}
+
 
 	
 

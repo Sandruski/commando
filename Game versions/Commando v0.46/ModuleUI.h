@@ -34,9 +34,9 @@ public:
 	SDL_Rect MarcadorGranada;
 	int font_score = -1;
 	char score_text[10];
-	uint score = 0;
-	char* grenades = "0";
-	char* points = "000000";
+	uint score;
+	uint grenade = 0;
+	uint cont = 0;
 	//bool characterselection_ui;
 private:
 

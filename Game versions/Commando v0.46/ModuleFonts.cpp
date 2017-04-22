@@ -3,6 +3,7 @@
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModuleFonts.h"
+#include "ModuleUI.h"
 
 #include<string.h>
 
@@ -97,6 +98,18 @@ void ModuleFonts::BlitText(int x, int y, int font_id, const char* text) const
 		LOG("Unable to render text with bmp font id %d", font_id);
 		return;
 	}
+
+	if (App->UI->cont == 0) {
+		if (strcmp(text, "0") == 0)
+			text = "0000000";
+	}
+	
+	else if (App->UI->cont == 1) {
+		if (strcmp(text, "0") == 0)
+			text = "00";
+	}
+
+
 
 	const Font* font = &fonts[font_id];
 	SDL_Rect rect;
