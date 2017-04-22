@@ -23,6 +23,8 @@ public:
 	SDL_Rect foreground;
 	SDL_Rect background;
 	SDL_Rect grenades;
+	int font_score1 = -1;
+	int font_score2 = -1;
 
 	int move_y = 118;
 };

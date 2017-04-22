@@ -35,7 +35,7 @@ public:
 	int font_score = -1;
 	char score_text[10];
 	uint score;
-	uint grenade = 0;
+	uint grenade = 3;
 	uint cont = 0;
 
 	//bool characterselection_ui;

@@ -101,7 +101,7 @@ void ModuleFonts::BlitText(int x, int y, int font_id, const char* text) const
 
 	if (App->UI->cont == 0) {
 		if (strcmp(text, "0") == 0)
-			text = "0000000";
+			text = "000000";
 	}
 	
 	else if (App->UI->cont == 1) {

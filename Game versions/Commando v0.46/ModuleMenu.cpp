@@ -13,6 +13,11 @@
 #include "ModuleCollision.h"
 #include "ModuleCinematic.h"
 #include "ModuleUI.h"
+#include "ModuleFonts.h"
+
+#include<stdio.h>
+#include<string.h>
+
 
 ModuleMenu::ModuleMenu()
 {
@@ -43,6 +48,8 @@ bool ModuleMenu::Start()
 
 	graphics = App->textures->Load("menu.png");
 	grenade = App->textures->Load("items&HUD&snake.png");
+	font_score1 = App->fonts->Load("fonts/rtype_font1.png", "0123456789", 1);
+	font_score2 = App->fonts->Load("fonts/rtype_font2.png", "0123456789", 1);
 
 	App->audio->play_music1();
 
@@ -94,5 +101,15 @@ update_status ModuleMenu::Update()
 		App->fade->FadeToBlack(this, App->cinematic, 3);
 
 	}
+
+	char str1[10];
+	sprintf_s(str1, "%i", App->UI->score);
+	App->fonts->BlitText(26, 27, font_score1, str1);
+
+	char str2[10];
+	sprintf_s(str2, "%i", App->UI->score);
+	App->fonts->BlitText(104, 27, font_score2, str2);
+
+
 	return ret;
 }
