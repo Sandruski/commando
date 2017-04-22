@@ -30,6 +30,8 @@ ModuleScene1::ModuleScene1()
 	ammo_grenades_colours.PushBack({ 179, 298, 33, 18 });
 	ammo_grenades_colours.speed = 0.2f;
 
+	win1.PushBack({ 0, 0, 27, 11 });
+
 	ammo_specialgrenade1.PushBack({ 75, 227, 17, 16 });
 	
 
@@ -52,6 +54,7 @@ bool ModuleScene1::Start()
 	moto = App->textures->Load("vehicles.png");
 	items = App->textures->Load("items&HUD&snake.png");
 	graphics = App->textures->Load("1-1.png");
+	win = App->textures->Load("win.png");
 	App->UI->Disable();
 	App->UI->Enable();
 	App->player->Disable();
@@ -64,6 +67,8 @@ bool ModuleScene1::Start()
 	App->player->enemyB = true;
 	App->player->waterB = true;
 	App->player->current_animation = &App->player->idleF;
+	cont6 = false;
+	cont5 = 0;
 
 	//Initialize camera and others (prepare it for use)
 	App->render->camera.y = 0;
@@ -309,6 +314,20 @@ update_status ModuleScene1::Update()
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->END, 3);
+	}
+
+	if (App->player->position.y <= 60 - 2656) 
+		cont6 = true;
+	
+	if (cont6 == true) {
+		current_animation = &win1;
+		r = current_animation->GetCurrentFrame();
+		App->render->Blit(win, 112, 60 - 2656, &r);
+		cont5++;
+	}
+	if (cont5 == 20) {
+		App->fade->FadeToBlack(App->scene_1, App->Menu);
+		App->player->vides = 3;
 	}
 
 

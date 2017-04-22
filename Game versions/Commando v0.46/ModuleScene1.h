@@ -22,14 +22,18 @@ public:
 	SDL_Texture* graphics = nullptr;
 	SDL_Texture* moto = nullptr;
 	SDL_Texture* items = nullptr;
+	SDL_Texture* win = nullptr;
 	SDL_Rect foreground;
 	Animation ammo_grenades_colours;
 	Animation ammo_specialgrenade1;
 	Animation moto_go;
+	Animation win1;
 	Animation moto_stop;
 	SDL_Rect background;
 	SDL_Rect r;
 	Animation* current_animation = nullptr;
+	int cont5;
+	bool cont6 = false;
 
 	bool check = true;
 	int w = 0, h = SCREEN_HEIGHT - 2880;

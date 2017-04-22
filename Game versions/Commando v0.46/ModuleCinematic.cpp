@@ -56,6 +56,12 @@ bool ModuleCinematic::Start()
 	App->collision->Disable();
 	App->particles->Disable();
 	App->player->Disable();
+	check = true;
+	helialtura = 220;
+	w = 0, h = SCREEN_HEIGHT - 2880;
+	helicont = 0;
+	sj_y = 86, sj_x = 147;
+	pjcont = 0;
 
 	LOG("Loading cinematic scene");
 	helicopter = App->textures->Load("helicopterfix.png");
