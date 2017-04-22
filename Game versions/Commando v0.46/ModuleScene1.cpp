@@ -229,6 +229,13 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::PRISONER, 15, 752 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::PRISONER, 47, 756 - 2656);
 
+	//PrisonerPoints
+	App->enemies->AddEnemy(ENEMY_TYPES::PRISONERPOINTS, 58, 1667 - 2656);
+
+	//SoldierPrisoner
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIERPRISONER, 44, 1669 - 2656);
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIERPRISONER, 72, 1665 - 2656);
+
 	return true;
 
 }

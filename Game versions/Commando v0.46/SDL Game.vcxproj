@@ -98,7 +98,9 @@
     <ClInclude Include="p2Point.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="Prisoner.h" />
+    <ClInclude Include="PrisonerPoints.h" />
     <ClInclude Include="Soldier.h" />
+    <ClInclude Include="SoldierPrisoner.h" />
     <ClInclude Include="Soldier_Grenade.h" />
     <ClInclude Include="Soldier_Knife.h" />
     <ClInclude Include="Soldier_Rifle.h" />
@@ -130,7 +132,9 @@
     <ClCompile Include="ModuleUI.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />
     <ClCompile Include="Prisoner.cpp" />
+    <ClCompile Include="PrisonerPoints.cpp" />
     <ClCompile Include="Soldier.cpp" />
+    <ClCompile Include="SoldierPrisoner.cpp" />
     <ClCompile Include="Soldier_Grenade.cpp" />
     <ClCompile Include="Soldier_Knife.cpp" />
     <ClCompile Include="Soldier_Rifle.cpp" />

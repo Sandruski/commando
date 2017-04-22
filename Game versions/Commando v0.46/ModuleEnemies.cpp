@@ -13,6 +13,8 @@
 #include "Soldier_Shield.h"
 #include "Crazy_Green.h"
 #include "Prisoner.h"
+#include "PrisonerPoints.h"
+#include "SoldierPrisoner.h"
 #include <time.h>
 
 #define SPAWN_MARGIN 50
@@ -159,6 +161,12 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::PRISONER:
 			enemies[i] = new Enemy_Prisoner(info.x, info.y);
+			break;
+		case ENEMY_TYPES::PRISONERPOINTS:
+			enemies[i] = new Enemy_PrisonerPoints(info.x, info.y);
+			break;
+		case ENEMY_TYPES::SOLDIERPRISONER:
+			enemies[i] = new Enemy_SoldierPrisoner(info.x, info.y);
 			break;
 		}
 	}

@@ -1,13 +1,4 @@
-﻿  Application.cpp
-  Generando código...
-  Compilando...
-  ModuleUI.cpp
-  Generando código...
-  Omitiendo... (no se detectaron cambios relevantes)
-  ModuleScene1.cpp
-  ModulePlayer.cpp
-  ModuleMenu.cpp
-  ModuleFonts.cpp
-  ModuleEND.cpp
+﻿  PrisonerPoints.cpp
+c:\users\perso\desktop\gets-name-\game versions\commando v0.46\prisonerpoints.cpp(30): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
   SDL Game.vcxproj -> C:\Users\perso\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.exe
   SDL Game.vcxproj -> C:\Users\perso\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.pdb (Full PDB)

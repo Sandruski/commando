@@ -14,7 +14,9 @@ enum ENEMY_TYPES
 	SOLDIER,
 	SOLDIER_SHIELD,
 	CRAZY_GREEN,
-	PRISONER
+	PRISONER,
+	PRISONERPOINTS,
+	SOLDIERPRISONER
 };
 
 class Enemy;
@@ -38,8 +40,8 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
-
 	bool AddEnemy(ENEMY_TYPES type, int x, int y);
+	int cont;
 
 private:
 
