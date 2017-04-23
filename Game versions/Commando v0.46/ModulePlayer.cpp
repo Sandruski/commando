@@ -59,8 +59,8 @@ ModulePlayer::ModulePlayer()
 	grenade.speed = 0.04;
 
 	die.PushBack({ 43, 44, 16, 27 });
-	die.PushBack({ 44, 62, 15, 19 });
-	die.PushBack({ 44, 80, 17, 27 });
+	die.PushBack({ 62, 39, 15, 27 });
+	die.PushBack({ 80, 44, 17, 27 });
 	die.speed = 0.02;
 }
 
@@ -362,14 +362,21 @@ update_status ModulePlayer::Update()
 
 	coll->SetPos(position.x, position.y + 3);
 	feetC->SetPos(position.x + 3, position.y + 22);
-
 	if (waterB == false) {
 		current_animation = &waterDie;
 		move = false;
 	}
+	currentTime = SDL_GetTicks();
+	currentTime -= lastTime;
+	if (waterB == true)
+		lastTime = SDL_GetTicks();
+
+	if (currentTime > 500 && waterB == false) {
+		current_animation = &invisible;
+		timeW = true;
+	}
 	if (enemyB == false) {
 		current_animation = &die;
-		//PlayerDie.DieA();
 		move = false;
 	}
 	App->render->Blit(graphics, position.x, position.y, &r);
@@ -450,21 +457,25 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 
 	if (App->fade->IsFading() == false)
 	{
-		vides--;
-		if (vides != 0) {
+		if (App->fade->IsFading() == false)
+		{
+			vides--;
+			if (vides != 0) {
+				waterB = false;
+				if (timeW == true) {
+					App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, 500);
+					App->fade->FadeToBlack(App->scene_1, App->scene_1);
+				}
+			}
 
-			App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, 500);
-			App->fade->FadeToBlack(App->scene_1, App->scene_1);
-			waterB = false;
-
-
-		}
-
-		else if (vides == 0) {
-			App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, NULL);
-			App->fade->FadeToBlack(App->scene_1, App->Menu);
-			waterB = false;
-			vides = 3;
+			else if (vides == 0) {
+				waterB = false;
+				if (timeW == true) {
+					App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, 500);
+					App->fade->FadeToBlack(App->scene_1, App->Menu);
+				}
+				vides = 3;
+			}
 		}
 	}
 }

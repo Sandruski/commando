@@ -51,7 +51,8 @@ public:
 	bool enemyB = true;
 	bool GOD = false;
 	int speed;
-	bool W = true;
+	bool timeW = false;
+	uint lastTime, currentTime;
 
 	iPoint x1, x2, x3, x4;
 	int check_grenade = 1, check_nonshoot = 1, update_position_grenade = 0;
