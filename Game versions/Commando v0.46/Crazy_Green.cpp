@@ -84,10 +84,8 @@ void Enemy_CrazyGreen::Move()
 		animation = &run2;
 		if (position.x < 130)
 			position.x++;
-		if (position.y > 0 - 2656)
+		if (position.y > 0 - 2686)
 			position.y--;
-		if (position.y == 0 - 2656 && position.x == 130)
-			animation = nullptr;
 	}
 	
 

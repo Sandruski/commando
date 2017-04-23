@@ -1,6 +1,5 @@
-﻿  ModuleScene1.cpp
-  ModuleCinematic.cpp
-c:\users\perso\desktop\gets-name-\game versions\commando v0.46\modulecinematic.cpp(148): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+﻿  Soldier_Shield.cpp
+  Crazy_Green.cpp
   Generando código...
   SDL Game.vcxproj -> C:\Users\perso\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.exe
   SDL Game.vcxproj -> C:\Users\perso\Desktop\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.pdb (Full PDB)

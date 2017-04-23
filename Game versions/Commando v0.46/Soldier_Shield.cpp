@@ -74,28 +74,10 @@ void Enemy_SoldierShield::Move()
 				}
 			}
 		}
-		else if (cont2 >= 550 && cont2 < 700) {
+		else if (cont2 >= 550 /*&& cont2 < 700*/) {
 			animation = &surrender;
 		}
-		else if (cont2 >= 700) { animation = nullptr; }
-	//}
-	/*
-	if (going_up)
-	{
-	if (wave > 1.0f)
-	going_up = false;
-	else
-	wave += 0.05f;
-	}
-	else
-	{
-	if (wave < -1.0f)
-	going_up = true;
-	else
-	wave -= 0.05f;
-	}
-
-	position.y = original_y + (25.0f * sinf(wave));
-	position.x -= 1;
-	*/
+		//else if (cont2 >= 700) { animation = nullptr; }
+	
+	
 }

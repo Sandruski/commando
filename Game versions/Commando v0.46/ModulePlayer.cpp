@@ -115,7 +115,7 @@ update_status ModulePlayer::Update()
 	if (App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN && GOD == true)
 		GOD = false;
 
-	if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656) {
+	if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666) {
 		current_animation = &invisible;
 	}
 
@@ -159,7 +159,7 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && move == true && check_grenade == 1)
 	{
-		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
 			current_animation = &forward;
@@ -184,7 +184,7 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && move == true && check_grenade == 1)
 	{
-		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
 			current_animation = &backward;
@@ -208,7 +208,7 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && position.x < (SCREEN_WIDTH - right.frames->w) && move == true && check_grenade == 1)
 	{
-		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
 			current_animation = &right;
@@ -223,7 +223,7 @@ update_status ModulePlayer::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && position.x > 0 && move == true && check_grenade == 1)
 	{
-		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
 			current_animation = &left;
@@ -237,7 +237,7 @@ update_status ModulePlayer::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && move == true && check_grenade == 1) {
 
-		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
 			current_animation = &diagWD;
@@ -251,7 +251,7 @@ update_status ModulePlayer::Update()
 		diagWD.Stop();
 	}
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && move == true && check_grenade == 1) {
-		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
 			current_animation = &diagWA;
@@ -264,7 +264,7 @@ update_status ModulePlayer::Update()
 		diagWA.Stop();
 	}
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && move == true && check_grenade == 1) {
-		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
 			current_animation = &diagSD;
@@ -277,7 +277,7 @@ update_status ModulePlayer::Update()
 		diagSD.Stop();
 	}
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && move == true && check_grenade == 1) {
-		if (App->player->position.y <= 1430 - 2656 && App->player->position.y >= 1344 - 2656)
+		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
 			current_animation = &diagSA;
