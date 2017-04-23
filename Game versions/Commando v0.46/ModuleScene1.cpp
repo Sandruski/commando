@@ -245,7 +245,6 @@ bool ModuleScene1::Start()
 
 }
 
-// UnLoad assets
 bool ModuleScene1::CleanUp()
 {
 	LOG("Unloading 1st scene");
@@ -270,16 +269,24 @@ update_status ModuleScene1::Update()
 	
 	current_animation = &ammo_grenades_colours;
 	r = current_animation->GetCurrentFrame();
+	if (App->player->detectionitem2 == false)
 	App->render->Blit(items, 153, 2464 - 2656, &r);
+	if (App->player->detectionitem3 == false)
 	App->render->Blit(items, 33, 1936 - 2656, &r);
+	if (App->player->detectionitem5 == false)
 	App->render->Blit(items, 30, 944 - 2656, &r);
+	if (App->player->detectionitem6 == false)
 	App->render->Blit(items, 44, 706 - 2656, &r);
+	if (App->player->detectionitem7 == false)
 	App->render->Blit(items, 1, 464 - 2656, &r);
+	if (App->player->detectionitem8 == false)
 	App->render->Blit(items, 155, 218 - 2656, &r);
 
 	current_animation = &ammo_specialgrenade1;
 	r = current_animation->GetCurrentFrame();
+	if (App->player->detectionitem == false)
 	App->render->Blit(items, 151, 2625 - 2656, &r);
+	if (App->player->detectionitem4 == false)
 	App->render->Blit(items, 185, 1149 - 2656, &r);
 
 

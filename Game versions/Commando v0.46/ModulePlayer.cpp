@@ -411,7 +411,38 @@ void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 
 void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
 
+	if (App->player->position.y < 2655 - 2656 && App->player->position.y > 2547 - 2656)
+	detectionitem = true;
+	if (App->player->position.y < 2547 - 2656 && App->player->position.y > 2340 - 2656) {
+		detectionitem2 = true;
+		App->UI->grenade++;
+	}
+	if (App->player->position.y < 2016 - 2656 && App->player->position.y > 1829 - 2656) {
+		detectionitem3 = true;
+		App->UI->grenade++;
+	}
+	if (App->player->position.y < 1269 - 2656 && App->player->position.y > 1104 - 2656) {
+		detectionitem4 = true;
+	}
+	if (App->player->position.y < 1041 - 2656 && App->player->position.y > 896 - 2656) {
+		detectionitem5 = true;
+		App->UI->grenade++;
+	}
+	if (App->player->position.y < 792 - 2656 && App->player->position.y > 613 - 2656) {
+		detectionitem6 = true;
+		App->UI->grenade++;
+	}
+	if (App->player->position.y < 577 - 2656 && App->player->position.y > 416 - 2656) {
+		detectionitem7 = true;
+		App->UI->grenade++;
+	}
+	if (App->player->position.y < 380 - 2656 && App->player->position.y > 212 - 2656) {
+		detectionitem8 = true;
+		App->UI->grenade++;
+	}
+	App->UI->grenade++;
 	c2->to_delete = true;
+
 }
 
 void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {

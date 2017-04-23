@@ -21,6 +21,18 @@ public:
 	void OnCollisionWater(Collider* c1, Collider* c2);
 	void OnCollisionEnemy(Collider* c1, Collider* c2);
 
+	bool detectionitem = false;
+	bool detectionitem1 = false;
+	bool detectionitem2 = false;
+	bool detectionitem3 = false;
+	bool detectionitem4 = false;
+	bool detectionitem5 = false;
+	bool detectionitem6 = false;
+	bool detectionitem7 = false;
+	bool detectionitem8 = false;
+
+
+
 	update_status Update();
 	bool CleanUp();
 
