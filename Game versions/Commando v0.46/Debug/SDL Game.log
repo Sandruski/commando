@@ -1,3 +1,5 @@
-﻿  ModuleParticles.cpp
+﻿  ModulePlayer.cpp
+d:\users\albert\aleix\programacio citm\commando-citm\gets-name-\game versions\commando v0.46\moduleplayer.cpp(59): warning C4305: '=': truncation from 'double' to 'float'
+d:\users\albert\aleix\programacio citm\commando-citm\gets-name-\game versions\commando v0.46\moduleplayer.cpp(64): warning C4305: '=': truncation from 'double' to 'float'
   SDL Game.vcxproj -> D:\Users\Albert\ALEIX\Programacio CITM\Commando-CITM\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.exe
   SDL Game.vcxproj -> D:\Users\Albert\ALEIX\Programacio CITM\Commando-CITM\gets-name-\Game versions\Commando v0.46\Debug\SDL5 Handout.pdb (Full PDB)

@@ -150,10 +150,9 @@ bool Particle::Update()
 	{
 		if ((SDL_GetTicks() - born) > life) {
 			if (collider->type == COLLIDER_PLAYER_SHOT)
-			{
+		
 				App->particles->AddParticle(App->particles->explosion, position.x, position.y, COLLIDER_END_OF_BULLET, NULL);
-			}
-
+			
 			ret = false;
 		}
 	}

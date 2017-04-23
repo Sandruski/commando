@@ -463,7 +463,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 			if (vides != 0) {
 				waterB = false;
 				if (timeW == true) {
-					App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, 500);
+					App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_END_OF_BULLET, NULL);
 					App->fade->FadeToBlack(App->scene_1, App->scene_1);
 				}
 			}
@@ -471,7 +471,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 			else if (vides == 0) {
 				waterB = false;
 				if (timeW == true) {
-					App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_NONE, 500);
+					App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_END_OF_BULLET, NULL);
 					App->fade->FadeToBlack(App->scene_1, App->Menu);
 				}
 				vides = 3;
