@@ -24,11 +24,14 @@ bool ModuleParticlesEnemies::Start()
 	LOG("Loading particles");
 	graphics = App->textures->Load("particles.png");
 
-
 	bala.anim.PushBack({ 32, 16, 7, 7 });
+
 	explosion.anim.PushBack({ 16,34,11,11 });
+	explosion.life = 300;
+
 	bala.speed.y = -6;
 	bala.life = 1500;
+
 	return true;
 }
 
@@ -107,7 +110,7 @@ void ModuleParticlesEnemies::OnCollision(Collider* c1, Collider* c2)
 		// Always destroy particles that collide
 		if (active[i] != nullptr && active[i]->collider == c1)
 		{
-			//AddParticle(explosion, active[i]->position.x, active[i]->position.y);
+			App->particlesenemies->AddParticle(App->particlesenemies->explosion, active[i]->position.x, active[i]->position.y, COLLIDER_END_OF_BULLET, NULL);
 			delete active[i];
 			active[i] = nullptr;
 			break;
@@ -141,8 +144,14 @@ bool Particle1::Update()
 
 	if (life > 0)
 	{
-		if ((SDL_GetTicks() - born) > life)
+		if ((SDL_GetTicks() - born) > life) {
+			if (collider->type == COLLIDER_ENEMY_SHOT)
+			{
+				App->particlesenemies->AddParticle(App->particlesenemies->explosion, position.x, position.y, COLLIDER_END_OF_BULLET, NULL);
+			}
+
 			ret = false;
+		}
 	}
 	else
 		if (anim.Finished())

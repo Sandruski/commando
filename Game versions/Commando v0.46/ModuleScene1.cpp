@@ -16,7 +16,6 @@
 #include "ModuleCinematic.h"
 #include "ModuleUI.h"
 
-
 ModuleScene1::ModuleScene1()
 {
 	background.x = 0;
@@ -33,7 +32,6 @@ ModuleScene1::ModuleScene1()
 	win1.PushBack({ 0, 0, 27, 11 });
 
 	ammo_specialgrenade1.PushBack({ 75, 227, 17, 16 });
-	
 
 	moto_go.PushBack({ 20, 22, 47, 23 });
 	moto_go.speed = 0.2f;

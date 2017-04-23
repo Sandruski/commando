@@ -51,6 +51,7 @@ private:
 public:
 	Particle bala;
 	Particle explosion;
+
 };
 
 #endif

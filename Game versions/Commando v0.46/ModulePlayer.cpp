@@ -15,6 +15,7 @@
 #include "ModuleParticlesGrenade1.h"
 #include "SDL/include/SDL_timer.h"
 
+//We have to change the position of the end of the bullet and the end of the grenade!
 
 ModulePlayer::ModulePlayer()
 {
@@ -30,7 +31,6 @@ ModulePlayer::ModulePlayer()
 	//forward.frames.PushBack({9, 136, 53, 83});
 	forward.PushBack({ 34, 15, 16, 24 });
 	forward.PushBack({ 48, 15, 15, 26 });
-
 
 	right.PushBack({ 200, 13, 19, 28 });
 	right.PushBack({ 219, 14, 18, 26 });
@@ -51,7 +51,6 @@ ModulePlayer::ModulePlayer()
 	diagSD.PushBack({ 97, 16, 17, 24 });
 
 	invisible.PushBack({ 209, 202, 17, 24 });
-
 
 	waterDie.PushBack({ 239, 16, 13, 16 });
 
@@ -105,6 +104,7 @@ bool ModulePlayer::CleanUp()
 
 	return true;
 }
+
 // Update: draw background
 update_status ModulePlayer::Update()
 {
@@ -119,44 +119,45 @@ update_status ModulePlayer::Update()
 		current_animation = &invisible;
 	}
 
-		//GRENADE
-		if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN)
-		{
-			check_grenade = 0;
-			update_position_grenade = 0;
+	//GRENADE
+	//Grenades must be retouched because now if player throws 2 grenades, only kills the last one
+	if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN && App->UI->grenade > 0)
+	{
+		check_grenade = 0;
+		update_position_grenade = 0;
+		App->UI->grenade--;
 
-			//Reset player animation throwing a grenade
-			grenade.Reset();
-			grenade.loops = 0;
+		//Reset player animation throwing a grenade
+		grenade.Reset();
+		grenade.loops = 0;
 
-			current_animation = &grenade;
+		current_animation = &grenade;
 
-			//Reset grenade
-			App->particlesgrenade->grenade.anim.Reset();
-			App->particlesgrenade->grenade.anim.loops = 0;
+		//Reset grenade
+		App->particlesgrenade->grenade.anim.Reset();
+		App->particlesgrenade->grenade.anim.loops = 0;
 
-			App->particlesgrenade->grenade.speed.x = 0;
-			App->particlesgrenade->grenade.speed.y = -2;
+		App->particlesgrenade->grenade.speed.x = 0;
+		App->particlesgrenade->grenade.speed.y = -2;
 
-			App->particlesgrenade->AddParticle(App->particlesgrenade->grenade, position.x, position.y, COLLIDER_NONE, NULL);
-		}
+		App->particlesgrenade->AddParticle(App->particlesgrenade->grenade, position.x, position.y, COLLIDER_PLAYER_GRENADE, NULL);
+	}
 
-		update_position_grenade += App->particlesgrenade->grenade.speed.y;
+	update_position_grenade += App->particlesgrenade->grenade.speed.y;
 
-		if (update_position_grenade == -110) {
-			App->particlesgrenade1->grenade.speed.x = 0;
-			App->particlesgrenade1->grenade.speed.y = +1;
-			App->particlesgrenade1->AddParticle(App->particlesgrenade1->grenade, position.x, position.y - 110, COLLIDER_PLAYER_GRENADE, NULL);
-		}
+	if (update_position_grenade == -110) {
+		App->particlesgrenade1->grenade.speed.x = 0;
+		App->particlesgrenade1->grenade.speed.y = +1;
+		App->particlesgrenade1->AddParticle(App->particlesgrenade1->grenade, position.x, position.y - 110, COLLIDER_PLAYER_GRENADE, NULL);
+	}
 
-		if (grenade.loops == 1) {
-			current_animation = &forward;
-			grenade.loops = 0;
-			check_grenade = 1;
-		}
-		//_grenade_end
+	if (grenade.loops == 1) {
+		current_animation = &forward;
+		grenade.loops = 0;
+		check_grenade = 1;
+	}
+	//_grenade_end
 	
-
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && move == true && check_grenade == 1)
 	{
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)

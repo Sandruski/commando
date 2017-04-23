@@ -23,6 +23,8 @@ struct Particle3
 	Uint32 life = 0;
 	bool fx_played = false;
 
+
+
 	Particle3();
 	Particle3(const Particle3& p);
 	~Particle3();

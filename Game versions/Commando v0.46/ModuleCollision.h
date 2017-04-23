@@ -1,7 +1,7 @@
 #ifndef __ModuleCollision_H__
 #define __ModuleCollision_H__
 
-#define MAX_COLLIDERS 700
+#define MAX_COLLIDERS 1700
 
 #include "Module.h"
 
@@ -19,6 +19,8 @@ enum COLLIDER_TYPE
 	COLLIDER_ITEM,
 	COLLIDER_PRISONER,
 	COLLIDER_PLAYER_GRENADE,
+	COLLIDER_END_OF_BULLET,
+	COLLIDER_END_OF_GRENADE,
 
 	COLLIDER_MAX
 };
