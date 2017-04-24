@@ -26,18 +26,17 @@ Enemy_PrisonerPoints::Enemy_PrisonerPoints(int x, int y) : Enemy(x, y)
 
 void Enemy_PrisonerPoints::Move()
 {
-	if (App->enemies->cont == 2) {
-		animation == &movepoints;
-		position.x++;
-	}
-	else if ((position.y >= 1481 - 2656) && (App->player->position.y <= 1712 - 2656))
+
+	if ((position.y >= -1200) && (App->player->position.y <= 1712 - 2656) && bonus == false)
 		position.y--;
-	else if (position.y == -1176) {
+	if (position.y == -1200)
+		animation = nullptr;
+
+	if (App->enemies->dieE == 4) {
 		animation = &move2;
 		position.x++;
-		if (cont == 0) {
+		if (bonus == false)
 			App->UI->score += 500;
-			cont = 1;
-		}
+		bonus = true;
 	}
 }

@@ -3,6 +3,7 @@
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
 #include "ModuleUI.h"
+#include "ModuleEnemies.h"
 #include "SDL/include/SDL_timer.h"
 
 Enemy_SoldierPrisoner::Enemy_SoldierPrisoner(int x, int y) : Enemy(x, y)
@@ -34,8 +35,11 @@ void Enemy_SoldierPrisoner::Move()
 		lastTime = SDL_GetTicks();
 		if ((position.y >= 1481 - 2656) && (App->player->position.y <= 1712 - 2656))
 			position.y--;
-		else if (position.y == 1480 - 2656)
-			animation == nullptr;
+		else if (position.y == 1480 - 2656) {
+			animation = nullptr;
+			collider->to_delete = true;
+		}
+
 	}
 	else {
 		animation = &die;
@@ -45,11 +49,15 @@ void Enemy_SoldierPrisoner::Move()
 	}
 }
 
-void Enemy_SoldierPrisoner::OnCollision(Collider* c1) {
+void Enemy_SoldierPrisoner::OnCollision(Collider* c1, Collider* c2) {
 
-	if (dieB == false)
-		App->UI->score += 25;
+	if (dieB == false) {
+		if (c2->type == COLLIDER_PLAYER_SHOT)
+			App->UI->score += 75;
+		else if (c2->type == COLLIDER_END_OF_GRENADE)
+			App->UI->score += 150;
+	}
 	dieB = true;
-
+	App->enemies->dieE++;
 }
 

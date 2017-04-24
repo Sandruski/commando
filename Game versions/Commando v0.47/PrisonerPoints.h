@@ -19,6 +19,7 @@ private:
 
 public:
 
+	bool bonus = false;
 	Enemy_PrisonerPoints(int x, int y);
 
 	void Move();

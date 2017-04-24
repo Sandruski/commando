@@ -18,8 +18,9 @@ private:
 
 public:
 
+	int dieS;
 	Enemy_SoldierPrisoner(int x, int y);
-	void OnCollision(Collider* c1);
+	void OnCollision(Collider* c1, Collider* c2);
 	bool dieB = false;
 	uint lastTime, currentTime;
 

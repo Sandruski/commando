@@ -34,8 +34,8 @@ public:
 	Enemy_Soldier(int x, int y);
 
 	void Move();
-
-	void OnCollision(Collider* collider);
+	bool dieB = false;
+	void OnCollision(Collider* collider, Collider* c2);
 };
 
 #endif

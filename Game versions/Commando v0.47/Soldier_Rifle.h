@@ -24,8 +24,10 @@ public:
 	uint lastTime, currentTime;
 	bool dieB = false;
 	Enemy_SoldierRifle(int x, int y);
-	void OnCollision(Collider* c1);
+
+	void OnCollision(Collider* c1, Collider* c2);
 	void Move();
 };
+
 
 #endif

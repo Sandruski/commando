@@ -153,7 +153,12 @@ void Enemy_Soldier::Move()
 	*/
 }
 
-void Enemy_Soldier::OnCollision(Collider* collider) {
-	animation = &die;
-	App->UI->score += 100;
+void Enemy_Soldier::OnCollision(Collider* collider, Collider* c2) {
+	if (dieB == false) {
+		if (c2->type == COLLIDER_PLAYER_SHOT)
+			App->UI->score += 75;
+		else if (c2->type == COLLIDER_END_OF_GRENADE)
+			App->UI->score += 150;
+	}
+	dieB = true;
 }

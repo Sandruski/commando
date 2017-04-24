@@ -99,7 +99,7 @@ void Enemy_SoldierRifle::Move()
 		*/
 	}
 
-	if (dieB == true){
+	if (dieB == true) {
 
 		animation = &die;
 		die.speed = 0.1f;
@@ -108,10 +108,13 @@ void Enemy_SoldierRifle::Move()
 	}
 }
 
-
-void Enemy_SoldierRifle::OnCollision(Collider* c1) {
-	if (dieB == false)
-		App->UI->score += 25;
+void Enemy_SoldierRifle::OnCollision(Collider* c1, Collider* c2) {
+	if (dieB == false) {
+		if (c2->type == COLLIDER_PLAYER_SHOT)
+			App->UI->score += 75;
+		else if (c2->type == COLLIDER_END_OF_GRENADE)
+			App->UI->score += 150;
+	}
 	dieB = true;
 
 

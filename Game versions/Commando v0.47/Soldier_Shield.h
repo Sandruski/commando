@@ -13,7 +13,7 @@ private:
 	int original_y = 0;
 	int original_x = 0;
 
-	Animation move1, move2, move3, move4;
+	Animation move1, move2, move3, move4, die;
 	Animation surrender;
 	int aleatori;
 	int cont;
@@ -21,8 +21,11 @@ private:
 
 public:
 
+	uint lastTime, currentTime;
+	bool dieB = false;
 	Enemy_SoldierShield(int x, int y);
 
+	void OnCollision(Collider* c1);
 	void Move();
 };
 

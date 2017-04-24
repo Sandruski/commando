@@ -187,31 +187,44 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
-		if (c1->type == COLLIDER_PRISONER || c2->type == COLLIDER_PRISONER){
+		if (c1->type == COLLIDER_PRISONER || c2->type == COLLIDER_PRISONER) { //PRISONERS
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
-				enemies[i]->OnCollision(c2);
+				enemies[i]->OnCollision(c2, c1);
 
 			}
-			}
+		}
+
 		else if (c1->type != COLLIDER_WALL && c2->type != COLLIDER_WALL) {
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 			{
 
-				if (c1->type == COLLIDER_ENEMY) {
-					enemies[i]->OnCollision(c1);
+				if (enemies[i]->type == ENEMY_TYPES::SOLDIER_SHIELD)
+				{
+					if (c2->type == COLLIDER_END_OF_GRENADE && c1->type == COLLIDER_ENEMY) {
+						enemies[i]->OnCollision(c1, c2);
+						c1->to_delete = true;
+					}
+					else if (c1->type == COLLIDER_END_OF_GRENADE && c2->type == COLLIDER_ENEMY) {
+						enemies[i]->OnCollision(c2, c1);
+						c2->to_delete = true;
+					}
+				}
+
+				else if (c1->type == COLLIDER_ENEMY) {
+					enemies[i]->OnCollision(c1, c2);
 					c1->to_delete = true;
 				}
 				else if (c2->type == COLLIDER_ENEMY) {
-					enemies[i]->OnCollision(c2);
+					enemies[i]->OnCollision(c2, c1);
 					c2->to_delete = true;
 				}
 
 				/*if (dieE == true) {
-					delete enemies[i];
-					enemies[i] = nullptr;
-					break;
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
 				}*/
-				}
+			}
 
 		}
 	}

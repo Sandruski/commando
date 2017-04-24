@@ -2,8 +2,10 @@
 #include "Soldier_Shield.h"
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
+#include "SDL/include/SDL_timer.h"
 #include <stdlib.h>
 #include <time.h>
+#include "ModuleUI.h"
 
 Enemy_SoldierShield::Enemy_SoldierShield(int x, int y) : Enemy(x, y)
 {
@@ -31,6 +33,10 @@ Enemy_SoldierShield::Enemy_SoldierShield(int x, int y) : Enemy(x, y)
 	move4.speed = 0.05f;
 	surrender.speed = 0.05f;
 
+	die.PushBack({ 151, 149, 16, 27 });
+	die.PushBack({ 40, 104, 15, 27 });
+	die.PushBack({ 169, 149, 16, 27 });
+	die.PushBack({ 204, 140, 15, 27 });
 
 	animation = &move1;
 
@@ -39,7 +45,12 @@ Enemy_SoldierShield::Enemy_SoldierShield(int x, int y) : Enemy(x, y)
 
 void Enemy_SoldierShield::Move()
 {
-	//if (App->player->position.x <= 240 - 2656) {
+	currentTime = SDL_GetTicks();
+	currentTime -= lastTime;
+
+	if (dieB == false) {
+		lastTime = SDL_GetTicks();
+		//if (App->player->position.x <= 240 - 2656) {
 		aleatori = rand() % 10;
 		cont2++;
 		if (cont2 > 25 && cont2 < 45) {
@@ -76,8 +87,24 @@ void Enemy_SoldierShield::Move()
 		}
 		else if (cont2 >= 550 /*&& cont2 < 700*/) {
 			animation = &surrender;
+			collider->to_delete = true;
 		}
 		//else if (cont2 >= 700) { animation = nullptr; }
-	
-	
+	}
+	if (dieB == true) {
+
+		animation = &die;
+		die.speed = 0.1f;
+		if (currentTime > 1000)
+			animation = nullptr;
+	}
+}
+
+void Enemy_SoldierShield::OnCollision(Collider* c1) {
+
+
+	if (dieB == false)
+		App->UI->score += 150;
+	dieB = true;
+
 }
