@@ -39,7 +39,6 @@ ModuleMenu::~ModuleMenu()
 // Load assets
 bool ModuleMenu::Start()
 {
-
 	App->UI->Disable();
 	App->player->Disable();
 	App->collision->Disable();
@@ -49,7 +48,10 @@ bool ModuleMenu::Start()
 
 	graphics = App->textures->Load("menu.png");
 	grenade = App->textures->Load("items&HUD&snake.png");
-	App->audio->play_music1();
+
+
+	//Initialize audio
+	check_audio = true;
 
 	//Initialize camera and others (prepare it for use)
 	App->render->camera.x = App->render->camera.y = 0;
@@ -78,7 +80,11 @@ bool ModuleMenu::CleanUp()
 update_status ModuleMenu::Update()
 {
 	update_status ret = UPDATE_CONTINUE;
-
+	
+	if (check_audio) {
+		App->audio->play_music1();
+		check_audio = false;
+	}
 
 	if (!App->render->Blit(graphics, 0, SCREEN_HEIGHT - 224, &background, 0.75f))
 		ret = UPDATE_ERROR;

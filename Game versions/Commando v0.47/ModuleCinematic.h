@@ -41,6 +41,8 @@ public:
 	int sj_y = 86, sj_x = 147;
 	int pjcont = 0;
 	bool contadorsalto;
+
+	bool check_audio = true;
 };
 
 

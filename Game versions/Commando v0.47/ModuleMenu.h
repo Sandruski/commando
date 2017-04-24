@@ -27,5 +27,6 @@ public:
 	int font_score2 = -1;
 
 	int move_y = 118;
+	bool check_audio = true;
 };
 #endif

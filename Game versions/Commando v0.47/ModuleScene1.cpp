@@ -73,16 +73,15 @@ bool ModuleScene1::Start()
 	cont6 = false;
 	cont5 = 0;
 
+	//Initialize audio
+	check_audio = true;
+
 	//Initialize camera and others (prepare it for use)
 	App->render->camera.x = App->render->camera.y = 0;
 	cont = 0;
 
 	App->player->position.x = App->fade->start_x;
 	App->player->position.y = App->fade->start_y;
-
-	App->audio->pause_music();
-	App->audio->play_music2();
-
 
 	//Colliders
 	App->collision->AddCollider({ 133,2817 - 2656,20,23 }, COLLIDER_WALL, this);
@@ -270,6 +269,11 @@ bool ModuleScene1::CleanUp()
 update_status ModuleScene1::Update()
 {
 	update_status ret = UPDATE_CONTINUE;
+
+	if (check_audio) {
+		App->audio->play_music2();
+		check_audio = false;
+	}
 
 	//CAMERA
 	//middle screen (where camera goes up) = 110 - cont

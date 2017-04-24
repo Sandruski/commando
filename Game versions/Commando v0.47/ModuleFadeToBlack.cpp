@@ -4,6 +4,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleScene1.h"
 #include "ModuleScene2.h"
+#include "ModuleAudio.h"
 #include "ModuleMenu.h"
 #include "ModuleRender.h"
 #include "ModuleEND.h"
@@ -51,6 +52,7 @@ update_status ModuleFadeToBlack::Update()
 				App->render->camera.y = 0;
 				App->player->position.x = start_x;
 				App->player->position.y = start_y;
+				App->audio->pause_music();
 			}
 
 			total_time += total_time;

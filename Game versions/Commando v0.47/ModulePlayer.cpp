@@ -134,7 +134,7 @@ update_status ModulePlayer::Update()
 	//GRENADE
 	//Grenades must be retouched because now if player throws 2 grenades, only kills the last one
 
-	if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN && App->UI->grenade > 0)
+	if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN && App->UI->grenade > 0 && (position.y >= 1405 - 2656 || App->player->position.y <= 1338 - 2666))
 	{
 		check_grenade = 0;
 		update_position_grenade = 0;
@@ -162,6 +162,7 @@ update_status ModulePlayer::Update()
 		App->particlesgrenade1->grenade.speed.x = 0;
 		App->particlesgrenade1->grenade.speed.y = +1;
 		App->particlesgrenade1->AddParticle(App->particlesgrenade1->grenade, position.x, position.y - 110, COLLIDER_PLAYER_GRENADE, NULL);
+		App->audio->play_fx5();
 	}
 
 	if (grenade.loops == 1) {
@@ -421,6 +422,8 @@ void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 
 void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
 
+	App->audio->play_fx7();
+
 	if (App->player->position.y < 2655 - 2656 && App->player->position.y > 2547 - 2656)
 	detectionitem[0] = true;
 	if (App->player->position.y < 2547 - 2656 && App->player->position.y > 2340 - 2656) {
@@ -465,6 +468,8 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 			if (vides != 0) {
 				waterB = false;
 				if (timeW == true) {
+					App->audio->pause_music();
+					App->audio->play_fx6();
 					App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_END_OF_BULLET, NULL);
 					App->fade->FadeToBlack(App->scene_1, App->scene_1);
 				}
@@ -473,6 +478,8 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 			else if (vides == 0) {
 				waterB = false;
 				if (timeW == true) {
+					App->audio->pause_music();
+					App->audio->play_fx6();
 					App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_END_OF_BULLET, NULL);
 					App->fade->FadeToBlack(App->scene_1, App->Menu);
 				}
@@ -487,6 +494,8 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 	{
 		vides--;
 		if (vides != 0) {
+			App->audio->pause_music();
+			App->audio->play_fx6();
 			App->fade->FadeToBlack(App->scene_1, App->scene_1, 6.0f);
 			enemyB = false;
 
@@ -494,6 +503,8 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 		}
 
 		else if (vides == 0) {
+			App->audio->pause_music();
+			App->audio->play_fx6();
 			App->fade->FadeToBlack(App->scene_1, App->Menu, 6.0f);
 			enemyB = false;
 			vides = 3;

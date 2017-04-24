@@ -63,6 +63,10 @@ bool ModuleCinematic::Start()
 	sj_y = 86, sj_x = 147;
 	pjcont = 0;
 
+	//Initialize audio
+	check_audio = true;
+	App->audio->play_music8();
+
 	LOG("Loading cinematic scene");
 	helicopter = App->textures->Load("helicopterfix.png");
 	graphics2 = App->textures->Load("1-1.png");
@@ -92,6 +96,11 @@ update_status ModuleCinematic::Update()
 
 	App->render->Blit(graphics2, w, h, &background2);
 
+
+	if (check_audio) {
+		App->audio->play_fx3();
+		check_audio = false;
+	}
 
 	/*
 	current_animation = &playerbye;
