@@ -37,8 +37,9 @@ public:
 	uint score;
 	uint grenade = 3;
 	uint cont = 0;
-	char str2[10];
 	char str1[10];
+	char str2[10];
+	char str3[10];
 
 	//bool characterselection_ui;
 private:

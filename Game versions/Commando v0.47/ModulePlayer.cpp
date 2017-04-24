@@ -133,6 +133,7 @@ update_status ModulePlayer::Update()
 
 	//GRENADE
 	//Grenades must be retouched because now if player throws 2 grenades, only kills the last one
+
 	if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN && App->UI->grenade > 0)
 	{
 		check_grenade = 0;

@@ -84,153 +84,30 @@ bool ModuleUI::CleanUp()
 update_status ModuleUI::Update()
 {
 
-	if (App->player->vides >= 3) {
-
-		App->render->Blit(Hud, 22, 210 - var, &MarcadorVida);
-
-		if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
-			if (var2 != App->player->position.y)
-				var += 1;
-		}
-
-		var2 = App->player->position.y;
-
-		if (App->player->vides == 3) {
-
-			App->render->Blit(Hud2, 35, 213 - var, &vida3);
-
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
-				if (var2 != App->player->position.y)
-					var += 1;
-			}
-
-			var2 = App->player->position.y;
-
-
-		}
-		if (App->player->vides == 3) {
-
-			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
-			//
-			cont = 0;
-			str2[10];
-			sprintf_s(str2, "%i", score);
-			App->fonts->BlitText(37, 5 - var, App->savedata->font_score, str2);
-			//grenades
+		if (App->player->position.y == (110 - App->scene_1->cont) && App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT ) {
 			cont = 1;
-			str1[10];
-			sprintf_s(str1, "%i", grenade);
-			App->fonts->BlitText(129, 215 - var, App->savedata->font_score, str1);
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
-				if (var2 != App->player->position.y)
-					var += 1;
-			}
-
-			var2 = App->player->position.y;
-
-
-		}
-
-	}
-
-	if (App->player->vides >= 2) {
-
-		App->render->Blit(Hud, 22, 210 - var, &MarcadorVida);
-
-		if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
-			if (var2 != App->player->position.y)
-				var += 1;
-		}
-
-		var2 = App->player->position.y;
-
-		if (App->player->vides == 2) {
-
-			App->render->Blit(Hud2, 35, 213 - var, &vida2);
-
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
-				if (var2 != App->player->position.y)
-					var += 1;
-			}
-
-			var2 = App->player->position.y;
-
-
-		}
-		if (App->player->vides == 2) {
-
-			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
-			//
-			cont = 0;;
 			sprintf_s(str1, "%i", score);
-			//grenades
-			cont = 1;
 			sprintf_s(str2, "%i", grenade);
-			App->fonts->BlitText(129, 215 - var, App->savedata->font_score, str2);
-			App->fonts->BlitText(37, 5 - var, App->savedata->font_score, str1);
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
-				if (var2 != App->player->position.y)
-					var += 1;
-			}
-
-			var2 = App->player->position.y;
-
-
-		}
-
-
-
-	}
-
-	if (App->player->vides >= 1) {
-
-		App->render->Blit(Hud, 22, 210 - var, &MarcadorVida);
-
-		if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
-			if (var2 != App->player->position.y)
-				var += 1;
-		}
-
-		var2 = App->player->position.y;
-
-		if (App->player->vides == 1) {
-
-			App->render->Blit(Hud2, 35, 213 - var, &vida1);
-
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
-				if (var2 != App->player->position.y)
-					var += 1;
-			}
-
-			var2 = App->player->position.y;
-
-
-		}
-		if (App->player->vides == 1) {
-
-			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
-			//
+			sprintf_s(str3, "%i", App->player->vides);
+			App->render->Blit(Hud, 116, 213 - App->scene_1->cont, &MarcadorGranada);
+			App->render->Blit(Hud, 22, 210 - App->scene_1->cont, &MarcadorVida);
+			App->fonts->BlitText(35, 215 - App->scene_1->cont, App->savedata->font_score, str3);
+			App->fonts->BlitText(129, 215 - App->scene_1->cont, App->savedata->font_score, str2);
 			cont = 0;
-			sprintf_s(str1, "%i", score);
-			//grenades
-			cont = 1;
-			sprintf_s(str2, "%i", grenade);
-			App->fonts->BlitText(129, 215 - var, App->savedata->font_score, str2);
-			App->fonts->BlitText(37, 5 - var, App->savedata->font_score, str1);
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
-				if (var2 != App->player->position.y)
-					var += 1;
-			}
-
-			var2 = App->player->position.y;
-
-
+			App->fonts->BlitText(37, 5 - App->scene_1->cont, App->savedata->font_score, str1);
 		}
-
-
-
-	}
-
+		else {
+			cont = 1;
+			sprintf_s(str1, "%i", score);
+			sprintf_s(str2, "%i", grenade);
+			sprintf_s(str3, "%i", App->player->vides);
+			App->render->Blit(Hud, 116, 213 - App->scene_1->cont, &MarcadorGranada);
+			App->render->Blit(Hud, 22, 210 - App->scene_1->cont, &MarcadorVida);
+			App->fonts->BlitText(35, 215 - App->scene_1->cont, App->savedata->font_score, str3);
+			App->fonts->BlitText(129, 215 - App->scene_1->cont, App->savedata->font_score, str2);
+			cont = 0;
+			App->fonts->BlitText(37, 5 - App->scene_1->cont, App->savedata->font_score, str1);
+		}
 
 	
 
