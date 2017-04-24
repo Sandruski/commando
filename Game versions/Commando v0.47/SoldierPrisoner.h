@@ -19,6 +19,9 @@ private:
 public:
 
 	Enemy_SoldierPrisoner(int x, int y);
+	void OnCollision(Collider* c1);
+	bool dieB = false;
+	uint lastTime, currentTime;
 
 	void Move();
 };

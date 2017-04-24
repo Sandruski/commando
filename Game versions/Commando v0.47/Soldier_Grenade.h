@@ -13,11 +13,14 @@ private:
 	int original_y = 0;
 	int original_x = 0;
 
-	Animation turn;
+	Animation turn, die;
 
 public:
 
 	Enemy_SoldierGrenade(int x, int y);
+	void OnCollision(Collider* c1);
+	bool dieB = false;
+	uint lastTime, currentTime;
 
 	void Move();
 };

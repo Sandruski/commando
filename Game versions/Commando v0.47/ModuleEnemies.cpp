@@ -195,17 +195,21 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		else if (c1->type != COLLIDER_WALL && c2->type != COLLIDER_WALL) {
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 			{
-				enemies[i]->OnCollision(c2);
-				if (c1->type == COLLIDER_ENEMY)
-					c1->to_delete = true;
-				else if (c2->type == COLLIDER_ENEMY)
-					c2->to_delete = true;
 
-				if (dieE == true) {
+				if (c1->type == COLLIDER_ENEMY) {
+					enemies[i]->OnCollision(c1);
+					c1->to_delete = true;
+				}
+				else if (c2->type == COLLIDER_ENEMY) {
+					enemies[i]->OnCollision(c2);
+					c2->to_delete = true;
+				}
+
+				/*if (dieE == true) {
 					delete enemies[i];
 					enemies[i] = nullptr;
 					break;
-				}
+				}*/
 				}
 
 		}

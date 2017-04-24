@@ -1,8 +1,5 @@
-﻿  Soldier_Rifle.cpp
-c:\users\aleixg\desktop\commando v0.46\soldier_rifle.cpp(76): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixg\desktop\commando v0.46\soldier_rifle.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixg\desktop\commando v0.46\soldier_rifle.cpp(79): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+﻿  Soldier_Grenade.cpp
   ModuleEnemies.cpp
   Generating Code...
-  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\Commando v0.46\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\Commando v0.46\Debug\SDL5 Handout.pdb (Full PDB)
+  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\Commando v0.47\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\Commando v0.47\Debug\SDL5 Handout.pdb (Full PDB)

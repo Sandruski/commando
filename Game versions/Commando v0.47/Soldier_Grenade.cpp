@@ -1,6 +1,8 @@
 #include "Application.h"
 #include "Soldier_Grenade.h"
 #include "ModuleCollision.h"
+#include "ModuleUI.h"
+#include "SDL/include/SDL_timer.h"
 
 Enemy_SoldierGrenade::Enemy_SoldierGrenade(int x, int y) : Enemy(x, y)
 {
@@ -12,6 +14,11 @@ Enemy_SoldierGrenade::Enemy_SoldierGrenade(int x, int y) : Enemy(x, y)
 
 	turn.speed = 0.1f;
 
+	die.PushBack({ 6, 111, 16, 27 });
+	die.PushBack({ 40, 104, 15, 27 });
+	die.PushBack({ 25, 111, 16, 27 });
+	die.PushBack({ 40, 104, 15, 27 });
+
 	animation = &turn;
 
 	collider = App->collision->AddCollider({ 0, 0, 18, 18 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
@@ -19,6 +26,20 @@ Enemy_SoldierGrenade::Enemy_SoldierGrenade(int x, int y) : Enemy(x, y)
 
 void Enemy_SoldierGrenade::Move()
 {
+	currentTime = SDL_GetTicks();
+	currentTime -= lastTime;
+
+	if (dieB == false) 
+		lastTime = SDL_GetTicks();
+
+
+	if (dieB == true) {
+
+		animation = &die;
+		die.speed = 0.1f;
+		if (currentTime > 1000)
+			animation = nullptr;
+	}
 	/*
 	if (going_up)
 	{
@@ -38,6 +59,16 @@ void Enemy_SoldierGrenade::Move()
 	position.y = original_y + (25.0f * sinf(wave));
 	position.x -= 1;
 	*/
+
+
+
+}
+
+
+void Enemy_SoldierGrenade::OnCollision(Collider* c1) {
+	if (dieB == false)
+		App->UI->score += 25;
+	dieB = true;
 
 
 }
