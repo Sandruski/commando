@@ -54,9 +54,9 @@ bool ModuleMenu::Start()
 	App->audio->play_music1();
 
 	//Initialize camera and others (prepare it for use)
-	App->render->camera.y = 0;
-	App->render->h = 110;
-	App->render->two = 197;
+	App->render->camera.x = App->render->camera.y = 0;
+	App->scene_1->cont = 0;
+
 	App->player->position.x = App->fade->start_x;
 	App->player->position.y = App->fade->start_y;
 

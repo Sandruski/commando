@@ -178,16 +178,8 @@ update_status ModulePlayer::Update()
 			current_animation = &forward;
 			forward.Start();
 		}
-
-		if (position.y > App->render->two - 210) {
-			position.y -= speed;
-		}
-		/*
-		if (position.y >= 150)
+		
 		position.y -= speed;
-		else if (App->scene_1->h == 0 && position.y > 25)
-		position.y -= speed;
-		*/
 	}
 
 	else if (App->input->keyboard[SDL_SCANCODE_W] == KEY_UP)
@@ -204,14 +196,10 @@ update_status ModulePlayer::Update()
 			backward.Start();
 		}
 
-		if (position.y <= App->render->two) {
+		if (App->player->position.y <= (110 - App->scene_1->cont + 88)) {
 			position.y += speed;
 		}
-		/*
-		if (position.y < 220) {
-		position.y += speed;
-		}
-		*/
+
 	}
 
 	else if (App->input->keyboard[SDL_SCANCODE_S] == KEY_UP)

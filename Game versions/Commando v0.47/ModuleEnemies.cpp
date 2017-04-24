@@ -12,6 +12,7 @@
 #include "Soldier_Knife.h"
 #include "Soldier.h"
 #include "Soldier_Shield.h"
+#include "ModuleScene1.h"
 #include "Crazy_Green.h"
 #include "Prisoner.h"
 #include "PrisonerPoints.h"
@@ -81,7 +82,7 @@ update_status ModuleEnemies::PostUpdate()
 	{
 		if (enemies[i] != nullptr)
 		{
-			if (enemies[i]->position.y >(App->render->two) + SPAWN_MARGIN)
+			if (enemies[i]->position.y > (110 - App->scene_1->cont + 88) + SPAWN_MARGIN)
 				//if(enemies[i]->position.x * SCREEN_SIZE < (App->render->camera.x) - SPAWN_MARGIN)
 			{
 				LOG("DeSpawning enemy at %d", enemies[i]->position.y * SCREEN_SIZE);

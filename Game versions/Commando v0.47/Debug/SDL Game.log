@@ -1,62 +1,6 @@
-﻿  Soldier_Shield.cpp
-  Soldier_Rifle.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\soldier_rifle.cpp(74): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\soldier_rifle.cpp(75): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\soldier_rifle.cpp(77): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  Soldier_Knife.cpp
-  Soldier_Grenade.cpp
-  SoldierPrisoner.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\soldierprisoner.cpp(38): warning C4553: '==': operator has no effect; did you intend '='?
-  Soldier.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\soldier.cpp(82): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\soldier.cpp(83): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\soldier.cpp(85): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\soldier.cpp(90): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\soldier.cpp(91): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  PrisonerPoints.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\prisonerpoints.cpp(30): warning C4553: '==': operator has no effect; did you intend '='?
-  Prisoner.cpp
-  ModuleWindow.cpp
-  ModuleUI.cpp
-  ModuleTextures.cpp
-  ModuleScene1.cpp
-  ModuleRender.cpp
-  ModulePlayer.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleplayer.cpp(59): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleplayer.cpp(64): warning C4305: '=': truncation from 'double' to 'float'
-  ModuleParticlesGrenade1.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleparticlesgrenade1.cpp(29): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleparticlesgrenade1.cpp(33): warning C4305: '=': truncation from 'double' to 'float'
-  ModuleParticlesGrenade.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleparticlesgrenade.cpp(29): warning C4305: '=': truncation from 'double' to 'float'
-  ModuleParticlesEnemies.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleparticlesenemies.cpp(73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleparticlesenemies.cpp(95): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleparticlesenemies.cpp(96): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleparticlesenemies.cpp(115): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleparticlesenemies.cpp(152): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\moduleparticlesenemies.cpp(166): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  ModuleParticles.cpp
+﻿  ModuleScene1.cpp
   ModuleMenu.cpp
-  ModuleInput.cpp
-  Generating Code...
-  Compiling...
-  ModuleFonts.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\modulefonts.cpp(55): warning C4018: '<': signed/unsigned mismatch
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\modulefonts.cpp(125): warning C4018: '<': signed/unsigned mismatch
-  ModuleFadeToBlack.cpp
   ModuleEnemies.cpp
-  ModuleEND.cpp
-  ModuleCollision.cpp
-  ModuleCinematic.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\modulecinematic.cpp(148): warning C4804: '<': unsafe use of type 'bool' in operation
-  ModuleAudio.cpp
-  Main.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\commando v0.47\main.cpp(29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Globals.cpp
-  Enemy.cpp
-  Crazy_Green.cpp
-  Application.cpp
   Generating Code...
-  SDL Game.vcxproj -> C:\Users\aleixca1\Desktop\gets-name-\Game versions\Commando v0.47\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\aleixca1\Desktop\gets-name-\Game versions\Commando v0.47\Debug\SDL5 Handout.pdb (Full PDB)
+  SDL Game.vcxproj -> C:\Users\Sandra\Desktop\gets-name-\Game versions\Commando v0.47\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Sandra\Desktop\gets-name-\Game versions\Commando v0.47\Debug\SDL5 Handout.pdb (Full PDB)

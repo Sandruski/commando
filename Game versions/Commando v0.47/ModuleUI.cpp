@@ -3,6 +3,7 @@
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
+#include "ModuleScene1.h"
 #include "ModuleInput.h"
 #include "ModuleUI.h"
 #include "ModuleFonts.h"
@@ -88,7 +89,7 @@ update_status ModuleUI::Update()
 
 		App->render->Blit(Hud, 22, 210 - var, &MarcadorVida);
 
-		if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
+		if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 			if (var2 != App->player->position.y)
 				var += 1;
 		}
@@ -99,7 +100,7 @@ update_status ModuleUI::Update()
 
 			App->render->Blit(Hud2, 35, 213 - var, &vida3);
 
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
+			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 				if (var2 != App->player->position.y)
 					var += 1;
 			}
@@ -121,7 +122,7 @@ update_status ModuleUI::Update()
 			char str1[10];
 			sprintf_s(str1, "%i", grenade);
 			App->fonts->BlitText(129, 215 - var, font_score, str1);
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
+			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 				if (var2 != App->player->position.y)
 					var += 1;
 			}
@@ -137,7 +138,7 @@ update_status ModuleUI::Update()
 
 		App->render->Blit(Hud, 22, 210 - var, &MarcadorVida);
 
-		if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
+		if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 			if (var2 != App->player->position.y)
 				var += 1;
 		}
@@ -148,7 +149,7 @@ update_status ModuleUI::Update()
 
 			App->render->Blit(Hud2, 35, 213 - var, &vida2);
 
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
+			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 				if (var2 != App->player->position.y)
 					var += 1;
 			}
@@ -170,7 +171,7 @@ update_status ModuleUI::Update()
 			sprintf_s(str3, "%i", grenade);
 			App->fonts->BlitText(129, 215 - var, font_score, str3);
 			App->fonts->BlitText(37, 5 - var, font_score, str4);
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
+			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 				if (var2 != App->player->position.y)
 					var += 1;
 			}
@@ -188,7 +189,7 @@ update_status ModuleUI::Update()
 
 		App->render->Blit(Hud, 22, 210 - var, &MarcadorVida);
 
-		if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
+		if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 			if (var2 != App->player->position.y)
 				var += 1;
 		}
@@ -199,7 +200,7 @@ update_status ModuleUI::Update()
 
 			App->render->Blit(Hud2, 35, 213 - var, &vida1);
 
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
+			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 				if (var2 != App->player->position.y)
 					var += 1;
 			}
@@ -221,7 +222,7 @@ update_status ModuleUI::Update()
 			sprintf_s(str3, "%i", grenade);
 			App->fonts->BlitText(129, 215 - var, font_score, str3);
 			App->fonts->BlitText(37, 5 - var, font_score, str4);
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(App->render->h)) {
+			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 				if (var2 != App->player->position.y)
 					var += 1;
 			}

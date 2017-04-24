@@ -57,44 +57,6 @@ update_status ModuleRender::PreUpdate()
 
 update_status ModuleRender::Update()
 {
-	int speed = 3;
-
-	/*
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && App->player->position.y < 150) {
-		if (App->fade->on == App->scene_1) {
-			if (App->scene_1->h != 0)
-				App->scene_1->h += speed;
-			if (App->scene_1->h >= SCREEN_HEIGHT - 1550)
-				App->scene_1->h_m += speed;
-
-		}
-		if (App->fade->on == App->scene_2) {
-			if (App->scene_2->h != 0)
-				App->scene_2->h += speed;
-		}
-	}
-	*/ //abs(App->player->position.y - 150) == camera.y
-
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT) {
-		if (App->fade->on == App->scene_1 && camera.y <= 7964) {
-			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(h)) {
-				camera.y += speed;
-				h -= 1;
-				two -= 1;
-			}
-		}
-	}
-
-
-		/*
-
-			&& App->player->position.y < camera.y - 150) {
-		if (App->fade->on == App->scene_1) {
-			camera.y += speed;
-		}
-		*/
-	
-	
 	return update_status::UPDATE_CONTINUE;
 }
 

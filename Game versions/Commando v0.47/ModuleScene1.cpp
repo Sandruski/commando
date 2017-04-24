@@ -72,14 +72,15 @@ bool ModuleScene1::Start()
 	cont5 = 0;
 
 	//Initialize camera and others (prepare it for use)
-	App->render->camera.y = 0;
-	App->render->h = 110;
-	App->render->two = 197;
+	App->render->camera.x = App->render->camera.y = 0;
+	cont = 0;
+
 	App->player->position.x = App->fade->start_x;
 	App->player->position.y = App->fade->start_y;
 
 	App->audio->pause_music();
 	App->audio->play_music2();
+
 
 	//Colliders
 	App->collision->AddCollider({ 133,2817 - 2656,20,23 }, COLLIDER_WALL, this);
@@ -263,6 +264,14 @@ bool ModuleScene1::CleanUp()
 update_status ModuleScene1::Update()
 {
 	update_status ret = UPDATE_CONTINUE;
+
+	//CAMERA
+	//middle screen (where camera goes up) = 110 - cont
+	//bottom screen = 110 - cont + 88
+	if (App->player->position.y == (110 - cont) && App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
+		cont++;
+		App->render->camera.y += speed;
+	}
 
 	//Animation* current_animation = &moto_stop;
 

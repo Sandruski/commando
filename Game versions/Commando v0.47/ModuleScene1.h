@@ -39,6 +39,9 @@ public:
 	int w = 0, h = SCREEN_HEIGHT - 2880;
 	int w_m = 255, h_m = 20;
 	double long contador = 0;
+
+	//Camera parameters
+	int cont = 0, speed = 3, two = 130;
 };
 
 
