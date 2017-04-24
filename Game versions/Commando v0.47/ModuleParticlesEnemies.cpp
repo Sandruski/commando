@@ -84,7 +84,7 @@ update_status ModuleParticlesEnemies::Update()
 }
 
 
-void ModuleParticlesEnemies::AddParticle(const Particle1& particle, int x, int y, COLLIDER_TYPE collider_type, Uint32 delay)
+void ModuleParticlesEnemies::AddParticle(const Particle1& particle, int x, int y, COLLIDER_TYPE collider_type, Uint32 delay, fPoint speed)
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -94,6 +94,8 @@ void ModuleParticlesEnemies::AddParticle(const Particle1& particle, int x, int y
 			p->born = SDL_GetTicks() + delay;
 			p->position.x = x + 9;
 			p->position.y = y - 15;
+			p->speed.x = speed.x;
+			p->speed.y = speed.y;
 			if (collider_type != COLLIDER_NONE)
 				p->collider = App->collision->AddCollider(p->anim.GetCurrentFrame(), collider_type, this);
 			active[i] = p;
@@ -110,7 +112,7 @@ void ModuleParticlesEnemies::OnCollision(Collider* c1, Collider* c2)
 		// Always destroy particles that collide
 		if (active[i] != nullptr && active[i]->collider == c1)
 		{
-			App->particlesenemies->AddParticle(App->particlesenemies->explosion, active[i]->position.x, active[i]->position.y, COLLIDER_END_OF_BULLET, NULL);
+			App->particlesenemies->AddParticle(App->particlesenemies->explosion, active[i]->position.x, active[i]->position.y, COLLIDER_END_OF_BULLET, NULL, App->particlesenemies->explosion.speed);
 			delete active[i];
 			active[i] = nullptr;
 			break;
@@ -147,7 +149,7 @@ bool Particle1::Update()
 		if ((SDL_GetTicks() - born) > life) {
 			if (collider->type == COLLIDER_ENEMY_SHOT)
 			{
-				App->particlesenemies->AddParticle(App->particlesenemies->explosion, position.x, position.y, COLLIDER_END_OF_BULLET, NULL);
+				App->particlesenemies->AddParticle(App->particlesenemies->explosion, position.x, position.y, COLLIDER_END_OF_BULLET, NULL, App->particlesenemies->explosion.speed);
 			}
 
 			ret = false;

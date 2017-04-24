@@ -10,7 +10,6 @@ private:
 	float wave = -1.0f;
 	bool going_up = true;
 
-
 	int original_y = 0;
 	int original_x = 0;
 
@@ -25,7 +24,6 @@ public:
 	uint lastTime, currentTime;
 	bool dieB = false;
 	Enemy_SoldierRifle(int x, int y);
-
 	void OnCollision(Collider* c1);
 	void Move();
 };

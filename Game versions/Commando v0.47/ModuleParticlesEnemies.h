@@ -40,7 +40,7 @@ public:
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
 
-	void AddParticle(const Particle1& particle, int x, int y, COLLIDER_TYPE collider_type, Uint32 delay);
+	void AddParticle(const Particle1& particle, int x, int y, COLLIDER_TYPE collider_type, Uint32 delay, fPoint speed);
 
 
 private:

@@ -79,17 +79,17 @@ bool ModulePlayer::Start()
 	coll = App->collision->AddCollider({ 300, 300, 16, 19 }, COLLIDER_PLAYER, this); //the collider is out of the screen!
 	feetC = App->collision->AddCollider({ 300 - 16, 300 - 19, 10, 5 }, COLLIDER_PLAYER, this);
 
-	x1.x = position.x - 30;
-	x1.y = position.y;
+	p1.x = position.x - 30;
+	p1.y = position.y;
 
-	x2.x = position.x;
-	x2.y = position.y - 30;
+	p2.x = position.x;
+	p2.y = position.y - 30;
 
-	x3.x = position.x + 30;
-	x3.y = position.y;
+	p3.x = position.x + 30;
+	p3.y = position.y;
 
-	x4.x = position.x;
-	x4.y = position.y + 30;
+	p4.x = position.x;
+	p4.y = position.y + 30;
 
 	return true;
 }
@@ -108,6 +108,18 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
+	p1.x = position.x - 30;
+	p1.y = position.y;
+
+	p2.x = position.x;
+	p2.y = position.y - 30;
+
+	p3.x = position.x + 30;
+	p3.y = position.y;
+
+	p4.x = position.x;
+	p4.y = position.y + 30;
+
 	speed = 1;
 
 	if (App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN && GOD == false)

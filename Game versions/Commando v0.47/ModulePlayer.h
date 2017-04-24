@@ -45,7 +45,7 @@ public:
 	bool timeW = false;
 	uint lastTime, currentTime;
 
-	iPoint x1, x2, x3, x4;
+	iPoint p1, p2, p3, p4;
 	int check_grenade = 1, check_nonshoot = 1, update_position_grenade = 0;
 };
 

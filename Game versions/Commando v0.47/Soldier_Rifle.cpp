@@ -1,14 +1,13 @@
 #include "Application.h"
 #include "Soldier_Rifle.h"
 #include "ModuleCollision.h"
+#include "ModuleUI.h"
 #include "ModulePlayer.h"
 #include "ModuleParticlesEnemies.h"
-#include "ModuleUI.h"
-#include "ModuleEnemies.h"
-#include "SDL/include/SDL_timer.h"
 #include <stdlib.h>
 #include <time.h>
 
+#include "SDL/include/SDL_timer.h"
 
 Enemy_SoldierRifle::Enemy_SoldierRifle(int x, int y) : Enemy(x, y)
 {
@@ -25,7 +24,6 @@ Enemy_SoldierRifle::Enemy_SoldierRifle(int x, int y) : Enemy(x, y)
 	right.speed = 0.1f;
 	more_right.speed = 0.1f;
 
-	//Die animation
 	die.PushBack({ 6, 111, 16, 27 });
 	die.PushBack({ 40, 104, 15, 27 });
 	die.PushBack({ 25, 111, 16, 27 });
@@ -45,6 +43,7 @@ void Enemy_SoldierRifle::Move()
 
 	if (dieB == false) {
 		lastTime = SDL_GetTicks();
+		
 		//MOVEMENT
 		if (App->player->position.x <= position.x - 22) {
 			animation = &more_left;
@@ -63,13 +62,12 @@ void Enemy_SoldierRifle::Move()
 		}
 
 		//SHOT
-
 		num_shots = rand() % 4;
 
 		if (rand1 == 3 && App->player->position.y > position.y + 24) {
 
 			for (int i = 0; i <= num_shots; i++) {
-				App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL); //position.y+30+space
+				App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
 				space = rand() % 10 + 5;
 			}
 
@@ -85,8 +83,8 @@ void Enemy_SoldierRifle::Move()
 			App->particlesenemies->bala.speed.x = enemyplayeru.x;
 			App->particlesenemies->bala.speed.y = enemyplayeru.y;
 
-			App->particlesenemies->bala.position.x = (position.x + App->particlesenemies->bala.speed.x);
-			App->particlesenemies->bala.position.y = ((position.y + 25) + App->particlesenemies->bala.speed.y);
+			//App->particlesenemies->bala.position.x = (position.x + App->particlesenemies->bala.speed.x);
+			//App->particlesenemies->bala.position.y = ((position.y + 25) + App->particlesenemies->bala.speed.y);
 
 			space = 0;
 		}
