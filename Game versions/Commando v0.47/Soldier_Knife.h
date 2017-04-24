@@ -17,8 +17,9 @@ private:
 
 public:
 
+	int original_posx;
 	Enemy_SoldierKnife(int x, int y);
-
+	Path path;
 	void Move();
 };
 

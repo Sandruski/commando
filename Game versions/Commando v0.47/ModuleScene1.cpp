@@ -245,6 +245,10 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIERPRISONER, 44, 1669 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIERPRISONER, 72, 1665 - 2656);
 
+	//SoldierKnife
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_KNIFE, 34, 2072 - 2656);
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_KNIFE, 239, 2075 - 2656);
+
 	return true;
 
 }

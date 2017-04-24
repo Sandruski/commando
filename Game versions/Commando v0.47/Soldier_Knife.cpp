@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "Soldier_Knife.h"
 #include "ModuleCollision.h"
+#include "Path.h"
 
 Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
 {
@@ -16,7 +17,7 @@ Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
 	turn.PushBack({ 177, 110, 18, 18 }); //MORE right
 
 	turn.speed = 0.1f;
-
+	original_posx = x;
 	animation = &turn;
 
 	collider = App->collision->AddCollider({ 0, 0, 18, 18 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
@@ -24,23 +25,14 @@ Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
 
 void Enemy_SoldierKnife::Move()
 {
-	/*
-	if (going_up)
-	{
-	if (wave > 1.0f)
-	going_up = false;
-	else
-	wave += 0.05f;
+	if (original_posx < 100) {
+		path.PushBack({ 0.5f, 0.0f }, 50);
+		path.PushBack({ 0.0f, -0.5f }, 25);
+		path.PushBack({ 0.5f, 0.0f }, 25);
 	}
-	else
-	{
-	if (wave < -1.0f)
-	going_up = true;
-	else
-	wave -= 0.05f;
+	else if (original_posx > 100) {
+		path.PushBack({- 0.5f, 0.0f }, 50);
+		path.PushBack({ 0.0f, -0.5f }, 25);
+		path.PushBack({ -0.5f, 0.0f }, 25);
 	}
-
-	position.y = original_y + (25.0f * sinf(wave));
-	position.x -= 1;
-	*/
 }
