@@ -7,6 +7,7 @@
 #include "ModuleInput.h"
 #include "ModuleUI.h"
 #include "ModuleFonts.h"
+#include "ModuleSaveData.h"
 
 #include<stdio.h>
 #include<string.h>
@@ -57,9 +58,7 @@ bool ModuleUI::Start()
 	bool ret = true;
 
 	LOG("Loading screen UI");
-	font_score = App->fonts->Load("fonts/rtype_font.png", "0123456789", 1);
 	Hud = App->textures->Load("items&HUD&snake.png");
-	Hud2 = App->textures->Load("Alphabet&Numbers&Extra.png");
 
 	if (Hud == nullptr) {
 		LOG("Cannot load the texture");
@@ -114,14 +113,14 @@ update_status ModuleUI::Update()
 			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
 			//
 			cont = 0;
-			char str2[10];
+			str2[10];
 			sprintf_s(str2, "%i", score);
-			App->fonts->BlitText(37, 5 - var, font_score, str2);
+			App->fonts->BlitText(37, 5 - var, App->savedata->font_score, str2);
 			//grenades
 			cont = 1;
-			char str1[10];
+			str1[10];
 			sprintf_s(str1, "%i", grenade);
-			App->fonts->BlitText(129, 215 - var, font_score, str1);
+			App->fonts->BlitText(129, 215 - var, App->savedata->font_score, str1);
 			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 				if (var2 != App->player->position.y)
 					var += 1;
@@ -162,15 +161,13 @@ update_status ModuleUI::Update()
 
 			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
 			//
-			cont = 0;
-			char str4[10];
-			sprintf_s(str4, "%i", score);
+			cont = 0;;
+			sprintf_s(str1, "%i", score);
 			//grenades
 			cont = 1;
-			char str3[10];
-			sprintf_s(str3, "%i", grenade);
-			App->fonts->BlitText(129, 215 - var, font_score, str3);
-			App->fonts->BlitText(37, 5 - var, font_score, str4);
+			sprintf_s(str2, "%i", grenade);
+			App->fonts->BlitText(129, 215 - var, App->savedata->font_score, str2);
+			App->fonts->BlitText(37, 5 - var, App->savedata->font_score, str1);
 			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 				if (var2 != App->player->position.y)
 					var += 1;
@@ -214,14 +211,12 @@ update_status ModuleUI::Update()
 			App->render->Blit(Hud, 116, 213 - var, &MarcadorGranada);
 			//
 			cont = 0;
-			char str4[10];
-			sprintf_s(str4, "%i", score);
+			sprintf_s(str1, "%i", score);
 			//grenades
 			cont = 1;
-			char str3[10];
-			sprintf_s(str3, "%i", grenade);
-			App->fonts->BlitText(129, 215 - var, font_score, str3);
-			App->fonts->BlitText(37, 5 - var, font_score, str4);
+			sprintf_s(str2, "%i", grenade);
+			App->fonts->BlitText(129, 215 - var, App->savedata->font_score, str2);
+			App->fonts->BlitText(37, 5 - var, App->savedata->font_score, str1);
 			if (App->player->position.y <= 110 && abs(App->player->position.y) == abs(110 - App->scene_1->cont)) {
 				if (var2 != App->player->position.y)
 					var += 1;

@@ -19,6 +19,7 @@
 #include "ModuleParticlesGrenade1.h"
 #include "ModuleFonts.h"
 #include "ModuleUI.h"
+#include "ModuleSaveData.h"
 
 Application::Application()
 {
@@ -28,6 +29,7 @@ Application::Application()
 	modules[index_module++] = render = new ModuleRender();
 	modules[index_module++] = input = new ModuleInput();
 	modules[index_module++] = textures = new ModuleTextures();
+	modules[index_module++] = savedata = new ModuleSaveData();
 	modules[index_module++] = fonts = new ModuleFonts();
 	//modules[4] = scene_2 = new ModuleScene2();
 

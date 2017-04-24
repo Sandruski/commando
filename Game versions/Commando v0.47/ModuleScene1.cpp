@@ -48,6 +48,8 @@ ModuleScene1::~ModuleScene1()
 // Load assets
 bool ModuleScene1::Start()
 {
+	if (App->player->vides == 3)
+		App->UI->score = 0;
 	LOG("Loading 1st scene");
 	moto = App->textures->Load("vehicles.png");
 	items = App->textures->Load("items&HUD&snake.png");
