@@ -49,7 +49,6 @@ bool ModuleMenu::Start()
 
 	graphics = App->textures->Load("menu.png");
 	grenade = App->textures->Load("items&HUD&snake.png");
-
 	App->audio->play_music1();
 
 	//Initialize camera and others (prepare it for use)
@@ -65,6 +64,8 @@ bool ModuleMenu::Start()
 // UnLoad assets
 bool ModuleMenu::CleanUp()
 {
+
+	App->UI->score = 0;
 	//App->player->Enable();
 	//App->player->destroyed = false;
 	//find both things in ModuleCinematic

@@ -36,7 +36,7 @@ Application::Application()
 	modules[index_module++] = Menu = new ModuleMenu();
 	modules[index_module++] = cinematic = new ModuleCinematic();
 	modules[index_module++] = scene_1 = new ModuleScene1();
-	modules[index_module++] = END = new ModuleEND();
+	
 
 
 	modules[index_module++] = player = new ModulePlayer();
@@ -68,7 +68,7 @@ bool Application::Init()
 	// Player will be enabled on the first update of a new scene
 	player->Disable();
 	// Disable the map that you do not start with
-	END->Disable();
+
 	scene_1->Disable();
 	collision->Disable();
 //	scene_2->Disable();

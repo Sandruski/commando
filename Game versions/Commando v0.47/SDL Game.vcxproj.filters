@@ -56,9 +56,6 @@
     <ClInclude Include="ModuleScene1.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleEND.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
     <ClInclude Include="ModuleMenu.h">
       <Filter>Modules</Filter>
     </ClInclude>
@@ -158,9 +155,6 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="ModuleScene1.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleEND.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="ModuleMenu.cpp">

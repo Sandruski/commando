@@ -47,7 +47,7 @@ update_status ModuleFadeToBlack::Update()
 			off->CleanUp();
 			off->Disable();
 			on->Enable();
-			if ((App->fade->on == App->END) || (App->fade->on == App->scene_1)) {
+			if ((App->fade->on == App->Menu) || (App->fade->on == App->scene_1)) {
 				App->render->camera.y = 0;
 				App->player->position.x = start_x;
 				App->player->position.y = start_y;

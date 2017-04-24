@@ -332,7 +332,7 @@ update_status ModuleScene1::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN) {
 		App->render->UP = false;
-		App->fade->FadeToBlack(this, App->END, 3);
+		App->fade->FadeToBlack(this, App->Menu, 3);
 	}
 
 	if (App->player->position.y <= 60 - 2656) 
