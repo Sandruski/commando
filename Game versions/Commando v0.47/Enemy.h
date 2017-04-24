@@ -16,6 +16,7 @@ protected:
 public:
 	iPoint position;
 	int type;
+	bool Esperanza;
 
 public:
 	Enemy(int x, int y);

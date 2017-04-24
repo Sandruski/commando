@@ -30,7 +30,7 @@ void Enemy_PrisonerPoints::Move()
 	if ((position.y >= -1200) && (App->player->position.y <= 1712 - 2656) && bonus == false)
 		position.y--;
 	if (position.y == -1200)
-		animation = nullptr;
+		Esperanza = false;
 
 	if (App->enemies->dieE == 4) {
 		animation = &move2;

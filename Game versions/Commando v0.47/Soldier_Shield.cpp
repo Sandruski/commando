@@ -85,22 +85,25 @@ void Enemy_SoldierShield::Move()
 				}
 			}
 		}
-		else if (cont2 >= 550 /*&& cont2 < 700*/) {
-			animation = &surrender;
+		if (cont2 >= 550)
+			cont2 = 0;
+			//else if (cont2 >= 550 /*&& cont2 < 700*/) {
+			/*animation = &surrender;
 			collider->to_delete = true;
-		}
-		//else if (cont2 >= 700) { animation = nullptr; }
+			}*/
+			//else if (cont2 >= 700) { animation = nullptr; }
 	}
 	if (dieB == true) {
-
-		animation = &die;
-		die.speed = 0.1f;
-		if (currentTime > 1000)
-			animation = nullptr;
-	}
+		animation = &surrender;
+		collider->to_delete = true;
+			/*animation = &die;
+			die.speed = 0.1f;
+			if (currentTime > 1000)
+			Esperanza = false;*/
+		}
 }
 
-void Enemy_SoldierShield::OnCollision(Collider* c1) {
+void Enemy_SoldierShield::OnCollision(Collider* c1, Collider* c2) {
 
 
 	if (dieB == false)

@@ -25,7 +25,7 @@ public:
 	bool dieB = false;
 	Enemy_SoldierShield(int x, int y);
 
-	void OnCollision(Collider* c1);
+	void OnCollision(Collider* c1, Collider* c2);
 	void Move();
 };
 

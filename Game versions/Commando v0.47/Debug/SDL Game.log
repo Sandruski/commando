@@ -1,5 +1,3 @@
-﻿  ModulePlayer.cpp
-c:\users\sandra\documents\github\gets-name-\game versions\commando v0.47\moduleplayer.cpp(59): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\sandra\documents\github\gets-name-\game versions\commando v0.47\moduleplayer.cpp(64): warning C4305: '=': truncation from 'double' to 'float'
-  SDL Game.vcxproj -> C:\Users\Sandra\Documents\GitHub\gets-name-\Game versions\Commando v0.47\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Sandra\Documents\GitHub\gets-name-\Game versions\Commando v0.47\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  ModuleEnemies.cpp
+  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\Commando v0.47\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\Commando v0.47\Debug\SDL5 Handout.pdb (Full PDB)

@@ -44,8 +44,8 @@ void Enemy_SoldierPrisoner::Move()
 	else {
 		animation = &die;
 		die.speed = 0.1f;
-		if (currentTime > 1000)
-			animation = nullptr;
+		if (currentTime > 800)
+			Esperanza = false;
 	}
 }
 

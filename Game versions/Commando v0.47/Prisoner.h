@@ -20,7 +20,7 @@ private:
 public:
 	bool move = false;
 	Enemy_Prisoner(int x, int y);
-	void OnCollision(Collider* c1);
+	void OnCollision(Collider* c1, Collider* c2);
 	void Move();
 };
 

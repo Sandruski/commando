@@ -40,7 +40,7 @@ void Enemy_Prisoner::Move()
 }
 
 
-void Enemy_Prisoner::OnCollision(Collider* c1) {
+void Enemy_Prisoner::OnCollision(Collider* c1, Collider* c2) {
 	if (move == false)
 		App->UI->score += 500;
 	move = true;

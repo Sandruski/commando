@@ -37,8 +37,9 @@ void Enemy_SoldierGrenade::Move()
 
 		animation = &die;
 		die.speed = 0.1f;
-		if (currentTime > 1000)
-			animation = nullptr;
+		if (currentTime > 800)
+			Esperanza = false;
+
 	}
 	/*
 	if (going_up)

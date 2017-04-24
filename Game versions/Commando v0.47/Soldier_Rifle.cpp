@@ -103,8 +103,8 @@ void Enemy_SoldierRifle::Move()
 
 		animation = &die;
 		die.speed = 0.1f;
-		if (currentTime > 1000)
-			animation = nullptr;
+		if (currentTime > 800)
+			Esperanza = false;
 	}
 }
 

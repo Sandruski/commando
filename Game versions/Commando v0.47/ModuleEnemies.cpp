@@ -82,7 +82,7 @@ update_status ModuleEnemies::PostUpdate()
 	{
 		if (enemies[i] != nullptr)
 		{
-			if (enemies[i]->position.y > (110 - App->scene_1->cont + 88) + SPAWN_MARGIN)
+			if ((enemies[i]->position.y > (110 - App->scene_1->cont + 88) + SPAWN_MARGIN) || enemies[i]->Esperanza == false)
 				//if(enemies[i]->position.x * SCREEN_SIZE < (App->render->camera.x) - SPAWN_MARGIN)
 			{
 				LOG("DeSpawning enemy at %d", enemies[i]->position.y * SCREEN_SIZE);
@@ -141,43 +141,53 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 
 	if (i != MAX_ENEMIES)
 	{
+
 		switch (info.type)
 		{
 		case ENEMY_TYPES::SOLDIER_RIFLE:
 			enemies[i] = new Enemy_SoldierRifle(info.x, info.y);
 			enemies[i]->type = ENEMY_TYPES::SOLDIER_RIFLE;
+			enemies[i]->Esperanza = true;
 			break;
 		case ENEMY_TYPES::SOLDIER_GRENADE:
 			enemies[i] = new Enemy_SoldierGrenade(info.x, info.y);
 			enemies[i]->type = ENEMY_TYPES::SOLDIER_GRENADE;
+			enemies[i]->Esperanza = true;
 			break;
 		case ENEMY_TYPES::SOLDIER_KNIFE:
 			enemies[i] = new Enemy_SoldierKnife(info.x, info.y);
 			enemies[i]->type = ENEMY_TYPES::SOLDIER_KNIFE;
+			enemies[i]->Esperanza = true;
 			break;
 		case ENEMY_TYPES::SOLDIER:
 			enemies[i] = new Enemy_Soldier(info.x, info.y);
 			enemies[i]->type = ENEMY_TYPES::SOLDIER;
+			enemies[i]->Esperanza = true;
 			break;
 		case ENEMY_TYPES::SOLDIER_SHIELD:
 			enemies[i] = new Enemy_SoldierShield(info.x, info.y);
 			enemies[i]->type = ENEMY_TYPES::SOLDIER_SHIELD;
+			enemies[i]->Esperanza = true;
 			break;
 		case ENEMY_TYPES::CRAZY_GREEN:
 			enemies[i] = new Enemy_CrazyGreen(info.x, info.y);
 			enemies[i]->type = ENEMY_TYPES::CRAZY_GREEN;
+			enemies[i]->Esperanza = true;
 			break;
 		case ENEMY_TYPES::PRISONER:
 			enemies[i] = new Enemy_Prisoner(info.x, info.y);
 			enemies[i]->type = ENEMY_TYPES::PRISONER;
+			enemies[i]->Esperanza = true;
 			break;
 		case ENEMY_TYPES::PRISONERPOINTS:
 			enemies[i] = new Enemy_PrisonerPoints(info.x, info.y);
 			enemies[i]->type = ENEMY_TYPES::PRISONERPOINTS;
+			enemies[i]->Esperanza = true;
 			break;
 		case ENEMY_TYPES::SOLDIERPRISONER:
 			enemies[i] = new Enemy_SoldierPrisoner(info.x, info.y);
 			enemies[i]->type = ENEMY_TYPES::SOLDIERPRISONER;
+			enemies[i]->Esperanza = true;
 			break;
 		}
 	}
@@ -210,11 +220,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					}
 				}
 
-				else if (c1->type == COLLIDER_ENEMY) {
+				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER) {
 					enemies[i]->OnCollision(c1, c2);
 					c1->to_delete = true;
 				}
-				else if (c2->type == COLLIDER_ENEMY) {
+				else if (c2->type == COLLIDER_ENEMY && c1->type != COLLIDER_PLAYER) {
 					enemies[i]->OnCollision(c2, c1);
 					c2->to_delete = true;
 				}
