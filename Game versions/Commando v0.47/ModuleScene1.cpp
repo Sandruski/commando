@@ -82,10 +82,10 @@ bool ModuleScene1::Start()
 	App->audio->play_music2();
 
 	//Colliders
-	App->collision->AddCollider({ 136,2817 - 2656,19,23 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 148,2800 - 2656,21,23 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 171,2817 - 2656,20,24 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 22,2769 - 2656,26,23 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 133,2817 - 2656,20,23 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 153,2802 - 2656,18,17 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 171,2817 - 2656,20,23 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 22,2769 - 2656,20,20 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 193,2705 - 2656,61,26 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 84,2640 - 2656,29,25 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,2642 - 2656,43,25 }, COLLIDER_WALL, this);
@@ -109,13 +109,13 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 71,1861 - 2656,81,51 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 256,1750 - 2656,57,50 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,1702 - 2656,57,53 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 70,1698 - 2656,22,20 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 108,1698 - 2656,24,22 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 86,1682 - 2656,24,19 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 70,1698 - 2656,20,23 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 108,1698 - 2656,20,23 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 86,1682 - 2656,20,23 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 22,1538 - 2656,24,22 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 149,1538 - 2656,24,22 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 86,1472 - 2656,24,22 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 192,1473 - 2656,57,6 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 195,1470 - 2656,57,8 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,1343 - 2656,100,81 }, COLLIDER_WALL, this);  //Pont
 	App->collision->AddCollider({ 156,1343 - 2656,100,81 }, COLLIDER_WALL, this); //Pont
 																				  //-------------- Pedres
@@ -137,7 +137,7 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 22,721 - 2656,24,22 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 67,752 - 2656,56,8 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 147,671 - 2656,73,8 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 209,1456 - 2656,14,14 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 209,1456 - 2656,19,18 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,639 - 2656,56,8 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 100,575 - 2656,56,8 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,511 - 2656,75,8 }, COLLIDER_WALL, this);
