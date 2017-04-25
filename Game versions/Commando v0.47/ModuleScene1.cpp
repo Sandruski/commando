@@ -266,6 +266,9 @@ bool ModuleScene1::CleanUp()
 {
 	LOG("Unloading 1st scene");
 	App->textures->Unload(graphics);
+	App->textures->Unload(moto);
+	App->textures->Unload(items);
+	App->textures->Unload(win);
 
 	App->enemies->Disable();
 	App->collision->Disable();

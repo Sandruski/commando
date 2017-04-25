@@ -86,6 +86,7 @@ bool ModuleUI::CleanUp()
 
 	LOG("Unloading screen UI");
 	App->textures->Unload(Hud);
+	App->textures->Unload(Hud2);
 
 	return false;
 }

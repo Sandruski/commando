@@ -80,6 +80,8 @@ bool ModuleCinematic::CleanUp()
 {
 	LOG("Unloading 1st scene");
 	App->textures->Unload(graphics2);
+	App->textures->Unload(helicopter);
+	App->textures->Unload(playerhelicopter);
 	App->player->Enable();
 	App->player->move = false;
 	helicont = 0;

@@ -71,6 +71,9 @@ bool ModuleMenu::CleanUp()
 	//App->player->Enable();
 	//App->player->destroyed = false;
 	//find both things in ModuleCinematic
+	App->textures->Unload(graphics);
+	App->textures->Unload(grenade);
+	
 
 	LOG("Unloading menu scene");
 	return true;
