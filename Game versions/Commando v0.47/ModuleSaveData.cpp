@@ -43,6 +43,10 @@ update_status ModuleSaveData::Update()
 
 bool ModuleSaveData::CleanUp()
 {
+	App->textures->Unload(Hud2);
+	App->fonts->UnLoad(font_score);
+	App->fonts->UnLoad(font_score2);
+	
 	return true;
 }
 
