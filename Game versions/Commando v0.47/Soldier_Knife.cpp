@@ -1,6 +1,9 @@
 #include "Application.h"
 #include "Soldier_Knife.h"
 #include "ModuleCollision.h"
+#include "ModulePlayer.h"
+#include "ModuleUI.h"
+#include "SDL/include/SDL_timer.h"
 #include "Path.h"
 
 Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
@@ -14,52 +17,97 @@ Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
 	down.PushBack({ 199, 219, 18, 18 }); //abaix
 	down.PushBack({ 225, 219, 13, 23 }); //abaix
 
-	right.speed = 0.5f;
-	left.speed = 0.5f;
-	down.speed = 0.5f;
+	right.speed = 0.05f;
+	left.speed = 0.05f;
+	down.speed = 0.05f;
 
 
-	//animation = &right;
-	path.PushBack({ 0.5f, 0.0f }, 50);
+	die.PushBack({ 6, 111, 16, 27 });
+	die.PushBack({ 40, 104, 15, 27 });
+	die.PushBack({ 25, 111, 16, 27 });
+	die.PushBack({ 40, 104, 15, 27 });
+
+	/*//animation = &right;
+	path.PushBack({ +0.5f, +0.0f }, 50);
 	//animation = &down;
-	path.PushBack({ 0.0f, -0.5f }, 25);
+	path.PushBack({ +0.0f, -0.5f }, 25);
 	//animation = &right;
-	path.PushBack({ 0.5f, 0.0f }, 25);
+	path.PushBack({ +0.5f, +0.0f }, 25);
 
 	//animation = &left;
-	path1.PushBack({ -0.5f, 0.0f }, 50);
+	path1.PushBack({ -0.5f, +0.0f }, 50);
 	//animation = &down;
-	path1.PushBack({ 0.0f, -0.5f }, 25);
+	path1.PushBack({ +0.0f, -0.5f }, 25);
 	//animation = &left;
-	path1.PushBack({ -0.5f, 0.0f }, 25);
-	
+	path1.PushBack({ -0.5f, +0.0f }, 25);*/
+
 	original_pos.x = x;
 	original_pos.y = y;
-	animation = &right;
+	animation = &left;
+
 
 	collider = App->collision->AddCollider({ 0, 0, 18, 18 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_SoldierKnife::Move()
 {
-	
-	//if (original_pos.x <= 100) {
-	//	position = original_pos + path.GetCurrentPosition(&animation);
-	//}
-	//else if (original_pos.x > 100) {
-		//position = original_pos + path1.GetCurrentPosition(&animation);
-	//}
-	if (position.x < 140 && cont == 0) {
-		position.x++;
-		cont = 1;
+	/*if (original_pos.x <= 100) {
+	animation = &right;
+	position = original_pos + path.GetCurrentPosition(&animation);
 	}
-	else if (position.y > 2085 - 2656 && cont == 1) {
-		position.y++;
-		cont = 3;
+	else if (original_pos.x >= 100) {
+	animation = &left;
+	position = original_pos + path1.GetCurrentPosition(&animation);
 	}
-	else if (position.x < 300 && cont == 3) {
-		position.y++;
+	*/
+
+	currentTime = SDL_GetTicks();
+	currentTime -= lastTime;
+
+	if (dieB == false) {
+		lastTime = SDL_GetTicks();
+
+		if (App->player->position.y <= -450) {
+			if (position.x <= 240 && cont == 0) {
+				position.x--;
+				if (position.x == 150)
+					cont = 1;
+			}
+			if (position.y >= -581 && cont == 1) {
+				animation = &down;
+				position.y++;
+
+				if (position.y == -525)
+					cont = 3;
+
+			}
+			if (position.x >= 150 && cont == 3) {
+				position.x++;
+				animation = &right;
+				if (position.x == 240)
+					cont = 1;
+			}
+		}
+
 	}
-	
-	
+
+	if (dieB == true) {
+
+		animation = &die;
+		die.speed = 0.1f;
+		if (currentTime > 800)
+			Esperanza = false;
+
+	}
+}
+
+void Enemy_SoldierKnife::OnCollision(Collider* c1, Collider* c2) {
+
+	if (dieB == false) {
+		if (c2->type == COLLIDER_PLAYER_SHOT)
+			App->UI->score += 75;
+		else if (c2->type == COLLIDER_END_OF_GRENADE)
+			App->UI->score += 150;
+	}
+	dieB = true;
 }

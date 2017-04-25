@@ -13,13 +13,18 @@ private:
 	int original_y = 0;
 	int original_x = 0;
 
-	Animation up, down, right, left;
+	Animation up, down, right, left, die;
 	iPoint original_pos;
-	int cont = 0;
+	int cont;
 
 public:
 
 	Enemy_SoldierKnife(int x, int y);
+
+	void OnCollision(Collider* c1, Collider* c2);
+	bool dieB = false;
+	uint lastTime, currentTime;
+
 	Path path, path1;
 	void Move();
 };

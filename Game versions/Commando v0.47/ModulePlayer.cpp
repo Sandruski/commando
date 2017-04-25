@@ -489,8 +489,9 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 
 	if (App->fade->IsFading() == false)
 	{
-		vides--;
+
 		if (vides != 0) {
+			vides--;
 			App->audio->pause_music();
 			App->audio->play_fx6();
 			App->fade->FadeToBlack(App->scene_1, App->scene_1, 5.0f);
