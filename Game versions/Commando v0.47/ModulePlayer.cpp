@@ -50,7 +50,7 @@ ModulePlayer::ModulePlayer()
 	diagSD.PushBack({ 80, 15, 17, 25 });
 	diagSD.PushBack({ 97, 16, 17, 24 });
 
-	invisible.PushBack({ 209, 202, 17, 24 });
+	invisible.PushBack({ 162, 231, 10, 10 });
 
 	waterDie.PushBack({ 239, 16, 13, 16 });
 

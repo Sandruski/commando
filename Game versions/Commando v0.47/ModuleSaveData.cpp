@@ -34,6 +34,7 @@ bool ModuleSaveData::Init()
 
 update_status ModuleSaveData::Update()
 {	
+	if(savescore_p1 < App->UI->score)
 	savescore_p1 = App->UI->score;
 	if (savescore < App->UI -> score)
 		savescore = App->UI -> score;

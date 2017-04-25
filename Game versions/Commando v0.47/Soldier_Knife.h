@@ -13,13 +13,14 @@ private:
 	int original_y = 0;
 	int original_x = 0;
 
-	Animation turn;
+	Animation up, down, right, left;
+	iPoint original_pos;
+	int cont = 0;
 
 public:
 
-	int original_posx;
 	Enemy_SoldierKnife(int x, int y);
-	Path path;
+	Path path, path1;
 	void Move();
 };
 
