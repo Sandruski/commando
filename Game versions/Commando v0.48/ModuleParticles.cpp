@@ -96,8 +96,17 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 		{
 			Particle* p = new Particle(particle);
 			p->born = SDL_GetTicks() + delay;
-			p->position.x = x + 9;
-			p->position.y = y + 7;
+			if (collider_type == COLLIDER_PLAYER_SHOT)
+			{
+				p->position.x = x + 9;
+				p->position.y = y + 7;
+			}
+			else if (collider_type == COLLIDER_END_OF_BULLET)
+			{
+				p->position.x = x;
+				p->position.y = y;
+			}
+		
 			if (collider_type != COLLIDER_NONE)
 				p->collider = App->collision->AddCollider(p->anim.GetCurrentFrame(), collider_type, this);
 			active[i] = p;

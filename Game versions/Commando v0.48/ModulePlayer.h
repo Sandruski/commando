@@ -43,6 +43,8 @@ public:
 	bool GOD = false;
 	int speed;
 	bool timeW = false;
+
+	bool cooldown = false;
 	uint lastTime, currentTime;
 
 	bool non_grenade = false;

@@ -13,7 +13,7 @@ Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
 	right.PushBack({ 198, 188, 16, 22 }); //dreta
 	right.PushBack({ 3, 229, 16, 22 }); //dreta
 	left.PushBack({ 24, 229, 16, 22 }); //esquerra
-	left.PushBack({ 219, 199, 16, 22 }); //esquerra
+	left.PushBack({ 219, 188, 16, 22 }); //esquerra
 	down.PushBack({ 199, 219, 18, 18 }); //abaix
 	down.PushBack({ 225, 219, 13, 23 }); //abaix
 

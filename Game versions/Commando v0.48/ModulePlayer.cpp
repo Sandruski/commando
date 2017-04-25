@@ -139,8 +139,9 @@ update_status ModulePlayer::Update()
 	//GRENADE
 	//Grenades must be retouched because now if player throws 2 grenades, only kills the last one
 
-	if (non_grenade == false && App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN && App->UI->grenade > 0 && (position.y >= 1405 - 2656 || App->player->position.y <= 1338 - 2666))
+	if (cooldown == false && non_grenade == false && App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN && App->UI->grenade > 0 && (position.y >= 1405 - 2656 || App->player->position.y <= 1338 - 2666))
 	{
+		cooldown = true;
 		non_grenade = false;
 		check_grenade = 0;
 		update_position_grenade = 0;
@@ -169,6 +170,7 @@ update_status ModulePlayer::Update()
 		App->particlesgrenade1->grenade.speed.y = +1;
 		App->particlesgrenade1->AddParticle(App->particlesgrenade1->grenade, position.x, position.y - 110, COLLIDER_PLAYER_GRENADE, NULL);
 		App->audio->play_fx5();
+		cooldown = false;
 	}
 
 	if (grenade.loops == 1) {

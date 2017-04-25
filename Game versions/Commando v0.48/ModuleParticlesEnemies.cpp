@@ -107,8 +107,8 @@ void ModuleParticlesEnemies::AddParticle(const Particle1& particle, int x, int y
 		{
 			Particle1* p = new Particle1(particle);
 			p->born = SDL_GetTicks() + delay;
-			p->position.x = x + 9;
-			p->position.y = y - 15;
+			p->position.x = x /*+ 9*/;
+			p->position.y = y /*- 15*/;
 			p->speed.x = speed.x;
 			p->speed.y = speed.y;
 			if (collider_type != COLLIDER_NONE)
