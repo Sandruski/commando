@@ -48,6 +48,11 @@ ModuleUI::ModuleUI()
 	MarcadorGranada.w = 12;
 	MarcadorGranada.h = 13;
 
+	lvl1.x = 18;
+	lvl1.y = 100;
+	lvl1.w = 23;
+	lvl1.h = 13;
+
 }
 ModuleUI::~ModuleUI()
 {
@@ -83,6 +88,10 @@ bool ModuleUI::CleanUp()
 
 update_status ModuleUI::Update()
 {
+	if (tempo1 <= 40) {
+		App->render->Blit(Hud2, 111, 100 - App->scene_1->cont, &lvl1);
+		tempo1++;
+	}
 
 		if (App->player->position.y == (110 - App->scene_1->cont) && App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT ) {
 			cont = 1;

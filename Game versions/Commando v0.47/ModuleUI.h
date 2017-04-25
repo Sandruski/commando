@@ -25,12 +25,13 @@ public:
 
 	SDL_Texture* Hud = nullptr;
 	SDL_Texture* Hud2 = nullptr;
-
+	SDL_Texture* level = nullptr;
 	SDL_Rect MarcadorVida;
 	SDL_Rect vida0;
 	SDL_Rect vida1;
 	SDL_Rect vida2;
 	SDL_Rect vida3;
+	SDL_Rect lvl1;
 	SDL_Rect MarcadorGranada;
 	int font_score = -1;
 	char score_text[10];
@@ -40,6 +41,8 @@ public:
 	char str1[10];
 	char str2[10];
 	char str3[10];
+	int tempo1;
+
 
 	//bool characterselection_ui;
 private:

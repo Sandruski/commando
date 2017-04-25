@@ -462,10 +462,11 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 
 	if (App->fade->IsFading() == false)
 	{
-		vides--;
+		
 		if (vides != 0) {
 			waterB = false;
 			if (timeW == true) {
+				vides--;
 				App->audio->pause_music();
 				App->audio->play_fx6();
 				App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_END_OF_BULLET, NULL);

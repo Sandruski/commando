@@ -356,6 +356,19 @@ update_status ModuleScene1::Update()
 		App->fade->FadeToBlack(App->scene_1, App->Menu);
 		App->player->vides = 3;
 	}
+	cont8 = true;
+
+	if (cont8 == true) {
+		current_animation = &lvl1;
+		r = current_animation->GetCurrentFrame();
+		App->render->Blit(level, 110, 100, &r);
+		cont7++;
+
+		if (cont7 == 20)
+			App->fade->FadeToBlack(App->scene_1, App->scene_1);
+
+	}
+
 
 
 	return ret;
