@@ -15,6 +15,7 @@
 #include "ModuleParticles.h"
 #include "ModuleCinematic.h"
 #include "ModuleUI.h"
+#include <windows.h>
 
 ModuleScene1::ModuleScene1()
 {
@@ -75,6 +76,15 @@ bool ModuleScene1::Start()
 
 	//Initialize audio
 	check_audio = true;
+	check_audio1 = true;
+	check_audio2 = true;
+	check_audio3 = true;
+
+	//Initialize moto
+	w = 0;
+	h = SCREEN_HEIGHT - 2880;
+	w_m = 255, h_m = 20;
+	contador = 0;
 
 	//Initialize camera and others (prepare it for use)
 	App->render->camera.x = App->render->camera.y = 0;
@@ -274,7 +284,7 @@ update_status ModuleScene1::Update()
 		App->audio->play_music2();
 		check_audio = false;
 	}
-
+	
 	//CAMERA
 	//middle screen (where camera goes up) = 110 - cont
 	//bottom screen = 110 - cont + 88
@@ -313,6 +323,10 @@ update_status ModuleScene1::Update()
 	//-2656
 	if (App->player->position.y <= 1550 - 2656 && contador < 120) { /* && App->player->position.y >= 1300 - 2656 */
 		if (w_m > 105) {
+			if (check_audio1) {
+				App->audio->play_fx9();
+				check_audio1 = false;
+			}
 			current_animation = &moto_go;
 			r = current_animation->GetCurrentFrame();
 			App->render->Blit(moto, w_m, 1345 - 2656, &r);
@@ -328,6 +342,10 @@ update_status ModuleScene1::Update()
 	}
 
 	else if (contador >= 120) {
+		if (check_audio2) {
+			App->audio->play_fx10();
+			check_audio2 = false;
+		}
 		Animation* current_animation = &moto_go;
 		r = current_animation->GetCurrentFrame();
 		App->render->Blit(moto, w_m, 1345 - 2656, &r);
@@ -357,6 +375,14 @@ update_status ModuleScene1::Update()
 		App->player->vides = 3;
 	}
 	cont8 = true;
+
+	if (App->player->position.y == 119 - 2565) {
+		App->audio->pause_music();
+		if (check_audio3) {
+			App->audio->play_music7();
+			check_audio3 = false;
+		}
+	}
 
 	if (cont8 == true) {
 		current_animation = &lvl1;

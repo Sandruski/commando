@@ -7,10 +7,14 @@
 #include "ModuleInput.h"
 #include "ModuleUI.h"
 #include "ModuleFonts.h"
+#include "ModuleAudio.h"
 #include "ModuleSaveData.h"
 
+#include <windows.h>
+#include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
+using namespace std;
 
 ModuleUI::ModuleUI()
 {
@@ -72,7 +76,7 @@ bool ModuleUI::Start()
 	gate = false;
 	var = 0;
 	var2 = 0;
-
+	tempo1 = 0;
 	return ret;
 }
 
@@ -88,7 +92,7 @@ bool ModuleUI::CleanUp()
 
 update_status ModuleUI::Update()
 {
-	if (tempo1 <= 40) {
+	if (tempo1 <= 120) {
 		App->render->Blit(Hud2, 111, 100 - App->scene_1->cont, &lvl1);
 		tempo1++;
 	}

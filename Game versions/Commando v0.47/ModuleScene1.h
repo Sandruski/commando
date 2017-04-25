@@ -44,9 +44,12 @@ public:
 	int w_m = 255, h_m = 20;
 	double long contador = 0;
 
-	bool check_audio = true;
+	bool check_audio = true, check_audio1 = true, check_audio2 = true, check_audio3 = true;
 	//Camera parameters
 	int cont = 0, speed = 3;
+
+	int tempo1 = 0;
+	bool check_UI = true;
 };
 
 

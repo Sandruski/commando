@@ -51,6 +51,8 @@ private:
 public:
 	Particle1 bala;
 	Particle1 explosion;
+	Particle1 grenade;
+	Particle1 explosiongrenade;
 };
 
 #endif

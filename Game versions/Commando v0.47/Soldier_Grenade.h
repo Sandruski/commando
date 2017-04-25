@@ -22,6 +22,10 @@ public:
 	bool dieB = false;
 	uint lastTime, currentTime;
 
+	fPoint enemyplayer, enemyplayeru;
+	float module, angle;
+	int rand1 = 3, num_shots, space = 0;
+
 	void Move();
 };
 

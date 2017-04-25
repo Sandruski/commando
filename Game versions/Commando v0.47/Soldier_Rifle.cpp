@@ -2,6 +2,7 @@
 #include "Soldier_Rifle.h"
 #include "ModuleCollision.h"
 #include "ModuleUI.h"
+#include "ModuleParticlesGrenade1.h"
 #include "ModulePlayer.h"
 #include "ModuleParticlesEnemies.h"
 #include <stdlib.h>
@@ -43,7 +44,7 @@ void Enemy_SoldierRifle::Move()
 
 	if (dieB == false) {
 		lastTime = SDL_GetTicks();
-		
+
 		//MOVEMENT
 		if (App->player->position.x <= position.x - 22) {
 			animation = &more_left;

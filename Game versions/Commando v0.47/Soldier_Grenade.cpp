@@ -2,6 +2,11 @@
 #include "Soldier_Grenade.h"
 #include "ModuleCollision.h"
 #include "ModuleUI.h"
+#include "ModulePlayer.h"
+#include "ModuleParticlesEnemies.h"
+#include <stdlib.h>
+#include <time.h>
+
 #include "SDL/include/SDL_timer.h"
 
 Enemy_SoldierGrenade::Enemy_SoldierGrenade(int x, int y) : Enemy(x, y)
@@ -29,7 +34,37 @@ void Enemy_SoldierGrenade::Move()
 	currentTime = SDL_GetTicks();
 	currentTime -= lastTime;
 
-	if (dieB == false) 
+	//SHOT
+	num_shots = rand() % 4;
+
+	if (rand1 == 3 && App->player->position.y > position.y + 24) {
+
+		for (int i = 0; i <= num_shots; i++) {
+			App->particlesenemies->AddParticle(App->particlesenemies->grenade, position.x, (position.y + 25), COLLIDER_PLAYER_GRENADE, NULL, enemyplayeru); //position.y+30+space
+			space = rand() % 10 + 5;
+		}
+
+		enemyplayer.x = (App->player->position.x + 5) - position.x;
+		enemyplayer.y = abs(position.y + 25) - abs(App->player->position.y + 10);
+
+		module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
+		enemyplayeru.x = enemyplayer.x / module;
+		enemyplayeru.y = enemyplayer.y / module;
+
+		//angle = atan(enemyplayer.x / enemyplayer.y); do not use. Only if needed
+
+		App->particlesenemies->bala.speed.x = enemyplayeru.x;
+		App->particlesenemies->bala.speed.y = enemyplayeru.y;
+
+		//App->particlesenemies->bala.position.x = (position.x + App->particlesenemies->bala.speed.x);
+		//App->particlesenemies->bala.position.y = ((position.y + 25) + App->particlesenemies->bala.speed.y);
+
+		space = 0;
+	}
+
+	rand1 = rand() % 500;
+
+	if (dieB == false)
 		lastTime = SDL_GetTicks();
 
 
@@ -41,25 +76,6 @@ void Enemy_SoldierGrenade::Move()
 			Esperanza = false;
 
 	}
-	/*
-	if (going_up)
-	{
-	if (wave > 1.0f)
-	going_up = false;
-	else
-	wave += 0.05f;
-	}
-	else
-	{
-	if (wave < -1.0f)
-	going_up = true;
-	else
-	wave -= 0.05f;
-	}
-
-	position.y = original_y + (25.0f * sinf(wave));
-	position.x -= 1;
-	*/
 
 
 

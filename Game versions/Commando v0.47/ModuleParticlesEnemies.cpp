@@ -24,6 +24,21 @@ bool ModuleParticlesEnemies::Start()
 	LOG("Loading particles");
 	graphics = App->textures->Load("particles.png");
 
+	grenade.anim.PushBack({ 126, 16, 5, 6 });
+	grenade.anim.PushBack({ 139, 16, 5, 6 });
+	grenade.anim.PushBack({ 126, 16, 5, 6 });
+	grenade.anim.PushBack({ 139, 16, 5, 6 });
+	grenade.anim.PushBack({ 126, 16, 5, 6 });
+	grenade.anim.PushBack({ 139, 16, 5, 6 });
+	grenade.anim.speed = 0.1f;
+	grenade.speed.y = -6;
+	grenade.life = 1500;
+
+	explosiongrenade.anim.PushBack({ 24, 117, 15, 14 });
+	explosiongrenade.anim.PushBack({ 62, 112, 25, 24 });
+	explosiongrenade.anim.speed = 0.07f;
+	explosiongrenade.anim.loop = false;
+
 	bala.anim.PushBack({ 32, 16, 7, 7 });
 
 	explosion.anim.PushBack({ 16,34,11,11 });
@@ -151,6 +166,11 @@ bool Particle1::Update()
 			{
 				App->particlesenemies->AddParticle(App->particlesenemies->explosion, position.x, position.y, COLLIDER_END_OF_BULLET, NULL, App->particlesenemies->explosion.speed);
 			}
+			if (collider->type == COLLIDER_PLAYER_GRENADE)
+			{
+				App->particlesenemies->AddParticle(App->particlesenemies->explosiongrenade, position.x, position.y, COLLIDER_ENEMY_SHOT, NULL, App->particlesenemies->explosiongrenade.speed);
+			}
+
 
 			ret = false;
 		}

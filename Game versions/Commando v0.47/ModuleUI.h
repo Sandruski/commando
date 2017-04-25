@@ -43,6 +43,8 @@ public:
 	char str3[10];
 	int tempo1;
 
+	bool check_sleep = true, check_UI = true;
+
 
 	//bool characterselection_ui;
 private:
