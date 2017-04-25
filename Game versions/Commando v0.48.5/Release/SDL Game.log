@@ -1,0 +1,10 @@
+﻿  ModulePlayer.cpp
+ModulePlayer.cpp(59): warning C4305: '=': truncation from 'double' to 'float'
+ModulePlayer.cpp(64): warning C4305: '=': truncation from 'double' to 'float'
+  Generating code
+  0 of 310 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\Commando v0.48\Release\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\Commando v0.48\Release\SDL5 Handout.pdb (Full PDB)
