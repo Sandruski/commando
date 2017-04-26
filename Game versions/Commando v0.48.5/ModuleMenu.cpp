@@ -53,8 +53,8 @@ bool ModuleMenu::Start()
 	App->particles->Disable();
 	App->player->Disable();
 
-	graphics = App->textures->Load("menu.png");
-	grenade = App->textures->Load("items&HUD&snake.png");
+	graphics = App->textures->Load("assets/menu.png");
+	grenade = App->textures->Load("assets/items&HUD&snake.png");
 
 	App->player->vides = 3;
 	App->UI->grenade = 3;

@@ -66,9 +66,9 @@ bool ModuleCinematic::Start()
 	App->audio->play_music8();
 
 	LOG("Loading cinematic scene");
-	helicopter = App->textures->Load("helicopterfix.png");
-	graphics2 = App->textures->Load("1-1.png");
-	playerhelicopter = App->textures->Load("spritesheet_humanos.png");
+	helicopter = App->textures->Load("assets/helicopterfix.png");
+	graphics2 = App->textures->Load("assets/1-1.png");
+	playerhelicopter = App->textures->Load("assets/spritesheet_humanos.png");
 
 	return true;
 }

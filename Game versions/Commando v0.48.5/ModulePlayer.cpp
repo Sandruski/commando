@@ -94,7 +94,7 @@ bool ModulePlayer::Start()
 	p4.y = position.y + 30;
 
 	LOG("Loading player textures");
-	graphics = App->textures->Load("spritesheet_humanos.png");
+	graphics = App->textures->Load("assets/spritesheet_humanos.png");
 
 	return true;
 }

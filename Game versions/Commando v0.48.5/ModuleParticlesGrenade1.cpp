@@ -39,7 +39,7 @@ bool ModuleParticlesGrenade1::Start()
 	grenade.life = 300;
 	explosion.life = 450;
 
-	graphics = App->textures->Load("particles.png");
+	graphics = App->textures->Load("assets/particles.png");
 
 	return true;
 }

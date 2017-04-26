@@ -25,9 +25,9 @@ ModuleSaveData::~ModuleSaveData()
 bool ModuleSaveData::Init()
 {
 
-	Hud2 = App->textures->Load("Alphabet&Numbers&Extra.png");
-	font_score = App->fonts->Load("fonts/Commando_font.png", "0123456789", 1);
-	font_score2 = App->fonts->Load("fonts/Commando_font2.png", "0123456789", 1);
+	Hud2 = App->textures->Load("assets/Alphabet&Numbers&Extra.png");
+	font_score = App->fonts->Load("assets/fonts/Commando_font.png", "0123456789", 1);
+	font_score2 = App->fonts->Load("assets/fonts/Commando_font2.png", "0123456789", 1);
 	return true;
 }
 

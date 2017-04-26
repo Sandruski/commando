@@ -51,10 +51,10 @@ bool ModuleScene1::Start()
 	if (App->player->vides == 3)
 		App->UI->score = 0;
 	LOG("Loading 1st scene");
-	moto = App->textures->Load("vehicles.png");
-	items = App->textures->Load("items&HUD&snake.png");
-	graphics = App->textures->Load("1-1.png");
-	win = App->textures->Load("win.png");
+	moto = App->textures->Load("assets/vehicles.png");
+	items = App->textures->Load("assets/items&HUD&snake.png");
+	graphics = App->textures->Load("assets/1-1.png");
+	win = App->textures->Load("assets/win.png");
 	background.x = 0;
 	background.y = 0;
 	background.w = 256;

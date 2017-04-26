@@ -39,7 +39,7 @@ ModuleParticles::~ModuleParticles()
 bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
-	graphics = App->textures->Load("particles.png");
+	graphics = App->textures->Load("assets/particles.png");
 
 	return true;
 }

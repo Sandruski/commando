@@ -36,7 +36,7 @@ ModuleEnemies::~ModuleEnemies()
 bool ModuleEnemies::Start()
 {
 	
-	sprites = App->textures->Load("spritesheet_humanos.png");
+	sprites = App->textures->Load("assets/spritesheet_humanos.png");
 
 
 

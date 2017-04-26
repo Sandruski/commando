@@ -32,7 +32,7 @@ ModuleParticlesGrenade::~ModuleParticlesGrenade()
 bool ModuleParticlesGrenade::Start()
 {
 	LOG("Loading particles");
-	graphics = App->textures->Load("particles.png");
+	graphics = App->textures->Load("assets/particles.png");
 
 	grenade.life = 900;
 

@@ -67,8 +67,8 @@ bool ModuleUI::Start()
 	bool ret = true;
 
 	LOG("Loading screen UI");
-	Hud = App->textures->Load("items&HUD&snake.png");
-	Hud2 = App->textures->Load("Alphabet&Numbers&Extra.png");
+	Hud = App->textures->Load("assets/items&HUD&snake.png");
+	Hud2 = App->textures->Load("assets/Alphabet&Numbers&Extra.png");
 	if (Hud == nullptr) {
 		LOG("Cannot load the texture");
 		ret = false;
