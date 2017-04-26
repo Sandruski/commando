@@ -112,6 +112,9 @@ void Enemy_Soldier::Move()
 	else if (save_step.x < 0 && save_step.y < 0) {
 		animation = &up_left;
 	}
+
+
+
 	//
 
 	//SHOT
@@ -146,6 +149,11 @@ void Enemy_Soldier::Move()
 	rand1 = rand() % 300;
 	//end_of_shot
 	*/
+
+	collW = false;
+	collA = false;
+	collS = false;
+	collD = false;
 }
 
 void Enemy_Soldier::OnCollision(Collider* collider, Collider* c2) {
@@ -156,5 +164,26 @@ void Enemy_Soldier::OnCollision(Collider* collider, Collider* c2) {
 			App->UI->score += 150;
 	}
 	dieB = true;*/
-	App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+
+	if (c2->type == COLLIDER_WALL) {
+		if ((collider->rect.x + collider->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - collider->rect.x != 1 && (c2->rect.y + c2->rect.h) - collider->rect.y == 1 && (collider->rect.y + collider->rect.h) - c2->rect.y != 1)
+
+			collW = true;
+
+		if ((collider->rect.x + collider->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - collider->rect.x == 1 && (c2->rect.y + c2->rect.h) - collider->rect.y != 1 && (collider->rect.y + collider->rect.h) - c2->rect.y != 1)
+
+			collA = true;
+
+		if ((collider->rect.x + collider->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - collider->rect.x != 1 && (c2->rect.y + c2->rect.h) - collider->rect.y != 1 && (collider->rect.y + collider->rect.h) - c2->rect.y == 1)
+
+			collS = true;
+
+		if ((collider->rect.x + collider->rect.w) - c2->rect.x == 1 && (c2->rect.x + c2->rect.w) - collider->rect.x != 1 && (c2->rect.y + c2->rect.h) - collider->rect.y != 1 && (collider->rect.y + collider->rect.h) - c2->rect.y != 1)
+
+			collD = true;
+	}
+	else {
+		App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+	}
 }
+

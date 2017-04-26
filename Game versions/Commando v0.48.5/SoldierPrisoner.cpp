@@ -44,5 +44,6 @@ void Enemy_SoldierPrisoner::OnCollision(Collider* c1, Collider* c2) {
 	App->enemies->dieE++;*/
 
 	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+	App->enemies->dieE++;
 }
 

@@ -18,6 +18,7 @@
 #include "Prisoner.h"
 #include "PrisonerPoints.h"
 #include "SoldierPrisoner.h"
+#include "ModuleUI.h"
 #include <time.h>
 
 #define SPAWN_MARGIN 50
@@ -196,6 +197,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			}
 		}
 
+		else if (c2->type == COLLIDER_WALL) {
+			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && enemies[i]->type == ENEMY_TYPES::SOLDIER)
+				enemies[i]->OnCollision(c2, c1);
+		}
+
 		else if (c2->type != COLLIDER_WALL) {
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 			{
@@ -207,7 +213,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->audio->play_fx4();
 				}
 
-				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER) {
+				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER && enemies[i]->type != ENEMY_TYPES::SOLDIER_SHIELD) {
+					if (c2->type == COLLIDER_PLAYER_SHOT)
+						App->UI->score += 75;
+					else if (c2->type == COLLIDER_END_OF_GRENADE)
+						App->UI->score += 150;
 					enemies[i]->OnCollision(c1, c2);
 					App->audio->play_fx4();
 					delete enemies[i];

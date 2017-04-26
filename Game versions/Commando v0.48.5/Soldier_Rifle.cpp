@@ -111,6 +111,7 @@ void Enemy_SoldierRifle::OnCollision(Collider* c1, Collider* c2) {
 	}
 	dieB = true;*/
 
+	if(c2->type != COLLIDER_WALL)
 	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);
 
 

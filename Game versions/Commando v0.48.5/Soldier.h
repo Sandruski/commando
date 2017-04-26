@@ -9,6 +9,7 @@ class Enemy_Soldier : public Enemy
 private:
 	float wave = -1.0f;
 	bool going_up = true;
+	bool collW = false, collA = false, collS = false, collD = false;
 
 	Animation up_left, up_right, down_left, down_right, up, down, left, right;
 

@@ -14,7 +14,7 @@ private:
 	int original_x = 0;
 
 	Animation movepoints;
-	Animation move2;
+	Animation move2, inv;
 	int cont;
 
 public:

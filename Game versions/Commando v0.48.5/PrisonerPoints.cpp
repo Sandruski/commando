@@ -16,6 +16,8 @@ Enemy_PrisonerPoints::Enemy_PrisonerPoints(int x, int y) : Enemy(x, y)
 	move2.PushBack({ 114, 195, 16, 32 });
 	move2.PushBack({ 133, 195, 16, 31 });
 
+	inv.PushBack({ 1,1,1,1 });
+
 	movepoints.speed = 0.1f;
 	move2.speed = 0.1f;
 
@@ -27,10 +29,11 @@ Enemy_PrisonerPoints::Enemy_PrisonerPoints(int x, int y) : Enemy(x, y)
 void Enemy_PrisonerPoints::Move()
 {
 
-	if ((position.y >= -1200) && (App->player->position.y <= 1712 - 2656) && bonus == false)
+	if ((position.y >= -1225) && (App->player->position.y <= 1712 - 2656) && bonus == false)
 		position.y--;
-	if (position.y == -1200)
-//		Esperanza = false;
+	if (position.y == -1225)
+		animation = &inv;
+
 
 	if (App->enemies->dieE == 4) {
 		animation = &move2;
