@@ -180,7 +180,7 @@ update_status ModulePlayer::Update()
 	}
 	//_grenade_end
 	
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && move == true && check_grenade == 1)
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && move == true && check_grenade == 1 && collW == false)
 	{
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -197,7 +197,7 @@ update_status ModulePlayer::Update()
 		forward.Stop();
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && move == true && check_grenade == 1)
+	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT && move == true && check_grenade == 1 && collS == false)
 	{
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -217,7 +217,7 @@ update_status ModulePlayer::Update()
 		backward.Stop();
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && position.x < (SCREEN_WIDTH - right.frames->w) && move == true && check_grenade == 1)
+	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT && position.x < (SCREEN_WIDTH - right.frames->w) && move == true && check_grenade == 1 && collD == false)
 	{
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -232,7 +232,7 @@ update_status ModulePlayer::Update()
 	{
 		right.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && position.x > 0 && move == true && check_grenade == 1)
+	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && position.x > 0 && move == true && check_grenade == 1 && collA == false)
 	{
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -393,6 +393,10 @@ update_status ModulePlayer::Update()
 	App->render->Blit(graphics, position.x, position.y, &r);
 
 
+	collW = false;
+	collA = false;
+	collS = false;
+	collD = false;
 
 
 	return UPDATE_CONTINUE;
@@ -401,31 +405,49 @@ update_status ModulePlayer::Update()
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
 
-	if ((c1->type == COLLIDER_PLAYER || c1->type == COLLIDER_PLAYER_FEET || c1->type == COLLIDER_ENEMY || c2->type == COLLIDER_PLAYER || c2->type == COLLIDER_PLAYER_FEET || c2->type == COLLIDER_ENEMY) && (c1->type == COLLIDER_WALL || c2->type == COLLIDER_WALL) && GOD == false)
+	if ((c1->type == COLLIDER_PLAYER || c1->type == COLLIDER_PLAYER_FEET) && c2->type == COLLIDER_WALL && GOD == false)
 		OnCollisionWall(c1, c2);
-	if ((c1->type == COLLIDER_PLAYER || c1->type == COLLIDER_PLAYER_FEET || c1->type == COLLIDER_ENEMY || c2->type == COLLIDER_PLAYER || c2->type == COLLIDER_PLAYER_FEET || c2->type == COLLIDER_ENEMY) && (c1->type == COLLIDER_WATER || c2->type == COLLIDER_WATER) && GOD == false)
+	if ((c1->type == COLLIDER_PLAYER || c1->type == COLLIDER_PLAYER_FEET) && c2->type == COLLIDER_WATER && GOD == false)
 		OnCollisionWater(c1, c2);
-	if ((c1->type == COLLIDER_PLAYER_FEET || c2->type == COLLIDER_PLAYER_FEET || c1->type == COLLIDER_PLAYER || c2->type == COLLIDER_PLAYER) && (c1->type == COLLIDER_ITEM || c2->type == COLLIDER_ITEM))
+	if ((c1->type == COLLIDER_PLAYER_FEET || c1->type == COLLIDER_PLAYER) && c2->type == COLLIDER_ITEM)
 		OnCollisionItem(c1, c2);
-	if ((c1->type == COLLIDER_PLAYER || c2->type == COLLIDER_PLAYER) && (c1->type == COLLIDER_ENEMY || c1->type == COLLIDER_ENEMY_SHOT || c2->type == COLLIDER_ENEMY || c2->type == COLLIDER_ENEMY_SHOT) && GOD == false)
+	if (c1->type == COLLIDER_PLAYER && (c2->type == COLLIDER_ENEMY || c2->type == COLLIDER_ENEMY_SHOT) && GOD == false)
 		OnCollisionEnemy(c1, c2);
 
 }
 
 
 
+
 void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 {
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT)
-		position.y += speed;
+	/*if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT)
+	position.y += speed;
 
-	/*else*/ if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT)
-		position.y -= speed;
-	/*else*/ if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT)
-		position.x += speed;
-	/*else*/ if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT)
-		position.x -= speed;
+	else if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT)
+	position.y -= speed;
+	else if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT)
+	position.x += speed;
+	else if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT)
+	position.x -= speed;*/
+
+	if ((c1->rect.x + c1->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - c1->rect.x != 1 && (c2->rect.y + c2->rect.h) - c1->rect.y == 1 && (c1->rect.y + c1->rect.h) - c2->rect.y != 1)
+
+		collW = true;
+
+	if ((c1->rect.x + c1->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - c1->rect.x == 1 && (c2->rect.y + c2->rect.h) - c1->rect.y != 1 && (c1->rect.y + c1->rect.h) - c2->rect.y != 1)
+
+		collA = true;
+
+	if ((c1->rect.x + c1->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - c1->rect.x != 1 && (c2->rect.y + c2->rect.h) - c1->rect.y != 1 && (c1->rect.y + c1->rect.h) - c2->rect.y == 1)
+
+		collS = true;
+
+	if ((c1->rect.x + c1->rect.w) - c2->rect.x == 1 && (c2->rect.x + c2->rect.w) - c1->rect.x != 1 && (c2->rect.y + c2->rect.h) - c1->rect.y != 1 && (c1->rect.y + c1->rect.h) - c2->rect.y != 1)
+
+		collD = true;
 }
+
 
 
 void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
@@ -479,7 +501,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 				vides--;
 				App->audio->pause_music();
 				App->audio->play_fx6();
-				App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_END_OF_BULLET, NULL);
+				App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
 				App->fade->FadeToBlack(App->scene_1, App->scene_1);
 			}
 		}
@@ -488,7 +510,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 			if (timeW == true) {
 				App->audio->pause_music();
 				App->audio->play_fx6();
-				App->particles->AddParticle(App->particles->explosion, position.x - 6, position.y - 5, COLLIDER_END_OF_BULLET, NULL);
+				App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
 				App->fade->FadeToBlack(App->scene_1, App->Menu);
 			}
 			vides = 3;

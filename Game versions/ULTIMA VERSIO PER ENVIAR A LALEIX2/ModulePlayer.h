@@ -43,6 +43,10 @@ public:
 	bool GOD = false;
 	int speed;
 	bool timeW = false;
+	bool collW = false;
+	bool collA = false;
+	bool collS = false;
+	bool collD = false;
 
 	bool cooldown = false;
 	uint lastTime, currentTime;

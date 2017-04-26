@@ -101,11 +101,12 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 				p->position.x = x + 9;
 				p->position.y = y + 7;
 			}
-			else if (collider_type == COLLIDER_END_OF_BULLET)
+			else if (collider_type != COLLIDER_NONE)
 			{
 				p->position.x = x;
 				p->position.y = y;
 			}
+
 		
 			if (collider_type != COLLIDER_NONE)
 				p->collider = App->collision->AddCollider(p->anim.GetCurrentFrame(), collider_type, this);
