@@ -279,12 +279,7 @@ void Enemy_Soldier::OnCollision(Collider* collider, Collider* c2) {
 			collD = true;
 
 	}
-	if (dieB == false) {
-		if (c2->type == COLLIDER_PLAYER_SHOT)
-			App->UI->score += 150;
-		else if (c2->type == COLLIDER_END_OF_GRENADE)
-			App->UI->score += 300;
-	}
-	dieB = true;
-	//App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+
+	App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+
 }

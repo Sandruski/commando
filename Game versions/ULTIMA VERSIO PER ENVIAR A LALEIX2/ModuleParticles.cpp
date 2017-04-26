@@ -14,6 +14,12 @@ ModuleParticles::ModuleParticles()
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 		active[i] = nullptr;
 
+	dieEnemie.anim.PushBack({ 169, 61, 16, 27 });
+	dieEnemie.anim.PushBack({ 221, 61, 16, 27 });
+	dieEnemie.anim.PushBack({ 196, 61, 16, 27 });
+	dieEnemie.anim.PushBack({ 221, 61, 16, 27 });
+	dieEnemie.anim.speed = 0.1f;
+
 	bala.anim.PushBack({ 32, 16, 7, 7 });
 
 	explosion.anim.PushBack({ 16,34,11,11 });

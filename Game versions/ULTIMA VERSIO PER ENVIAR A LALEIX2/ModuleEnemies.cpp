@@ -210,14 +210,29 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			{
 
 				if (c2->type == COLLIDER_END_OF_GRENADE && enemies[i]->type == ENEMY_TYPES::SOLDIER_SHIELD) {
+					App->UI->score += 150;
 					enemies[i]->OnCollision(c1, c2);
 					c1->to_delete = true;
 					App->audio->play_fx4();
 				}
 
 				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER) {
+					if (c2->type == COLLIDER_PLAYER_SHOT) {
+						if (enemies[i]->type == ENEMY_TYPES::SOLDIER)
+							App->UI->score += 150;
+						else
+							App->UI->score += 75;
+					}
+					else {
+						if (enemies[i]->type == ENEMY_TYPES::SOLDIER)
+							App->UI->score += 300;
+						else
+							App->UI->score += 150;
+					}
 					enemies[i]->OnCollision(c1, c2);
-					c1->to_delete = true;
+					delete enemies[i];
+					enemies[i] = nullptr;
+					break;
 					App->audio->play_fx4();
 				}
 				/*if (dieE == true) {

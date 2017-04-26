@@ -5,6 +5,7 @@
 #include "ModuleUI.h"
 #include "ModuleEnemies.h"
 #include "SDL/include/SDL_timer.h"
+#include "ModuleParticles.h"
 
 Enemy_SoldierPrisoner::Enemy_SoldierPrisoner(int x, int y) : Enemy(x, y)
 {
@@ -53,13 +54,8 @@ void Enemy_SoldierPrisoner::Move()
 
 void Enemy_SoldierPrisoner::OnCollision(Collider* c1, Collider* c2) {
 
-	if (dieB == false) {
-		if (c2->type == COLLIDER_PLAYER_SHOT)
-			App->UI->score += 75;
-		else if (c2->type == COLLIDER_END_OF_GRENADE)
-			App->UI->score += 150;
-	}
-	dieB = true;
+	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+
 
 }
 

@@ -7,6 +7,7 @@
 #include "ModuleParticlesEnemies.h"
 #include <stdlib.h>
 #include <time.h>
+#include "ModuleParticles.h"
 
 #include "SDL/include/SDL_timer.h"
 
@@ -110,13 +111,9 @@ void Enemy_SoldierRifle::Move()
 }
 
 void Enemy_SoldierRifle::OnCollision(Collider* c1, Collider* c2) {
-	if (dieB == false) {
-		if (c2->type == COLLIDER_PLAYER_SHOT)
-			App->UI->score += 75;
-		else if (c2->type == COLLIDER_END_OF_GRENADE)
-			App->UI->score += 150;
-	}
-	dieB = true;
+
+	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+
 
 
 }

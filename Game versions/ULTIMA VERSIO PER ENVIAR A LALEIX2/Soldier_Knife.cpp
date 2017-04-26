@@ -5,6 +5,7 @@
 #include "ModuleUI.h"
 #include "SDL/include/SDL_timer.h"
 #include "Path.h"
+#include "ModuleParticles.h"
 
 Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
 {
@@ -104,11 +105,6 @@ void Enemy_SoldierKnife::Move()
 
 void Enemy_SoldierKnife::OnCollision(Collider* c1, Collider* c2) {
 
-	if (dieB == false) {
-		if (c2->type == COLLIDER_PLAYER_SHOT)
-			App->UI->score += 75;
-		else if (c2->type == COLLIDER_END_OF_GRENADE)
-			App->UI->score += 150;
-	}
-	dieB = true;
+	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+
 }
