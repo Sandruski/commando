@@ -20,26 +20,26 @@ bool ModuleAudio::Init() {
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 
 	//Load music
-	music[0] = Mix_LoadMUS("Commando_Sound-01-Title.ogg");
-	music[1] = Mix_LoadMUS("Commando_Sound-03-Areas_1-2-3.ogg");
-	music[2] = Mix_LoadMUS("Commando_Sound-03-Areas_1-2-3.ogg");
-	music[3] = Mix_LoadMUS("Commando_Sound-10-Win-Phase-1-2-3.ogg"); //when you finish the level
-	music[4] = Mix_LoadMUS("Commando_Sound-12-Game-Over.ogg"); //when you lose all lives
-	music[5] = Mix_LoadMUS("Commando_Sound-07-Restart.ogg"); //it plays when you die and you respawn
-	music[6] = Mix_LoadMUS("Commando_Sound-08-Fortress.ogg"); //final battle
-	music[7] = Mix_LoadMUS("Commando_Sound-02-Start.ogg"); //helicopter animation
+	music[0] = Mix_LoadMUS("assets/audios/Commando_Sound-01-Title.ogg");
+	music[1] = Mix_LoadMUS("assets/audios/Commando_Sound-03-Areas_1-2-3.ogg");
+	music[2] = Mix_LoadMUS("assets/audios/Commando_Sound-03-Areas_1-2-3.ogg");
+	music[3] = Mix_LoadMUS("assets/audios/Commando_Sound-10-Win-Phase-1-2-3.ogg"); //when you finish the level
+	music[4] = Mix_LoadMUS("assets/audios/Commando_Sound-12-Game-Over.ogg"); //when you lose all lives
+	music[5] = Mix_LoadMUS("assets/audios/Commando_Sound-07-Restart.ogg"); //it plays when you die and you respawn
+	music[6] = Mix_LoadMUS("assets/audios/Commando_Sound-08-Fortress.ogg"); //final battle
+	music[7] = Mix_LoadMUS("assets/audios/Commando_Sound-02-Start.ogg"); //helicopter animation
 
 														   //Load FX
-	fx[0] = Mix_LoadWAV("Commando_Effect-02-Principal-Shoot.wav");
-	fx[1] = Mix_LoadWAV("Commando_Effect-01-Choose-Menu.wav");
-	fx[2] = Mix_LoadWAV("Commando_Effect-12-Helicopter.wav"); //helicopter sound
-	fx[3] = Mix_LoadWAV("Commando_Effect-08-Kill-Enemy.wav"); //when you kill an enemy sound
-	fx[4] = Mix_LoadWAV("Commando_Effect-04-Grenade.wav"); //when a grenade explodes sound
-	fx[5] = Mix_LoadWAV("Commando_Effect-09-Life-lost.wav"); //when an enemy kills you sound
-	fx[6] = Mix_LoadWAV("Commando_Effect-10-Bonus.wav"); //when you pick an item
-	fx[7] = Mix_LoadWAV("Commando_Effect-10-Bonus-Prisoner.wav"); //when you free a prisoner
-	fx[8] = Mix_LoadWAV("Commando_Sound-13-Vehicle.wav"); //moto right-centre
-	fx[9] = Mix_LoadWAV("Commando_Sound-14-Vehicle-Decreasing.wav"); //moto centre-left
+	fx[0] = Mix_LoadWAV("assets/audios/Commando_Effect-02-Principal-Shoot.wav");
+	fx[1] = Mix_LoadWAV("assets/audios/Commando_Effect-01-Choose-Menu.wav");
+	fx[2] = Mix_LoadWAV("assets/audios/Commando_Effect-12-Helicopter.wav"); //helicopter sound
+	fx[3] = Mix_LoadWAV("assets/audios/Commando_Effect-08-Kill-Enemy.wav"); //when you kill an enemy sound
+	fx[4] = Mix_LoadWAV("assets/audios/Commando_Effect-04-Grenade.wav"); //when a grenade explodes sound
+	fx[5] = Mix_LoadWAV("assets/audios/Commando_Effect-09-Life-lost.wav"); //when an enemy kills you sound
+	fx[6] = Mix_LoadWAV("assets/audios/Commando_Effect-10-Bonus.wav"); //when you pick an item
+	fx[7] = Mix_LoadWAV("assets/audios/Commando_Effect-10-Bonus-Prisoner.wav"); //when you free a prisoner
+	fx[8] = Mix_LoadWAV("assets/audios/Commando_Sound-13-Vehicle.wav"); //moto right-centre
+	fx[9] = Mix_LoadWAV("assets/audios/Commando_Sound-14-Vehicle-Decreasing.wav"); //moto centre-left
 
 	return true;
 }
