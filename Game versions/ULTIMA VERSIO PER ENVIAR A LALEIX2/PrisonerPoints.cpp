@@ -32,11 +32,11 @@ void Enemy_PrisonerPoints::Move()
 	if (position.y == -1200)
 		Esperanza = false;
 
-	if (App->enemies->dieE == 4) {
+	if (App->enemies->dieE == 2) {
 		animation = &move2;
 		position.x++;
 		if (bonus == false)
-			App->UI->score += 500;
+			App->UI->score += 1000;
 		bonus = true;
 	}
 }

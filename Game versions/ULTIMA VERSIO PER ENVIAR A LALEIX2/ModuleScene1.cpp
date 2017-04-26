@@ -447,7 +447,7 @@ update_status ModuleScene1::Update()
 		App->fade->FadeToBlack(this, App->Menu, 3);
 	}
 
-	if (App->player->position.y <= 60 - 2656) 
+	if (App->player->position.y <= 60 - 2656 && winB == true) 
 		cont6 = true;
 	
 	if (cont6 == true) {

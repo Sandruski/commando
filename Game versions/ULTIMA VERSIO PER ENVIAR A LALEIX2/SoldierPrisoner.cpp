@@ -44,8 +44,10 @@ void Enemy_SoldierPrisoner::Move()
 	else {
 		animation = &die;
 		die.speed = 0.1f;
-		if (currentTime > 800)
+		if (currentTime > 800) {
 			Esperanza = false;
+			App->enemies->dieE++;
+		}
 	}
 }
 
@@ -58,6 +60,6 @@ void Enemy_SoldierPrisoner::OnCollision(Collider* c1, Collider* c2) {
 			App->UI->score += 150;
 	}
 	dieB = true;
-	App->enemies->dieE++;
+
 }
 

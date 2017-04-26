@@ -93,6 +93,13 @@ void Enemy_SoldierKnife::Move()
 
 	}
 
+	if (dieB == true) {
+		animation = &die;
+		die.speed = 0.1f;
+		if (currentTime > 800)
+			Esperanza = false;
+	}
+
 }
 
 void Enemy_SoldierKnife::OnCollision(Collider* c1, Collider* c2) {

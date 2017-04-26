@@ -228,12 +228,12 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			}
 		}
 
-		else if (c2->type == COLLIDER_WALL && c1->type == COLLIDER_ENEMY) {
+		/*else if (c2->type == COLLIDER_WALL && c1->type == COLLIDER_ENEMY) {
 			if (enemies[i] != nullptr) {
-				if (enemies[i]->type == ENEMY_TYPES::SOLDIER_SHIELD)
+				if (enemies[i]->type == ENEMY_TYPES::SOLDIER)
 					enemies[i]->OnCollision(c1, c2);
 			}
-		}
+		}*/
 	}
 
 }

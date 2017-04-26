@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "ModuleUI.h"
+#include "ModuleScene1.h"
 
 Enemy_SoldierShield::Enemy_SoldierShield(int x, int y) : Enemy(x, y)
 {
@@ -96,6 +97,7 @@ void Enemy_SoldierShield::Move()
 	if (dieB == true) {
 		animation = &surrender;
 		collider->to_delete = true;
+		App->scene_1->winB = true;
 			/*animation = &die;
 			die.speed = 0.1f;
 			if (currentTime > 1000)
