@@ -3,6 +3,7 @@
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
 #include "SDL/include/SDL_timer.h"
+#include "ModuleScene1.h"
 #include <stdlib.h>
 #include <time.h>
 #include "ModuleUI.h"
@@ -96,6 +97,7 @@ void Enemy_SoldierShield::Move()
 	if (dieB == true) {
 		animation = &surrender;
 		collider->to_delete = true;
+		App->scene_1->winB = true;
 			/*animation = &die;
 			die.speed = 0.1f;
 			if (currentTime > 1000)

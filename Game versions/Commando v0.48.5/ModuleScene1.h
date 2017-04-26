@@ -50,6 +50,7 @@ public:
 
 	int tempo1 = 0;
 	bool check_UI = true;
+	bool winB = false;
 };
 
 
