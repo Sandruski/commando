@@ -198,29 +198,21 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
-		if (c1->type == COLLIDER_PRISONER || c2->type == COLLIDER_PRISONER) { //PRISONERS
+		if (c1->type == COLLIDER_PRISONER) { //PRISONERS
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
 				enemies[i]->OnCollision(c2, c1);
 				App->audio->play_fx8();
 			}
 		}
 
-		else if (c1->type != COLLIDER_WALL && c2->type != COLLIDER_WALL) {
+		else if (c2->type != COLLIDER_WALL) {
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 			{
 
-				if (enemies[i]->type == ENEMY_TYPES::SOLDIER_SHIELD)
-				{
-					if (c2->type == COLLIDER_END_OF_GRENADE && c1->type == COLLIDER_ENEMY) {
-						enemies[i]->OnCollision(c1, c2);
-						c1->to_delete = true;
-						App->audio->play_fx4();
-					}
-					else if (c1->type == COLLIDER_END_OF_GRENADE && c2->type == COLLIDER_ENEMY) {
-						enemies[i]->OnCollision(c2, c1);
-						c2->to_delete = true;
-						App->audio->play_fx4();
-					}
+				if (c2->type == COLLIDER_END_OF_GRENADE && enemies[i]->type == ENEMY_TYPES::SOLDIER_SHIELD) {
+					enemies[i]->OnCollision(c1, c2);
+					c1->to_delete = true;
+					App->audio->play_fx4();
 				}
 
 				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER) {
@@ -228,19 +220,20 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					c1->to_delete = true;
 					App->audio->play_fx4();
 				}
-				else if (c2->type == COLLIDER_ENEMY && c1->type != COLLIDER_PLAYER) {
-					enemies[i]->OnCollision(c2, c1);
-					c2->to_delete = true;
-					App->audio->play_fx4();
-				}
-
 				/*if (dieE == true) {
 				delete enemies[i];
 				enemies[i] = nullptr;
 				break;
 				}*/
 			}
+		}
 
+		else if (c2->type == COLLIDER_WALL && c1->type == COLLIDER_ENEMY) {
+			if (enemies[i] != nullptr) {
+				if (enemies[i]->type == ENEMY_TYPES::SOLDIER_SHIELD)
+					enemies[i]->OnCollision(c1, c2);
+			}
 		}
 	}
+
 }

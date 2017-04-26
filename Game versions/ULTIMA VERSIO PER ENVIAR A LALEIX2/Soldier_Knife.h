@@ -23,6 +23,7 @@ public:
 
 	void OnCollision(Collider* c1, Collider* c2);
 	bool dieB = false;
+	bool move = true;
 	uint lastTime, currentTime;
 
 	Path path, path1;

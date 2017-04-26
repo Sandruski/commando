@@ -259,6 +259,26 @@ void Enemy_Soldier::Move()
 }
 
 void Enemy_Soldier::OnCollision(Collider* collider, Collider* c2) {
+	
+	if (c2->type == COLLIDER_WALL) {
+
+		if ((collider->rect.x + collider->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - collider->rect.x != 1 && (c2->rect.y + c2->rect.h) - collider->rect.y == 1 && (collider->rect.y + collider->rect.h) - c2->rect.y != 1)
+
+			collW = true;
+
+		if ((collider->rect.x + collider->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - collider->rect.x == 1 && (c2->rect.y + c2->rect.h) - collider->rect.y != 1 && (collider->rect.y + collider->rect.h) - c2->rect.y != 1)
+
+			collA = true;
+
+		if ((collider->rect.x + collider->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - collider->rect.x != 1 && (c2->rect.y + c2->rect.h) - collider->rect.y != 1 && (collider->rect.y + collider->rect.h) - c2->rect.y == 1)
+
+			collS = true;
+
+		if ((collider->rect.x + collider->rect.w) - c2->rect.x == 1 && (c2->rect.x + c2->rect.w) - collider->rect.x != 1 && (c2->rect.y + c2->rect.h) - collider->rect.y != 1 && (collider->rect.y + collider->rect.h) - c2->rect.y != 1)
+
+			collD = true;
+
+	}
 	if (dieB == false) {
 		if (c2->type == COLLIDER_PLAYER_SHOT)
 			App->UI->score += 75;

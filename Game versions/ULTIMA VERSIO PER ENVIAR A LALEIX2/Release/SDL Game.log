@@ -1,6 +1,4 @@
-﻿  ModulePlayer.cpp
-ModulePlayer.cpp(59): warning C4305: '=': truncation from 'double' to 'float'
-ModulePlayer.cpp(64): warning C4305: '=': truncation from 'double' to 'float'
+﻿  ModuleEnemies.cpp
   Generating code
   1 of 309 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation

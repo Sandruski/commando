@@ -35,6 +35,7 @@ public:
 	void Move();
 	uint lastTime, currentTime;
 	bool dieB = false;
+	bool collW = false, collA = false, collS = false, collD = false;
 	void OnCollision(Collider* collider, Collider* c2);
 };
 

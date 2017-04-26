@@ -55,11 +55,11 @@ void Enemy_SoldierKnife::Move()
 	animation = &right;
 	position = original_pos + path.GetCurrentPosition(&animation);
 	}
-	else if (original_pos.x >= 100) {
+	if (original_pos.x >= 100) {
 	animation = &left;
 	position = original_pos + path1.GetCurrentPosition(&animation);
-	}
-	*/
+	}*/
+
 
 	currentTime = SDL_GetTicks();
 	currentTime -= lastTime;
@@ -67,9 +67,11 @@ void Enemy_SoldierKnife::Move()
 	if (dieB == false) {
 		lastTime = SDL_GetTicks();
 
-		if (App->player->position.y <= -450) {
+		if (App->player->position.y <= -450 || move == true) {
 			if (position.x <= 240 && cont == 0) {
 				position.x--;
+				animation = &left;
+				move = true;
 				if (position.x == 150)
 					cont = 1;
 			}
@@ -85,20 +87,12 @@ void Enemy_SoldierKnife::Move()
 				position.x++;
 				animation = &right;
 				if (position.x == 240)
-					cont = 1;
+					cont = 0;
 			}
 		}
 
 	}
 
-	if (dieB == true) {
-
-		animation = &die;
-		die.speed = 0.1f;
-		if (currentTime > 800)
-			Esperanza = false;
-
-	}
 }
 
 void Enemy_SoldierKnife::OnCollision(Collider* c1, Collider* c2) {
