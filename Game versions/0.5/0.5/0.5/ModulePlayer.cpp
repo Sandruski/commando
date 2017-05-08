@@ -363,7 +363,7 @@ update_status ModulePlayer::Update()
 
 	}
 
-	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN)
+	else if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && move == true)
 	{
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);

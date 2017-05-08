@@ -108,8 +108,14 @@ void ModuleParticlesGrenade1::AddParticle(const Particle3& particle, int x, int 
 		{
 			Particle3* p = new Particle3(particle);
 			p->born = SDL_GetTicks() + delay;
-			p->position.x = x + 9;
-			p->position.y = y + 7;
+			if (collider_type == COLLIDER_PLAYER_GRENADE) {
+				p->position.x = x + 9;
+				p->position.y = y + 7;
+			}
+			else if (collider_type == COLLIDER_END_OF_GRENADE) {
+				p->position.x = x - 8;
+				p->position.y = y;
+			}
 			if (collider_type != COLLIDER_NONE)
 				p->collider = App->collision->AddCollider(p->anim.GetCurrentFrame(), collider_type, this);
 			active[i] = p;

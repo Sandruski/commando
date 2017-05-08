@@ -280,6 +280,9 @@ void ModuleCollision::DebugDraw()
 		case COLLIDER_END_OF_BULLET: //rainbowsinthesky
 			App->render->DrawQuad(colliders[i]->rect, 23, 12, 3, alpha);
 			break;
+		case COLLIDER_END_OF_GRENADE: //rainbowsinthesky
+			App->render->DrawQuad(colliders[i]->rect, 255, 255, 0, alpha);
+			break;
 		}
 	}
 }
