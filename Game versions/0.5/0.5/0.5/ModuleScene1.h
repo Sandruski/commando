@@ -54,8 +54,13 @@ public:
 	bool winB = false;
 
 	//Starting y positions of the player (for respawns)
-	bool start1 = false; //110
-	bool start2 = true; //-300
+	bool start = true; //initial position (when player appears for the first time) -> 110
+	bool start1 = false; //2778 - 2656
+	bool start2 = false; //2294 - 2656
+	bool start3 = false; //1836 - 2656
+	bool start4 = false; //882 - 2656
+	bool start5 = false; //395 - 2656
+	int current_start_pos = 0;
 };
 
 

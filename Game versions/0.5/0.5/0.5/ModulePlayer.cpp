@@ -205,14 +205,40 @@ update_status ModulePlayer::Update()
 			backward.Start();
 		}
 
-		if (App->scene_1->start1) {
-			if (App->player->position.y <= (110 - App->scene_1->cont + 88)) {
-				position.y += speed;
-			}
+		if (App->fade->off == App->scene_1) {
+			position.y += speed;
 		}
-		else if (App->scene_1->start2) {
-			if (App->player->position.y <= (-300 - App->scene_1->cont + 88)) {
-				position.y += speed;
+
+		if (App->fade->on == App->scene_1) {
+			if (App->scene_1->start1) {
+				if (App->player->position.y <= (2778 - 2656 - App->scene_1->cont + 88)) {
+					position.y += speed;
+				}
+			}
+			else if (App->scene_1->start2) {
+				if (App->player->position.y <= (2294 - 2656 - App->scene_1->cont + 88)) {
+					position.y += speed;
+				}
+			}
+			else if (App->scene_1->start3) {
+				if (App->player->position.y <= (1836 - 2656 - App->scene_1->cont + 88)) {
+					position.y += speed;
+				}
+			}
+			else if (App->scene_1->start4) {
+				if (App->player->position.y <= (882 - 2656 - App->scene_1->cont + 88)) {
+					position.y += speed;
+				}
+			}
+			else if (App->scene_1->start5) {
+				if (App->player->position.y <= (395 - 2656 - App->scene_1->cont + 88)) {
+					position.y += speed;
+				}
+			}
+			else {
+				if (App->player->position.y <= (110 - App->scene_1->cont + 88)) {
+					position.y += speed;
+				}
 			}
 		}
 
@@ -502,7 +528,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 
 	if (App->fade->IsFading() == false)
 	{
-		
+
 		if (vides != 0) {
 			waterB = false;
 			if (timeW == true) {
@@ -510,6 +536,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 				App->audio->pause_music();
 				App->audio->play_fx6();
 				App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
+				App->scene_1->start = false;
 				save_player_position = position.y;
 				App->fade->FadeToBlack(App->scene_1, App->scene_1);
 			}
@@ -520,6 +547,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 				App->audio->pause_music();
 				App->audio->play_fx6();
 				App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
+				App->scene_1->start = true;
 				App->fade->FadeToBlack(App->scene_1, App->ending);
 			}
 			vides = 3;
@@ -539,6 +567,7 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 			vides--;
 			App->audio->pause_music();
 			App->audio->play_fx6();
+			App->scene_1->start = false;
 			save_player_position = position.y;
 			App->fade->FadeToBlack(App->scene_1, App->scene_1, 5.0f);
 			enemyB = false;
@@ -549,11 +578,11 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 		else if (vides == 0) {
 			App->audio->pause_music();
 			App->audio->play_fx6();
+			App->scene_1->start = true;
 			App->fade->FadeToBlack(App->scene_1, App->ending, 5.0f);
 			enemyB = false;
 			vides = 3;
 		}
 	}
-
 
 }

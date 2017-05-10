@@ -100,47 +100,49 @@ bool ModuleUI::CleanUp()
 update_status ModuleUI::Update()
 {
 	if (tempo1 <= 120) {
-		App->render->Blit(Hud2, 111, 100 - App->scene_1->cont, &lvl1);
+		App->render->Blit(Hud2, 111, App->scene_1->current_start_pos + 100 - App->scene_1->cont, &lvl1);
 		tempo1++;
 	}
 
-		if (App->player->position.y == (110 - App->scene_1->cont) && App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT ) {
-			if (App->player->GOD == true) {
-				current_animation = &Inv1;
-				r = current_animation->GetCurrentFrame();
-				App->render->Blit(Inv, 110, 5 - App->scene_1->cont, &r);
-
-			}
-			cont = 1;
-			sprintf_s(str1, "%i", score);
-			sprintf_s(str2, "%i", grenade);
-			sprintf_s(str3, "%i", App->player->vides);
-			App->render->Blit(Hud, 116, 213 - App->scene_1->cont, &MarcadorGranada);
-			App->render->Blit(Hud, 22, 210 - App->scene_1->cont, &MarcadorVida);
-			App->fonts->BlitText(35, 215 - App->scene_1->cont, App->savedata->font_score, str3);
-			App->fonts->BlitText(129, 215 - App->scene_1->cont, App->savedata->font_score, str2);
-			cont = 0;
-			App->fonts->BlitText(37, 5 - App->scene_1->cont, App->savedata->font_score, str1);
+	if ((App->player->position.y == (110 - App->scene_1->cont) ||
+		App->player->position.y == (2294 - 2656 - App->scene_1->cont) ||
+		App->player->position.y == (1836 - 2656 - App->scene_1->cont) ||
+		App->player->position.y == (882 - App->scene_1->cont) ||
+		App->player->position.y == (395 - App->scene_1->cont))
+		&& App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT) {
+		if (App->player->GOD == true) {
+			current_animation = &Inv1;
+			r = current_animation->GetCurrentFrame();
+			App->render->Blit(Inv, 110, App->scene_1->current_start_pos + 5 - App->scene_1->cont, &r);
 		}
-		else {
-			if (App->player->GOD == true) {
-				current_animation = &Inv1;
-				r = current_animation->GetCurrentFrame();
-				App->render->Blit(Inv, 110, 5 - App->scene_1->cont, &r);
-			}
-			cont = 1;
-			sprintf_s(str1, "%i", score);
-			sprintf_s(str2, "%i", grenade);
-			sprintf_s(str3, "%i", App->player->vides);
-			App->render->Blit(Hud, 116, 213 - App->scene_1->cont, &MarcadorGranada);
-			App->render->Blit(Hud, 22, 210 - App->scene_1->cont, &MarcadorVida);
-			App->fonts->BlitText(35, 215 - App->scene_1->cont, App->savedata->font_score, str3);
-			App->fonts->BlitText(129, 215 - App->scene_1->cont, App->savedata->font_score, str2);
-			cont = 0;
-			App->fonts->BlitText(37, 5 - App->scene_1->cont, App->savedata->font_score, str1);
+		cont = 1;
+		sprintf_s(str1, "%i", score);
+		sprintf_s(str2, "%i", grenade);
+		sprintf_s(str3, "%i", App->player->vides);
+		App->render->Blit(Hud, 116, App->scene_1->current_start_pos + 213 - App->scene_1->cont, &MarcadorGranada);
+		App->render->Blit(Hud, 22, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida);
+		App->fonts->BlitText(35, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str3);
+		App->fonts->BlitText(129, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str2);
+		cont = 0;
+		App->fonts->BlitText(37, App->scene_1->current_start_pos + 5 - App->scene_1->cont, App->savedata->font_score, str1);
+	}
+	else {
+		if (App->player->GOD == true) {
+			current_animation = &Inv1;
+			r = current_animation->GetCurrentFrame();
+			App->render->Blit(Inv, 110, 5 - App->scene_1->cont, &r);
 		}
-
-	
+		cont = 1;
+		sprintf_s(str1, "%i", score);
+		sprintf_s(str2, "%i", grenade);
+		sprintf_s(str3, "%i", App->player->vides);
+		App->render->Blit(Hud, 116, App->scene_1->current_start_pos + 213 - App->scene_1->cont, &MarcadorGranada);
+		App->render->Blit(Hud, 22, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida);
+		App->fonts->BlitText(35, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str3);
+		App->fonts->BlitText(129, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str2);
+		cont = 0;
+		App->fonts->BlitText(37, App->scene_1->current_start_pos + 5 - App->scene_1->cont, App->savedata->font_score, str1);
+	}
 
 	return UPDATE_CONTINUE;
 }

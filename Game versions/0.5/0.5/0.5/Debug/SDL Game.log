@@ -1,70 +1,7 @@
-﻿  Soldier_Shield.cpp
-  Soldier_Rifle.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\soldier_rifle.cpp(76): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\soldier_rifle.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\soldier_rifle.cpp(79): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  Soldier_Knife.cpp
-  Soldier_Grenade.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\soldier_grenade.cpp(48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\soldier_grenade.cpp(49): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\soldier_grenade.cpp(51): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  SoldierPrisoner.cpp
-  Soldier.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\soldier.cpp(231): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\soldier.cpp(232): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\soldier.cpp(234): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  PrisonerPoints.cpp
-  Prisoner.cpp
-  ModuleWindow.cpp
-  ModuleUI.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleui.cpp(35): warning C4305: '=': truncation from 'double' to 'float'
-  ModuleTextures.cpp
-  ModuleSecretRoomE.cpp
-  ModuleSecretRoomB.cpp
-  ModuleSecretRoom1A.cpp
-  ModuleScene1.cpp
-  ModuleSaveData.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\modulesavedata.cpp(37): warning C4018: '<': signed/unsigned mismatch
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\modulesavedata.cpp(39): warning C4018: '<': signed/unsigned mismatch
-  ModuleRender.cpp
+﻿  ModuleSecretRoom1A.cpp
   ModulePlayer.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleplayer.cpp(60): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleplayer.cpp(65): warning C4305: '=': truncation from 'double' to 'float'
-  ModuleParticlesGrenade1.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleparticlesgrenade1.cpp(19): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleparticlesgrenade1.cpp(23): warning C4305: '=': truncation from 'double' to 'float'
-  ModuleParticlesGrenade.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleparticlesgrenade.cpp(19): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.5\0.5\0.5\moduleplayer.cpp(60): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.5\0.5\0.5\moduleplayer.cpp(65): warning C4305: '=': truncation from 'double' to 'float'
   Generating Code...
-  Compiling...
-  ModuleParticlesEnemies.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleparticlesenemies.cpp(88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleparticlesenemies.cpp(110): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleparticlesenemies.cpp(111): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleparticlesenemies.cpp(130): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleparticlesenemies.cpp(167): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleparticlesenemies.cpp(171): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\moduleparticlesenemies.cpp(186): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  ModuleParticles.cpp
-  ModuleMenu.cpp
-  ModuleInput.cpp
-  ModuleFonts.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\modulefonts.cpp(55): warning C4018: '<': signed/unsigned mismatch
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\modulefonts.cpp(125): warning C4018: '<': signed/unsigned mismatch
-  ModuleFadeToBlack.cpp
-  ModuleEnemies.cpp
-  ModuleEnding.cpp
-  ModuleCollision.cpp
-  ModuleCinematic.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\modulecinematic.cpp(156): warning C4804: '<': unsafe use of type 'bool' in operation
-  ModuleAudio.cpp
-  Main.cpp
-c:\users\aleixca1\desktop\gets-name-\game versions\0.5\0.5\0.5\main.cpp(29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Globals.cpp
-  Enemy.cpp
-  Crazy_Green.cpp
-  Application.cpp
-  Generating Code...
-  LINK : C:\Users\aleixca1\Desktop\gets-name-\Game versions\0.5\0.5\0.5\Debug\SDL5 Handout.exe not found or not built by the last incremental link; performing full link
-  SDL Game.vcxproj -> C:\Users\aleixca1\Desktop\gets-name-\Game versions\0.5\0.5\0.5\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\aleixca1\Desktop\gets-name-\Game versions\0.5\0.5\0.5\Debug\SDL5 Handout.pdb (Full PDB)
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.5\0.5\0.5\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.5\0.5\0.5\Debug\SDL5 Handout.pdb (Full PDB)

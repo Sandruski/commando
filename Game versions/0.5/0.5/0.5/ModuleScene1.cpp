@@ -19,6 +19,9 @@
 #include "ModuleParticles.h"
 #include "ModuleCinematic.h"
 #include "ModuleUI.h"
+#include "ModuleSecretRoom1A.h"
+#include "ModuleSecretRoomB.h"
+#include "ModuleSecretRoomE.h"
 #include <windows.h>
 
 using namespace std;
@@ -107,32 +110,81 @@ bool ModuleScene1::Start()
 	w_m = 255, h_m = 20;
 	contador = 0;
 
-	//Initialize player position
-	App->player->position.x = App->fade->start_x;
-	App->player->position.y = 110; //start2 is enabled because starting position is -300
+	//Initialize camera for respawns
 
-	//Initialize camera and others
-	/*
-	if (App->player->save_player_position >= 2003 - 2656) {
+		start1 = false;
+		start2 = false;
+		start3 = false;
+		start4 = false;
+		start5 = false;
+		App->player->position.x = 130;
+		App->player->position.y = 110;
+		current_start_pos = 0;
+
+		App->render->camera.y = 0;
+	
+	if (App->player->save_player_position < 110 && App->player->save_player_position >= 2529 - 2656) {
+		start1 = true;
+		start2 = false;
+		start3 = false;
+		start4 = false;
+		start5 = false;
+		App->player->position.x = 130;
+		App->player->position.y = 110;
+		current_start_pos = 0;
+
+		App->render->camera.y = 0;
+	}
+	else if (App->player->save_player_position < 2529 - 2656 && App->player->save_player_position >= 2003 - 2656) {
+		start1 = false;
+		start2 = true;
+		start3 = false;
+		start4 = false;
+		start5 = false;
 		App->player->position.x = 114;
 		App->player->position.y = 2294 - 2656;
+		current_start_pos = 2294 - 2656 - 114;
+
+		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
 	}
 	else if (App->player->save_player_position < 2003 - 2656 && App->player->save_player_position > 1235 - 2656) {
+		start1 = false;
+		start2 = false;
+		start3 = true;
+		start4 = false;
+		start5 = false;
 		App->player->position.x = 127;
 		App->player->position.y = 1836 - 2656;
+		current_start_pos = 1836 - 2656 - 114;
+
+		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
 	}
 	else if (App->player->save_player_position < 1235 - 2656 && App->player->save_player_position > 378 - 2656) {
+		start1 = false;
+		start2 = false;
+		start3 = false;
+		start4 = true;
+		start5 = false;
 		App->player->position.x = 122;
 		App->player->position.y = 882 - 2656;
+		current_start_pos = 882 - 2656 - 114;
+
+		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
 	}
 	else if (App->player->save_player_position < 378 - 2656 && App->player->save_player_position > -2656) {
+		start1 = false;
+		start2 = false;
+		start3 = false;
+		start4 = false;
+		start5 = true;
 		App->player->position.x = 122;
 		App->player->position.y = 395 - 2656;
-	}
-	*/
+		current_start_pos = 395 - 2656 - 114;
 
-	App->render->camera.x = App->render->camera.y = 0;
-	//App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
+		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
+	}
+
+	App->render->camera.x = 0;
 	cont = 0;
 
 	//Colliders
@@ -400,7 +452,10 @@ update_status ModuleScene1::Update()
 	//CAMERA
 	//middle screen (where camera goes up) = 110 - cont
 	//bottom screen = 110 - cont + 88
-	if ((App->player->position.y == (110 - cont) || App->player->position.y == (-300 - cont)) && App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
+	if ((App->player->position.y == (110 - cont) || App->player->position.y == (2294 - 2656 - cont) ||
+		App->player->position.y == (1836 - 2656 - cont) || App->player->position.y == (882 - 2656 - cont) ||
+		App->player->position.y == (379 - 2656 - cont))
+		&& App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
 		cont++;
 		App->render->camera.y += speed;
 	}
@@ -464,7 +519,22 @@ update_status ModuleScene1::Update()
 		w_m--;
 	}
 	
-	
+	if (App->input->keyboard[SDL_SCANCODE_1] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, App->room1A, 3);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_2] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, App->roomB, 3);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_5] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, App->roomE, 3);
+
+	}
+
 	
 	// end
 

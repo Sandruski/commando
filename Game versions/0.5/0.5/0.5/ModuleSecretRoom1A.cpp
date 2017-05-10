@@ -37,7 +37,15 @@ bool ModuleSecretRoom1A::Start() {
 	background.w = 256;
 	background.h = 224;
 
+	App->render->camera.y = 0;
 
+	App->player->Disable();
+
+
+	App->collision->Disable();
+	App->collision->Enable();
+	App->player->Enable();
+	App->UI->Enable();
 
 	return true;
 }

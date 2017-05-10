@@ -80,7 +80,9 @@ bool Application::Init()
 	particlesenemies->Disable();
 	particlesgrenade->Disable();
 	particlesgrenade1->Disable();
-	Menu->Disable();
+	room1A->Disable();
+	roomE->Disable();
+	roomB->Disable();
 
 	// Player will be enabled on the first update of a new scene
 
