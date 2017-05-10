@@ -1,0 +1,12 @@
+	if (App->player->save_player_position <= -10 && App->player->save_player_position >= -700) {
+		App->player->position.y = -250;
+		App->render->camera.y = 1080;
+		App->scene_1->cont = 360;
+	}
+
+	if (App->player->save_player_position <= -701) {
+		App->player->position.y = -500;
+		App->render->camera.y = 1830;
+		App->scene_1->cont = 610;
+	}
+	
