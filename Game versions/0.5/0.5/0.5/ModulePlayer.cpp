@@ -77,10 +77,8 @@ bool ModulePlayer::Start()
 	position.x = 130;
 	position.y = 110;
 
-
 	coll = App->collision->AddCollider({ 300, 300, 12, 15 }, COLLIDER_PLAYER, this); //the collider is out of the screen!
 	feetC = App->collision->AddCollider({ 300 - 16, 300 - 19, 8, 4 }, COLLIDER_PLAYER, this);
-
 
 	p1.x = position.x - 30;
 	p1.y = position.y;
@@ -207,8 +205,15 @@ update_status ModulePlayer::Update()
 			backward.Start();
 		}
 
-		if (App->player->position.y <= (110 - App->scene_1->cont + 88)) {
-			position.y += speed;
+		if (App->scene_1->start1) {
+			if (App->player->position.y <= (110 - App->scene_1->cont + 88)) {
+				position.y += speed;
+			}
+		}
+		else if (App->scene_1->start2) {
+			if (App->player->position.y <= (-300 - App->scene_1->cont + 88)) {
+				position.y += speed;
+			}
 		}
 
 	}
@@ -505,6 +510,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 				App->audio->pause_music();
 				App->audio->play_fx6();
 				App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
+				save_player_position = position.y;
 				App->fade->FadeToBlack(App->scene_1, App->scene_1);
 			}
 		}
@@ -533,6 +539,7 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 			vides--;
 			App->audio->pause_music();
 			App->audio->play_fx6();
+			save_player_position = position.y;
 			App->fade->FadeToBlack(App->scene_1, App->scene_1, 5.0f);
 			enemyB = false;
 

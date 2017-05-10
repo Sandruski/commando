@@ -116,7 +116,7 @@ update_status ModuleMenu::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN && move_y == 118) {
 		App->render->UP = false;
-		App->fade->FadeToBlack(this, App->cinematic, 3);
+		App->fade->FadeToBlack(this, App->scene_1, 3);
 
 	}
 

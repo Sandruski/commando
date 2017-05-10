@@ -55,6 +55,9 @@ public:
 	bool play_ending = false;
 	iPoint p1, p2, p3, p4;
 	int check_grenade = 1, check_nonshoot = 1, update_position_grenade = 0;
+
+	//Save position where player died
+	int save_player_position = 0;
 };
 
 #endif

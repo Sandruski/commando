@@ -21,6 +21,8 @@
 #include "ModuleUI.h"
 #include <windows.h>
 
+using namespace std;
+
 ModuleScene1::ModuleScene1()
 {
 	
@@ -105,12 +107,33 @@ bool ModuleScene1::Start()
 	w_m = 255, h_m = 20;
 	contador = 0;
 
-	//Initialize camera and others (prepare it for use)
-	App->render->camera.x = App->render->camera.y = 0;
-	cont = 0;
-
+	//Initialize player position
 	App->player->position.x = App->fade->start_x;
-	App->player->position.y = App->fade->start_y;
+	App->player->position.y = 110; //start2 is enabled because starting position is -300
+
+	//Initialize camera and others
+	/*
+	if (App->player->save_player_position >= 2003 - 2656) {
+		App->player->position.x = 114;
+		App->player->position.y = 2294 - 2656;
+	}
+	else if (App->player->save_player_position < 2003 - 2656 && App->player->save_player_position > 1235 - 2656) {
+		App->player->position.x = 127;
+		App->player->position.y = 1836 - 2656;
+	}
+	else if (App->player->save_player_position < 1235 - 2656 && App->player->save_player_position > 378 - 2656) {
+		App->player->position.x = 122;
+		App->player->position.y = 882 - 2656;
+	}
+	else if (App->player->save_player_position < 378 - 2656 && App->player->save_player_position > -2656) {
+		App->player->position.x = 122;
+		App->player->position.y = 395 - 2656;
+	}
+	*/
+
+	App->render->camera.x = App->render->camera.y = 0;
+	//App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
+	cont = 0;
 
 	//Colliders
 	App->collision->AddCollider({ 133,2817 - 2656,20,23 }, COLLIDER_WALL, this);
@@ -377,7 +400,7 @@ update_status ModuleScene1::Update()
 	//CAMERA
 	//middle screen (where camera goes up) = 110 - cont
 	//bottom screen = 110 - cont + 88
-	if (App->player->position.y == (110 - cont) && App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
+	if ((App->player->position.y == (110 - cont) || App->player->position.y == (-300 - cont)) && App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
 		cont++;
 		App->render->camera.y += speed;
 	}

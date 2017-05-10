@@ -46,12 +46,16 @@ public:
 
 	bool check_audio = true, check_audio1 = true, check_audio2 = true, check_audio3 = true;
 	//Camera parameters
-	int cont = 0, speed = 1;
+	int cont = 0, speed = 3;
 
 	bool play_win = false;
 	int tempo1 = 0;
 	bool check_UI = true;
 	bool winB = false;
+
+	//Starting y positions of the player (for respawns)
+	bool start1 = false; //110
+	bool start2 = true; //-300
 };
 
 
