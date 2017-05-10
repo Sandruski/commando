@@ -15,6 +15,9 @@
     <Filter Include="Modules\Enemies">
       <UniqueIdentifier>{76d291b1-94f4-4f57-a65f-016dcd36012c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Modules\NewFilter1">
+      <UniqueIdentifier>{33d2b11d-1771-4fb3-82df-bc20dddc6f94}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -128,6 +131,9 @@
     <ClInclude Include="ModuleEnding.h">
       <Filter>Modules</Filter>
     </ClInclude>
+    <ClInclude Include="ModuleSecretRoomB.h">
+      <Filter>Modules\NewFilter1</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -228,6 +234,9 @@
     </ClCompile>
     <ClCompile Include="ModuleEnding.cpp">
       <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleSecretRoomB.cpp">
+      <Filter>Modules\NewFilter1</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

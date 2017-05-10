@@ -93,6 +93,7 @@
     <ClInclude Include="ModuleRender.h" />
     <ClInclude Include="ModuleSaveData.h" />
     <ClInclude Include="ModuleScene1.h" />
+    <ClInclude Include="ModuleSecretRoomB.h" />
     <ClInclude Include="ModuleTextures.h" />
     <ClInclude Include="ModuleUI.h" />
     <ClInclude Include="ModuleWindow.h" />
@@ -130,6 +131,7 @@
     <ClCompile Include="ModuleRender.cpp" />
     <ClCompile Include="ModuleSaveData.cpp" />
     <ClCompile Include="ModuleScene1.cpp" />
+    <ClCompile Include="ModuleSecretRoomB.cpp" />
     <ClCompile Include="ModuleTextures.cpp" />
     <ClCompile Include="ModuleUI.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />

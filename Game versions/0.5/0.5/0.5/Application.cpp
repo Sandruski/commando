@@ -21,6 +21,7 @@
 #include "ModuleFonts.h"
 #include "ModuleUI.h"
 #include "ModuleSaveData.h"
+#include "ModuleSecretRoomB.h"
 
 Application::Application()
 {
@@ -38,6 +39,7 @@ Application::Application()
 	modules[index_module++] = cinematic = new ModuleCinematic();
 	modules[index_module++] = scene_1 = new ModuleScene1();
 	modules[index_module++] = ending = new ModuleEnding();
+	modules[index_module++] = roomB = new ModuleSecretRoomB();
 
 
 	modules[index_module++] = player = new ModulePlayer();
