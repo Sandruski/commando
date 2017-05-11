@@ -37,15 +37,17 @@ bool ModuleSecretRoomE::Start() {
 	background.w = 256;
 	background.h = 224;
 
-	App->render->camera.y = 0;
-
-
-	App->player->Disable();
-	App->collision->Disable();
-
 	App->collision->Enable();
 	App->player->Enable();
 	App->UI->Enable();
+	App->enemies->Enable();
+
+	//Camera and player parametres
+	App->player->position.x = 130;
+	App->player->position.y = 110;
+	App->scene_1->current_start_pos = 0;
+	App->render->camera.y = 0;
+	App->scene_1->cont = 0;
 
 	App->player->position.y = 170;
 	
@@ -69,6 +71,11 @@ update_status ModuleSecretRoomE::Update() {
 }
 bool ModuleSecretRoomE::CleanUp() {
 	App->textures->Unload(RoomE);
+
+	App->enemies->Disable();
+	App->UI->Disable();
+	App->player->Disable();
+	App->collision->Disable();
 
 	return true;
 }

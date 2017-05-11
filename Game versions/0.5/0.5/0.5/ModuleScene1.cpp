@@ -70,15 +70,6 @@ bool ModuleScene1::Start()
 	background.w = 256;
 	background.h = 2880;
 
-	App->UI->Disable();
-	App->enemies->Disable();
-	App->collision->Disable();
-	App->particlesgrenade1->Disable();
-	App->particlesgrenade->Disable();
-	App->particlesenemies->Disable();
-	App->particles->Disable();
-	App->player->Disable();
-
 	App->player->Enable();
 	App->particles->Enable();
 	App->particlesenemies->Enable();
@@ -113,7 +104,7 @@ bool ModuleScene1::Start()
 	contador = 0;
 
 	//Initialize camera for respawns
-
+	if (start) {
 		start1 = false;
 		start2 = false;
 		start3 = false;
@@ -124,8 +115,8 @@ bool ModuleScene1::Start()
 		current_start_pos = 0;
 
 		App->render->camera.y = 0;
-	
-	if (App->player->save_player_position < 110 && App->player->save_player_position >= 2529 - 2656) {
+	}
+	else if (App->player->save_player_position < 110 && App->player->save_player_position >= 2529 - 2656) {
 		start1 = true;
 		start2 = false;
 		start3 = false;
@@ -567,6 +558,7 @@ update_status ModuleScene1::Update()
 	if (cont5 == 20) {
 		play_win = true;
 		App->ending->cont = 0;
+		start = true;
 		App->fade->FadeToBlack(this, App->ending, 3);
 		App->player->vides = 3;
 	}

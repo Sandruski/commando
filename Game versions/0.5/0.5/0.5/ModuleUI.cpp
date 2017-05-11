@@ -130,7 +130,7 @@ update_status ModuleUI::Update()
 		if (App->player->GOD == true) {
 			current_animation = &Inv1;
 			r = current_animation->GetCurrentFrame();
-			App->render->Blit(Inv, 110, 5 - App->scene_1->cont, &r);
+			App->render->Blit(Inv, 110, App->scene_1->current_start_pos + 5 - App->scene_1->cont, &r);
 		}
 		cont = 1;
 		sprintf_s(str1, "%i", score);

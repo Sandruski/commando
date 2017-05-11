@@ -18,6 +18,7 @@
 #include "ModuleParticlesGrenade1.h"
 #include "ModuleParticles.h"
 #include "ModuleCinematic.h"
+#include "ModuleScene1.h"
 #include "ModuleUI.h"
 #include <windows.h>
 
@@ -35,12 +36,17 @@ bool ModuleSecretRoomD::Start() {
 	background.w = 256;
 	background.h = 447;
 
-	App->player->Disable();
-	App->collision->Disable();
-
 	App->collision->Enable();
 	App->player->Enable();
 	App->UI->Enable();
+	App->enemies->Enable();
+
+	//Camera and player parametres
+	App->player->position.x = 130;
+	App->player->position.y = 110;
+	App->scene_1->current_start_pos = 0;
+	App->render->camera.y = 0;
+	App->scene_1->cont = 0;
 
 	App->render->camera.y = -3 * SCREEN_HEIGHT;
 	App->player->position.y = 370;
@@ -54,6 +60,11 @@ update_status ModuleSecretRoomD::Update() {
 }
 bool ModuleSecretRoomD::CleanUp() {
 	App->textures->Unload(RoomD);
+
+	App->enemies->Disable();
+	App->UI->Disable();
+	App->player->Disable();
+	App->collision->Disable();
 
 	return true;
 }

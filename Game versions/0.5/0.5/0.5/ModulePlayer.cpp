@@ -8,6 +8,11 @@
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
 #include "ModuleCollision.h"
+#include "ModuleSecretRoom1A.h"
+#include "ModuleSecretRoomB.h"
+#include "ModuleSecretRoomC.h"
+#include "ModuleSecretRoomD.h"
+#include "ModuleSecretRoomE.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleMenu.h"
 #include "ModuleUI.h"
@@ -205,9 +210,6 @@ update_status ModulePlayer::Update()
 			backward.Start();
 		}
 
-		if (App->fade->off == App->scene_1) {
-			position.y += speed;
-		}
 
 		if (App->fade->on == App->scene_1) {
 			if (App->scene_1->start1) {
@@ -240,6 +242,9 @@ update_status ModulePlayer::Update()
 					position.y += speed;
 				}
 			}
+		}
+		else if (App->fade->on == App->room1A) {
+			position.y += speed;
 		}
 
 	}

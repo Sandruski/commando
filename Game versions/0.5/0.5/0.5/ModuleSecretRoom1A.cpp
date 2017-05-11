@@ -37,19 +37,19 @@ bool ModuleSecretRoom1A::Start() {
 	background.w = 256;
 	background.h = 224;
 
-
-	App->render->camera.y = 0;
-
-
-	App->player->Disable();
-	App->collision->Disable();
-
-
 	App->collision->Enable();
 	App->player->Enable();
 	App->UI->Enable();
+	App->enemies->Enable();
 
+	//Camera and player parametres
+	App->player->position.x = 130;
+	App->player->position.y = 110;
+	App->scene_1->current_start_pos = 0;
+	App->render->camera.y = 0;
+	App->scene_1->cont = 0;
 
+	//COLLIDERS
 	App->collision->AddCollider({ 0,0, 32, 153 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,151, 16, 71 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,216, 255, 8 }, COLLIDER_WALL, this);
@@ -58,6 +58,12 @@ bool ModuleSecretRoom1A::Start() {
 	App->collision->AddCollider({ 32,0, 132, 34 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 162,0, 29, 23 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 189,0, 35, 35 }, COLLIDER_WALL, this);
+
+	//ENEMIES
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 167, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 53, 110);
+
+
 	return true;
 }
 update_status ModuleSecretRoom1A::Update() {
@@ -73,6 +79,11 @@ update_status ModuleSecretRoom1A::Update() {
 }
 bool ModuleSecretRoom1A::CleanUp() {
 	App->textures->Unload(Room1A);
+
+	App->enemies->Disable();
+	App->UI->Disable();
+	App->player->Disable();
+	App->collision->Disable();
 
 	return true;
 }

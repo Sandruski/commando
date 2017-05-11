@@ -35,8 +35,7 @@ public:
 		{
 		CleanUp();
 		
-			enabled = false;
-			Start();
+		enabled = false;
 		}
 
 	}

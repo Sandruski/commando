@@ -44,14 +44,6 @@ ModuleMenu::~ModuleMenu()
 bool ModuleMenu::Start()
 {
 	LOG("Loading menu scene");
-	App->UI->Disable();
-	App->enemies->Disable();
-	App->collision->Disable();
-	App->particlesgrenade1->Disable();
-	App->particlesgrenade->Disable();
-	App->particlesenemies->Disable();
-	App->particles->Disable();
-	App->player->Disable();
 
 	graphics = App->textures->Load("Assets/Background/menu.png");
 	grenade = App->textures->Load("Assets/Sprites/items&HUD&snake.png");
