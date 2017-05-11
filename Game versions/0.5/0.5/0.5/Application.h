@@ -3,7 +3,7 @@
 
 #include "Globals.h"
 
-#define NUM_MODULES 23
+#define NUM_MODULES 25
 
 class ModuleWindow;
 class ModuleInput;
@@ -29,6 +29,8 @@ class ModuleParticlesGrenade1;
 class ModuleSaveData;
 class ModuleSecretRoomB;
 class ModuleSecretRoom1A;
+class ModuleSecretRoomC;
+class ModuleSecretRoomD;
 class ModuleSecretRoomE;
 
 
@@ -61,6 +63,8 @@ public:
 	ModuleSaveData* savedata;
 	ModuleSecretRoomB * roomB;
 	ModuleSecretRoom1A* room1A;
+	ModuleSecretRoomC * roomC;
+	ModuleSecretRoomD * roomD;
 	ModuleSecretRoomE* roomE;
 
 public:

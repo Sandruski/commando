@@ -95,6 +95,8 @@
     <ClInclude Include="ModuleScene1.h" />
     <ClInclude Include="ModuleSecretRoom1A.h" />
     <ClInclude Include="ModuleSecretRoomB.h" />
+    <ClInclude Include="ModuleSecretRoomC.h" />
+    <ClInclude Include="ModuleSecretRoomD.h" />
     <ClInclude Include="ModuleSecretRoomE.h" />
     <ClInclude Include="ModuleTextures.h" />
     <ClInclude Include="ModuleUI.h" />
@@ -135,6 +137,8 @@
     <ClCompile Include="ModuleScene1.cpp" />
     <ClCompile Include="ModuleSecretRoom1A.cpp" />
     <ClCompile Include="ModuleSecretRoomB.cpp" />
+    <ClCompile Include="ModuleSecretRoomC.cpp" />
+    <ClCompile Include="ModuleSecretRoomD.cpp" />
     <ClCompile Include="ModuleSecretRoomE.cpp" />
     <ClCompile Include="ModuleTextures.cpp" />
     <ClCompile Include="ModuleUI.cpp" />

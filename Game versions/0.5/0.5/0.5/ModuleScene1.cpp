@@ -21,6 +21,8 @@
 #include "ModuleUI.h"
 #include "ModuleSecretRoom1A.h"
 #include "ModuleSecretRoomB.h"
+#include "ModuleSecretRoomC.h"
+#include "ModuleSecretRoomD.h"
 #include "ModuleSecretRoomE.h"
 #include <windows.h>
 
@@ -531,12 +533,12 @@ update_status ModuleScene1::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_3] == 1 && KEY_DOWN) {
 		App->render->UP = false;
-		//App->fade->FadeToBlack(this, App->roomB, 3);
+		App->fade->FadeToBlack(this, App->roomC, 3);
 
 	}
 	if (App->input->keyboard[SDL_SCANCODE_4] == 1 && KEY_DOWN) {
 		App->render->UP = false;
-		//App->fade->FadeToBlack(this, App->roomB, 3);
+		App->fade->FadeToBlack(this, App->roomD, 3);
 
 	}
 	if (App->input->keyboard[SDL_SCANCODE_5] == 1 && KEY_DOWN) {

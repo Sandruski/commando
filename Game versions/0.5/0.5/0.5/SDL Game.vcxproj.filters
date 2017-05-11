@@ -140,6 +140,12 @@
     <ClInclude Include="ModuleSecretRoomE.h">
       <Filter>Modules\NewFilter1</Filter>
     </ClInclude>
+    <ClInclude Include="ModuleSecretRoomC.h">
+      <Filter>Modules\NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleSecretRoomD.h">
+      <Filter>Modules\NewFilter1</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -248,6 +254,12 @@
       <Filter>Modules\NewFilter1</Filter>
     </ClCompile>
     <ClCompile Include="ModuleSecretRoomE.cpp">
+      <Filter>Modules\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleSecretRoomC.cpp">
+      <Filter>Modules\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleSecretRoomD.cpp">
       <Filter>Modules\NewFilter1</Filter>
     </ClCompile>
   </ItemGroup>

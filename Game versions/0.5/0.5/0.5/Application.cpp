@@ -22,6 +22,8 @@
 #include "ModuleUI.h"
 #include "ModuleSaveData.h"
 #include "ModuleSecretRoomB.h"
+#include "ModuleSecretRoomC.h"
+#include "ModuleSecretRoomD.h"
 #include "ModuleSecretRoom1A.h"
 #include "ModuleSecretRoomE.h"
 
@@ -44,6 +46,8 @@ Application::Application()
 	modules[index_module++] = ending = new ModuleEnding();
 	modules[index_module++] = roomB = new ModuleSecretRoomB();
 	modules[index_module++] = room1A = new ModuleSecretRoom1A();
+	modules[index_module++] = roomC = new ModuleSecretRoomC();
+	modules[index_module++] = roomD = new ModuleSecretRoomD();
 	modules[index_module++] = roomE = new ModuleSecretRoomE();
 
 	modules[index_module++] = player = new ModulePlayer();
@@ -83,6 +87,8 @@ bool Application::Init()
 	room1A->Disable();
 	roomE->Disable();
 	roomB->Disable();
+	roomC->Disable();
+	roomD->Disable();
 
 	// Player will be enabled on the first update of a new scene
 
