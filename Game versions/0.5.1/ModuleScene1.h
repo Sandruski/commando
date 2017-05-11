@@ -32,6 +32,7 @@ public:
 	Animation win1;
 	Animation moto_stop;
 	SDL_Rect background;
+	SDL_Rect Secret_Room;
 	SDL_Rect r;
 	Animation* current_animation = nullptr;
 	int cont5;
@@ -60,7 +61,17 @@ public:
 	bool start3 = false; //1836 - 2656
 	bool start4 = false; //882 - 2656
 	bool start5 = false; //395 - 2656
+
+	//Secret rooms
+	bool roomA = false;
+	bool roomB = false;
+	bool roomC = false;
+	bool roomD = false;
+	bool roomE = false;
 	int current_start_pos = 0;
+
+	void OnCollision(Collider* c1, Collider* c2);
+
 };
 
 

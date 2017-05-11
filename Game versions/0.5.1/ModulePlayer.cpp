@@ -450,6 +450,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		OnCollisionItem(c1, c2);
 	if (c1->type == COLLIDER_PLAYER && (c2->type == COLLIDER_ENEMY || c2->type == COLLIDER_ENEMY_SHOT) && GOD == false)
 		OnCollisionEnemy(c1, c2);
+	if ((c1->type == COLLIDER_PLAYER_FEET || c1->type == COLLIDER_PLAYER)&& c2->type == COLLIDER_SECRET_ROOM)
+		OnCollisionSecretRooms(c1, c2);
 
 }
 
@@ -458,15 +460,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 {
-	/*if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT)
-	position.y += speed;
-
-	else if (App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT)
-	position.y -= speed;
-	else if (App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT)
-	position.x += speed;
-	else if (App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT)
-	position.x -= speed;*/
 
 	if ((c1->rect.x + c1->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - c1->rect.x != 1 && (c2->rect.y + c2->rect.h) - c1->rect.y == 1 && (c1->rect.y + c1->rect.h) - c2->rect.y != 1)
 
@@ -590,4 +583,11 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 		}
 	}
 
+}
+
+void ModulePlayer::OnCollisionSecretRooms(Collider* c1, Collider* c2) {
+
+	if (App->scene_1->roomA == true || App->scene_1->roomB == true || App->scene_1->roomC == true || App->scene_1->roomD == true || App->scene_1->roomE == true) {
+		waterB = true;
+	}
 }

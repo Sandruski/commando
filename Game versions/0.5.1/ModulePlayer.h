@@ -20,7 +20,7 @@ public:
 	void OnCollisionItem(Collider* c1, Collider* c2);
 	void OnCollisionWater(Collider* c1, Collider* c2);
 	void OnCollisionEnemy(Collider* c1, Collider* c2);
-
+	void OnCollisionSecretRooms(Collider* c1, Collider* c2);
 
 	bool detectionitem[9];
 

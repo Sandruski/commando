@@ -70,6 +70,11 @@ bool ModuleScene1::Start()
 	background.w = 256;
 	background.h = 2880;
 
+	Secret_Room.x = 110;
+	Secret_Room.y = 125;
+	Secret_Room.w = 16;
+	Secret_Room.h = 16;
+
 	App->player->Enable();
 	App->particles->Enable();
 	App->particlesenemies->Enable();
@@ -284,6 +289,13 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 151, 2625 - 2656,17,17 }, COLLIDER_ITEM, this); //Granades
 	App->collision->AddCollider({ 185, 1149 - 2656,17,17 }, COLLIDER_ITEM, this);
 
+
+	App->collision->AddCollider({ 150, 2370 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this); //Secret Rooms
+	App->collision->AddCollider({ 9, 2051 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this);
+	App->collision->AddCollider({ 217, 1426 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this);
+	App->collision->AddCollider({ 121, 1056 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this);
+	App->collision->AddCollider({ 233, 522 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this);
+
 	//ENEMIES
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 150, 2366 - 2656); //positiony = 1375-2656
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 227, 1449 - 2656);
@@ -480,6 +492,19 @@ update_status ModuleScene1::Update()
 	App->render->Blit(items, 185, 1149 - 2656, &r);
 
 
+	if(roomA == true)
+		App->render->Blit(items, 150, 2372 - 2656, &Secret_Room);
+	if (roomB == true)
+		App->render->Blit(items, 9, 2051 - 2656, &Secret_Room);
+	if (roomC == true)
+		App->render->Blit(items, 217, 1426 - 2656, &Secret_Room);
+	if (roomD == true)
+		App->render->Blit(items, 121, 1056 - 2656, &Secret_Room);
+	if (roomE == true)
+		App->render->Blit(items, 233, 522 - 2656, &Secret_Room);
+
+	
+	
 	//-2656
 	if (App->player->position.y <= 1550 - 2656 && contador < 120) { /* && App->player->position.y >= 1300 - 2656 */
 		if (w_m > 105) {
@@ -578,4 +603,21 @@ update_status ModuleScene1::Update()
 	}
 
 	return ret;
+}
+
+
+void ModuleScene1::OnCollision(Collider* c1, Collider* c2)
+{
+	if (c1->type == COLLIDER_SECRET_ROOM && c2->type == COLLIDER_END_OF_GRENADE){
+		if (App->player->position.y < 2480 - 2656 && App->player->position.y > 2350 - 2656)
+			roomA= true;
+		if (App->player->position.y < 2145 - 2656 && App->player->position.y > 2000 - 2656) 
+			roomB = true;
+		if (App->player->position.y < 1520 - 2656 && App->player->position.y > 1400 - 2656) 
+			roomC = true;
+		if (App->player->position.y < 1130 - 2656 && App->player->position.y > 1000 - 2656) 
+			roomD = true;
+		if (App->player->position.y < 630 - 2656 && App->player->position.y > 475 - 2656) 
+			roomE = true;
+		}
 }
