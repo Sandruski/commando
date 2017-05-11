@@ -529,6 +529,16 @@ update_status ModuleScene1::Update()
 		App->fade->FadeToBlack(this, App->roomB, 3);
 
 	}
+	if (App->input->keyboard[SDL_SCANCODE_3] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		//App->fade->FadeToBlack(this, App->roomB, 3);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_4] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		//App->fade->FadeToBlack(this, App->roomB, 3);
+
+	}
 	if (App->input->keyboard[SDL_SCANCODE_5] == 1 && KEY_DOWN) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->roomE, 3);

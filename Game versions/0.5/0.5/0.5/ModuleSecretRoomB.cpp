@@ -34,6 +34,28 @@ bool ModuleSecretRoomB::Start(){
 	background.y = 0;
 	background.w = 256;
 	background.h = 224;
+
+	App->render->camera.y = 0;
+
+
+	App->player->Disable();
+	App->collision->Disable();
+
+
+	App->collision->Enable();
+	App->player->Enable();
+	App->UI->Enable();
+
+	App->collision->AddCollider({ 0,0, 256, 45 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 208,38, 48, 24 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 240,61, 16, 163 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 0,216, 242, 8 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 0,38, 16, 186 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 15,72, 65, 50 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 208 ,60, 6, 26 }, COLLIDER_WALL, this);
+
+
+
 	return true;
 }
 update_status ModuleSecretRoomB::Update(){

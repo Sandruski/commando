@@ -37,6 +37,27 @@ bool ModuleSecretRoomE::Start() {
 	background.w = 256;
 	background.h = 224;
 
+	App->render->camera.y = 0;
+
+
+	App->player->Disable();
+	App->collision->Disable();
+
+	App->collision->Enable();
+	App->player->Enable();
+	App->UI->Enable();
+
+	App->player->position.y = 170;
+	
+	App->collision->AddCollider({ 0,0, 256, 31 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 0,31, 116, 17 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 141,31, 115, 16 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 239,47, 16, 177 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 192,71, 49, 50 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 96,87, 63, 53 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 0,38, 16, 186 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 0,216, 256, 8 }, COLLIDER_WALL, this);
+
 
 
 	return true;

@@ -1,7 +1,3 @@
-﻿  ModuleSecretRoom1A.cpp
-  ModulePlayer.cpp
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.5\0.5\0.5\moduleplayer.cpp(60): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.5\0.5\0.5\moduleplayer.cpp(65): warning C4305: '=': truncation from 'double' to 'float'
-  Generating Code...
-  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.5\0.5\0.5\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.5\0.5\0.5\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  ModuleSecretRoomE.cpp
+  SDL Game.vcxproj -> C:\Users\aleixca1\Desktop\gets-name-\Game versions\0.5\0.5\0.5\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\aleixca1\Desktop\gets-name-\Game versions\0.5\0.5\0.5\Debug\SDL5 Handout.pdb (Full PDB)

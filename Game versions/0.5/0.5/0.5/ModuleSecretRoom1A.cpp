@@ -37,19 +37,36 @@ bool ModuleSecretRoom1A::Start() {
 	background.w = 256;
 	background.h = 224;
 
+
 	App->render->camera.y = 0;
 
+
 	App->player->Disable();
-
-
 	App->collision->Disable();
+
+
 	App->collision->Enable();
 	App->player->Enable();
 	App->UI->Enable();
 
+
+	App->collision->AddCollider({ 0,0, 32, 153 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 0,151, 16, 71 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 0,216, 255, 8 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 224,0, 32, 142 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 240,141, 16, 74 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 32,0, 132, 34 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 162,0, 29, 23 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 189,0, 35, 35 }, COLLIDER_WALL, this);
 	return true;
 }
 update_status ModuleSecretRoom1A::Update() {
+
+	
+
+
+
+
 	App->render->Blit(Room1A, w, h, &background);
 
 	return UPDATE_CONTINUE;
