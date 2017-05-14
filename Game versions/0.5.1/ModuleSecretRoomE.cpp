@@ -2,7 +2,11 @@
 #include "Application.h"
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
+#include "ModuleSecretRoom1A.h"
 #include "ModuleSecretRoomB.h"
+#include "ModuleSecretRoomC.h"
+#include "ModuleSecretRoomD.h"
+#include "ModuleSecretRoomE.h"
 #include "ModuleMenu.h"
 #include "ModulePlayer.h"
 #include "ModuleInput.h"
@@ -20,7 +24,6 @@
 #include "ModuleCinematic.h"
 #include "ModuleUI.h"
 #include <windows.h>
-#include "ModuleSecretRoomE.h"
 #include "ModuleScene1.h"
 
 ModuleSecretRoomE::ModuleSecretRoomE() {
@@ -66,6 +69,32 @@ bool ModuleSecretRoomE::Start() {
 }
 update_status ModuleSecretRoomE::Update() {
 	App->render->Blit(RoomE, w, h, &background);
+
+	if (App->input->keyboard[SDL_SCANCODE_1] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, App->room1A, 1);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_2] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, App->roomB, 1);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_3] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, App->roomC, 1);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_4] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, App->roomD, 1);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_5] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, App->scene_1, 1);
+	}
+
 
 	return UPDATE_CONTINUE;
 }

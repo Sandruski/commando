@@ -47,6 +47,7 @@ public:
 	bool collA = false;
 	bool collS = false;
 	bool collD = false;
+	bool stairs = true;
 
 	bool cooldown = false;
 	uint lastTime, currentTime;

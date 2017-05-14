@@ -409,19 +409,27 @@ update_status ModulePlayer::Update()
 
 	coll->SetPos(position.x + 2, position.y + 4);
 	feetC->SetPos(position.x + 4, position.y + 19);
-
+	if (stairs == false) {
+		current_animation = &waterDie;
+		move = false;
+	}
 	if (waterB == false) {
 		current_animation = &waterDie;
 		move = false;
 	}
 	currentTime = SDL_GetTicks();
 	currentTime -= lastTime;
-	if (waterB == true)
+	if (waterB == true && stairs == true)
 		lastTime = SDL_GetTicks();
 
 	if (currentTime > 500 && waterB == false) {
 		current_animation = &invisible;
 		timeW = true;
+	}
+
+	if (currentTime > 500 && stairs == false) {
+		App->player->current_animation = &App->player->forward;
+		App->player->move = true;
 	}
 	if (enemyB == false) {
 		current_animation = &die;
@@ -587,7 +595,24 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 
 void ModulePlayer::OnCollisionSecretRooms(Collider* c1, Collider* c2) {
 
-	if (App->scene_1->roomA == true || App->scene_1->roomB == true || App->scene_1->roomC == true || App->scene_1->roomD == true || App->scene_1->roomE == true) {
-		waterB = true;
+	if (App->scene_1->roomA == true) {
+		App->fade->FadeToBlack(App->scene_1, App->room1A, 1);
+		stairs = false;
+	}
+	else if (App->scene_1->roomB == true) {
+		App->fade->FadeToBlack(App->scene_1, App->roomB, 1);
+		stairs = false;
+	}
+	else if (App->scene_1->roomC == true){
+		App->fade->FadeToBlack(App->scene_1, App->roomC, 1);
+		stairs = false;
+	}
+	else if (App->scene_1->roomD == true ){
+		App->fade->FadeToBlack(App->scene_1, App->roomD, 1);
+		stairs = false;
+	}
+	else if (App->scene_1->roomE == true) {
+		App->fade->FadeToBlack(App->scene_1, App->roomE, 1);
+		stairs = false;
 	}
 }

@@ -1,5 +1,5 @@
 ﻿  ModulePlayer.cpp
-c:\users\aleixgm\desktop\gets-name-\game versions\0.5.1\moduleplayer.cpp(65): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\gets-name-\game versions\0.5.1\moduleplayer.cpp(70): warning C4305: '=': truncation from 'double' to 'float'
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.5.1\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.5.1\Debug\SDL5 Handout.pdb (Full PDB)
+c:\users\aleixg\desktop\gets-name-\game versions\0.5.1\moduleplayer.cpp(65): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\aleixg\desktop\gets-name-\game versions\0.5.1\moduleplayer.cpp(70): warning C4305: '=': truncation from 'double' to 'float'
+  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\0.5.1\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\AleixG\Desktop\gets-name-\Game versions\0.5.1\Debug\SDL5 Handout.pdb (Full PDB)
