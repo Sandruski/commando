@@ -1,0 +1,22 @@
+5h
+
+GUILLEM:
+2 players
+-Reviure (+ dissenyar i preparar sprites).
+-Càmera 2 players.
+-Items, etc.
+
+ALEIX:
+PowerUp Granada.
+Entrada sales secretes.
+Colliders 2 players.
+
+SANDRA:
+Càmera de les sales secretes (les que es desplaça cap amunt perquè estan dividides en 2 zones).
+Enemics a les sales secretes + item Haschichi (PER ACABAR).
+Fer que quan mates determinats enemics amb una granada dropejin un objecte (PER ACABAR).
+
+*****
+ALEIX 14/05:
+Canvis d'una sala secreta a una altra amb un botó des d'una mateixa sala secreta 1h
+
