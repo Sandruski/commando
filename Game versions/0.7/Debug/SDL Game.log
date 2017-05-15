@@ -1,0 +1,6 @@
+﻿  Soldier_Grenade.cpp
+c:\users\sandraag3\desktop\0.5.1\soldier_grenade.cpp(63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\desktop\0.5.1\soldier_grenade.cpp(64): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\desktop\0.5.1\soldier_grenade.cpp(66): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  SDL Game.vcxproj -> C:\Users\sandraag3\Desktop\0.5.1\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\sandraag3\Desktop\0.5.1\Debug\SDL5 Handout.pdb (Full PDB)
