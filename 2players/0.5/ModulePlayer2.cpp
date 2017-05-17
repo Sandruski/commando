@@ -656,29 +656,53 @@ void ModulePlayer2::OnCollisionEnemy(Collider* c1, Collider* c2) {
 
 void ModulePlayer2::OnCollisionRev(Collider* c1, Collider* c2)
 {
-	if (App->input->keyboard[SDL_SCANCODE_0] == KEY_STATE::KEY_DOWN)
+	if (App->input->keyboard[SDL_SCANCODE_0] == KEY_STATE::KEY_REPEAT) {
 		revTime++;
-	if (revTime == 2) {
-		
-		App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev1);
-	}
-	if (revTime == 4) {
-	
-		App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev2);
-	}
-	if (revTime == 6) {
-		
-		App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev3);
-	}
-	if (revTime == 8) {
+		/*
+		if (revTime == 2) {
 
-		App->render->Blit(graphics, App->player->position.x - 5 , App->player->position.y, &hpRev4);
+			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev1);
+		}
+		if (revTime == 4) {
+
+			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev2);
+		}
+		if (revTime == 6) {
+
+			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev3);
+		}
+		if (revTime == 8) {
+
+			App->render->Blit(graphics, App->player->position.x - 5 , App->player->position.y, &hpRev4);
+		}
+		if (revTime >= 8) {
+			App->player->move = true;
+			revTime = 0;
+		}
+		*/
+
+		if (revTime <= 20 && revTime >= 1) {
+
+			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev1);
+		}
+		else if (revTime <= 40 && revTime > 20) {
+
+			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev2);
+		}
+		else if (revTime <= 60 && revTime > 40) {
+
+			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev3);
+		}
+		else if (revTime <= 80 && revTime > 60) {
+
+			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev4);
+		}
+		if (revTime >= 80) {
+			App->player->move = true;
+			revTime = 0;
+
+		}
 	}
-	if (revTime >= 8) {
-		App->player->move = true;
+	if (App->input->keyboard[SDL_SCANCODE_0] == KEY_STATE::KEY_UP)
 		revTime = 0;
-	}
-
-
-
 }

@@ -1,3 +1,5 @@
-﻿  ModuleScene1.cpp
-  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\2players\0.5\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\2players\0.5\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  ModulePlayer.cpp
+c:\users\perso\desktop\gets-name-\2players\0.5\moduleplayer.cpp(66): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\perso\desktop\gets-name-\2players\0.5\moduleplayer.cpp(71): warning C4305: '=': truncamiento de 'double' a 'float'
+  SDL Game.vcxproj -> C:\Users\perso\Desktop\gets-name-\2players\0.5\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\perso\Desktop\gets-name-\2players\0.5\Debug\SDL5 Handout.pdb (Full PDB)

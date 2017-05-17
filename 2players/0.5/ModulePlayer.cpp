@@ -639,28 +639,55 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 
 void ModulePlayer::OnCollisionRev(Collider* c1, Collider* c2)
 {
-	if (App->input->keyboard[SDL_SCANCODE_8] == KEY_STATE::KEY_DOWN)
-		revTime++;
-	if (revTime == 1) {
+	if (App->input->keyboard[SDL_SCANCODE_9] == KEY_STATE::KEY_REPEAT) {
+		App->player2->revTime++;
+		/*
+		if (revTime == 2) {
 
-		App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev1);
-	}
-	if (revTime == 2) {
-		App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev2);
-	}
-	if (revTime == 3) {
+		App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev1);
+		}
+		if (revTime == 4) {
 
-		App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev3);
-	}
-	if (revTime == 4) {
-		
-		App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev4);
-	}
-	if (revTime >= 4) {
-		App->player2->move = true;
+		App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev2);
+		}
+		if (revTime == 6) {
+
+		App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev3);
+		}
+		if (revTime == 8) {
+
+		App->render->Blit(graphics, App->player->position.x - 5 , App->player->position.y, &hpRev4);
+		}
+		if (revTime >= 8) {
+		App->player->move = true;
 		revTime = 0;
-	}
+		}
+		*/
 
+		if (App->player2->revTime <= 20 && App->player2->revTime >= 1) {
+
+			App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev1);
+		}
+		else if (App->player2->revTime <= 40 && App->player2->revTime > 20) {
+
+			App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev2);
+		}
+		else if (App->player2->revTime <= 60 && App->player2->revTime > 40) {
+
+			App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev3);
+		}
+		else if (App->player2->revTime <= 80 && App->player2->revTime > 60) {
+
+			App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev4);
+		}
+		if (App->player2->revTime >= 80) {
+			App->player2->move = true;
+			App->player2->revTime = 0;
+
+		}
+	}
+	if (App->input->keyboard[SDL_SCANCODE_9] == KEY_STATE::KEY_UP)
+		App->player2->revTime = 0;
 
 
 }
