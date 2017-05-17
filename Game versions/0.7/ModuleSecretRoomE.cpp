@@ -48,8 +48,8 @@ bool ModuleSecretRoomE::Start() {
 	App->player->current_animation = &App->player->forward;
 
 	//Camera and player parametres
-	App->player->position.x = 130;
-	App->player->position.y = 170;
+	App->player->position.x = SCREEN_WIDTH / 2;
+	App->player->position.y = 185;
 	App->scene_1->current_start_pos = 0;
 	App->render->camera.y = 0;
 	App->scene_1->cont = 0;

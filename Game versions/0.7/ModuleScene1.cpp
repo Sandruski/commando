@@ -135,7 +135,7 @@ bool ModuleScene1::Start()
 
 		App->render->camera.y = 0;
 	}
-	else if (App->player->save_player_position < 110 && App->player->save_player_position >= 2529 - 2656) {
+	else if ((App->player->save_player_position < 110 && App->player->save_player_position >= 2529 - 2656) || start1) {
 		start1 = true;
 		start2 = false;
 		start3 = false;
@@ -147,7 +147,7 @@ bool ModuleScene1::Start()
 
 		App->render->camera.y = 0;
 	}
-	else if (App->player->save_player_position < 2529 - 2656 && App->player->save_player_position >= 2003 - 2656) {
+	else if ((App->player->save_player_position < 2529 - 2656 && App->player->save_player_position >= 2003 - 2656) || start2) {
 		start1 = false;
 		start2 = true;
 		start3 = false;
@@ -159,7 +159,7 @@ bool ModuleScene1::Start()
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
 	}
-	else if (App->player->save_player_position < 2003 - 2656 && App->player->save_player_position > 1235 - 2656) {
+	else if ((App->player->save_player_position < 2003 - 2656 && App->player->save_player_position > 1235 - 2656) || start3) {
 		start1 = false;
 		start2 = false;
 		start3 = true;
@@ -171,7 +171,7 @@ bool ModuleScene1::Start()
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
 	}
-	else if (App->player->save_player_position < 1235 - 2656 && App->player->save_player_position > 378 - 2656) {
+	else if ((App->player->save_player_position < 1235 - 2656 && App->player->save_player_position > 378 - 2656) || start4) {
 		start1 = false;
 		start2 = false;
 		start3 = false;
@@ -183,7 +183,7 @@ bool ModuleScene1::Start()
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
 	}
-	else if (App->player->save_player_position < 378 - 2656 && App->player->save_player_position > -2656) {
+	else if ((App->player->save_player_position < 378 - 2656 && App->player->save_player_position > -2656) || start5) {
 		start1 = false;
 		start2 = false;
 		start3 = false;
@@ -529,7 +529,7 @@ update_status ModuleScene1::Update()
 			hello5 = false;
 		}
 	}
-	else if (blit_item && App->player->detectionitem[13] == false) {
+	else if (blit_item && App->player->detectionitem[14] == false) {
 		App->render->Blit(items, enemydiex, enemydiey, &r1);
 		if (hello6) {
 			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM, this);
@@ -607,6 +607,7 @@ update_status ModuleScene1::Update()
 		w_m--;
 	}
 	
+	//Secret rooms auto
 	if (App->input->keyboard[SDL_SCANCODE_1] == 1 && KEY_DOWN) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->room1A, 1);
@@ -630,6 +631,63 @@ update_status ModuleScene1::Update()
 	if (App->input->keyboard[SDL_SCANCODE_5] == 1 && KEY_DOWN) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->roomE, 1);
+
+	}
+
+	//Respawns auto
+	if (App->input->keyboard[SDL_SCANCODE_Z] == 1 && KEY_DOWN) {
+		start = false;
+		start1 = true;
+		start2 = false;
+		start3 = false;
+		start4 = false;
+		start5 = false;
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, this, 1);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_X] == 1 && KEY_DOWN) {
+		start = false;
+		start1 = false;
+		start2 = true;
+		start3 = false;
+		start4 = false;
+		start5 = false;
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, this, 1);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_C] == 1 && KEY_DOWN) {
+		start = false;
+		start1 = false;
+		start2 = false;
+		start3 = true;
+		start4 = false;
+		start5 = false;
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, this, 1);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_V] == 1 && KEY_DOWN) {
+		start = false;
+		start1 = false;
+		start2 = false;
+		start3 = false;
+		start4 = true;
+		start5 = false;
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, this, 1);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_B] == 1 && KEY_DOWN) {
+		start = false;
+		start1 = false;
+		start2 = false;
+		start3 = false;
+		start4 = false;
+		start5 = true;
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, this, 1);
 
 	}
 

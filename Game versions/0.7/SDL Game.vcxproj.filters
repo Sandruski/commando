@@ -146,6 +146,9 @@
     <ClInclude Include="ModuleSecretRoomD.h">
       <Filter>Modules\NewFilter1</Filter>
     </ClInclude>
+    <ClInclude Include="GrenadesB.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -261,6 +264,9 @@
     </ClCompile>
     <ClCompile Include="ModuleSecretRoomD.cpp">
       <Filter>Modules\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="GrenadesB.cpp">
+      <Filter>Modules\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

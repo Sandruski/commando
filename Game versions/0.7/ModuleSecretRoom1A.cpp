@@ -54,14 +54,14 @@ bool ModuleSecretRoom1A::Start() {
 	App->player->current_animation = &App->player->forward;
 
 	//Camera and player parametres
-	App->player->position.x = 130;
-	App->player->position.y = 110;
+	App->player->position.x = SCREEN_WIDTH / 2;
+	App->player->position.y = 185;
 	App->scene_1->current_start_pos = 0;
 	App->render->camera.y = 0;
 	App->scene_1->cont = 0;
 
 	//COLLIDERS
-/*	App->collision->AddCollider({ 0,0, 32, 153 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 0,0, 32, 153 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,151, 16, 71 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,216, 255, 8 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 224,0, 32, 142 }, COLLIDER_WALL, this);
@@ -69,7 +69,7 @@ bool ModuleSecretRoom1A::Start() {
 	App->collision->AddCollider({ 32,0, 132, 34 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 162,0, 29, 23 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 189,0, 35, 35 }, COLLIDER_WALL, this);
-*/
+
 	//Items
 	App->collision->AddCollider({ 52, 52, 14, 14 }, COLLIDER_ITEM, this);
 

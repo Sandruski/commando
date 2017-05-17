@@ -5,6 +5,7 @@
 #include "ModuleEnemies.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
+#include "GrenadesB.h"
 #include "ModuleTextures.h"
 #include "Enemy.h"
 #include "Soldier_Rifle.h"
@@ -189,6 +190,11 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i]->type = ENEMY_TYPES::SOLDIERPRISONER;
 			enemies[i]->Esperanza = true;
 			break;
+		case ENEMY_TYPES::GRENADE:
+			enemies[i] = new GrenadesB(info.x, info.y);
+			enemies[i]->type = ENEMY_TYPES::SOLDIERPRISONER;
+			enemies[i]->Esperanza = true;
+			break;
 		}
 	}
 }
@@ -197,6 +203,17 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
+		if (c1->type == COLLIDER_ITEM) { //GRENADES
+			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
+
+				enemies[i]->OnCollision(c1, c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			}
+		}
+
+
 		if (c1->type == COLLIDER_PRISONER) { //PRISONERS
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
 				enemies[i]->OnCollision(c2, c1);

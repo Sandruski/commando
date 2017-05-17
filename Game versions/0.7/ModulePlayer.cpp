@@ -520,52 +520,9 @@ void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
 		detectionitem[7] = true;
 		App->UI->grenade++;
 	}
-	if (App->player->position.x > App->scene_1->enemydiex - 25 && App->player->position.x < App->scene_1->enemydiex + 25 &&
-		App->player->position.y > App->scene_1->enemydiey - 25 && App->player->position.y < App->scene_1->enemydiey + 25 && count == 0) {
-		count++;
-		detectionitem[8] = true;
-		App->UI->score += 1000;
-	}
-	if (App->player->position.x > App->scene_1->enemydiex - 25 && App->player->position.x < App->scene_1->enemydiex + 25 &&
-		App->player->position.y > App->scene_1->enemydiey - 25 && App->player->position.y < App->scene_1->enemydiey + 25 && count == 1) {
-		count++;
-		detectionitem[9] = true;
-		App->UI->score += 1000;
-	}
-	if (App->player->position.x > App->scene_1->enemydiex - 25 && App->player->position.x < App->scene_1->enemydiex + 25 &&
-		App->player->position.y > App->scene_1->enemydiey - 25 && App->player->position.y < App->scene_1->enemydiey + 25 && count == 2) {
-		count++;
-		detectionitem[10] = true;
-		App->UI->score += 1000;
-	}
-	if (App->player->position.x > App->scene_1->enemydiex - 25 && App->player->position.x < App->scene_1->enemydiex + 25 &&
-		App->player->position.y > App->scene_1->enemydiey - 25 && App->player->position.y < App->scene_1->enemydiey + 25 && count == 3) {
-		count++;
-		detectionitem[11] = true;
-		App->UI->score += 1000;
-	}
-	if (App->player->position.x > App->scene_1->enemydiex - 25 && App->player->position.x < App->scene_1->enemydiex + 25 &&
-		App->player->position.y > App->scene_1->enemydiey - 25 && App->player->position.y < App->scene_1->enemydiey + 25 && count == 4) {
-		count++;
-		detectionitem[12] = true;
-		App->UI->score += 1000;
-	}
-	if (App->player->position.x > App->scene_1->enemydiex - 25 && App->player->position.x < App->scene_1->enemydiex + 25 &&
-		App->player->position.y > App->scene_1->enemydiey - 25 && App->player->position.y < App->scene_1->enemydiey + 25 && count == 5) {
-		count++;
-		detectionitem[13] = true;
-		App->UI->score += 1000;
-	}
-	if (App->player->position.x > App->scene_1->enemydiex - 25 && App->player->position.x < App->scene_1->enemydiex + 25 &&
-		App->player->position.y > App->scene_1->enemydiey - 25 && App->player->position.y < App->scene_1->enemydiey + 25 && count == 6) {
-		count++;
-		detectionitem[14] = true;
-		App->UI->score += 1000;
-	}
 
 	App->UI->grenade++;
 	c2->to_delete = true;
-
 }
 
 void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {

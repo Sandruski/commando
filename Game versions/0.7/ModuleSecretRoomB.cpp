@@ -48,12 +48,13 @@ bool ModuleSecretRoomB::Start(){
 	App->player->current_animation = &App->player->forward;
 
 	//Camera and player parametres
-	App->player->position.x = 130;
-	App->player->position.y = 110;
+	App->player->position.x = SCREEN_WIDTH / 2;
+	App->player->position.y = 185;
 	App->scene_1->current_start_pos = 0;
 	App->render->camera.y = 0;
 	App->scene_1->cont = 0;
 
+	//COLLIDERS
 	App->collision->AddCollider({ 0,0, 256, 45 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 208,38, 48, 24 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 240,61, 16, 163 }, COLLIDER_WALL, this);
@@ -61,6 +62,28 @@ bool ModuleSecretRoomB::Start(){
 	App->collision->AddCollider({ 0,38, 16, 186 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 15,72, 65, 50 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 208 ,60, 6, 26 }, COLLIDER_WALL, this);
+
+	//Grenades
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 100, 49);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 133, 49);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 121, 68);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 155, 68);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 114, 85);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 151, 85);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 124, 103);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 173, 103);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 94, 118);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 147, 118);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 138, 130);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 164, 130);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 100, 148);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 138, 148);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 125, 166);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 172, 166);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 92, 182);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 156, 182);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 135, 196);
+	App->enemies->AddEnemy(ENEMY_TYPES::GRENADE, 172, 196);
 
 	return true;
 }

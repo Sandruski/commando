@@ -98,7 +98,4 @@ void Enemy_CrazyGreen::Move()
 	//position.y++;
 	//position.x--;
 	//position.x--;
-	
-	
-
 }
