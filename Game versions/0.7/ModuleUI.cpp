@@ -9,6 +9,7 @@
 #include "ModuleFonts.h"
 #include "ModuleAudio.h"
 #include "ModuleSaveData.h"
+#include "ModuleFadeToBlack.h"
 
 #include <windows.h>
 #include<stdlib.h>
@@ -99,7 +100,7 @@ bool ModuleUI::CleanUp()
 
 update_status ModuleUI::Update()
 {
-	if (tempo1 <= 120) {
+	if (tempo1 <= 120 && App->fade->on == App->scene_1) {
 		App->render->Blit(Hud2, 111, App->scene_1->current_start_pos + 100 - App->scene_1->cont, &lvl1);
 		tempo1++;
 	}
