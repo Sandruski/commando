@@ -56,6 +56,20 @@ bool ModuleSecretRoomC::Start() {
 	App->render->camera.y = -3 * SCREEN_HEIGHT;
 	App->scene_1->cont = 0;
 
+	//COLLIDERS
+	App->collision->AddCollider({ 0,0, 16, 448 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 16,442, 255, 6 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 240,0, 16, 448 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 16,7, 224, 38 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 112,42, 32, 37 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 192,104, 49, 55 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 16,215, 16, 60 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 64,215, 176, 55 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 112,79, 4, 16 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 141,79, 4, 16 }, COLLIDER_WALL, this);
+
+
+
 	//ENEMIES
 	App->enemies->AddEnemy(ENEMY_TYPES::PRISONER, 147, 265);
 	App->enemies->AddEnemy(ENEMY_TYPES::PRISONER, 181, 265);
