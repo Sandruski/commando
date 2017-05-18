@@ -1,2 +1,7 @@
-﻿  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  ModuleScene1.cpp
+  ModulePlayer.cpp
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleplayer.cpp(65): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleplayer.cpp(70): warning C4305: '=': truncation from 'double' to 'float'
+  Generating Code...
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)

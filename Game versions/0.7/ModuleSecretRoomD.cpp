@@ -41,9 +41,13 @@ bool ModuleSecretRoomD::Start() {
 	background.h = 447;
 
 	App->collision->Enable();
+	App->particles->Enable();
+	App->particlesenemies->Enable();
+	App->particlesgrenade->Enable();
+	App->particlesgrenade1->Enable();
 	App->player->Enable();
-	App->UI->Enable();
 	App->enemies->Enable();
+	App->UI->Enable();
 
 	App->player->current_animation = &App->player->forward;
 
@@ -87,8 +91,8 @@ bool ModuleSecretRoomD::Start() {
 update_status ModuleSecretRoomD::Update() {
 	App->render->Blit(RoomD, w, h, &background);
 
-	//Move camera
-	if (App->player->position.y <= 230 && App->render->camera.y < 0) {
+	//Move camera UP
+	if (App->player->position.y <= 220 && App->render->camera.y < 0) {
 		check_player++;
 
 		if (check_player % 2 == 0) {
@@ -104,6 +108,25 @@ update_status ModuleSecretRoomD::Update() {
 	else {
 		App->player->forward.Stop();
 		App->player->move = true;
+	}
+	//
+
+	//Move camera DOWN
+	if (App->player->position.y > 220 && App->render->camera.y > -3 * SCREEN_HEIGHT) {
+		check_player++;
+
+		if (check_player % 2 == 0) {
+			App->player->position.y++;
+		}
+
+		App->player->move = false;
+		App->scene_1->cont -= 2;
+		App->player->current_animation = &App->player->backward;
+		App->player->backward.Start();
+		App->render->camera.y -= 6;
+	}
+	else {
+		App->player->backward.Stop();
 	}
 	//
 
@@ -124,6 +147,14 @@ update_status ModuleSecretRoomD::Update() {
 	}
 	if (App->input->keyboard[SDL_SCANCODE_4] == 1 && KEY_DOWN) {
 		App->render->UP = false;
+
+		App->scene_1->start = false;
+		App->scene_1->start1 = false;
+		App->scene_1->start2 = false;
+		App->scene_1->start3 = false;
+		App->scene_1->start4 = true;
+		App->scene_1->start5 = false;
+
 		App->fade->FadeToBlack(this, App->scene_1, 1);
 
 	}
@@ -137,9 +168,13 @@ update_status ModuleSecretRoomD::Update() {
 bool ModuleSecretRoomD::CleanUp() {
 	App->textures->Unload(RoomD);
 
-	App->enemies->Disable();
 	App->UI->Disable();
+	App->enemies->Disable();
 	App->player->Disable();
+	App->particlesgrenade1->Disable();
+	App->particlesgrenade->Disable();
+	App->particlesenemies->Disable();
+	App->particles->Disable();
 	App->collision->Disable();
 
 	return true;

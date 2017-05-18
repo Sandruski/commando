@@ -89,12 +89,12 @@ bool ModuleScene1::Start()
 	Secret_Room.w = 16;
 	Secret_Room.h = 16;
 
-	App->player->Enable();
+	App->collision->Enable();
 	App->particles->Enable();
 	App->particlesenemies->Enable();
 	App->particlesgrenade->Enable();
 	App->particlesgrenade1->Enable();
-	App->collision->Enable();
+	App->player->Enable();
 	App->enemies->Enable();
 	App->UI->Enable();
 
@@ -123,19 +123,7 @@ bool ModuleScene1::Start()
 	contador = 0;
 
 	//Initialize camera for respawns
-	if (start) {
-		start1 = false;
-		start2 = false;
-		start3 = false;
-		start4 = false;
-		start5 = false;
-		App->player->position.x = 130;
-		App->player->position.y = 110;
-		current_start_pos = 0;
-
-		App->render->camera.y = 0;
-	}
-	else if ((App->player->save_player_position < 110 && App->player->save_player_position >= 2529 - 2656) || start1) {
+	if (start1) {
 		start1 = true;
 		start2 = false;
 		start3 = false;
@@ -147,7 +135,7 @@ bool ModuleScene1::Start()
 
 		App->render->camera.y = 0;
 	}
-	else if ((App->player->save_player_position < 2529 - 2656 && App->player->save_player_position >= 2003 - 2656) || start2) {
+	else if (start2) {
 		start1 = false;
 		start2 = true;
 		start3 = false;
@@ -159,7 +147,7 @@ bool ModuleScene1::Start()
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
 	}
-	else if ((App->player->save_player_position < 2003 - 2656 && App->player->save_player_position > 1235 - 2656) || start3) {
+	else if (start3) {
 		start1 = false;
 		start2 = false;
 		start3 = true;
@@ -171,7 +159,7 @@ bool ModuleScene1::Start()
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
 	}
-	else if ((App->player->save_player_position < 1235 - 2656 && App->player->save_player_position > 378 - 2656) || start4) {
+	else if (start4) {
 		start1 = false;
 		start2 = false;
 		start3 = false;
@@ -183,7 +171,7 @@ bool ModuleScene1::Start()
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
 	}
-	else if ((App->player->save_player_position < 378 - 2656 && App->player->save_player_position > -2656) || start5) {
+	else if (start5) {
 		start1 = false;
 		start2 = false;
 		start3 = false;
@@ -448,12 +436,12 @@ bool ModuleScene1::CleanUp()
 
 	App->UI->Disable();
 	App->enemies->Disable();
-	App->collision->Disable();
+	App->player->Disable();
 	App->particlesgrenade1->Disable();
 	App->particlesgrenade->Disable();
 	App->particlesenemies->Disable();
 	App->particles->Disable();
-	App->player->Disable();
+	App->collision->Disable();
 
 	return true;
 }

@@ -41,9 +41,13 @@ bool ModuleSecretRoomB::Start(){
 	background.h = 224;
 
 	App->collision->Enable();
+	App->particles->Enable();
+	App->particlesenemies->Enable();
+	App->particlesgrenade->Enable();
+	App->particlesgrenade1->Enable();
 	App->player->Enable();
-	App->UI->Enable();
 	App->enemies->Enable();
+	App->UI->Enable();
 
 	App->player->current_animation = &App->player->forward;
 
@@ -97,6 +101,14 @@ update_status ModuleSecretRoomB::Update(){
 	}
 	if (App->input->keyboard[SDL_SCANCODE_2] == 1 && KEY_DOWN) {
 		App->render->UP = false;
+
+		App->scene_1->start = false;
+		App->scene_1->start1 = false;
+		App->scene_1->start2 = false;
+		App->scene_1->start3 = true;
+		App->scene_1->start4 = false;
+		App->scene_1->start5 = false;
+
 		App->fade->FadeToBlack(this, App->scene_1, 1);
 
 	}
@@ -120,9 +132,13 @@ update_status ModuleSecretRoomB::Update(){
 bool ModuleSecretRoomB::CleanUp(){
 	App->textures->Unload(RoomB);
 
-	App->enemies->Disable();
 	App->UI->Disable();
+	App->enemies->Disable();
 	App->player->Disable();
+	App->particlesgrenade1->Disable();
+	App->particlesgrenade->Disable();
+	App->particlesenemies->Disable();
+	App->particles->Disable();
 	App->collision->Disable();
 
 	return true;

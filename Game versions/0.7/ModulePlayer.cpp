@@ -213,7 +213,7 @@ update_status ModulePlayer::Update()
 
 		if (App->fade->on == App->scene_1) {
 			if (App->scene_1->start1) {
-				if (App->player->position.y <= (2778 - 2656 - App->scene_1->cont + 88)) {
+				if (App->player->position.y <= (110 - App->scene_1->cont + 88)) {
 					position.y += speed;
 				}
 			}
@@ -543,6 +543,56 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 				App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
 				App->scene_1->start = false;
 				save_player_position = position.y;
+
+				if (save_player_position < 110 && save_player_position >= 2529 - 2656) {
+					App->scene_1->start = false;
+					App->scene_1->start1 = true;
+					App->scene_1->start2 = false;
+					App->scene_1->start3 = false;
+					App->scene_1->start4 = false;
+					App->scene_1->start5 = false;
+				}
+				else if (save_player_position < 2529 - 2656 && save_player_position >= 2003 - 2656) {
+					App->scene_1->start = false;
+					App->scene_1->start1 = false;
+					App->scene_1->start2 = true;
+					App->scene_1->start3 = false;
+					App->scene_1->start4 = false;
+					App->scene_1->start5 = false;
+				}
+				else if (save_player_position < 2003 - 2656 && save_player_position > 1235 - 2656) {
+					App->scene_1->start = false;
+					App->scene_1->start1 = false;
+					App->scene_1->start2 = false;
+					App->scene_1->start3 = true;
+					App->scene_1->start4 = false;
+					App->scene_1->start5 = false;
+				}
+				else if (save_player_position < 1235 - 2656 && save_player_position > 378 - 2656) {
+					App->scene_1->start = false;
+					App->scene_1->start1 = false;
+					App->scene_1->start2 = false;
+					App->scene_1->start3 = false;
+					App->scene_1->start4 = true;
+					App->scene_1->start5 = false;
+				}
+				else if (save_player_position < 378 - 2656 && save_player_position > -2656) {
+					App->scene_1->start = false;
+					App->scene_1->start1 = false;
+					App->scene_1->start2 = false;
+					App->scene_1->start3 = false;
+					App->scene_1->start4 = false;
+					App->scene_1->start5 = true;
+				}
+				else {
+					App->scene_1->start = true;
+					App->scene_1->start1 = false;
+					App->scene_1->start2 = false;
+					App->scene_1->start3 = false;
+					App->scene_1->start4 = false;
+					App->scene_1->start5 = false;
+				}
+
 				App->fade->FadeToBlack(App->scene_1, App->scene_1);
 			}
 		}
@@ -574,6 +624,56 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 			App->audio->play_fx6();
 			App->scene_1->start = false;
 			save_player_position = position.y;
+
+			if (save_player_position < 110 && save_player_position >= 2529 - 2656) {
+				App->scene_1->start = false;
+				App->scene_1->start1 = true;
+				App->scene_1->start2 = false;
+				App->scene_1->start3 = false;
+				App->scene_1->start4 = false;
+				App->scene_1->start5 = false;
+			}
+			else if (save_player_position < 2529 - 2656 && save_player_position >= 2003 - 2656) {
+				App->scene_1->start = false;
+				App->scene_1->start1 = false;
+				App->scene_1->start2 = true;
+				App->scene_1->start3 = false;
+				App->scene_1->start4 = false;
+				App->scene_1->start5 = false;
+			}
+			else if (save_player_position < 2003 - 2656 && save_player_position > 1235 - 2656) {
+				App->scene_1->start = false;
+				App->scene_1->start1 = false;
+				App->scene_1->start2 = false;
+				App->scene_1->start3 = true;
+				App->scene_1->start4 = false;
+				App->scene_1->start5 = false;
+			}
+			else if (save_player_position < 1235 - 2656 && save_player_position > 378 - 2656) {
+				App->scene_1->start = false;
+				App->scene_1->start1 = false;
+				App->scene_1->start2 = false;
+				App->scene_1->start3 = false;
+				App->scene_1->start4 = true;
+				App->scene_1->start5 = false;
+			}
+			else if (save_player_position < 378 - 2656 && save_player_position > -2656) {
+				App->scene_1->start = false;
+				App->scene_1->start1 = false;
+				App->scene_1->start2 = false;
+				App->scene_1->start3 = false;
+				App->scene_1->start4 = false;
+				App->scene_1->start5 = true;
+			}
+			else {
+				App->scene_1->start = true;
+				App->scene_1->start1 = false;
+				App->scene_1->start2 = false;
+				App->scene_1->start3 = false;
+				App->scene_1->start4 = false;
+				App->scene_1->start5 = false;
+			}
+
 			App->fade->FadeToBlack(App->scene_1, App->scene_1, 5.0f);
 			enemyB = false;
 
