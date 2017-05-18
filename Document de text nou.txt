@@ -1,0 +1,51 @@
+	//player2
+		fishingup2.x = 77;
+		fishingup2.y = 113;
+		fishingup2.w = 12;
+		fishingup2.h = 28;
+
+		fishingdown2.x = 104;
+		fishingdown2.y = 118;
+		fishingdown2.w = 13;
+		fishingdown2.h = 27;
+
+		fishingleft2.x = 42;
+		fishingleft2.y = 119;
+		fishingleft2.w = 19;
+		fishingleft2.h = 23;
+
+		fishingright2.x = 20;
+		fishingright2.y = 119;
+		fishingright2.w = 19;
+		fishingright2.h = 23;
+
+		deadwatersprite2.x = 129;
+		deadwatersprite2.y = 117;
+		deadwatersprite2.w = 16;
+		deadwatersprite2.h = 16;
+
+		//player1
+		fishingup.x = 77;
+		fishingup.y = 148;
+		fishingup.w = 12;
+		fishingup.h = 28;
+
+		fishingdown.x = 104;
+		fishingdown.y = 153;
+		fishingdown.w = 13;
+		fishingdown.h = 27;
+
+		fishingleft.x = 42;
+		fishingleft.y = 154;
+		fishingleft.w = 19;
+		fishingleft.h = 23;
+
+		fishingright.x = 20;
+		fishingright.y = 154;
+		fishingright.w = 19;
+		fishingright.h = 23;
+
+		deadwatersprite.x = 129;
+		deadwatersprite.y = 154;
+		deadwatersprite.w = 16;
+		deadwatersprite.h = 16;
