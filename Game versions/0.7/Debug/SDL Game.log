@@ -1,4 +1,6 @@
 ﻿  ModuleUI.cpp
 c:\users\aleixca1\desktop\gets-name-\game versions\0.7\moduleui.cpp(36): warning C4305: '=': truncation from 'double' to 'float'
+  ModuleScene1.cpp
+  Generating Code...
   SDL Game.vcxproj -> C:\Users\aleixca1\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
   SDL Game.vcxproj -> C:\Users\aleixca1\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)

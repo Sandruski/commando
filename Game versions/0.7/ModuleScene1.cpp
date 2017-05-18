@@ -608,27 +608,27 @@ update_status ModuleScene1::Update()
 	}
 	
 	//Secret rooms auto
-	if (App->input->keyboard[SDL_SCANCODE_1] == 1 && KEY_DOWN) {
+	if (App->input->keyboard[SDL_SCANCODE_1] == KEY_DOWN && App->fade->IsFading() == false) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->room1A, 1);
 
 	}
-	if (App->input->keyboard[SDL_SCANCODE_2] == 1 && KEY_DOWN) {
+	if (App->input->keyboard[SDL_SCANCODE_2] == KEY_DOWN && App->fade->IsFading() == false) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->roomB, 1);
 
 	}
-	if (App->input->keyboard[SDL_SCANCODE_3] == 1 && KEY_DOWN) {
+	if (App->input->keyboard[SDL_SCANCODE_3] == KEY_DOWN && App->fade->IsFading() == false) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->roomC, 1);
 
 	}
-	if (App->input->keyboard[SDL_SCANCODE_4] == 1 && KEY_DOWN) {
+	if (App->input->keyboard[SDL_SCANCODE_4] == KEY_DOWN && App->fade->IsFading() == false) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->roomD, 1);
 
 	}
-	if (App->input->keyboard[SDL_SCANCODE_5] == 1 && KEY_DOWN) {
+	if (App->input->keyboard[SDL_SCANCODE_5] == KEY_DOWN && App->fade->IsFading() == false) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->roomE, 1);
 
