@@ -3,6 +3,9 @@
 
 #include "Module.h"
 #include "SDL\include\SDL_rect.h"
+#include <fstream>
+
+using namespace std;
 
 class ModuleSaveData : public Module
 {
@@ -16,6 +19,8 @@ public:
 
 public:
 	int savescore;
+	fstream scorefile;
+	int savescore2p;
 	int savescore_p1;
 	int font_score;
 	int font_score2;

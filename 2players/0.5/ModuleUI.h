@@ -46,6 +46,7 @@ public:
 	char str2[10];
 	char str3[10];
 	char str4[10];
+	char str5[10];
 	int tempo1;
 
 	bool check_sleep = true, check_UI = true;

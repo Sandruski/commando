@@ -106,7 +106,6 @@ update_status ModuleMenu::Update()
 
 	App->render->Blit(grenade, 71, move_y, &grenades, 0.75f);
 
-
 	if (move_y == 118 + 16)
 		App->player2->twoplayerson = true;
 	else
@@ -130,6 +129,9 @@ update_status ModuleMenu::Update()
 	sprintf_s(App->UI->str2, "%i", App->savedata->savescore);
 	App->fonts->BlitText(104, 27, App->savedata->font_score2, App->UI->str2);
 
+	sprintf_s(App->UI->str2, "%i", App->savedata->savescore2p);
+	App->fonts->BlitText(200, 27, App->savedata->font_score, App->UI->str2);
 
 	return ret;
 }
+
