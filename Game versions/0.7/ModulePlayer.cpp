@@ -594,24 +594,50 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 
 void ModulePlayer::OnCollisionSecretRooms(Collider* c1, Collider* c2) {
 
-	if (App->scene_1->roomA == true) {
-		App->fade->FadeToBlack(App->scene_1, App->room1A, 1);
-		stairs = false;
+	if (App->fade->on == App->scene_1) {
+		if (App->scene_1->roomA == true) {
+			App->fade->FadeToBlack(App->scene_1, App->room1A, 1);
+			stairs = false;
+		}
+		else if (App->scene_1->roomB == true) {
+			App->fade->FadeToBlack(App->scene_1, App->roomB, 1);
+			stairs = false;
+		}
+		else if (App->scene_1->roomC == true) {
+			App->fade->FadeToBlack(App->scene_1, App->roomC, 1);
+			stairs = false;
+		}
+		else if (App->scene_1->roomD == true) {
+			App->fade->FadeToBlack(App->scene_1, App->roomD, 1);
+			stairs = false;
+		}
+		else if (App->scene_1->roomE == true) {
+			App->fade->FadeToBlack(App->scene_1, App->roomE, 1);
+			stairs = false;
+		}
 	}
-	else if (App->scene_1->roomB == true) {
-		App->fade->FadeToBlack(App->scene_1, App->roomB, 1);
-		stairs = false;
-	}
-	else if (App->scene_1->roomC == true){
-		App->fade->FadeToBlack(App->scene_1, App->roomC, 1);
-		stairs = false;
-	}
-	else if (App->scene_1->roomD == true ){
-		App->fade->FadeToBlack(App->scene_1, App->roomD, 1);
-		stairs = false;
-	}
-	else if (App->scene_1->roomE == true) {
-		App->fade->FadeToBlack(App->scene_1, App->roomE, 1);
-		stairs = false;
+
+	else {
+		if (App->fade->on == App->room1A) {
+			App->fade->FadeToBlack(App->room1A, App->scene_1, 1);
+			stairs = false;
+		}
+		else if (App->fade->on == App->roomB) {
+			App->fade->FadeToBlack(App->roomB, App->scene_1, 1);
+			stairs = false;
+		}
+		else if (App->fade->on == App->roomC) {
+			App->fade->FadeToBlack(App->roomC, App->scene_1, 1);
+			stairs = false;
+		}
+		else if (App->fade->on == App->roomD) {
+			App->fade->FadeToBlack(App->roomD, App->scene_1, 1);
+			stairs = false;
+		}
+		else if (App->fade->on == App->roomE) {
+			App->fade->FadeToBlack(App->roomE, App->scene_1, 1);
+			stairs = false;
+		}
+
 	}
 }
