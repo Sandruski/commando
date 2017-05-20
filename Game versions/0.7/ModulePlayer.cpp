@@ -175,6 +175,8 @@ update_status ModulePlayer::Update()
 		App->particlesgrenade1->AddParticle(App->particlesgrenade1->grenade, position.x, position.y - 110, COLLIDER_PLAYER_GRENADE, NULL);
 		App->audio->play_fx5();
 		cooldown = false;
+		if ((detectionitem[0] == true || detectionitem[3] == true) && granadeUp == true)
+			granade = true;
 	}
 
 	if (grenade.loops == 1) {
@@ -182,6 +184,48 @@ update_status ModulePlayer::Update()
 		grenade.loops = 0;
 		check_grenade = 1;
 	}
+
+	allTime = SDL_GetTicks();
+	if (granade == false)
+		finalTime = SDL_GetTicks();
+	if (granade == true)
+		allTime -= finalTime;
+
+	if (granade == true) {
+		if (allTime > 150 && allTime < 250 && (detectionitem[0] == true || detectionitem[3] == true))
+			App->render->DrawQuad(App->player->R, 196, 0, 255, 0);
+
+		else if (allTime > 250 && allTime < 400 && (detectionitem[0] == true || detectionitem[3] == true)) {
+			App->render->DrawQuad(App->player->R, 196, 0, 255, 90);
+			grenadeC = App->collision->AddCollider({ 0, position.y - 200, SCREEN_WIDTH, SCREEN_HEIGHT + 100 }, COLLIDER_END_OF_GRENADE, this);
+		}
+		else if (allTime > 400 && allTime < 425 && (detectionitem[0] == true || detectionitem[3] == true))
+			App->render->DrawQuad(App->player->R, 196, 0, 255, 90);
+		else if (allTime > 425 && allTime < 450 && (detectionitem[0] == true || detectionitem[3] == true))
+			App->render->DrawQuad(App->player->R, 196, 0, 255, 0);
+		else if (allTime > 450 && allTime < 475 && (detectionitem[0] == true || detectionitem[3] == true))
+			App->render->DrawQuad(App->player->R, 196, 0, 255, 90);
+		else if (allTime > 475 && allTime < 500 && (detectionitem[0] == true || detectionitem[3] == true))
+			App->render->DrawQuad(App->player->R, 196, 0, 255, 0);
+
+		else if (allTime > 500 && allTime < 650 && (detectionitem[0] == true || detectionitem[3] == true))
+			App->render->DrawQuad(App->player->R, 196, 0, 255, 90);
+
+		else if (allTime > 650 && allTime < 750 && (detectionitem[0] == true || detectionitem[3] == true))
+			App->render->DrawQuad(App->player->R, 196, 0, 255, 0);
+
+		else if (allTime > 750 && allTime < 900 && (detectionitem[0] == true || detectionitem[3] == true))
+			App->render->DrawQuad(App->player->R, 196, 0, 255, 90);
+
+		else if (allTime > 900 && allTime < 1000 && (detectionitem[0] == true || detectionitem[3] == true)) {
+			App->render->DrawQuad(App->player->R, 196, 0, 255, 0);
+			granade = false;
+			granadeUp = false;
+		}
+		if (grenadeC != nullptr)
+			grenadeC->to_delete = true;
+	}
+
 	//_grenade_end
 	
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && move == true && check_grenade == 1 && collW == false)
@@ -489,10 +533,13 @@ void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 
 void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
 
+
 	App->audio->play_fx7();
 
-	if (App->player->position.y < 2655 - 2656 && App->player->position.y > 2547 - 2656)
-	detectionitem[0] = true;
+	if (App->player->position.y < 2655 - 2656 && App->player->position.y > 2547 - 2656) {
+		detectionitem[0] = true;
+		granadeUp = true;
+	}
 	if (App->player->position.y < 2547 - 2656 && App->player->position.y > 2340 - 2656) {
 		detectionitem[1] = true;
 		App->UI->grenade++;
@@ -503,6 +550,7 @@ void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
 	}
 	if (App->player->position.y < 1269 - 2656 && App->player->position.y > 1104 - 2656) {
 		detectionitem[3] = true;
+		granadeUp = true;
 	}
 	if (App->player->position.y < 1041 - 2656 && App->player->position.y > 896 - 2656) {
 		detectionitem[4] = true;
@@ -520,9 +568,9 @@ void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
 		detectionitem[7] = true;
 		App->UI->grenade++;
 	}
-
 	App->UI->grenade++;
 	c2->to_delete = true;
+
 }
 
 void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {

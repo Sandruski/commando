@@ -35,7 +35,8 @@ public:
 	Animation* current_animation = &idleF;
 	Collider* coll;
 	Collider* feetC;
-	SDL_Rect r;
+	Collider* grenadeC;
+	SDL_Rect r, R;
 	int vides = 3;
 	bool move = true;
 	bool waterB = true;
@@ -48,9 +49,11 @@ public:
 	bool collS = false;
 	bool collD = false;
 	bool stairs = true;
+	bool granade = false;
+	bool granadeUp = false;
 
 	bool cooldown = false;
-	uint lastTime, currentTime;
+	uint lastTime, currentTime, allTime, finalTime;
 
 	bool non_grenade = false;
 	bool play_ending = false;
