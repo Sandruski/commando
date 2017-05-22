@@ -39,10 +39,11 @@ public:
 	void OnCollision(Collider* collider, Collider* c2);
 
 	bool hi = false;
-	bool one = true;
+	bool one = true, two = true, three = true;
 
 	bool anim1, anim2;
 	fPoint another;
+	bool yeah = true;
 };
 
 #endif

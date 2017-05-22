@@ -20,7 +20,7 @@ public:
 	fPoint hi = { 0.0f, 0.0f };
 
 	uint count = 0;
-private:
+public:
 	uint current_frame = 0;
 	uint last_step = 0;
 	int hi1 = 0;

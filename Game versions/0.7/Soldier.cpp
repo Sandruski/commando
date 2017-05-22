@@ -124,49 +124,49 @@ void Enemy_Soldier::Move()
 
 	/*
 	if (original_pos.y == 2706 - 2656 || original_pos.y == 2460 - 2656 || original_pos.y == 2408 - 2656 || original_pos.y == 2154 - 2656
-		|| original_pos.y == 1693 - 2656 || original_pos.y == 1624 - 2656 || original_pos.y == 1023 - 2656 || original_pos.y == 896 - 2656
-		|| original_pos.y == 699 - 2656 || original_pos.y == 688 - 2656 || position.y == 538 - 2656) {
-		position = original_pos + path.GetCurrentPosition(&animation);
-		save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	|| original_pos.y == 1693 - 2656 || original_pos.y == 1624 - 2656 || original_pos.y == 1023 - 2656 || original_pos.y == 896 - 2656
+	|| original_pos.y == 699 - 2656 || original_pos.y == 688 - 2656 || position.y == 538 - 2656) {
+	position = original_pos + path.GetCurrentPosition(&animation);
+	save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
 	}
 
 	if (original_pos.y == 2763 - 2656 || original_pos.y == 2678 - 2656 || original_pos.y == 2465 - 2656 || original_pos.y == 2332 - 2656
-		|| original_pos.y == 1865 - 2656 || original_pos.y == 531 - 2656 || original_pos.y == 283 - 2656) {
-		position = original_pos + path1.GetCurrentPosition(&animation);
-		save_step = path1.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	|| original_pos.y == 1865 - 2656 || original_pos.y == 531 - 2656 || original_pos.y == 283 - 2656) {
+	position = original_pos + path1.GetCurrentPosition(&animation);
+	save_step = path1.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
 	}
 
 	if (original_pos.y == 2579 - 2656 || original_pos.y == 2245 - 2656 || original_pos.y == 2212 - 2656 || original_pos.y == 1962 - 2656
-		|| original_pos.y == 1619 - 2656 || original_pos.y == 621 - 2656) {
-		position = original_pos + path2.GetCurrentPosition(&animation);
-		save_step = path2.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	|| original_pos.y == 1619 - 2656 || original_pos.y == 621 - 2656) {
+	position = original_pos + path2.GetCurrentPosition(&animation);
+	save_step = path2.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
 	}
 
 	if (original_pos.y == 2348 - 2656 || original_pos.y == 2230 - 2656 || original_pos.y == 1970 - 2656 || original_pos.y == 1500 - 2656
-		|| original_pos.y == 812 - 2656) {
-		position = original_pos + path3.GetCurrentPosition(&animation);
-		save_step = path3.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	|| original_pos.y == 812 - 2656) {
+	position = original_pos + path3.GetCurrentPosition(&animation);
+	save_step = path3.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
 	}
 
 	if (original_pos.y == 111 - 2656 || original_pos.y == 104 - 2656 || original_pos.y == -2 - 2656 || original_pos.y == -5 - 2656
-		|| original_pos.y == -8 - 2656 || original_pos.y == 0 - 2656 || original_pos.y == 120 - 2656) {
+	|| original_pos.y == -8 - 2656 || original_pos.y == 0 - 2656 || original_pos.y == 120 - 2656) {
 
-		position = original_pos + path_fb.GetCurrentPosition(&animation);
-		save_step = path_fb.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	position = original_pos + path_fb.GetCurrentPosition(&animation);
+	save_step = path_fb.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
 	}
 
 	if (original_pos.y == 125 - 2656 || original_pos.y == 57 - 2656 || original_pos.y == 98 - 2656 || original_pos.y == 55 - 2656
-		|| original_pos.y == 42 - 2656 || original_pos.y == 20 - 2656 || original_pos.y == 30 - 2656) {
+	|| original_pos.y == 42 - 2656 || original_pos.y == 20 - 2656 || original_pos.y == 30 - 2656) {
 
-		position = original_pos + path_fb1.GetCurrentPosition(&animation);
-		save_step = path_fb1.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	position = original_pos + path_fb1.GetCurrentPosition(&animation);
+	save_step = path_fb1.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
 	}
 
 	if (original_pos.y == 35 - 2656 || original_pos.y == 1 - 2656 || original_pos.y == 2 - 2656 || original_pos.y == 7 - 2656
-		|| original_pos.y == 4 - 2656) {
+	|| original_pos.y == 4 - 2656) {
 
-		position = original_pos + path_fb2.GetCurrentPosition(&animation);
-		save_step = path_fb2.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	position = original_pos + path_fb2.GetCurrentPosition(&animation);
+	save_step = path_fb2.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
 	}
 	*/
 
@@ -193,17 +193,17 @@ void Enemy_Soldier::Move()
 
 	/*
 	//SHOT CODE
-		enemyplayer.x = (App->player->position.x + 5) - position.x;
-		enemyplayer.y = abs(position.y + 25) - abs(App->player->position.y + 10);
+	enemyplayer.x = (App->player->position.x + 5) - position.x;
+	enemyplayer.y = abs(position.y + 25) - abs(App->player->position.y + 10);
 
-		module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
-		enemyplayeru.x = enemyplayer.x / module;
-		enemyplayeru.y = enemyplayer.y / module;
+	module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
+	enemyplayeru.x = enemyplayer.x / module;
+	enemyplayeru.y = enemyplayer.y / module;
 
-		//angle = atan(enemyplayer.x / enemyplayer.y); do not use. Only if needed
+	//angle = atan(enemyplayer.x / enemyplayer.y); do not use. Only if needed
 
-		App->particlesenemies->bala.speed.x = enemyplayeru.x;
-		App->particlesenemies->bala.speed.y = enemyplayeru.y;
+	App->particlesenemies->bala.speed.x = enemyplayeru.x;
+	App->particlesenemies->bala.speed.y = enemyplayeru.y;
 	*/
 
 
@@ -228,6 +228,8 @@ void Enemy_Soldier::Move()
 		another.x = position.x;
 		another.y = position.y;
 
+		yeah = true;
+
 	}
 	else {
 		anim2 = false;
@@ -237,18 +239,16 @@ void Enemy_Soldier::Move()
 			position = original_pos + path.GetCurrentPositionfl(&animation);
 			save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
 		}
-		else {
-			//here we need to have different paths. If one path is done, switch to the next one
+		else if (!one && two) {
 
+			if (yeah) {
+				path.accumulated_speed = { 0.0f, 0.0f };
+				path.current_frame = 0;
+			}
 
-
-			position = another + path1.GetCurrentPositionfl(&animation);
-			save_step = path1.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-			
-
-
-
-
+			position = another + path.GetCurrentPositionfl(&animation);
+			save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+			yeah = false;
 		}
 	}
 
@@ -309,7 +309,7 @@ void Enemy_Soldier::Move()
 		}
 	}
 	//
-	
+
 	//SHOT
 	rand1 = rand() % 300;
 	num_shots = rand() % 4;
@@ -338,7 +338,7 @@ void Enemy_Soldier::Move()
 
 		space = 0;
 	}
-	
+
 	//end_of_shot
 
 	if (dieB == true) {
