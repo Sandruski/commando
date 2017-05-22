@@ -50,6 +50,8 @@ bool ModuleSecretRoomD::Start() {
 	App->UI->Enable();
 
 	App->player->current_animation = &App->player->forward;
+	App->player->stairsDown = true;
+	App->player->move = true;
 
 	check_player = 0;
 
@@ -74,6 +76,7 @@ bool ModuleSecretRoomD::Start() {
 	App->collision->AddCollider({ 208,298, 32, 55 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 240,0, 16, 448 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 16, 442, 224, 6 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 121, 27, 15, 8 }, COLLIDER_SECRET_ROOM, this);
 
 
 

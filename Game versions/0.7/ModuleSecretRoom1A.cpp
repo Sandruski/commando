@@ -56,6 +56,8 @@ bool ModuleSecretRoom1A::Start() {
 	hits = 0;
 
 	App->player->current_animation = &App->player->forward;
+	App->player->stairsDown = true;
+	App->player->move = true;
 
 	//Camera and player parametres
 	App->player->position.x = SCREEN_WIDTH / 2;
@@ -73,7 +75,7 @@ bool ModuleSecretRoom1A::Start() {
 	App->collision->AddCollider({ 32,0, 132, 34 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 162,0, 29, 23 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 189,0, 35, 35 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 162, 28, 26, 8 }, COLLIDER_SECRET_ROOM, this);
+	App->collision->AddCollider({ 167, 24, 15, 8 }, COLLIDER_SECRET_ROOM, this);
 
 	//Items
 	App->collision->AddCollider({ 52, 52, 14, 14 }, COLLIDER_ITEM, this);

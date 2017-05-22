@@ -69,6 +69,8 @@ ModulePlayer::ModulePlayer()
 	die.PushBack({ 62, 39, 15, 27 });
 	die.PushBack({ 80, 44, 17, 27 });
 	die.speed = 0.02;
+
+	stairsRoom.PushBack({ 116,43,15,17 });
 }
 
 ModulePlayer::~ModulePlayer()
@@ -467,26 +469,28 @@ update_status ModulePlayer::Update()
 	
 	
 	*/
-
-	if (stairs == false) {
-		current_animation = &waterDie;
+	if (stairsUp == false) {
+		current_animation = &stairsRoom;
 		move = false;
 	}
-	if (waterB == false) {
+	if (waterB == false || stairsDown == false) {
 		current_animation = &waterDie;
 		move = false;
 	}
 	currentTime = SDL_GetTicks();
 	currentTime -= lastTime;
-	if (waterB == true && stairs == true)
+	if (waterB == true && stairsDown == true && stairsUp == true)
 		lastTime = SDL_GetTicks();
 
 	if (currentTime > 500 && waterB == false) {
 		current_animation = &invisible;
 		timeW = true;
 	}
+	if (currentTime > 300 && (stairsDown == false || stairsUp == false)) {
+		App->player->current_animation = &invisible;
+	}
 
-	if (currentTime > 500 && stairs == false) {
+	if (currentTime > 500 && (stairsDown == false || stairsUp == false)) {
 		App->player->current_animation = &App->player->forward;
 		App->player->move = true;
 	}
@@ -502,6 +506,8 @@ update_status ModulePlayer::Update()
 	collS = false;
 	collD = false;
 
+	if (App->input->keyboard[SDL_SCANCODE_N] == KEY_STATE::KEY_DOWN)
+		App->UI->grenade++;
 
 	return UPDATE_CONTINUE;
 }
@@ -769,46 +775,103 @@ void ModulePlayer::OnCollisionSecretRooms(Collider* c1, Collider* c2) {
 	if (App->fade->on == App->scene_1) {
 		if (App->scene_1->roomA == true) {
 			App->fade->FadeToBlack(App->scene_1, App->room1A, 1);
-			stairs = false;
+			stairsDown = false;
+			position.x = 150;
+			position.y = 2372 - 2656;
+			App->scene_1->roomA = false;
+
 		}
 		else if (App->scene_1->roomB == true) {
 			App->fade->FadeToBlack(App->scene_1, App->roomB, 1);
-			stairs = false;
+			stairsDown = false;
+			position.x = 11;
+			position.y = 2051 - 2656;
+			App->scene_1->roomB = false;
+
 		}
 		else if (App->scene_1->roomC == true) {
 			App->fade->FadeToBlack(App->scene_1, App->roomC, 1);
-			stairs = false;
+			stairsDown = false;
+			position.x = 217;
+			position.y = 1426 - 2656;
+			App->scene_1->roomC = false;
+
 		}
 		else if (App->scene_1->roomD == true) {
 			App->fade->FadeToBlack(App->scene_1, App->roomD, 1);
-			stairs = false;
+			stairsDown = false;
+			position.x = 121;
+			position.y = 1056 - 2656;
+			App->scene_1->roomD = false;
 		}
 		else if (App->scene_1->roomE == true) {
 			App->fade->FadeToBlack(App->scene_1, App->roomE, 1);
-			stairs = false;
+			stairsDown = false;
+			position.x = 233;
+			position.y = 522 - 2656;
+			App->scene_1->roomE = false;
 		}
 	}
 
-	else {
+	else if (stairsDown == true) {
 		if (App->fade->on == App->room1A) {
 			App->fade->FadeToBlack(App->room1A, App->scene_1, 1);
-			stairs = false;
+			stairsUp = false;
+			position.x = 169;
+			position.y = 31;
+			App->scene_1->start = false;
+			App->scene_1->start1 = false;
+			App->scene_1->start2 = true;
+			App->scene_1->start3 = false;
+			App->scene_1->start4 = false;
+			App->scene_1->start5 = false;
 		}
 		else if (App->fade->on == App->roomB) {
 			App->fade->FadeToBlack(App->roomB, App->scene_1, 1);
-			stairs = false;
+			stairsUp = false;
+			position.y = 65;
+			App->scene_1->start = false;
+			App->scene_1->start1 = false;
+			App->scene_1->start2 = false;
+			App->scene_1->start3 = true;
+			App->scene_1->start4 = false;
+			App->scene_1->start5 = false;
 		}
 		else if (App->fade->on == App->roomC) {
 			App->fade->FadeToBlack(App->roomC, App->scene_1, 1);
-			stairs = false;
+			stairsUp = false;
+			position.x = 121;
+			position.y = 85;
+			App->scene_1->start = false;
+			App->scene_1->start1 = false;
+			App->scene_1->start2 = false;
+			App->scene_1->start3 = true;
+			App->scene_1->start4 = false;
+			App->scene_1->start5 = false;
 		}
 		else if (App->fade->on == App->roomD) {
 			App->fade->FadeToBlack(App->roomD, App->scene_1, 1);
-			stairs = false;
+			stairsUp = false;
+			position.x = 121;
+			position.y = 32;
+			App->scene_1->start = false;
+			App->scene_1->start1 = false;
+			App->scene_1->start2 = false;
+			App->scene_1->start3 = false;
+			App->scene_1->start4 = true;
+			App->scene_1->start5 = false;
 		}
 		else if (App->fade->on == App->roomE) {
 			App->fade->FadeToBlack(App->roomE, App->scene_1, 1);
-			stairs = false;
+			stairsUp = false;
+			position.x = 121;
+			position.y = 32;
+			App->scene_1->start = false;
+			App->scene_1->start1 = false;
+			App->scene_1->start2 = false;
+			App->scene_1->start3 = false;
+			App->scene_1->start4 = false;
+			App->scene_1->start5 = true;
 		}
 
 	}

@@ -95,6 +95,7 @@ bool ModuleScene1::Start()
 	App->enemies->dieE = 0;
 	App->player->non_grenade = false;
 	App->player->move = true;
+	App->player->stairsUp = true;
 	App->player->enemyB = true;
 	App->player->waterB = true;
 	for (int i = 0; i <= 9; i++) {
@@ -835,7 +836,7 @@ void ModuleScene1::OnCollision(Collider* c1, Collider* c2)
 			roomB = true;
 		if (App->player->position.y < 1520 - 2656 && App->player->position.y > 1400 - 2656) 
 			roomC = true;
-		if (App->player->position.y < 1130 - 2656 && App->player->position.y > 1000 - 2656) 
+		if (App->player->position.y < 1160 - 2656 && App->player->position.y > 1000 - 2656) 
 			roomD = true;
 		if (App->player->position.y < 630 - 2656 && App->player->position.y > 475 - 2656) 
 			roomE = true;

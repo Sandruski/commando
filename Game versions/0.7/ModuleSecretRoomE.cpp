@@ -50,6 +50,8 @@ bool ModuleSecretRoomE::Start() {
 	App->UI->Enable();
 
 	App->player->current_animation = &App->player->forward;
+	App->player->stairsDown = true;
+	App->player->move = true;
 
 	//Camera and player parametres
 	App->player->position.x = SCREEN_WIDTH / 2;
@@ -67,6 +69,7 @@ bool ModuleSecretRoomE::Start() {
 	App->collision->AddCollider({ 96,87, 63, 53 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,38, 16, 186 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,216, 256, 8 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 121, 27, 15, 8 }, COLLIDER_SECRET_ROOM, this);
 
 	//ENEMIES
 	App->enemies->AddEnemy(ENEMY_TYPES::PRISONER, 131, 137);
