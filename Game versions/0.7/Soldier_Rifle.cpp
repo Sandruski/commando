@@ -8,6 +8,7 @@
 #include "ModuleParticlesEnemies.h"
 #include <stdlib.h>
 #include <time.h>
+#include "ModuleEnemies.h"
 #include "ModuleParticles.h"
 
 #include "SDL/include/SDL_timer.h"
@@ -36,9 +37,6 @@ Enemy_SoldierRifle::Enemy_SoldierRifle(int x, int y) : Enemy(x, y)
 	animation = &center;
 
 	collider = App->collision->AddCollider({ 0, 0, 18, 18 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
-
-
-
 }
 
 void Enemy_SoldierRifle::Move()
@@ -111,13 +109,24 @@ void Enemy_SoldierRifle::Move()
 		if (currentTime > 800)
 			Esperanza = false;
 	}
+
+	checking++;
+	one = rand() % 100;
 }
 
 void Enemy_SoldierRifle::OnCollision(Collider* c1, Collider* c2) {
 	if (c1->type == COLLIDER_ENEMY && c2->type == COLLIDER_END_OF_GRENADE) {
 		App->scene_1->enemydiex = position.x;
 		App->scene_1->enemydiey = position.y;
-		App->scene_1->blit_item = true;
+
+		if (checking % 2 == 0 || checking % 3 == 0 || checking % 5 == 0) {
+			if (one % 2 == 0 || one % 3 == 0) {
+				App->enemies->AddEnemy(ENEMY_TYPES::ITEM1, App->scene_1->enemydiex, App->scene_1->enemydiey);
+			}
+			else {
+				App->enemies->AddEnemy(ENEMY_TYPES::ITEM2, App->scene_1->enemydiex, App->scene_1->enemydiey);
+			}
+		}
 	}
 
 	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);	

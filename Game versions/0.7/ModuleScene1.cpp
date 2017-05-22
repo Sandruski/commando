@@ -51,19 +51,6 @@ ModuleScene1::ModuleScene1()
 	moto_stop.PushBack({ 187, 17, 47, 28 });
 	moto_stop.speed = 0.1f;
 
-	//ITEM DROPPED1
-	drop1.PushBack({ 138, 9, 12, 15 });
-	drop1.PushBack({ 154, 9, 12, 15 });
-	drop1.PushBack({ 172, 9, 12, 15 });
-	drop1.PushBack({ 190, 9, 12, 15 });
-	drop1.speed = 0.1f;
-
-	//ITEM DROPPED2
-	drop2.PushBack({ 4, 40, 12, 16 });
-	drop2.PushBack({ 20, 40, 12, 16 });
-	drop2.PushBack({ 35, 40, 12, 16 });
-	drop2.PushBack({ 50, 40, 12, 16 });
-	drop2.speed = 0.1f;
 }
 
 ModuleScene1::~ModuleScene1()
@@ -472,60 +459,129 @@ update_status ModuleScene1::Update()
 	App->render->Blit(graphics, w, h, &background);
 	
 	//Enemies drop items
+
+	/*
 	current_animation1 = &drop1;
+	current_animation2 = &drop1;
+	current_animation3 = &drop1;
+	current_animation4 = &drop1;
+	current_animation5 = &drop1;
+	current_animation6 = &drop1;
+	current_animation7 = &drop1;
+
 	r1 = current_animation1->GetCurrentFrame();
+	r2 = current_animation2->GetCurrentFrame();
+	r3 = current_animation3->GetCurrentFrame();
+	r4 = current_animation4->GetCurrentFrame();
+	r5 = current_animation5->GetCurrentFrame();
+	r6 = current_animation6->GetCurrentFrame();
+	r7 = current_animation7->GetCurrentFrame();
 
-	if (blit_item && App->player->detectionitem[8] == false) {
-		App->render->Blit(items, enemydiex, enemydiey, &r1);
-		if (hello1) {
-			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM, this);
-			hello1 = false;
+	if (blit_item) {
+		to_blit++;
+
+		if (to_blit == 1) {
+			blit_item1 = true;
 		}
-	}
-	else if (blit_item && App->player->detectionitem[9] == false) {
-		App->render->Blit(items, enemydiex, enemydiey, &r1);
-		if (hello1) {
-			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM, this);
-			hello1 = false;
+		if (to_blit == 2) {
+			blit_item2 = true;
 		}
+		if (to_blit == 3) {
+			blit_item3 = true;
+		}
+		if (to_blit == 4) {
+			blit_item4 = true;
+		}
+		if (to_blit == 5) {
+			blit_item5 = true;
+		}
+		if (to_blit == 6) {
+			blit_item6 = true;
+		}
+		if (to_blit == 7) {
+			blit_item7 = true;
+		}
+
+		blit_item = false;
 	}
-	else if (blit_item && App->player->detectionitem[10] == false) {
-		App->render->Blit(items, enemydiex, enemydiey, &r1);
+
+	if (blit_item1 && App->player->detectionitem[8] == false) {
+		if (hello1) {
+			enemydiex1 = enemydiex;
+			enemydiey1 = enemydiey;
+
+			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM1, this);
+			hello1 = false;
+			hello2 = true;
+		}
+		App->render->Blit(items, enemydiex1, enemydiey1, &r1);
+	}
+	if (blit_item2 && App->player->detectionitem[9] == false) {
+
 		if (hello2) {
-			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM, this);
+			enemydiex2 = enemydiex;
+			enemydiey2 = enemydiey;
+			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM1, this);
 			hello2 = false;
+			hello3 = true;
 		}
+		App->render->Blit(items, enemydiex2, enemydiey2, &r1);
 	}
-	else if (blit_item && App->player->detectionitem[11] == false) {
-		App->render->Blit(items, enemydiex, enemydiey, &r1);
-		if (hello3) {
-			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM, this);
-			hello3 = false;
-		}
-	}
-	else if (blit_item && App->player->detectionitem[12] == false) {
-		App->render->Blit(items, enemydiex, enemydiey, &r1);
-		if (hello4) {
-			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM, this);
-			hello4 = false;
-		}
-	}
-	else if (blit_item && App->player->detectionitem[13] == false) {
-		App->render->Blit(items, enemydiex, enemydiey, &r1);
-		if (hello5) {
-			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM, this);
-			hello5 = false;
-		}
-	}
-	else if (blit_item && App->player->detectionitem[14] == false) {
-		App->render->Blit(items, enemydiex, enemydiey, &r1);
-		if (hello6) {
-			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM, this);
-			hello6 = false;
-		}
-	}
+	if (blit_item3 && App->player->detectionitem[10] == false) {
 
-	
+		if (hello3) {
+			enemydiex3 = enemydiex;
+			enemydiey3 = enemydiey;
+			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM1, this);
+			hello3 = false;
+			hello4 = true;
+		}
+		App->render->Blit(items, enemydiex3, enemydiey3, &r1);
+	}
+	if (blit_item4 && App->player->detectionitem[11] == false) {
+
+		if (hello4) {
+			enemydiex4 = enemydiex;
+			enemydiey4 = enemydiey;
+			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM1, this);
+			hello4 = false;
+			hello5 = true;
+		}
+		App->render->Blit(items, enemydiex4, enemydiey4, &r1);
+	}
+	if (blit_item5 && App->player->detectionitem[12] == false) {
+
+		if (hello5) {
+			enemydiex5 = enemydiex;
+			enemydiey5 = enemydiey;
+			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM1, this);
+			hello5 = false;
+			hello6 = true;
+		}
+		App->render->Blit(items, enemydiex5, enemydiey5, &r1);
+	}
+	if (blit_item6 && App->player->detectionitem[13] == false) {
+
+		if (hello6) {
+			enemydiex6 = enemydiex;
+			enemydiey6 = enemydiey;
+			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM1, this);
+			hello6 = false;
+			hello7 = true;
+		}
+		App->render->Blit(items, enemydiex6, enemydiey6, &r1);
+	}
+	if (blit_item7 && App->player->detectionitem[14] == false) {
+
+		if (hello7) {
+			enemydiex7 = enemydiex;
+			enemydiey7 = enemydiey;
+			App->collision->AddCollider({ enemydiex, enemydiey, 12, 15 }, COLLIDER_ITEM1, this);
+			hello7 = false;
+		}
+		App->render->Blit(items, enemydiex7, enemydiey7, &r1);
+	}	
+	*/
 
 	current_animation = &ammo_grenades_colours;
 	r = current_animation->GetCurrentFrame();

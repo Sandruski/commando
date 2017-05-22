@@ -73,12 +73,12 @@ public:
 	void OnCollision(Collider* c1, Collider* c2);
 
 	//Enemies drop items
-	bool blit_item = false;
+
 	Animation drop1, drop2;
 	SDL_Rect r1;
 	Animation* current_animation1 = nullptr;
+
 	int enemydiex, enemydiey;
-	bool hello1 = true, hello2 = true, hello3 = true, hello4 = true, hello5 = true, hello6 = true;
 };
 
 

@@ -149,6 +149,12 @@
     <ClInclude Include="GrenadesB.h">
       <Filter>Modules\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="ItemsEnemies.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemsEnemies2.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -266,6 +272,12 @@
       <Filter>Modules\NewFilter1</Filter>
     </ClCompile>
     <ClCompile Include="GrenadesB.cpp">
+      <Filter>Modules\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemsEnemies.cpp">
+      <Filter>Modules\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemsEnemies2.cpp">
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
   </ItemGroup>

@@ -22,7 +22,7 @@ public:
 	void OnCollisionEnemy(Collider* c1, Collider* c2);
 	void OnCollisionSecretRooms(Collider* c1, Collider* c2);
 
-	bool detectionitem[9];
+	bool detectionitem[20];
 
 	update_status Update();
 	bool CleanUp();
@@ -51,6 +51,8 @@ public:
 	bool stairs = true;
 	bool granade = false;
 	bool granadeUp = false;
+
+	bool one = true, two = false, three = false, four = false, five = false, six = false, seven = false;
 
 	bool cooldown = false;
 	uint lastTime, currentTime, allTime, finalTime;

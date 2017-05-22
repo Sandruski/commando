@@ -7,6 +7,7 @@
 #include "ModuleParticles.h"
 #include "ModuleScene1.h"
 #include <stdlib.h>
+#include "ModuleEnemies.h"
 #include <time.h>
 
 #include "SDL/include/SDL_timer.h"
@@ -93,15 +94,24 @@ void Enemy_SoldierGrenade::Move()
 
 	}
 
-
-
+	checking++;
+	one = rand() % 100;
 }
 
 void Enemy_SoldierGrenade::OnCollision(Collider* c1, Collider* c2) {
 	if (c1->type == COLLIDER_ENEMY && c2->type == COLLIDER_END_OF_GRENADE) {
+
 		App->scene_1->enemydiex = position.x;
 		App->scene_1->enemydiey = position.y;
-		App->scene_1->blit_item = true;
+
+		if (checking % 2 == 0 || checking % 3 == 0 || checking % 5 == 0) {
+			if (one % 2 == 0 || one % 3 == 0) {
+				App->enemies->AddEnemy(ENEMY_TYPES::ITEM1, App->scene_1->enemydiex, App->scene_1->enemydiey);
+			}
+			else {
+				App->enemies->AddEnemy(ENEMY_TYPES::ITEM2, App->scene_1->enemydiex, App->scene_1->enemydiey);
+			}
+		}
 	}
 
 	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);

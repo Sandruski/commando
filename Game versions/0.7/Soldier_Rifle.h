@@ -28,6 +28,8 @@ public:
 
 	void OnCollision(Collider* c1, Collider* c2);
 	void Move();
+
+	int checking = 0, one = 0;
 };
 
 
