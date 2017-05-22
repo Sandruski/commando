@@ -67,14 +67,13 @@ bool ModuleSecretRoom1A::Start() {
 	App->scene_1->cont = 0;
 
 	//COLLIDERS
-	App->collision->AddCollider({ 0,0, 32, 153 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 18,30, 15, 123 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,151, 16, 71 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,216, 255, 8 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 224,0, 32, 142 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 224,30, 16, 112 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 240,141, 16, 74 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 32,0, 132, 34 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 162,0, 29, 23 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 189,0, 35, 35 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 32,26, 132, 17 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 189,26, 35, 17 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 167, 24, 15, 8 }, COLLIDER_SECRET_ROOM, this);
 
 	//Items

@@ -63,19 +63,19 @@ bool ModuleSecretRoomD::Start() {
 	App->scene_1->cont = 0;
 
 	//COLLIDERS
-	App->collision->AddCollider({ 0,0, 15, 448 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 0,45, 15, 448 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 16,266, 32, 54 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 16,120, 32, 54 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 16,8, 96, 70 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 109,8, 35, 23 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 16,45, 96, 25 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 96, 120, 64, 52 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 144,8, 96, 70 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 144,45, 96, 25 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 208,120, 33, 54 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 208, 216, 33, 40 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 208,97, 32, 55 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 208,298, 32, 55 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 240,0, 16, 448 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 240,45, 16, 448 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 16, 442, 224, 6 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 109, 31, 6, 25 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 140, 31, 6, 25 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 121, 27, 15, 8 }, COLLIDER_SECRET_ROOM, this);
 
 

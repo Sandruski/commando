@@ -92,6 +92,7 @@ bool ModuleScene1::Start()
 	App->enemies->Enable();
 	App->UI->Enable();
 
+	App->player->check_grenade = 1;
 	App->enemies->dieE = 0;
 	App->player->non_grenade = false;
 	App->player->move = true;

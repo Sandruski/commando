@@ -61,7 +61,7 @@ bool ModuleSecretRoomB::Start(){
 	App->scene_1->cont = 0;
 
 	//COLLIDERS
-	App->collision->AddCollider({ 0,0, 256, 45 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 15,30, 240, 15 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 208,38, 48, 24 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 240,61, 16, 163 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 0,216, 242, 8 }, COLLIDER_WALL, this);
