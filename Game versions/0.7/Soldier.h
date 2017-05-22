@@ -12,7 +12,7 @@ private:
 
 	Animation die, up_left, up_right, down_left, down_right, up, down, left, right;
 
-	iPoint original_pos;
+	fPoint original_pos;
 	fPoint save_step;
 	Path path, path1, path2, path3, path_fb, path_fb1, path_fb2;
 	int current_frame;
@@ -39,6 +39,10 @@ public:
 	void OnCollision(Collider* collider, Collider* c2);
 
 	bool hi = false;
+	bool one = true;
+
+	bool anim1, anim2;
+	fPoint another;
 };
 
 #endif

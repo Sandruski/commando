@@ -57,7 +57,7 @@ ModulePlayer::ModulePlayer()
 	diagSD.PushBack({ 80, 15, 17, 25 });
 	diagSD.PushBack({ 97, 16, 17, 24 });
 
-	invisible.PushBack({ 222, 51, 10, 10 });
+	invisible.PushBack({ 195, 161, 10, 10 });
 
 	waterDie.PushBack({ 239, 16, 13, 16 });
 
@@ -69,9 +69,6 @@ ModulePlayer::ModulePlayer()
 	die.PushBack({ 62, 39, 15, 27 });
 	die.PushBack({ 80, 44, 17, 27 });
 	die.speed = 0.02;
-
-
-
 }
 
 ModulePlayer::~ModulePlayer()
@@ -85,7 +82,11 @@ bool ModulePlayer::Start()
 
 	coll = App->collision->AddCollider({ 300, 300, 12, 15 }, COLLIDER_PLAYER, this); //the collider is out of the screen!
 	feetC = App->collision->AddCollider({ 300 - 16, 300 - 19, 8, 4 }, COLLIDER_PLAYER, this);
-	follow_p = App->collision->AddCollider({ 300 - 16, 300 - 19, 70, 70 }, COLLIDER_FOLLOW, this);
+	
+	follow_p = App->collision->AddCollider({ 300 - 16, 300 - 19, 50, 120 }, COLLIDER_FOLLOW, this);
+	follow_p1 = App->collision->AddCollider({ 300 - 16, 300 - 19, 50, 120 }, COLLIDER_FOLLOW, this);
+	follow_p2 = App->collision->AddCollider({ 300 - 16, 300 - 19, 120, 50 }, COLLIDER_FOLLOW, this);
+	follow_p3 = App->collision->AddCollider({ 300 - 16, 300 - 19, 120, 50 }, COLLIDER_FOLLOW, this);
 
 	p1.x = position.x - 30;
 	p1.y = position.y;
@@ -454,7 +455,18 @@ update_status ModulePlayer::Update()
 
 	coll->SetPos(position.x + 2, position.y + 4);
 	feetC->SetPos(position.x + 4, position.y + 19);
-	follow_p->SetPos(position.x - 20, position.y - 20);
+	follow_p->SetPos(position.x - 50, position.y - 50);
+	follow_p1->SetPos(position.x + 20, position.y - 50);
+	follow_p2->SetPos(position.x - 50, position.y - 50);
+	follow_p3->SetPos(position.x - 50, position.y + 25);
+	/*
+	follow_p = App->collision->AddCollider({ 300 - 16, 300 - 19, 50, 100 }, COLLIDER_FOLLOW, this);
+	follow_p1 = App->collision->AddCollider({ 300 - 16, 300 - 19, 50, 100 }, COLLIDER_FOLLOW, this);
+	follow_p2 = App->collision->AddCollider({ 300 - 16, 300 - 19, 100, 50 }, COLLIDER_FOLLOW, this);
+	follow_p3 = App->collision->AddCollider({ 300 - 16, 300 - 19, 100, 50 }, COLLIDER_FOLLOW, this);
+	
+	
+	*/
 
 	if (stairs == false) {
 		current_animation = &waterDie;
@@ -667,6 +679,12 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 	{
 
 		if (vides != 0) {
+
+			App->player->follow_p->to_delete = true;
+			App->player->follow_p1->to_delete = true;
+			App->player->follow_p2->to_delete = true;
+			App->player->follow_p3->to_delete = true;
+
 			vides--;
 			App->audio->pause_music();
 			App->audio->play_fx6();
@@ -729,6 +747,12 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 		}
 
 		else if (vides == 0) {
+
+			App->player->follow_p->to_delete = true;
+			App->player->follow_p1->to_delete = true;
+			App->player->follow_p2->to_delete = true;
+			App->player->follow_p3->to_delete = true;
+
 			App->audio->pause_music();
 			App->audio->play_fx6();
 			App->scene_1->start = true;

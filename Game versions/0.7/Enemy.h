@@ -14,7 +14,7 @@ protected:
 	Collider* collider = nullptr;
 
 public:
-	iPoint position;
+	fPoint position;
 	int type;
 	bool Esperanza;
 

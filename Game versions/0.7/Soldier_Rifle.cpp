@@ -71,7 +71,7 @@ void Enemy_SoldierRifle::Move()
 		if (rand1 == 3 && App->player->position.y > position.y + 24) {
 
 			enemyplayer.x = (App->player->position.x + 5) - position.x;
-			enemyplayer.y = abs(position.y + 25) - abs(App->player->position.y + 10);
+			enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
 
 			module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
 			enemyplayeru.x = enemyplayer.x / module;

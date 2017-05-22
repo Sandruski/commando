@@ -38,6 +38,9 @@ public:
 	Collider* feetC;
 	Collider* grenadeC;
 	Collider* follow_p;
+	Collider* follow_p1;
+	Collider* follow_p2;
+	Collider* follow_p3;
 
 	SDL_Rect r, R;
 	int vides = 3;

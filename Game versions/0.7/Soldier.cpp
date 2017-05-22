@@ -191,55 +191,125 @@ void Enemy_Soldier::Move()
 	//end_of_movement
 	*/
 
+	/*
+	//SHOT CODE
+		enemyplayer.x = (App->player->position.x + 5) - position.x;
+		enemyplayer.y = abs(position.y + 25) - abs(App->player->position.y + 10);
+
+		module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
+		enemyplayeru.x = enemyplayer.x / module;
+		enemyplayeru.y = enemyplayer.y / module;
+
+		//angle = atan(enemyplayer.x / enemyplayer.y); do not use. Only if needed
+
+		App->particlesenemies->bala.speed.x = enemyplayeru.x;
+		App->particlesenemies->bala.speed.y = enemyplayeru.y;
+	*/
+
+
+
 	if (hi) {
-		position.y -= 2;
-	
-	
-	
-	
-	
-	
-	
+		one = false;
+
+		anim1 = false;
+		anim2 = true;
+
+		enemyplayer2.x = App->player->position.x - position.x;
+		enemyplayer2.y = fabs(position.y) - fabs(App->player->position.y);
+
+		module = sqrt((pow(enemyplayer2.x, 2) + pow(enemyplayer2.y, 2)));
+
+		enemyplayeru2.x = enemyplayer2.x / module;
+		enemyplayeru2.y = enemyplayer2.y / module;
+
+		position.x += enemyplayeru2.x / 1.5;
+		position.y += enemyplayeru2.y / 1.5;
+
+		another.x = position.x;
+		another.y = position.y;
+
 	}
-
-
-
-
-
-
 	else {
-		position = original_pos + path.GetCurrentPosition(&animation);
-		save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+		anim2 = false;
+		anim1 = true;
+
+		if (one) {
+			position = original_pos + path.GetCurrentPositionfl(&animation);
+			save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+		}
+		else {
+			//here we need to have different paths. If one path is done, switch to the next one
+
+
+
+			position = another + path1.GetCurrentPositionfl(&animation);
+			save_step = path1.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+			
+
+
+
+
+		}
 	}
 
-	//ANIMATION CHANGE
-	if (save_step.x == 0 && save_step.y > 0) {
-		animation = &down;
+	//ANIMATION CHANGE FOR PATHS
+	if (anim1) {
+		if ((save_step.x == 0 && save_step.y > 0)) {
+			animation = &down;
+		}
+		else if ((save_step.x == 0 && save_step.y < 0)) {
+			animation = &up;
+		}
+		else if ((save_step.x > 0 && save_step.y == 0)) {
+			animation = &right;
+		}
+		else if ((save_step.x < 0 && save_step.y == 0)) {
+			animation = &left;
+		}
+		else if ((save_step.x > 0 && save_step.y > 0)) {
+			animation = &down_right;
+		}
+		else if ((save_step.x < 0 && save_step.y > 0)) {
+			animation = &down_left;
+		}
+		else if ((save_step.x > 0 && save_step.y < 0)) {
+			animation = &up_right;
+		}
+		else if ((save_step.x < 0 && save_step.y < 0)) {
+			animation = &up_left;
+		}
 	}
-	if (save_step.x == 0 && save_step.y < 0) {
-		animation = &up;
-	}
-	if (save_step.x > 0 && save_step.y == 0) {
-		animation = &right;
-	}
-	if (save_step.x < 0 && save_step.y == 0) {
-		animation = &left;
-	}
-	if (save_step.x > 0 && save_step.y > 0) {
-		animation = &down_right;
-	}
-	if (save_step.x < 0 && save_step.y > 0) {
-		animation = &down_left;
-	}
-	if (save_step.x > 0 && save_step.y < 0) {
-		animation = &up_right;
-	}
-	if (save_step.x < 0 && save_step.y < 0) {
-		animation = &up_left;
+	//
+
+	//ANIMATION CHANGE FOR FOLLOW
+	if (anim2) {
+		if ((enemyplayeru2.x == 0 && enemyplayeru.y > 0)) {
+			animation = &down;
+		}
+		else if ((enemyplayeru2.x == 0 && enemyplayeru.y < 0)) {
+			animation = &up;
+		}
+		else if ((enemyplayeru2.x > 0 && enemyplayeru.y == 0)) {
+			animation = &right;
+		}
+		else if ((enemyplayeru2.x < 0 && enemyplayeru.y == 0)) {
+			animation = &left;
+		}
+		else if ((enemyplayeru2.x > 0 && enemyplayeru.y > 0)) {
+			animation = &down_right;
+		}
+		else if ((enemyplayeru2.x < 0 && enemyplayeru.y > 0)) {
+			animation = &down_left;
+		}
+		else if ((enemyplayeru2.x > 0 && enemyplayeru.y < 0)) {
+			animation = &up_right;
+		}
+		else if ((enemyplayeru2.x < 0 && enemyplayeru.y < 0)) {
+			animation = &up_left;
+		}
 	}
 	//
 	
-
 	//SHOT
 	rand1 = rand() % 300;
 	num_shots = rand() % 4;
@@ -247,7 +317,7 @@ void Enemy_Soldier::Move()
 	if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
 
 		enemyplayer.x = (App->player->position.x + 5) - position.x;
-		enemyplayer.y = abs(position.y + 25) - abs(App->player->position.y + 10);
+		enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
 
 		module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
 		enemyplayeru.x = enemyplayer.x / module;
@@ -279,10 +349,12 @@ void Enemy_Soldier::Move()
 			Esperanza = false;
 	}
 
+	hi = false;
+
 }
 
 void Enemy_Soldier::OnCollision(Collider* collider, Collider* c2) {
-	
+
 	if (c2->type == COLLIDER_WALL) {
 
 		if ((collider->rect.x + collider->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - collider->rect.x != 1 && (c2->rect.y + c2->rect.h) - collider->rect.y == 1 && (collider->rect.y + collider->rect.h) - c2->rect.y != 1)
@@ -308,6 +380,7 @@ void Enemy_Soldier::OnCollision(Collider* collider, Collider* c2) {
 	}
 
 	else {
+		hi = false;
 		App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
 	}
 

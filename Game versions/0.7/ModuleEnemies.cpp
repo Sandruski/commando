@@ -251,6 +251,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			}
 		}
 
+
+
+
 		else if (c2->type != COLLIDER_WALL) {
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 			{
@@ -267,6 +270,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (c2->type == COLLIDER_FOLLOW && enemies[i]->type == ENEMY_TYPES::SOLDIER) {
 					enemies[i]->OnCollision(c1, c2);
 				}
+				else if (c2->type == COLLIDER_FOLLOW && enemies[i]->type != ENEMY_TYPES::SOLDIER) {}
 
 				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER) {
 					if (c2->type == COLLIDER_PLAYER_SHOT) {
