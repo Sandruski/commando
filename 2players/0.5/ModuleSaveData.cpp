@@ -5,7 +5,7 @@
 #include "ModuleInput.h"
 #include "SDL/include/SDL.h"
 #include "ModuleFadeToBlack.h"
-#include "ModuleScene2.h"
+#include "ModuleScene1.h"
 #include "ModuleUI.h"
 #include "ModulePlayer2.h"
 #include "ModuleSaveData.h"
@@ -17,7 +17,7 @@ using namespace std;
 
 ModuleSaveData::ModuleSaveData() : Module()
 {
-	savescore = 0;
+
 }
 
 ModuleSaveData::~ModuleSaveData()
@@ -45,7 +45,7 @@ update_status ModuleSaveData::Update()
 	if (savescore < App->UI->score)
 		savescore = App->UI->score;
 
-	if (App->player2->twoplayerson == true) {
+	if (App->player2->twoplayerson == true && App->fade->on == App->scene_1) {
 		savescore2p = App->UI->score;
 
 	}

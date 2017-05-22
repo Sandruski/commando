@@ -22,10 +22,13 @@
 #include "ModuleUI.h"
 #include "ModuleSecretRoom1A.h"
 #include "ModuleSecretRoomB.h"
+#include "ModuleSaveData.h"
 #include "ModuleSecretRoomC.h"
 #include "ModuleSecretRoomD.h"
 #include "ModuleSecretRoomE.h"
 #include <windows.h>
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -183,6 +186,8 @@ bool ModuleScene1::Start()
 
 	App->render->camera.x = 0;
 	cont = 0;
+
+	App->player->move2 = true;
 
 	//Colliders
 	App->collision->AddCollider({ 133,2817 - 2656,20,23 }, COLLIDER_WALL, this);
@@ -419,6 +424,9 @@ bool ModuleScene1::Start()
 bool ModuleScene1::CleanUp()
 {
 	LOG("Unloading 1st scene");
+	App->savedata->scorefile.open("score.txt", std::ofstream::out | std::ofstream::trunc);
+	App->savedata->scorefile << App->savedata->savescore;
+	App->savedata->scorefile.close();
 	App->textures->Unload(graphics);
 	App->textures->Unload(moto);
 	App->textures->Unload(items);
@@ -570,6 +578,7 @@ update_status ModuleScene1::Update()
 		App->ending->cont = 0;
 		start = true;
 		App->fade->FadeToBlack(this, App->ending, 3);
+		App->player2->vides = 3;
 		App->player->vides = 3;
 	}
 	cont8 = true;

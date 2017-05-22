@@ -1,9 +1,1 @@
-﻿  ModuleAudio.cpp
-  ModuleInput.cpp
-  Generando código
-  1 of 318 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Generación de código finalizada
-  SDL Game.vcxproj -> C:\Users\perso\Desktop\0.5\0.5\0.5\Release\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\perso\Desktop\0.5\0.5\0.5\Release\SDL5 Handout.pdb (Full PDB)
+﻿LINK : fatal error LNK1104: cannot open file 'C:\Users\guillemcm3\Desktop\gets-name-\2players\0.5\Release\SDL5 Handout.exe'

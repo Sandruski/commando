@@ -1,20 +1,9 @@
-﻿  ModuleSaveData.cpp
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
-c:\users\guillemcm3\desktop\gets-name-\2players\0.5\modulesavedata.cpp(43): warning C4018: '<': signed/unsigned mismatch
-c:\users\guillemcm3\desktop\gets-name-\2players\0.5\modulesavedata.cpp(45): warning C4018: '<': signed/unsigned mismatch
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
-  ModuleMenu.cpp
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
-  Generating Code...
-  Compiling...
-  ModuleUI.cpp
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
-c:\users\guillemcm3\desktop\gets-name-\2players\0.5\moduleui.cpp(41): warning C4305: '=': truncation from 'double' to 'float'
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
-  Application.cpp
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
+﻿  ModulePlayer2.cpp
+c:\users\guillemcm3\desktop\gets-name-\2players\0.5\moduleplayer2.cpp(66): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\guillemcm3\desktop\gets-name-\2players\0.5\moduleplayer2.cpp(71): warning C4305: '=': truncation from 'double' to 'float'
+  ModulePlayer.cpp
+c:\users\guillemcm3\desktop\gets-name-\2players\0.5\moduleplayer.cpp(66): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\guillemcm3\desktop\gets-name-\2players\0.5\moduleplayer.cpp(71): warning C4305: '=': truncation from 'double' to 'float'
   Generating Code...
   SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\2players\0.5\Debug\SDL5 Handout.exe
   SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\2players\0.5\Debug\SDL5 Handout.pdb (Full PDB)

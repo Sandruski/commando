@@ -40,6 +40,7 @@ public:
 	SDL_Rect r;
 	int vides = 3;
 	bool move = true;
+	bool move2 = true;
 	bool waterB = true;
 	bool enemyB = true;
 	bool GOD = false;
@@ -49,7 +50,6 @@ public:
 	bool collA = false;
 	bool collS = false;
 	bool collD = false;
-
 	bool cooldown = false;
 	uint lastTime, currentTime;
 

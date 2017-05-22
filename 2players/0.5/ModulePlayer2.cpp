@@ -153,9 +153,9 @@ update_status ModulePlayer2::Update()
 
 	speed = 1;
 
-	if (App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN && GOD == false)
+	if ((App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN || App->input->buttonBack2 == KEY_DOWN) && GOD == false)
 		GOD = true;
-	if (App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN && GOD == true)
+	if ((App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN || App->input->buttonStart2 == KEY_DOWN) && GOD == true)
 		GOD = false;
 
 	if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666) {
@@ -165,7 +165,7 @@ update_status ModulePlayer2::Update()
 	//GRENADE
 	//Grenades must be retouched because now if player throws 2 grenades, only kills the last one
 
-	if (cooldown == false && non_grenade == false && App->input->keyboard[SDL_SCANCODE_RCTRL] == KEY_STATE::KEY_DOWN && App->UI->grenade > 0 && (position.y >= 1405 - 2656 || App->player2->position.y <= 1338 - 2666))
+	if ((cooldown == false && non_grenade == false && App->input->keyboard[SDL_SCANCODE_RCTRL] == KEY_STATE::KEY_DOWN || App->input->buttonB2 == KEY_STATE::KEY_DOWN) && App->UI->grenade > 0 && (position.y >= 1405 - 2656 || App->player2->position.y <= 1338 - 2666))
 	{
 		cooldown = true;
 		non_grenade = false;
@@ -206,7 +206,7 @@ update_status ModulePlayer2::Update()
 	}
 	//_grenade_end
 
-	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_REPEAT && move == true && check_grenade == 1 && collW == false)
+	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_REPEAT && move == true && check_grenade == 1 && collW == false && move2 == true)
 	{
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -223,7 +223,7 @@ update_status ModulePlayer2::Update()
 		forward.Stop();
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && move == true && check_grenade == 1 && collS == false)
+	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && move == true && check_grenade == 1 && collS == false && move2 == true)
 	{
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -277,7 +277,7 @@ update_status ModulePlayer2::Update()
 		backward.Stop();
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_REPEAT && position.x < (SCREEN_WIDTH - right.frames->w) && move == true && check_grenade == 1 && collD == false)
+	if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_REPEAT && position.x < (SCREEN_WIDTH - right.frames->w) && move == true && check_grenade == 1 && collD == false && move2 == true)
 	{
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -293,7 +293,7 @@ update_status ModulePlayer2::Update()
 	{
 		right.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT && position.x > 0 && move == true && check_grenade == 1 && collA == false)
+	if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT && position.x > 0 && move == true && check_grenade == 1 && collA == false && move2 == true)
 	{
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -308,7 +308,7 @@ update_status ModulePlayer2::Update()
 	{
 		left.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_REPEAT && move == true && check_grenade == 1) {
+	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_REPEAT && move == true && check_grenade == 1 && move2 == true) {
 
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -323,7 +323,7 @@ update_status ModulePlayer2::Update()
 	{
 		diagWD.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT && move == true && check_grenade == 1) {
+	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT && move == true && check_grenade == 1 && move2 == true) {
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
@@ -336,7 +336,7 @@ update_status ModulePlayer2::Update()
 	{
 		diagWA.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_REPEAT && move == true && check_grenade == 1) {
+	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_REPEAT && move == true && check_grenade == 1 && move2 == true) {
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
@@ -349,7 +349,7 @@ update_status ModulePlayer2::Update()
 	{
 		diagSD.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT && move == true && check_grenade == 1) {
+	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT && move == true && check_grenade == 1 && move2 == true) {
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
@@ -365,35 +365,35 @@ update_status ModulePlayer2::Update()
 
 
 
-	if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN && current_animation == &diagSA) //Esquerra Abaix
+	if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagSA) //Esquerra Abaix
 	{
 		App->particles->bala2.speed.y = +6;
 		App->particles->bala2.speed.x = -6;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala2, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN && current_animation == &diagSD)//Dreta Abaix
+	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagSD)//Dreta Abaix
 	{
 		App->particles->bala2.speed.y = +6;
 		App->particles->bala2.speed.x = +6;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala2, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN && current_animation == &diagWD)//Dreta Adalt
+	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagWD)//Dreta Adalt
 	{
 		App->particles->bala2.speed.y = -6;
 		App->particles->bala2.speed.x = +6;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala2, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN && current_animation == &diagWA) //Esquerra Adalt
+	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagWA) //Esquerra Adalt
 	{
 		App->particles->bala2.speed.y = -6;
 		App->particles->bala2.speed.y = -6;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala2, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN && current_animation == &forward) //Adalt
+	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &forward) //Adalt
 	{
 		App->particles->bala2.speed.y = -6;
 		App->particles->bala2.speed.x = 0;
@@ -401,21 +401,21 @@ update_status ModulePlayer2::Update()
 		App->particles->AddParticle(App->particles->bala2, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 
-	else if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN && current_animation == &backward) //Abaix
+	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &backward) //Abaix
 	{
 		App->particles->bala2.speed.y = +6;
 		App->particles->bala2.speed.x = 0;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala2, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN && current_animation == &right) //Dreta
+	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &right) //Dreta
 	{
 		App->particles->bala2.speed.x = +6;
 		App->particles->bala2.speed.y = 0;
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala2, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN && current_animation == &left) //Esquer0a
+	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &left ) //Esquer0a
 	{
 		App->particles->bala2.speed.x = -6;
 		App->particles->bala2.speed.y = 0;
@@ -423,8 +423,7 @@ update_status ModulePlayer2::Update()
 		App->particles->AddParticle(App->particles->bala2, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 
 	}
-
-	else if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN && move == true)
+	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && move == true && move2 == true)
 	{
 		App->audio->play_fx1();
 		App->particles->AddParticle(App->particles->bala2, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
@@ -462,29 +461,28 @@ update_status ModulePlayer2::Update()
 	collD = false;
 
 	//print help
-	if (move == false) {
+	if (move2 == false) {
 		detectionlive = 1;
 		App->render->Blit(App->player2->graphics, position.x + 10, position.y, &App->player->help);
 		App->render->Blit(App->player2->graphics, position.x - 2, position.y + 5, &App->player->dead2player);
 		current_animation = &invisible;
 		contdead = 1;
 	}
-	else if (move == true && contdead == 1) {
+	else if (move2 == true && contdead == 1) {
 		detectionlive = 0;
 		current_animation = &idleF;
 		contdead = 0;
 	}
 
-	if ((move == false && App->player->move == false && twoplayerson == true) ||  (twoplayerson == true && App->player->vides == 0 && App->player2->vides == 0)) {
+	if ((move2 == false && App->player->move2 == false && twoplayerson == true) ||  (twoplayerson == true && App->player->vides == 0 && App->player2->vides == 0)) {
 		//if (timeW == true) {
 			App->audio->pause_music();
 			App->audio->play_fx6();
 			App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
 			App->scene_1->start = true;
 			App->fade->FadeToBlack(App->scene_1, App->ending);
-			move = true;
-			App->player->move = true;
-			App->player2->move = true;
+			move2 = true;
+			App->player->move2 = true;
 		//}
 
 	}
@@ -503,7 +501,7 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		OnCollisionItem(c1, c2);
 	if ((c1->type == COLLIDER_PLAYER2 && (c2->type == COLLIDER_ENEMY || c2->type == COLLIDER_ENEMY_SHOT) && GOD == false) && detectionlive == 0)
 		OnCollisionEnemy(c1, c2);
-	if (c1->type == COLLIDER_PLAYER2 && c2->type == COLLIDER_REVIVE && App->player->move == false)
+	if (c1->type == COLLIDER_PLAYER2 && c2->type == COLLIDER_REVIVE && App->player->move2 == false)
 		OnCollisionRev(c1, c2);
 
 }
@@ -585,32 +583,33 @@ void ModulePlayer2::OnCollisionWater(Collider* c1, Collider* c2) {
 	non_grenade = true;
 	App->ending->cont = 0;
 	play_ending = true;
+	if (twoplayerson == false){
+		if (App->fade->IsFading() == false)
+		{
 
-	if (App->fade->IsFading() == false)
-	{
-
-		if (vides != 0) {
-			waterB = false;
-			if (timeW == true) {
-				vides--;
-				App->audio->pause_music();
-				App->audio->play_fx6();
-				App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
-				App->scene_1->start = false;
-				save_player_position = position.y;
-				App->fade->FadeToBlack(App->scene_1, App->scene_1);
+			if (vides != 0) {
+				waterB = false;
+				if (timeW == true) {
+					vides--;
+					App->audio->pause_music();
+					App->audio->play_fx6();
+					App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
+					App->scene_1->start = false;
+					save_player_position = position.y;
+					App->fade->FadeToBlack(App->scene_1, App->scene_1);
+				}
 			}
-		}
-		else if (vides == 0) {
-			waterB = false;
-			if (timeW == true) {
-				App->audio->pause_music();
-				App->audio->play_fx6();
-				App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
-				App->scene_1->start = true;
-				App->fade->FadeToBlack(App->scene_1, App->ending);
+			else if (vides == 0) {
+				waterB = false;
+				if (timeW == true) {
+					App->audio->pause_music();
+					App->audio->play_fx6();
+					App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
+					App->scene_1->start = true;
+					App->fade->FadeToBlack(App->scene_1, App->ending);
+				}
+				vides = 3;
 			}
-			vides = 3;
 		}
 	}
 }
@@ -646,7 +645,7 @@ void ModulePlayer2::OnCollisionEnemy(Collider* c1, Collider* c2) {
 		}
 	}
 	else {
-		move = false;
+		move2 = false;
 		if (vides != 0) {
 			vides--;
 		}
@@ -656,53 +655,34 @@ void ModulePlayer2::OnCollisionEnemy(Collider* c1, Collider* c2) {
 
 void ModulePlayer2::OnCollisionRev(Collider* c1, Collider* c2)
 {
-	if (App->input->keyboard[SDL_SCANCODE_0] == KEY_STATE::KEY_REPEAT) {
-		revTime++;
-		/*
-		if (revTime == 2) {
+	if (App->player->vides != 0) {
+		if (App->input->keyboard[SDL_SCANCODE_0] == KEY_STATE::KEY_REPEAT || App->input->buttonX2 == KEY_REPEAT) {
+			revTime++;
+		
+			if (revTime <= 20 && revTime >= 1) {
 
-			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev1);
-		}
-		if (revTime == 4) {
+				App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev1);
+			}
+			else if (revTime <= 40 && revTime > 20) {
 
-			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev2);
-		}
-		if (revTime == 6) {
+				App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev2);
+			}
+			else if (revTime <= 60 && revTime > 40) {
 
-			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev3);
-		}
-		if (revTime == 8) {
+				App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev3);
+			}
+			else if (revTime <= 80 && revTime > 60) {
 
-			App->render->Blit(graphics, App->player->position.x - 5 , App->player->position.y, &hpRev4);
+				App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev4);
+			}
+			if (revTime >= 80) {
+				App->player->move2 = true;
+				revTime = 0;
+
+			}
 		}
-		if (revTime >= 8) {
-			App->player->move = true;
+		if (App->input->keyboard[SDL_SCANCODE_0] == KEY_STATE::KEY_UP || App->input->buttonX2 == KEY_UP)
 			revTime = 0;
-		}
-		*/
-
-		if (revTime <= 20 && revTime >= 1) {
-
-			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev1);
-		}
-		else if (revTime <= 40 && revTime > 20) {
-
-			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev2);
-		}
-		else if (revTime <= 60 && revTime > 40) {
-
-			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev3);
-		}
-		else if (revTime <= 80 && revTime > 60) {
-
-			App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev4);
-		}
-		if (revTime >= 80) {
-			App->player->move = true;
-			revTime = 0;
-
-		}
 	}
-	if (App->input->keyboard[SDL_SCANCODE_0] == KEY_STATE::KEY_UP)
-		revTime = 0;
+	else {}
 }

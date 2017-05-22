@@ -38,6 +38,7 @@ public:
 
 	int vides = 3;
 	bool move = true;
+	bool move2 = true;
 	bool waterB = true;
 	bool enemyB = true;
 	bool GOD = false;
