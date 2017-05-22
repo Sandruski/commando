@@ -20,6 +20,8 @@ private:
 	int cont2;
 
 public:
+	int contt = 0;
+	int check = true;
 
 	uint lastTime, currentTime;
 	bool dieB = false;

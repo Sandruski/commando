@@ -20,6 +20,7 @@ public:
 public:
 	
 	SDL_Texture* graphics = nullptr;
+	SDL_Texture* end_door = nullptr;
 	SDL_Texture* moto = nullptr;
 	SDL_Texture* items = nullptr;
 	SDL_Texture* win = nullptr;
@@ -27,6 +28,7 @@ public:
 	SDL_Rect foreground;
 	Animation ammo_grenades_colours;
 	Animation ammo_specialgrenade1;
+	Animation door;
 	Animation moto_go;
 	Animation lvl1;
 	Animation win1;
@@ -34,7 +36,9 @@ public:
 	SDL_Rect background;
 	SDL_Rect Secret_Room;
 	SDL_Rect r;
+	SDL_Rect reee;
 	Animation* current_animation = nullptr;
+	Animation* current_animation1 = nullptr;
 	int cont5;
 	int cont7;
 
@@ -76,12 +80,10 @@ public:
 
 	Animation drop1, drop2;
 	SDL_Rect r1;
-	Animation* current_animation1 = nullptr;
 
 	int enemydiex, enemydiey;
+
+	bool dead = false, first = true;
 };
-
-
-
 
 #endif // __MODULESCENE1_H__

@@ -1,11 +1,6 @@
-﻿  Soldier_Rifle.cpp
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_rifle.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_rifle.cpp(78): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_rifle.cpp(80): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  Soldier_Grenade.cpp
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_grenade.cpp(64): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_grenade.cpp(65): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_grenade.cpp(67): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
+﻿  Soldier.cpp
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(225): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(226): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(228): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
   SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)

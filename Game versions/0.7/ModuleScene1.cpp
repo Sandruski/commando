@@ -30,7 +30,8 @@ using namespace std;
 
 ModuleScene1::ModuleScene1()
 {
-	
+	door.PushBack({ 89, 89, 82, 59 });
+
 	ammo_grenades_colours.PushBack({ 179, 126, 33, 18 });
 	ammo_grenades_colours.PushBack({ 179, 152, 33, 18 });
 	ammo_grenades_colours.PushBack({ 179, 173, 33, 18 });
@@ -61,15 +62,21 @@ bool ModuleScene1::Start()
 {
 	if (App->player->vides == 3)
 		App->UI->score = 0;
+
 	LOG("Loading 1st scene");
 	moto = App->textures->Load("Assets/Sprites/vehicles.png");
 	items = App->textures->Load("Assets/Sprites/items&HUD&snake.png");
 	graphics = App->textures->Load("Assets/Background/1-1.png");
 	win = App->textures->Load("Assets/Sprites/win.png");
+	end_door = App->textures->Load("Assets/Sprites/door.png");
+
 	background.x = 0;
 	background.y = 0;
 	background.w = 256;
 	background.h = 2880;
+
+	dead = false;
+	first = true;
 
 	Secret_Room.x = 110;
 	Secret_Room.y = 125;
@@ -749,7 +756,7 @@ update_status ModuleScene1::Update()
 	if (cont6 == true) {
 		current_animation = &win1;
 		r = current_animation->GetCurrentFrame();
-		App->render->Blit(win, 112, 60 - 2656, &r);
+		//App->render->Blit(win, 112, 60 - 2656, &r);
 		cont5++;
 	}
 	if (cont5 == 20) {
@@ -773,6 +780,45 @@ update_status ModuleScene1::Update()
 		if (cont7 == 20)
 			App->fade->FadeToBlack(this, this, 3);
 	}
+
+	//end door opens when enemies start spawning
+	if (App->render->camera.y == ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
+		current_animation1 = &door;
+		reee = current_animation1->GetCurrentFrame();
+
+		App->render->Blit(end_door, 88, -2656, &reee);
+	}
+
+
+
+	//player walks towards the end door
+	if (dead) {
+		
+		if (first) {
+			if (App->player->position.x < SCREEN_WIDTH / 2) {
+				App->player->current_animation = &App->player->right;
+				App->player->right.Start();
+
+				App->player->position.x++;
+			}
+			else if (App->player->position.x > SCREEN_WIDTH / 2) {
+				App->player->current_animation = &App->player->left;
+				App->player->left.Start();
+
+				App->player->position.x--;
+			}
+
+			if (App->player->position.x == SCREEN_WIDTH / 2)
+				first = false;
+		}
+
+		if (!first) {
+			App->player->position.y--;
+			App->player->current_animation = &App->player->forward;
+			App->player->forward.Start();
+		}
+	}
+	//
 
 	return ret;
 }

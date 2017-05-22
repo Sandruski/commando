@@ -118,7 +118,6 @@ Enemy_Soldier::Enemy_Soldier(int x, int y) : Enemy(x, y)
 
 void Enemy_Soldier::Move()
 {
-
 	currentTime = SDL_GetTicks();
 	currentTime -= lastTime;
 
@@ -218,15 +217,10 @@ void Enemy_Soldier::Move()
 	//
 
 	//SHOT
-
+	rand1 = rand() % 300;
 	num_shots = rand() % 4;
 
 	if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
-
-		for (int i = 0; i <= num_shots; i++) {
-			App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
-			space = rand() % 10 + 5;
-		}
 
 		enemyplayer.x = (App->player->position.x + 5) - position.x;
 		enemyplayer.y = abs(position.y + 25) - abs(App->player->position.y + 10);
@@ -240,13 +234,18 @@ void Enemy_Soldier::Move()
 		App->particlesenemies->bala.speed.x = enemyplayeru.x;
 		App->particlesenemies->bala.speed.y = enemyplayeru.y;
 
-		App->particlesenemies->bala.position.x = (position.x + App->particlesenemies->bala.speed.x);
-		App->particlesenemies->bala.position.y = ((position.y + 25) + App->particlesenemies->bala.speed.y);
+		//App->particlesenemies->bala.position.x = (position.x + App->particlesenemies->bala.speed.x);
+		//App->particlesenemies->bala.position.y = ((position.y + 25) + App->particlesenemies->bala.speed.y);
+
+		for (int i = 0; i <= num_shots; i++) {
+			App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
+			space = rand() % 10 + 5;
+		}
 
 		space = 0;
 	}
 
-	rand1 = rand() % 300;
+	
 	//end_of_shot
 
 	if (dieB == true) {

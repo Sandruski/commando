@@ -22,7 +22,6 @@ Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
 	left.speed = 0.05f;
 	down.speed = 0.05f;
 
-
 	die.PushBack({ 6, 111, 16, 27 });
 	die.PushBack({ 40, 104, 15, 27 });
 	die.PushBack({ 25, 111, 16, 27 });

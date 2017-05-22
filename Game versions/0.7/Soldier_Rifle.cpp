@@ -66,13 +66,9 @@ void Enemy_SoldierRifle::Move()
 
 		//SHOT
 		num_shots = rand() % 4;
+		rand1 = rand() % 500;
 
 		if (rand1 == 3 && App->player->position.y > position.y + 24) {
-
-			for (int i = 0; i <= num_shots; i++) {
-				App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
-				space = rand() % 10 + 5;
-			}
 
 			enemyplayer.x = (App->player->position.x + 5) - position.x;
 			enemyplayer.y = abs(position.y + 25) - abs(App->player->position.y + 10);
@@ -86,13 +82,16 @@ void Enemy_SoldierRifle::Move()
 			App->particlesenemies->bala.speed.x = enemyplayeru.x;
 			App->particlesenemies->bala.speed.y = enemyplayeru.y;
 
+			for (int i = 0; i <= num_shots; i++) {
+				App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
+				space = rand() % 10 + 5;
+			}
+
 			//App->particlesenemies->bala.position.x = (position.x + App->particlesenemies->bala.speed.x);
 			//App->particlesenemies->bala.position.y = ((position.y + 25) + App->particlesenemies->bala.speed.y);
 
 			space = 0;
 		}
-
-		rand1 = rand() % 500;
 
 		//Change of behaviour. Soldier walks backwards
 		/*
