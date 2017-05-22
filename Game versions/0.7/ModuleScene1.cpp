@@ -297,6 +297,7 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 227, 1449 - 2656);
 
 	//Soldier rifle behind stone
+
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 167, 1127 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 53, 1127 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 37, 1047 - 2656);
@@ -356,7 +357,8 @@ bool ModuleScene1::Start()
 	//SOLDIER
 	//Path
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 62, 2706 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 240, 2460 - 2656);
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 240, 2650 - 2656);
+	/*
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 239, 2408 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 118, 2154 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 254, 1693 - 2656);
@@ -415,7 +417,7 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 124, 2 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 108, 7 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 130, 4 - 2656);
-
+	*/
 	return true;
 
 }

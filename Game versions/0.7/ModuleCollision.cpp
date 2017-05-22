@@ -26,6 +26,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_WALL][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_WALL][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_WALL][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_WALL][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_PLAYER][COLLIDER_WALL] = true;
 	matrix[COLLIDER_PLAYER][COLLIDER_PLAYER] = false;
@@ -41,6 +42,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_PLAYER][COLLIDER_SECRET_ROOM] = true;
 	matrix[COLLIDER_PLAYER][COLLIDER_ITEM1] = true;
+	matrix[COLLIDER_PLAYER][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_ENEMY][COLLIDER_WALL] = true;
 	matrix[COLLIDER_ENEMY][COLLIDER_PLAYER] = true;
@@ -56,6 +58,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ENEMY][COLLIDER_END_OF_GRENADE] = true;
 	matrix[COLLIDER_ENEMY][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_ENEMY][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_ENEMY][COLLIDER_FOLLOW] = true;
 
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_WALL] = true;
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_PLAYER] = false;
@@ -71,6 +74,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_PLAYER_SHOT][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_WALL] = false;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_PLAYER] = true;
@@ -86,6 +90,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_WATER][COLLIDER_WALL] = false;
 	matrix[COLLIDER_WATER][COLLIDER_PLAYER] = true;
@@ -101,6 +106,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_WATER][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_WATER][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_WATER][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_WATER][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_WALL] = true;
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_PLAYER] = false;
@@ -116,6 +122,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_SECRET_ROOM] = true;
 	matrix[COLLIDER_PLAYER_FEET][COLLIDER_ITEM1] = true;
+	matrix[COLLIDER_PLAYER_FEET][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_ITEM][COLLIDER_WALL] = false;
 	matrix[COLLIDER_ITEM][COLLIDER_PLAYER] = true;
@@ -131,6 +138,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ITEM][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_ITEM][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_ITEM][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_ITEM][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_WALL] = false;
 	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_PLAYER_GRENADE] = false;
@@ -146,6 +154,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_PLAYER_GRENADE][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_END_OF_BULLET][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_END_OF_BULLET][COLLIDER_PLAYER_FEET] = false;
@@ -161,6 +170,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_END_OF_BULLET][COLLIDER_END_OF_BULLET] = false;
 	matrix[COLLIDER_END_OF_BULLET][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_END_OF_BULLET][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_END_OF_BULLET][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_END_OF_GRENADE][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_END_OF_GRENADE][COLLIDER_PLAYER_FEET] = false;
@@ -176,6 +186,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_END_OF_GRENADE][COLLIDER_END_OF_BULLET] = false;
 	matrix[COLLIDER_END_OF_GRENADE][COLLIDER_SECRET_ROOM] = true;
 	matrix[COLLIDER_END_OF_GRENADE][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_END_OF_GRENADE][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_PRISONER][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_PRISONER][COLLIDER_PLAYER_FEET] = true;
@@ -191,6 +202,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PRISONER][COLLIDER_END_OF_BULLET] = false;
 	matrix[COLLIDER_PRISONER][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_PRISONER][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_PRISONER][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_SECRET_ROOM][COLLIDER_END_OF_GRENADE] = true;
 	matrix[COLLIDER_SECRET_ROOM][COLLIDER_PLAYER_FEET] = true;
@@ -206,6 +218,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_SECRET_ROOM][COLLIDER_END_OF_BULLET] = false;
 	matrix[COLLIDER_SECRET_ROOM][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_SECRET_ROOM][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_SECRET_ROOM][COLLIDER_FOLLOW] = false;
 
 	matrix[COLLIDER_ITEM1][COLLIDER_WALL] = false;
 	matrix[COLLIDER_ITEM1][COLLIDER_PLAYER] = true;
@@ -221,6 +234,23 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ITEM1][COLLIDER_END_OF_GRENADE] = false;
 	matrix[COLLIDER_ITEM1][COLLIDER_SECRET_ROOM] = false;
 	matrix[COLLIDER_ITEM1][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_ITEM1][COLLIDER_FOLLOW] = false;
+
+	matrix[COLLIDER_FOLLOW][COLLIDER_WALL] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_PLAYER] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_ENEMY] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_PLAYER_SHOT] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_ENEMY_SHOT] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_ITEM] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_PRISONER] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_WATER] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_PLAYER_FEET] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_PLAYER_GRENADE] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_END_OF_BULLET] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_END_OF_GRENADE] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_SECRET_ROOM] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_ITEM1] = false;
+	matrix[COLLIDER_FOLLOW][COLLIDER_FOLLOW] = true;
 }
 
 // Destructor
@@ -342,6 +372,9 @@ void ModuleCollision::DebugDraw()
 			break;
 		case COLLIDER_ITEM1:
 			App->render->DrawQuad(colliders[i]->rect, 15, 15, 255, alpha);
+			break;
+		case COLLIDER_FOLLOW:
+			App->render->DrawQuad(colliders[i]->rect, 4, 30, 1, alpha);
 			break;
 		}
 

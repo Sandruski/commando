@@ -37,6 +37,8 @@ public:
 	bool dieB = false;
 	bool collW = false, collA = false, collS = false, collD = false;
 	void OnCollision(Collider* collider, Collider* c2);
+
+	bool hi = false;
 };
 
 #endif

@@ -21,6 +21,7 @@ public:
 	void OnCollisionWater(Collider* c1, Collider* c2);
 	void OnCollisionEnemy(Collider* c1, Collider* c2);
 	void OnCollisionSecretRooms(Collider* c1, Collider* c2);
+	void OnCollisionFollow(Collider* c1, Collider* c2);
 
 	bool detectionitem[10];
 
@@ -36,6 +37,8 @@ public:
 	Collider* coll;
 	Collider* feetC;
 	Collider* grenadeC;
+	Collider* follow_p;
+
 	SDL_Rect r, R;
 	int vides = 3;
 	bool move = true;

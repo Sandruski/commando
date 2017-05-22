@@ -3,6 +3,7 @@
 #include "ModuleCollision.h"
 #include "ModuleUI.h"
 #include "Path.h"
+#include "ModuleEnemies.h"
 #include <stdlib.h>
 #include <time.h>
 #include "ModuleParticlesEnemies.h"
@@ -21,7 +22,7 @@ Enemy_Soldier::Enemy_Soldier(int x, int y) : Enemy(x, y)
 	up.PushBack({ 128, 82, 11, 22 });
 
 	down.PushBack({ 80, 82, 13, 23 });
-	down.PushBack({ 232, 47, 13, 23 });
+	down.PushBack({ 228, 45, 13, 23 });
 
 	left.PushBack({ 210, 82, 16, 22 });
 	left.PushBack({ 228, 82, 16, 22 });
@@ -36,7 +37,7 @@ Enemy_Soldier::Enemy_Soldier(int x, int y) : Enemy(x, y)
 	up_right.PushBack({ 175, 82, 16, 22 });
 
 	down_left.PushBack({ 96, 82, 15, 22 });
-	down_left.PushBack({ 213, 48, 15, 22 });
+	down_left.PushBack({ 210, 46, 15, 22 });
 
 	down_right.PushBack({ 141, 82, 15, 22 });
 	down_right.PushBack({ 158, 82, 15, 22 });
@@ -121,6 +122,7 @@ void Enemy_Soldier::Move()
 	currentTime = SDL_GetTicks();
 	currentTime -= lastTime;
 
+	/*
 	if (original_pos.y == 2706 - 2656 || original_pos.y == 2460 - 2656 || original_pos.y == 2408 - 2656 || original_pos.y == 2154 - 2656
 		|| original_pos.y == 1693 - 2656 || original_pos.y == 1624 - 2656 || original_pos.y == 1023 - 2656 || original_pos.y == 896 - 2656
 		|| original_pos.y == 699 - 2656 || original_pos.y == 688 - 2656 || position.y == 538 - 2656) {
@@ -166,7 +168,7 @@ void Enemy_Soldier::Move()
 		position = original_pos + path_fb2.GetCurrentPosition(&animation);
 		save_step = path_fb2.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
 	}
-
+	*/
 
 	/*
 	if (path.Path1Finished() == false) {
@@ -189,32 +191,54 @@ void Enemy_Soldier::Move()
 	//end_of_movement
 	*/
 
+	if (hi) {
+		position.y -= 2;
+	
+	
+	
+	
+	
+	
+	
+	}
+
+
+
+
+
+
+	else {
+		position = original_pos + path.GetCurrentPosition(&animation);
+		save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	}
+
 	//ANIMATION CHANGE
 	if (save_step.x == 0 && save_step.y > 0) {
 		animation = &down;
 	}
-	else if (save_step.x == 0 && save_step.y < 0) {
+	if (save_step.x == 0 && save_step.y < 0) {
 		animation = &up;
 	}
-	else if (save_step.x > 0 && save_step.y == 0) {
+	if (save_step.x > 0 && save_step.y == 0) {
 		animation = &right;
 	}
-	else if (save_step.x < 0 && save_step.y == 0) {
+	if (save_step.x < 0 && save_step.y == 0) {
 		animation = &left;
 	}
-	else if (save_step.x > 0 && save_step.y > 0) {
+	if (save_step.x > 0 && save_step.y > 0) {
 		animation = &down_right;
 	}
-	else if (save_step.x < 0 && save_step.y > 0) {
+	if (save_step.x < 0 && save_step.y > 0) {
 		animation = &down_left;
 	}
-	else if (save_step.x > 0 && save_step.y < 0) {
+	if (save_step.x > 0 && save_step.y < 0) {
 		animation = &up_right;
 	}
-	else if (save_step.x < 0 && save_step.y < 0) {
+	if (save_step.x < 0 && save_step.y < 0) {
 		animation = &up_left;
 	}
 	//
+	
 
 	//SHOT
 	rand1 = rand() % 300;
@@ -244,7 +268,6 @@ void Enemy_Soldier::Move()
 
 		space = 0;
 	}
-
 	
 	//end_of_shot
 
@@ -255,6 +278,7 @@ void Enemy_Soldier::Move()
 		if (currentTime > 800)
 			Esperanza = false;
 	}
+
 }
 
 void Enemy_Soldier::OnCollision(Collider* collider, Collider* c2) {
@@ -279,6 +303,12 @@ void Enemy_Soldier::OnCollision(Collider* collider, Collider* c2) {
 
 	}
 
-	App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+	else if ((c2->type == COLLIDER_FOLLOW)) {
+		hi = true;
+	}
+
+	else {
+		App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+	}
 
 }

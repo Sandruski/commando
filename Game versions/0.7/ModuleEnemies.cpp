@@ -9,6 +9,7 @@
 #include "ItemsEnemies.h"
 #include "ItemsEnemies2.h"
 #include "ModuleTextures.h"
+#include "ModulePlayer.h"
 #include "Enemy.h"
 #include "Soldier_Rifle.h"
 #include "Soldier_Grenade.h"
@@ -263,6 +264,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 				else if (c2->type == COLLIDER_PLAYER_SHOT && enemies[i]->type == ENEMY_TYPES::SOLDIER_SHIELD){}
 
+				else if (c2->type == COLLIDER_FOLLOW && enemies[i]->type == ENEMY_TYPES::SOLDIER) {
+					enemies[i]->OnCollision(c1, c2);
+				}
+
 				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER) {
 					if (c2->type == COLLIDER_PLAYER_SHOT) {
 						if (enemies[i]->type == ENEMY_TYPES::SOLDIER)
@@ -270,6 +275,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 						else
 							App->UI->score += 75;
 					}
+				
 					else {
 						if (enemies[i]->type == ENEMY_TYPES::SOLDIER)
 							App->UI->score += 300;
@@ -296,6 +302,13 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					enemies[i]->OnCollision(c1, c2);
 			}
 		}*/
+	
+
+
 	}
+	
+
+		
+
 
 }

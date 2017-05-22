@@ -1,6 +1,6 @@
 ﻿  Soldier.cpp
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(225): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(226): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(228): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+c:\users\sandraag3\desktop\0.7\soldier.cpp(239): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\desktop\0.7\soldier.cpp(240): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\desktop\0.7\soldier.cpp(242): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  SDL Game.vcxproj -> C:\Users\sandraag3\Desktop\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\sandraag3\Desktop\0.7\Debug\SDL5 Handout.pdb (Full PDB)

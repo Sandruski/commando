@@ -9,6 +9,7 @@
 #include "ModulePlayer.h"
 #include "ModuleCollision.h"
 #include "ModuleSecretRoom1A.h"
+#include "ModuleEnemies.h"
 #include "ModuleSecretRoomB.h"
 #include "ModuleSecretRoomC.h"
 #include "ModuleSecretRoomD.h"
@@ -84,6 +85,7 @@ bool ModulePlayer::Start()
 
 	coll = App->collision->AddCollider({ 300, 300, 12, 15 }, COLLIDER_PLAYER, this); //the collider is out of the screen!
 	feetC = App->collision->AddCollider({ 300 - 16, 300 - 19, 8, 4 }, COLLIDER_PLAYER, this);
+	follow_p = App->collision->AddCollider({ 300 - 16, 300 - 19, 70, 70 }, COLLIDER_FOLLOW, this);
 
 	p1.x = position.x - 30;
 	p1.y = position.y;
@@ -452,6 +454,8 @@ update_status ModulePlayer::Update()
 
 	coll->SetPos(position.x + 2, position.y + 4);
 	feetC->SetPos(position.x + 4, position.y + 19);
+	follow_p->SetPos(position.x - 20, position.y - 20);
+
 	if (stairs == false) {
 		current_animation = &waterDie;
 		move = false;
@@ -492,7 +496,6 @@ update_status ModulePlayer::Update()
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-
 	if ((c1->type == COLLIDER_PLAYER || c1->type == COLLIDER_PLAYER_FEET) && c2->type == COLLIDER_WALL && GOD == false)
 		OnCollisionWall(c1, c2);
 	if ((c1->type == COLLIDER_PLAYER || c1->type == COLLIDER_PLAYER_FEET) && c2->type == COLLIDER_WATER && GOD == false)
@@ -505,9 +508,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		OnCollisionSecretRooms(c1, c2);
 
 }
-
-
-
 
 void ModulePlayer::OnCollisionWall(Collider* c1, Collider* c2)
 {

@@ -47,6 +47,8 @@ public:
 	int dieE;
 	int cont;
 
+	bool follow = false;
+
 private:
 
 	void SpawnEnemy(const EnemyInfo& info);
