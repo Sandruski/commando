@@ -59,6 +59,11 @@ bool ModuleMenu::Start()
 	App->player2->checkwaterdead = false;
 	App->player->move2 = true;
 
+	App->UI->grenade = 3;
+	App->player->vides = 3;
+
+	if (App->player->vides == 3)
+		App->UI->score = 0;
 
 	//Initialize audio
 	check_audio = true;
@@ -69,6 +74,12 @@ bool ModuleMenu::Start()
 
 	App->player->position.x = App->fade->start_x;
 	App->player->position.y = App->fade->start_y;
+
+	App->scene_1->start1 = true;
+	App->scene_1->start2 = false;
+	App->scene_1->start3 = false;
+	App->scene_1->start4 = false;
+	App->scene_1->start5 = false;
 
 	return true;
 }

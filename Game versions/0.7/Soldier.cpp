@@ -67,6 +67,20 @@ Enemy_Soldier::Enemy_Soldier(int x, int y) : Enemy(x, y)
 	path.PushBack({ +0.0f, +0.5f }, 20);
 	path.PushBack({ -0.5f, +0.5f }, 70);
 
+	aux.PushBack({ +0.5f, -0.5f }, 70);
+	aux.PushBack({ -0.0f, -0.5f }, 20);
+	aux.PushBack({ +0.5f, -0.0f }, 50);
+	aux.PushBack({ -0.0f, -0.5f }, 10);
+	aux.PushBack({ +-0.5f, +0.5f }, 40);
+	aux.PushBack({ +0.5f, -0.0f }, 20);
+	aux.PushBack({ +0.5f, -0.5f }, 50);
+
+
+
+
+
+
+
 	path1.PushBack({ -0.5f, +0.0f }, 20);
 	path1.PushBack({ -0.5f, -0.5f }, 30);
 	path1.PushBack({ -0.5f, +0.0f }, 20);
@@ -206,50 +220,104 @@ void Enemy_Soldier::Move()
 	App->particlesenemies->bala.speed.y = enemyplayeru.y;
 	*/
 
+	if (dont_move && !NO1) {
+		if (hi) {
+			one = false;
 
+			anim1 = false;
+			anim2 = true;
 
-	if (hi) {
-		one = false;
-
-		anim1 = false;
-		anim2 = true;
-
-		enemyplayer2.x = App->player->position.x - position.x;
-		enemyplayer2.y = fabs(position.y) - fabs(App->player->position.y);
-
-		module = sqrt((pow(enemyplayer2.x, 2) + pow(enemyplayer2.y, 2)));
-
-		enemyplayeru2.x = enemyplayer2.x / module;
-		enemyplayeru2.y = enemyplayer2.y / module;
-
-		position.x += enemyplayeru2.x / 1.5;
-		position.y += enemyplayeru2.y / 1.5;
-
-		another.x = position.x;
-		another.y = position.y;
-
-		yeah = true;
-
-	}
-	else {
-		anim2 = false;
-		anim1 = true;
-
-		if (one) {
-			position = original_pos + path.GetCurrentPositionfl(&animation);
-			save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-		}
-		else if (!one && two) {
-
-			if (yeah) {
-				path.accumulated_speed = { 0.0f, 0.0f };
-				path.current_frame = 0;
+			if (App->player->position.y >= 0) {
+				enemyplayer2.x = App->player->position.x - position.x;
+				enemyplayer2.y = -fabs(position.y) + (App->player->position.y);
+			}
+			else {
+				enemyplayer2.x = App->player->position.x - position.x;
+				enemyplayer2.y = fabs(position.y) - fabs(App->player->position.y);
 			}
 
-			position = another + path.GetCurrentPositionfl(&animation);
-			save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-			yeah = false;
+			module = sqrt((pow(enemyplayer2.x, 2) + pow(enemyplayer2.y, 2)));
+
+			enemyplayeru2.x = enemyplayer2.x / module;
+			enemyplayeru2.y = enemyplayer2.y / module;
+
+			position.x += enemyplayeru2.x / 1.5;
+			position.y += enemyplayeru2.y / 1.5;
+
+			another.x = position.x;
+			another.y = position.y;
+
+			yeah = true;
+
 		}
+		else {
+			anim2 = false;
+			anim1 = true;
+
+			if (one) {
+				position = original_pos + path.GetCurrentPositionfl(&animation);
+				save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+			}
+			else if (!one && two) {
+
+				if (yeah) {
+					path.accumulated_speed = { 0.0f, 0.0f };
+					path.current_frame = 0;
+				}
+
+				position = another + path.GetCurrentPositionfl(&animation);
+				save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+				yeah = false;
+			}
+		}
+	}
+	else {
+		if (hi && !NO1) {
+			one = false;
+
+			anim1 = false;
+			anim2 = true;
+
+			if (App->player->position.y >= 0) {
+				enemyplayer2.x = App->player->position.x - position.x;
+				enemyplayer2.y = -fabs(position.y) + (App->player->position.y);
+			}
+			else {
+				enemyplayer2.x = App->player->position.x - position.x;
+				enemyplayer2.y = fabs(position.y) - fabs(App->player->position.y);
+			}
+
+			module = sqrt((pow(enemyplayer2.x, 2) + pow(enemyplayer2.y, 2)));
+
+			enemyplayeru2.x = enemyplayer2.x / module;
+			enemyplayeru2.y = enemyplayer2.y / module;
+
+			position.x += enemyplayeru2.x / 1.5;
+			position.y += enemyplayeru2.y / 1.5;
+
+			another.x = position.x;
+			another.y = position.y;
+
+			yeah = true;
+		}
+	}
+
+
+	if (collW) {
+		NO1 = true;
+		position.y++;
+	}
+	else if (collA) {
+		NO1 = true;
+		position.x++;
+	}
+	else if (collS) {
+		NO1 = true;
+		position.y--;
+	}
+	else if (collD) {
+		NO1 = true;
+		position.x--;
 	}
 
 	//ANIMATION CHANGE FOR PATHS
@@ -338,7 +406,6 @@ void Enemy_Soldier::Move()
 
 		space = 0;
 	}
-
 	//end_of_shot
 
 	if (dieB == true) {
@@ -351,37 +418,50 @@ void Enemy_Soldier::Move()
 
 	hi = false;
 
+	dont_move = true;
+
+	collW = false;
+	collA = false;
+	collS = false;
+	collD = false;
+
+	NO1 = false;
 }
 
-void Enemy_Soldier::OnCollision(Collider* collider, Collider* c2) {
+void Enemy_Soldier::OnCollision(Collider* c1, Collider* c2) {
 
-	if (c2->type == COLLIDER_WALL) {
-
-		if ((collider->rect.x + collider->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - collider->rect.x != 1 && (c2->rect.y + c2->rect.h) - collider->rect.y == 1 && (collider->rect.y + collider->rect.h) - c2->rect.y != 1)
-
-			collW = true;
-
-		if ((collider->rect.x + collider->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - collider->rect.x == 1 && (c2->rect.y + c2->rect.h) - collider->rect.y != 1 && (collider->rect.y + collider->rect.h) - c2->rect.y != 1)
-
-			collA = true;
-
-		if ((collider->rect.x + collider->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - collider->rect.x != 1 && (c2->rect.y + c2->rect.h) - collider->rect.y != 1 && (collider->rect.y + collider->rect.h) - c2->rect.y == 1)
-
-			collS = true;
-
-		if ((collider->rect.x + collider->rect.w) - c2->rect.x == 1 && (c2->rect.x + c2->rect.w) - collider->rect.x != 1 && (c2->rect.y + c2->rect.h) - collider->rect.y != 1 && (collider->rect.y + collider->rect.h) - c2->rect.y != 1)
-
-			collD = true;
-
-	}
-
-	else if ((c2->type == COLLIDER_FOLLOW)) {
+	if ((c2->type == COLLIDER_FOLLOW)) {
 		hi = true;
+
 	}
 
 	else {
-		hi = false;
-		App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
-	}
 
+		if (c2->type == COLLIDER_WALL) {
+			if ((c1->rect.x + c1->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - c1->rect.x != 1 && (c2->rect.y + c2->rect.h) - c1->rect.y == 1 && (c1->rect.y + c1->rect.h) - c2->rect.y != 1)
+
+				collW = true;
+
+			if ((c1->rect.x + c1->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - c1->rect.x == 1 && (c2->rect.y + c2->rect.h) - c1->rect.y != 1 && (c1->rect.y + c1->rect.h) - c2->rect.y != 1)
+
+				collA = true;
+
+			if ((c1->rect.x + c1->rect.w) - c2->rect.x != 1 && (c2->rect.x + c2->rect.w) - c1->rect.x != 1 && (c2->rect.y + c2->rect.h) - c1->rect.y != 1 && (c1->rect.y + c1->rect.h) - c2->rect.y == 1)
+
+				collS = true;
+
+			if ((c1->rect.x + c1->rect.w) - c2->rect.x == 1 && (c2->rect.x + c2->rect.w) - c1->rect.x != 1 && (c2->rect.y + c2->rect.h) - c1->rect.y != 1 && (c1->rect.y + c1->rect.h) - c2->rect.y != 1)
+
+				collD = true;
+
+			dont_move = false;
+		}
+
+
+		else {
+
+			hi = false;
+			App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+		}
+	}
 }

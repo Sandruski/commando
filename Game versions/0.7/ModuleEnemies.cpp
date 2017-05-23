@@ -13,6 +13,8 @@
 #include "Enemy.h"
 #include "Soldier_Rifle.h"
 #include "Soldier_Grenade.h"
+#include "ModuleFadeToBlack.h"
+#include "ModuleScene1.h"
 #include "Soldier_Knife.h"
 #include "Soldier.h"
 #include "Soldier_Shield.h"
@@ -55,8 +57,15 @@ update_status ModuleEnemies::PreUpdate()
 	{
 		if (queue[i].type != ENEMY_TYPES::NO_TYPE)
 		{
-			if (abs(queue[i].y * SCREEN_SIZE) < App->render->camera.y + (App->render->camera.h * SCREEN_SIZE) + SPAWN_MARGIN)
-			{
+			if (App->fade->on == App->scene_1) {
+				if (abs(queue[i].y * SCREEN_SIZE) < App->render->camera.y + (App->render->camera.h * SCREEN_SIZE) + SPAWN_MARGIN)
+				{
+					SpawnEnemy(queue[i]);
+					queue[i].type = ENEMY_TYPES::NO_TYPE;
+					LOG("Spawning enemy at %d", queue[i].y * SCREEN_SIZE);
+				}
+			}
+			else {
 				SpawnEnemy(queue[i]);
 				queue[i].type = ENEMY_TYPES::NO_TYPE;
 				LOG("Spawning enemy at %d", queue[i].y * SCREEN_SIZE);
@@ -251,7 +260,13 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			}
 		}
 
-
+		if (c2->type == COLLIDER_WALL && c1->type == COLLIDER_ENEMY) {
+			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
+				if (enemies[i]->type == ENEMY_TYPES::SOLDIER) {
+					enemies[i]->OnCollision(c1, c2);
+				}
+			}
+		}
 
 
 		else if (c2->type != COLLIDER_WALL) {

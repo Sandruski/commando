@@ -14,7 +14,7 @@ private:
 
 	fPoint original_pos;
 	fPoint save_step;
-	Path path, path1, path2, path3, path_fb, path_fb1, path_fb2;
+	Path path, path1, path2, path3, path_fb, path_fb1, path_fb2, aux;
 	int current_frame;
 
 	//Shot
@@ -28,6 +28,8 @@ private:
 	fPoint h = { 0.0f,0.0f };
 	float module2;
 
+	fPoint i = { -1.0f, -1.0f };
+
 public:
 
 	Enemy_Soldier(int x, int y);
@@ -36,7 +38,7 @@ public:
 	uint lastTime, currentTime;
 	bool dieB = false;
 	bool collW = false, collA = false, collS = false, collD = false;
-	void OnCollision(Collider* collider, Collider* c2);
+	void OnCollision(Collider* c1, Collider* c2);
 
 	bool hi = false;
 	bool one = true, two = true, three = true;
@@ -44,6 +46,10 @@ public:
 	bool anim1, anim2;
 	fPoint another;
 	bool yeah = true;
+	bool NO1 = false, NO2 = false, NO3 = false, NO4 = false;
+	int NO_CONT = 0;
+
+	bool dont_move = true;
 };
 
 #endif
