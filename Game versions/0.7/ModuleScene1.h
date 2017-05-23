@@ -41,7 +41,8 @@ public:
 	Animation* current_animation1 = nullptr;
 	int cont5;
 	int cont7;
-
+	int contcamera2 = 0;
+	int contcamera1 = 0;
 	bool cont8 = false;
 	bool cont6 = false;
 	bool check = true;
