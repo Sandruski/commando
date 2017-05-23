@@ -303,9 +303,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (c2->type == COLLIDER_FOLLOW && enemies[i]->type == ENEMY_TYPES::SOLDIER) {
 					enemies[i]->OnCollision(c1, c2);
 				}
-				else if (c2->type == COLLIDER_FOLLOW && enemies[i]->type != ENEMY_TYPES::SOLDIER) {}
+//				else if (c2->type == COLLIDER_FOLLOW && enemies[i]->type != ENEMY_TYPES::SOLDIER) {}
 
-				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER) {
+				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER != COLLIDER_PLAYER2 != COLLIDER_FOLLOW) {
 					if (c2->type == COLLIDER_PLAYER_SHOT) {
 						if (enemies[i]->type == ENEMY_TYPES::SOLDIER)
 							App->UI->score += 150;

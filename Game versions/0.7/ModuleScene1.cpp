@@ -78,6 +78,9 @@ bool ModuleScene1::Start()
 	background.w = 256;
 	background.h = 2880;
 
+	contcamera1 = 0;
+	contcamera2 = 0;
+
 	dead = false;
 	first = true;
 
