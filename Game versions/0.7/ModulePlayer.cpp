@@ -251,7 +251,7 @@ update_status ModulePlayer::Update()
 
 	//_grenade_end
 	
-	if ((App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT || App->input->dpadUp == KEY_STATE::KEY_REPEAT || App->input->joy_up == KEY_STATE::KEY_REPEAT) && move == true && check_grenade == 1 && collW == false && move2 == true)
+	if (((App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT || App->input->dpadUp == KEY_STATE::KEY_REPEAT || App->input->joy_up == KEY_STATE::KEY_REPEAT))&& move == true && check_grenade == 1 && collW == false && move2 == true)
 	{
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -268,7 +268,7 @@ update_status ModulePlayer::Update()
 		forward.Stop();
 	}
 
-	if ((App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT || App->input->dpadDown == KEY_STATE::KEY_REPEAT || App->input->joy_down == KEY_STATE::KEY_REPEAT) && move == true && check_grenade == 1 && collS == false && move2 == true)
+	if (((App->input->keyboard[SDL_SCANCODE_S] == KEY_REPEAT || App->input->dpadDown == KEY_STATE::KEY_REPEAT || App->input->joy_down == KEY_STATE::KEY_REPEAT)) && move == true && check_grenade == 1 && collS == false && move2 == true)
 	{
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -320,7 +320,7 @@ update_status ModulePlayer::Update()
 		backward.Stop();
 	}
 
-	if ((App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT || App->input->dpadRight == KEY_STATE::KEY_REPEAT || App->input->joy_right == KEY_STATE::KEY_REPEAT) && position.x < (SCREEN_WIDTH - right.frames->w) && move == true && check_grenade == 1 && collD == false && move2 == true)
+	if (((App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT || App->input->dpadRight == KEY_STATE::KEY_REPEAT || App->input->joy_right == KEY_STATE::KEY_REPEAT)) && position.x < (SCREEN_WIDTH - right.frames->w) && move == true && check_grenade == 1 && collD == false && move2 == true)
 	{
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -335,7 +335,7 @@ update_status ModulePlayer::Update()
 	{
 		right.Stop();
 	}
-	if ((App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT || App->input->dpadLeft == KEY_STATE::KEY_REPEAT || App->input->joy_left == KEY_STATE::KEY_REPEAT) && position.x > 0 && move == true && check_grenade == 1 && collA == false && move2 == true)
+	if (((App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT || App->input->dpadLeft == KEY_STATE::KEY_REPEAT || App->input->joy_left == KEY_STATE::KEY_REPEAT)) && position.x > 0 && move == true && check_grenade == 1 && collA == false && move2 == true)
 	{
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -349,7 +349,7 @@ update_status ModulePlayer::Update()
 	{
 		left.Stop();
 	}
-	if ((App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT) || ((App->input->dpadUp == KEY_STATE::KEY_REPEAT || App->input->joy_up == KEY_STATE::KEY_REPEAT) && (App->input->dpadRight == KEY_STATE::KEY_REPEAT || App->input->joy_right == KEY_STATE::KEY_REPEAT)) && move == true && check_grenade == 1 && move2 == true) {
+	if (((App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_D] == KEY_REPEAT) || ((App->input->dpadUp == KEY_STATE::KEY_REPEAT || App->input->joy_up == KEY_STATE::KEY_REPEAT) && (App->input->dpadRight == KEY_STATE::KEY_REPEAT || App->input->joy_right == KEY_STATE::KEY_REPEAT))) && move == true && check_grenade == 1 && move2 == true) {
 
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -813,7 +813,16 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 					App->scene_1->start4 = false;
 					App->scene_1->start5 = false;
 				}
-
+				if (App->fade->on == App->roomD) {
+					App->fade->FadeToBlack(App->roomD, App->scene_1, 5.0f);
+					App->scene_1->start = false;
+					App->scene_1->start1 = false;
+					App->scene_1->start2 = false;
+					App->scene_1->start3 = false;
+					App->scene_1->start4 = true;
+					App->scene_1->start5 = false;
+				}
+					
 				App->fade->FadeToBlack(App->scene_1, App->scene_1, 5.0f);
 				enemyB = false;
 
