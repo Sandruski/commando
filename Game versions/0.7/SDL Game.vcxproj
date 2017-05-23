@@ -83,6 +83,7 @@
     <ClInclude Include="ModuleCinematic.h" />
     <ClInclude Include="ModuleCollision.h" />
     <ClInclude Include="ModuleEnding.h" />
+    <ClInclude Include="ModuleEndinglvl1.h" />
     <ClInclude Include="ModuleEnemies.h" />
     <ClInclude Include="ModuleFadeToBlack.h" />
     <ClInclude Include="ModuleFonts.h" />
@@ -129,6 +130,7 @@
     <ClCompile Include="ModuleCinematic.cpp" />
     <ClCompile Include="ModuleCollision.cpp" />
     <ClCompile Include="ModuleEnding.cpp" />
+    <ClCompile Include="ModuleEndinglvl1.cpp" />
     <ClCompile Include="ModuleEnemies.cpp" />
     <ClCompile Include="ModuleFadeToBlack.cpp" />
     <ClCompile Include="ModuleFonts.cpp" />

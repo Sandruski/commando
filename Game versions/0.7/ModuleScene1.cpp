@@ -29,6 +29,7 @@
 #include <windows.h>
 #include <fstream>
 #include <iostream>
+#include "ModuleEndinglvl1.h"
 
 using namespace std;
 
@@ -573,6 +574,11 @@ update_status ModuleScene1::Update()
 	if (App->input->keyboard[SDL_SCANCODE_5] == KEY_DOWN && App->fade->IsFading() == false) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->roomE, 1);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_8] == 1 && KEY_DOWN) {
+		App->render->UP = false;
+		App->fade->FadeToBlack(this, App->EndingLvl1, 1);
 
 	}
 

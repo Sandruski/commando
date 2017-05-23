@@ -21,6 +21,7 @@ public:
 	bool play_music6();
 	bool play_music7();
 	bool play_music8();
+	bool play_music9();
 
 	bool pause_music();
 

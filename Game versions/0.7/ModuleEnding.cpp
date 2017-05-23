@@ -21,6 +21,7 @@
 #include "ModuleCinematic.h"
 #include "ModuleUI.h"
 #include <windows.h>
+#include "ModuleEndinglvl1.h"
 
 ModuleEnding::ModuleEnding()
 {
@@ -81,7 +82,7 @@ update_status ModuleEnding::Update()
 	}
 
 	if (cont == 205) {
-		App->fade->FadeToBlack(this, App->Menu, 1);
+		App->fade->FadeToBlack(this, App->EndingLvl1, 1);
 		yeah = true;
 	}
 

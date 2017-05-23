@@ -28,6 +28,7 @@ bool ModuleAudio::Init() {
 	music[5] = Mix_LoadMUS("Assets/Audio/Commando_Sound-07-Restart.ogg"); //it plays when you die and you respawn
 	music[6] = Mix_LoadMUS("Assets/Audio/Commando_Sound-08-Fortress.ogg"); //final battle
 	music[7] = Mix_LoadMUS("Assets/Audio/Commando_Sound-02-Start.ogg"); //helicopter animation
+	music[8] = Mix_LoadMUS("Assets/Audio/Area 2 Presentation.ogg"); // print leters end level
 
 														   //Load FX
 	fx[0] = Mix_LoadWAV("Assets/Audio/Commando_Effect-02-Principal-Shoot.wav");
@@ -76,6 +77,10 @@ bool ModuleAudio::play_music7() {
 	return true;
 }
 bool ModuleAudio::play_music8() {
+	Mix_FadeInMusic(music[7], -1, 2000);
+	return true;
+}
+bool ModuleAudio::play_music9() {
 	Mix_FadeInMusic(music[7], -1, 2000);
 	return true;
 }

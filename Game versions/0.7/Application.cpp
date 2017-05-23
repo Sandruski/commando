@@ -27,6 +27,7 @@
 #include "ModuleSecretRoom1A.h"
 #include "ModuleSecretRoomE.h"
 #include "ModulePlayer2.h"
+#include "ModuleEndingLvl1.h"
 
 
 Application::Application()
@@ -50,6 +51,7 @@ Application::Application()
 	modules[index_module++] = roomC = new ModuleSecretRoomC();
 	modules[index_module++] = roomD = new ModuleSecretRoomD();
 	modules[index_module++] = roomE = new ModuleSecretRoomE();
+	modules[index_module++] = EndingLvl1 = new ModuleEndingLvl1();
 
 	modules[index_module++] = player = new ModulePlayer();
 	modules[index_module++] = player2 = new ModulePlayer2();
@@ -93,6 +95,7 @@ bool Application::Init()
 	roomB->Disable();
 	roomC->Disable();
 	roomD->Disable();
+	EndingLvl1->Disable();
 
 	// Player will be enabled on the first update of a new scene
 
