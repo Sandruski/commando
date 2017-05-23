@@ -21,6 +21,7 @@ ModuleParticles::ModuleParticles()
 	dieEnemie.anim.speed = 0.1f;
 
 	bala.anim.PushBack({ 32, 16, 7, 7 });
+	bala2.anim.PushBack({ 32, 22, 7, 7 });
 
 	explosion.anim.PushBack({ 16,34,11,11 });
 	explosion.life = 300;
