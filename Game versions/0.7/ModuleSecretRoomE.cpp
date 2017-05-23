@@ -35,10 +35,16 @@ ModuleSecretRoomE::~ModuleSecretRoomE() {
 
 bool ModuleSecretRoomE::Start() {
 	RoomE = App->textures->Load("Assets/Background/Secret_Rooms/1-1/1-E.png");
+	GunUp = App->textures->Load("Assets/Sprites/Gun_PowerUp.png");
 	background.x = 0;
 	background.y = 0;
 	background.w = 256;
 	background.h = 224;
+
+	PowerUp.PushBack({ 15, 8, 128, 32 });
+	PowerUp.PushBack({ 15, 51, 128, 32 });
+	PowerUp.PushBack({ 1, 1, 1, 1 });
+	PowerUp.speed = 0.01f;
 
 	App->collision->Enable();
 	App->particles->Enable();
@@ -52,6 +58,7 @@ bool ModuleSecretRoomE::Start() {
 	App->player->current_animation = &App->player->forward;
 	App->player->stairsDown = true;
 	App->player->move = true;
+	App->player->SoldierPowerUp = 1;
 
 	//Camera and player parametres
 	App->player->position.x = SCREEN_WIDTH / 2;
@@ -77,6 +84,29 @@ bool ModuleSecretRoomE::Start() {
 }
 update_status ModuleSecretRoomE::Update() {
 	App->render->Blit(RoomE, w, h, &background);
+
+	if (App->player->SoldierPowerUp == 1)
+		lastTime = SDL_GetTicks();
+	else if (App->player->SoldierPowerUp == 2 && App->player->stairsUp == true) {
+		App->player->move = false;
+		App->player->current_animation = &App->player->idleF;
+		App->scene_1->current_animation = &PowerUp;
+		App->scene_1->r = App->scene_1->current_animation->GetCurrentFrame();
+		App->render->Blit(GunUp, 65, 55, &App->scene_1->r);
+	}
+
+	currentTime = SDL_GetTicks();
+	currentTime -= lastTime;
+
+	if (currentTime > 3500 && App->player->stairsUp == true) {
+		App->player->move = true;
+		PowerUp.speed = 0;
+		App->player->SoldierPowerUp = 1;
+	}
+
+
+
+
 
 	if (App->input->keyboard[SDL_SCANCODE_1] == 1 && KEY_DOWN) {
 		App->render->UP = false;
@@ -125,6 +155,7 @@ bool ModuleSecretRoomE::CleanUp() {
 	App->particlesenemies->Disable();
 	App->particles->Disable();
 	App->collision->Disable();
+	App->player->SoldierPowerUp = 0;
 
 	return true;
 }

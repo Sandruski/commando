@@ -22,8 +22,13 @@ public:
 
 public:
 	SDL_Texture* RoomE;
+	SDL_Texture* GunUp = nullptr;
 	SDL_Rect background;
 	int w = 0, h = 0;
+
+	Animation PowerUp;
+
+	uint lastTime, currentTime;
 
 
 };

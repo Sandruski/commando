@@ -22,6 +22,8 @@ ModuleParticles::ModuleParticles()
 
 	bala.anim.PushBack({ 32, 16, 7, 7 });
 	bala2.anim.PushBack({ 32, 22, 7, 7 });
+	balaUp.anim.PushBack({ 15, 14, 9, 9 });
+
 
 	explosion.anim.PushBack({ 16,34,11,11 });
 	explosion.life = 300;
@@ -30,6 +32,8 @@ ModuleParticles::ModuleParticles()
 	bala.life = 250;
 	bala2.speed.y = -6;
 	bala2.life = 250;
+	balaUp.speed.y = -6;
+	balaUp.life = 600;
 }
 
 ModuleParticles::~ModuleParticles()

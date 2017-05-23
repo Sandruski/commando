@@ -58,7 +58,7 @@ ModulePlayer::ModulePlayer()
 	diagSD.PushBack({ 80, 15, 17, 25 });
 	diagSD.PushBack({ 97, 16, 17, 24 });
 
-	invisible.PushBack({ 195, 161, 10, 10 });
+	invisible.PushBack({ 1, 1, 1, 1 });
 
 	waterDie.PushBack({ 239, 16, 13, 16 });
 
@@ -364,7 +364,7 @@ update_status ModulePlayer::Update()
 	{
 		diagWD.Stop();
 	}
-	if ((App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT) || ((App->input->dpadUp == KEY_STATE::KEY_REPEAT || App->input->joy_up == KEY_STATE::KEY_REPEAT) && (App->input->dpadLeft == KEY_STATE::KEY_REPEAT || App->input->joy_left == KEY_STATE::KEY_REPEAT)) && move == true && check_grenade == 1 && move2 == true) {
+	if ((App->input->keyboard[SDL_SCANCODE_A] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_W] == KEY_REPEAT) || ((App->input->dpadUp == KEY_STATE::KEY_REPEAT || App->input->joy_up == KEY_STATE::KEY_REPEAT) && (App->input->dpadLeft == KEY_STATE::KEY_REPEAT || App->input->joy_left == KEY_STATE::KEY_REPEAT)) && move == true && check_grenade == 1 && move2 == true ) {
 		if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
@@ -410,64 +410,89 @@ update_status ModulePlayer::Update()
 	{
 		App->particles->bala.speed.y = +6;
 		App->particles->bala.speed.x = -6;
+		App->particles->balaUp.speed.y = +6;
+		App->particles->balaUp.speed.x = -6;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+		//App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+		Shot();
 	}
 	else if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && current_animation == &diagSD)//Dreta Abaix
 	{
 		App->particles->bala.speed.y = +6;
 		App->particles->bala.speed.x = +6;
+		App->particles->balaUp.speed.y = +6;
+		App->particles->balaUp.speed.x = +6;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+		Shot();
+		//App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && current_animation == &diagWD)//Dreta Adalt
 	{
 		App->particles->bala.speed.y = -6;
 		App->particles->bala.speed.x = +6;
+		App->particles->balaUp.speed.y = -6;
+		App->particles->balaUp.speed.x = +6;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+		Shot();
+		//App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && current_animation == &diagWA) //Esquerra Adalt
 	{
 		App->particles->bala.speed.y = -6;
 		App->particles->bala.speed.y = -6;
+		App->particles->balaUp.speed.y = -6;
+		App->particles->balaUp.speed.y = -6;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+		Shot();
+		//App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && current_animation == &forward) //Adalt
 	{
 		App->particles->bala.speed.y = -6;
 		App->particles->bala.speed.x = 0;
+		App->particles->balaUp.speed.y = -6;
+		App->particles->balaUp.speed.x = 0;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+		Shot();
+		//App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 
 	else if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && current_animation == &backward) //Abaix
 	{
 		App->particles->bala.speed.y = +6;
 		App->particles->bala.speed.x = 0;
+		App->particles->balaUp.speed.y = +6;
+		App->particles->balaUp.speed.x = 0;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+		Shot();
+		//App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && current_animation == &right) //Dreta
 	{
 		App->particles->bala.speed.x = +6;
 		App->particles->bala.speed.y = 0;
+		App->particles->balaUp.speed.x = +6;
+		App->particles->balaUp.speed.y = 0;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+		Shot();
+		//App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 	else if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && current_animation == &left) //Esquer0a
 	{
 		App->particles->bala.speed.x = -6;
 		App->particles->bala.speed.y = 0;
+		App->particles->balaUp.speed.x = -6;
+		App->particles->balaUp.speed.y = 0;
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+		Shot();
+		//App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 
 	}
 	else if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && move == true)
 	{
 		App->audio->play_fx1();
-		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+		Shot();
+		//App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 	}
 
 	r = current_animation->GetCurrentFrame();
@@ -715,6 +740,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 		waterB = false;
 		App->player2->checkwaterdead = true;
 	}
+	GunPowerUp = false;
 }
 void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 
@@ -818,6 +844,7 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 		}
 
 	}
+	GunPowerUp = false;
 }
 
 void ModulePlayer::OnCollisionSecretRooms(Collider* c1, Collider* c2) {
@@ -959,4 +986,11 @@ void ModulePlayer::OnCollisionRev(Collider* c1, Collider* c2)
 			App->player2->revTime = 0;
 	}
 	else {}
+}
+
+void ModulePlayer::Shot() {
+	if(GunPowerUp == false)
+		App->particles->AddParticle(App->particles->bala, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
+	if(GunPowerUp == true)
+		App->particles->AddParticle(App->particles->balaUp, position.x, position.y, COLLIDER_PLAYER_SHOT, NULL);
 }

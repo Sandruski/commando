@@ -15,7 +15,7 @@ private:
 	int cont = 0;
 
 	Animation stand1, stand2;
-	Animation run;
+	Animation run, runPowerUp;
 	Animation animated;
 
 public:

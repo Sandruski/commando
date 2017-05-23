@@ -1,3 +1,5 @@
-﻿  ModuleEnemies.cpp
-  SDL Game.vcxproj -> C:\Users\sandraag3\Desktop\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\sandraag3\Desktop\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  ModulePlayer.cpp
+c:\users\aleixgm\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(67): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\aleixgm\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(72): warning C4305: '=': truncation from 'double' to 'float'
+  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)

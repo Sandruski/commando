@@ -51,6 +51,7 @@ private:
 public:
 	Particle bala;
 	Particle bala2;
+	Particle balaUp;
 	Particle explosion;
 	Particle dieEnemie;
 };

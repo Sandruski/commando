@@ -3,6 +3,9 @@
 #include "ModuleCollision.h"
 #include "ModuleUI.h"
 #include "ModulePlayer.h"
+#include "ModuleSecretRoomE.h"
+#include "ModuleFadeToBlack.h"
+
 
 
 Enemy_Prisoner::Enemy_Prisoner(int x, int y) : Enemy(x, y)
@@ -23,9 +26,13 @@ Enemy_Prisoner::Enemy_Prisoner(int x, int y) : Enemy(x, y)
 	run.PushBack({ 114, 195, 16, 32 });
 	run.PushBack({ 133, 195, 16, 31 });
 
+	runPowerUp.PushBack({ 189, 151, 16, 31 });
+	runPowerUp.PushBack({ 219, 151, 16, 31 });
+
 	animated.speed = 0.1f;
 	stand2.speed = 0.13f;
-	run.speed = 0.1f;
+	run.speed = 0.1f;	
+	runPowerUp.speed = 0.1f;
 
 	animation = &stand1;
 
@@ -48,7 +55,14 @@ void Enemy_Prisoner::Move()
 
 	if (move == true)
 	{
-		animation = &run;
+		if (App->player->SoldierPowerUp == 1 || App->player->SoldierPowerUp == 2) {
+			animation = &runPowerUp;
+			App->player->GunPowerUp = true;
+			App->player->SoldierPowerUp = 2;
+
+		}
+		else
+			animation = &run;
 		position.x++;
 
 	}
