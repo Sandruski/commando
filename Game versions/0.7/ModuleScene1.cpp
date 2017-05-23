@@ -5,6 +5,7 @@
 #include "ModuleScene1.h"
 #include "ModuleMenu.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleInput.h"
 #include "SDL/include/SDL.h"
 #include "ModuleEND.h"
@@ -19,12 +20,15 @@
 #include "ModuleParticles.h"
 #include "ModuleCinematic.h"
 #include "ModuleUI.h"
+#include "ModuleSaveData.h"
 #include "ModuleSecretRoom1A.h"
 #include "ModuleSecretRoomB.h"
 #include "ModuleSecretRoomC.h"
 #include "ModuleSecretRoomD.h"
 #include "ModuleSecretRoomE.h"
 #include <windows.h>
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -89,6 +93,8 @@ bool ModuleScene1::Start()
 	App->particlesgrenade->Enable();
 	App->particlesgrenade1->Enable();
 	App->player->Enable();
+	if (App->player2->twoplayerson == true)
+		App->player2->Enable();
 	App->enemies->Enable();
 	App->UI->Enable();
 
@@ -182,6 +188,8 @@ bool ModuleScene1::Start()
 
 	App->render->camera.x = 0;
 	cont = 0;
+
+	App->player->move2 = true;
 
 	//Colliders
 	App->collision->AddCollider({ 133,2817 - 2656,20,23 }, COLLIDER_WALL, this);
@@ -426,6 +434,9 @@ bool ModuleScene1::Start()
 bool ModuleScene1::CleanUp()
 {
 	LOG("Unloading 1st scene");
+	App->savedata->scorefile.open("score.txt", std::ofstream::out | std::ofstream::trunc);
+	App->savedata->scorefile << App->savedata->savescore;
+	App->savedata->scorefile.close();
 	App->textures->Unload(graphics);
 	App->textures->Unload(moto);
 	App->textures->Unload(items);
@@ -435,6 +446,7 @@ bool ModuleScene1::CleanUp()
 	App->UI->Disable();
 	App->enemies->Disable();
 	App->player->Disable();
+	App->player2->Disable();
 	App->particlesgrenade1->Disable();
 	App->particlesgrenade->Disable();
 	App->particlesenemies->Disable();
@@ -624,7 +636,7 @@ update_status ModuleScene1::Update()
 	
 	// end
 
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN) {
+	if (App->input->keyboard[SDL_SCANCODE_F9] == 1 && KEY_DOWN) {
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, App->Menu, 3);
 	}

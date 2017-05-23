@@ -26,6 +26,7 @@
 #include "ModuleSecretRoomD.h"
 #include "ModuleSecretRoom1A.h"
 #include "ModuleSecretRoomE.h"
+#include "ModulePlayer2.h"
 
 
 Application::Application()
@@ -51,6 +52,7 @@ Application::Application()
 	modules[index_module++] = roomE = new ModuleSecretRoomE();
 
 	modules[index_module++] = player = new ModulePlayer();
+	modules[index_module++] = player2 = new ModulePlayer2();
 	modules[index_module++] = collision = new ModuleCollision();
 
 	modules[index_module++] = particles = new ModuleParticles();
@@ -81,6 +83,8 @@ bool Application::Init()
 	scene_1->Disable();
 
 	particles->Disable();
+	player->Disable();
+	player2->Disable();
 	particlesenemies->Disable();
 	particlesgrenade->Disable();
 	particlesgrenade1->Disable();

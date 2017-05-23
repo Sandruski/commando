@@ -19,6 +19,7 @@
 #include "ModuleUI.h"
 #include "ModuleFonts.h"
 #include "ModuleSaveData.h"
+#include "ModulePlayer2.h"
 
 #include<stdio.h>
 #include<string.h>
@@ -49,7 +50,10 @@ bool ModuleMenu::Start()
 	grenade = App->textures->Load("Assets/Sprites/items&HUD&snake.png");
 
 	App->player->vides = 3;
+	App->player2->vides = 3;
 	App->UI->grenade = 3;
+	App->player->move2 = true;
+	App->player2->move2 = true;
 
 	//Initialize audio
 	check_audio = true;
@@ -93,7 +97,7 @@ update_status ModuleMenu::Update()
 	if (!App->render->Blit(graphics, 0, SCREEN_HEIGHT - 224, &background, 0.75f))
 		ret = UPDATE_ERROR;
 
-	if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN) {
+	if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN || App->input->buttonB == KEY_STATE::KEY_DOWN) {
 
 		App->audio->play_fx2();
 		move_y += 16;
@@ -106,10 +110,17 @@ update_status ModuleMenu::Update()
 	App->render->Blit(grenade, 71, move_y, &grenades, 0.75f);
 
 
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN && move_y == 118) {
+	if ((App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && move_y == 118) {
 		App->render->UP = false;
+		App->player2->twoplayerson = false;
 		App->fade->FadeToBlack(this, App->scene_1, 3);
+		App->player2->twoplayerson = false;
+	}
 
+	if ((App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && move_y == 118 + 16) {
+		App->render->UP = false;
+		App->player2->twoplayerson = true;
+		App->fade->FadeToBlack(this, App->scene_1, 3);
 	}
 
 	sprintf_s(App->UI->str1, "%i", App->savedata->savescore_p1);
@@ -118,6 +129,8 @@ update_status ModuleMenu::Update()
 	sprintf_s(App->UI->str2, "%i", App->savedata->savescore);
 	App->fonts->BlitText(104, 27, App->savedata->font_score2, App->UI->str2);
 
+	sprintf_s(App->UI->str2, "%i", App->savedata->savescore2p);
+	App->fonts->BlitText(200, 27, App->savedata->font_score, App->UI->str2);
 
 	return ret;
 }

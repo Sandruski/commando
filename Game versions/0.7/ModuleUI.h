@@ -28,7 +28,7 @@ public:
 	SDL_Texture* level = nullptr;
 	SDL_Texture* Inv = nullptr;
 	Animation Inv1;
-	SDL_Rect MarcadorVida;
+	SDL_Rect MarcadorVida, MarcadorVida2;
 	SDL_Rect vida0;
 	SDL_Rect vida1;
 	SDL_Rect vida2;
@@ -39,12 +39,14 @@ public:
 	Animation* current_animation = nullptr;
 	int font_score = -1;
 	char score_text[10];
-	uint score;
+	uint score, score2;
 	uint grenade = 3;
 	uint cont = 0;
 	char str1[10];
 	char str2[10];
 	char str3[10];
+	char str4[10];
+	char str5[10];
 	int tempo1;
 
 	bool check_sleep = true, check_UI = true;

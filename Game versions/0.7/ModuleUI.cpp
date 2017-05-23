@@ -3,13 +3,13 @@
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleScene1.h"
 #include "ModuleInput.h"
 #include "ModuleUI.h"
 #include "ModuleFonts.h"
 #include "ModuleAudio.h"
 #include "ModuleSaveData.h"
-#include "ModuleFadeToBlack.h"
 
 #include <windows.h>
 #include<stdlib.h>
@@ -24,6 +24,11 @@ ModuleUI::ModuleUI()
 	MarcadorVida.y = 227;
 	MarcadorVida.w = 12;
 	MarcadorVida.h = 17;
+
+	MarcadorVida2.x = 6;
+	MarcadorVida2.y = 208;
+	MarcadorVida2.w = 12;
+	MarcadorVida2.h = 17;
 
 	vida0.x = 27;
 	vida0.y = 6;
@@ -100,7 +105,7 @@ bool ModuleUI::CleanUp()
 
 update_status ModuleUI::Update()
 {
-	if (tempo1 <= 120 && App->fade->on == App->scene_1) {
+	if (tempo1 <= 120) {
 		App->render->Blit(Hud2, 111, App->scene_1->current_start_pos + 100 - App->scene_1->cont, &lvl1);
 		tempo1++;
 	}
@@ -120,12 +125,18 @@ update_status ModuleUI::Update()
 		sprintf_s(str1, "%i", score);
 		sprintf_s(str2, "%i", grenade);
 		sprintf_s(str3, "%i", App->player->vides);
+		sprintf_s(str4, "%i", App->player2->vides);
 		App->render->Blit(Hud, 116, App->scene_1->current_start_pos + 213 - App->scene_1->cont, &MarcadorGranada);
 		App->render->Blit(Hud, 22, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida);
+		if (App->player2->twoplayerson == true) {
+			App->render->Blit(Hud, 212, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida2);
+			App->fonts->BlitText(212 + 13, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str4);
+		}
 		App->fonts->BlitText(35, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str3);
 		App->fonts->BlitText(129, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str2);
 		cont = 0;
 		App->fonts->BlitText(37, App->scene_1->current_start_pos + 5 - App->scene_1->cont, App->savedata->font_score, str1);
+
 	}
 	else {
 		if (App->player->GOD == true) {
@@ -137,12 +148,18 @@ update_status ModuleUI::Update()
 		sprintf_s(str1, "%i", score);
 		sprintf_s(str2, "%i", grenade);
 		sprintf_s(str3, "%i", App->player->vides);
+		sprintf_s(str4, "%i", App->player2->vides);
 		App->render->Blit(Hud, 116, App->scene_1->current_start_pos + 213 - App->scene_1->cont, &MarcadorGranada);
 		App->render->Blit(Hud, 22, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida);
+		if (App->player2->twoplayerson == true) {
+			App->render->Blit(Hud, 212, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida2);
+			App->fonts->BlitText(212 + 13, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str4);
+		}
 		App->fonts->BlitText(35, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str3);
 		App->fonts->BlitText(129, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str2);
 		cont = 0;
 		App->fonts->BlitText(37, App->scene_1->current_start_pos + 5 - App->scene_1->cont, App->savedata->font_score, str1);
+
 	}
 
 	return UPDATE_CONTINUE;

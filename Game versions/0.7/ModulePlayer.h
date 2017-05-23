@@ -20,8 +20,8 @@ public:
 	void OnCollisionItem(Collider* c1, Collider* c2);
 	void OnCollisionWater(Collider* c1, Collider* c2);
 	void OnCollisionEnemy(Collider* c1, Collider* c2);
+	void OnCollisionRev(Collider* c1, Collider* c2);
 	void OnCollisionSecretRooms(Collider* c1, Collider* c2);
-	void OnCollisionFollow(Collider* c1, Collider* c2);
 
 	bool detectionitem[10];
 
@@ -35,6 +35,7 @@ public:
 	iPoint position;
 	Animation* current_animation = &idleF;
 	Collider* coll;
+	Collider* collrev;
 	Collider* feetC;
 	Collider* grenadeC;
 	Collider* follow_p;
@@ -45,6 +46,7 @@ public:
 	SDL_Rect r, R;
 	int vides = 3;
 	bool move = true;
+	bool move2 = true;
 	bool waterB = true;
 	bool enemyB = true;
 	bool GOD = false;
@@ -71,6 +73,12 @@ public:
 
 	//Save position where player died
 	int save_player_position = 0;
+	int revTime = 0;
+	SDL_Rect help;
+	SDL_Rect  hpRev1, hpRev2, hpRev3, hpRev4;
+	SDL_Rect dead2player;
+	bool contdead = 0;
+	bool detectionlive = 0;
 };
 
 #endif

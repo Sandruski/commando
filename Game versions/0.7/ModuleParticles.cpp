@@ -27,6 +27,8 @@ ModuleParticles::ModuleParticles()
 
 	bala.speed.y = -6;
 	bala.life = 250;
+	bala2.speed.y = -6;
+	bala2.life = 250;
 }
 
 ModuleParticles::~ModuleParticles()
