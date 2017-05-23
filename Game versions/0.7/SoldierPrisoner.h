@@ -22,6 +22,7 @@ public:
 	Enemy_SoldierPrisoner(int x, int y);
 	void OnCollision(Collider* c1, Collider* c2);
 	bool dieB = false;
+	bool move = false;
 	uint lastTime, currentTime;
 
 	void Move();

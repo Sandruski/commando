@@ -105,6 +105,9 @@ update_status ModuleSecretRoomC::Update() {
 		App->player->forward.Start();
 		App->render->camera.y += 6;
 	}
+	else if (App->player->position.x == 121 && App->player->position.y == 80) {
+		App->player->move = false;
+	}
 	else {
 		App->player->forward.Stop();
 		App->player->move = true;

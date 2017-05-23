@@ -133,10 +133,12 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		// Always destroy particles that collide
 		if (active[i] != nullptr && active[i]->collider == c1)
 		{
-			App->particles->AddParticle(App->particles->explosion, active[i]->position.x, active[i]->position.y, COLLIDER_END_OF_BULLET, NULL);
-			delete active[i];
-			active[i] = nullptr;
-			break;
+			if (c2->type != COLLIDER_ITEM) {
+				App->particles->AddParticle(App->particles->explosion, active[i]->position.x, active[i]->position.y, COLLIDER_END_OF_BULLET, NULL);
+				delete active[i];
+				active[i] = nullptr;
+				break;
+			}
 		}
 	}
 }

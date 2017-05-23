@@ -27,8 +27,10 @@ Enemy_PrisonerPoints::Enemy_PrisonerPoints(int x, int y) : Enemy(x, y)
 void Enemy_PrisonerPoints::Move()
 {
 
-	if ((position.y >= -1200) && (App->player->position.y <= 1712 - 2656) && bonus == false)
+	if ((position.y >= -1200) && (App->player->position.y <= 1712 - 2656) && (bonus == false) || move == true) {
 		position.y--;
+		move = true;
+	}
 	if (position.y == -1200)
 		Esperanza = false;
 
@@ -38,5 +40,6 @@ void Enemy_PrisonerPoints::Move()
 		if (bonus == false)
 			App->UI->score += 1000;
 		bonus = true;
+		move = false;
 	}
 }

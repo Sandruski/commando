@@ -67,7 +67,7 @@ bool ModuleSecretRoomD::Start() {
 	App->collision->AddCollider({ 16,266, 32, 54 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 16,120, 32, 54 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 16,45, 96, 25 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 96, 120, 64, 52 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 96, 120, 64, 47 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 144,45, 96, 25 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 208,120, 33, 54 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 208, 216, 33, 40 }, COLLIDER_WALL, this);
@@ -107,6 +107,9 @@ update_status ModuleSecretRoomD::Update() {
 		App->player->current_animation = &App->player->forward;
 		App->player->forward.Start();
 		App->render->camera.y += 6;
+	}
+	else if (App->player->position.x == 121 && App->player->position.y == 30) {
+		App->player->move = false;
 	}
 	else {
 		App->player->forward.Stop();

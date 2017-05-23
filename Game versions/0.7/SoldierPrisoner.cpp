@@ -34,8 +34,10 @@ void Enemy_SoldierPrisoner::Move()
 
 	if (dieB == false) {
 		lastTime = SDL_GetTicks();
-		if ((position.y >= 1481 - 2656) && (App->player->position.y <= 1712 - 2656))
+		if ((position.y >= 1481 - 2656) && (App->player->position.y <= 1712 - 2656) || move == true) {
 			position.y--;
+			move = true;
+		}
 		else if (position.y == 1480 - 2656) {
 			animation = nullptr;
 			collider->to_delete = true;

@@ -91,8 +91,8 @@ update_status ModuleSecretRoom1A::Update() {
 	current_animation = &item;
 	r = current_animation->GetCurrentFrame();
 
-	if (hits >= 10 && not_blit == false) {
-		App->render->Blit(items, 44, 155, &r);
+	if (hits >= 30 && not_blit == false) {
+		App->render->Blit(items, 50, 53, &r);
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_1] == 1 && KEY_DOWN) {
@@ -147,12 +147,13 @@ bool ModuleSecretRoom1A::CleanUp() {
 
 void ModuleSecretRoom1A::OnCollision(Collider* c1, Collider* c2)
 {
-	if (c1->type == COLLIDER_ITEM && c2->type == COLLIDER_END_OF_BULLET) {
+	if (c1->type == COLLIDER_ITEM && c2->type == COLLIDER_PLAYER_SHOT) {
 		hits++;
 	}
 
-	if (hits >= 10 && c1->type == COLLIDER_PLAYER && c2->type == COLLIDER_ITEM) {
-		c2->to_delete = true;
+	if (hits >= 30 && c1->type == COLLIDER_ITEM && c2->type == COLLIDER_PLAYER) {
+		c1->to_delete = true;
 		not_blit = true;
+		App->UI->score += 10000;
 	}
 }
