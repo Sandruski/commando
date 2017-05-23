@@ -67,20 +67,6 @@ Enemy_Soldier::Enemy_Soldier(int x, int y) : Enemy(x, y)
 	path.PushBack({ +0.0f, +0.5f }, 20);
 	path.PushBack({ -0.5f, +0.5f }, 70);
 
-	aux.PushBack({ +0.5f, -0.5f }, 70);
-	aux.PushBack({ -0.0f, -0.5f }, 20);
-	aux.PushBack({ +0.5f, -0.0f }, 50);
-	aux.PushBack({ -0.0f, -0.5f }, 10);
-	aux.PushBack({ +-0.5f, +0.5f }, 40);
-	aux.PushBack({ +0.5f, -0.0f }, 20);
-	aux.PushBack({ +0.5f, -0.5f }, 50);
-
-
-
-
-
-
-
 	path1.PushBack({ -0.5f, +0.0f }, 20);
 	path1.PushBack({ -0.5f, -0.5f }, 30);
 	path1.PushBack({ -0.5f, +0.0f }, 20);

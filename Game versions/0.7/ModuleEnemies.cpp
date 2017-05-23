@@ -10,6 +10,9 @@
 #include "ItemsEnemies2.h"
 #include "ModuleTextures.h"
 #include "ModulePlayer.h"
+#include "SoldierPath1.h"
+#include "SoldierPath2.h"
+#include "SoldierPath3.h"
 #include "Enemy.h"
 #include "Soldier_Rifle.h"
 #include "Soldier_Grenade.h"
@@ -221,6 +224,21 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::ITEM2:
 			enemies[i] = new ItemsEnemies2(info.x, info.y);
+			enemies[i]->type = ENEMY_TYPES::ITEM2;
+			enemies[i]->Esperanza = true;
+			break;
+		case ENEMY_TYPES::SOLDIER1:
+			enemies[i] = new Enemy_Soldier1(info.x, info.y);
+			enemies[i]->type = ENEMY_TYPES::ITEM2;
+			enemies[i]->Esperanza = true;
+			break;
+		case ENEMY_TYPES::SOLDIER2:
+			enemies[i] = new Enemy_Soldier2(info.x, info.y);
+			enemies[i]->type = ENEMY_TYPES::ITEM2;
+			enemies[i]->Esperanza = true;
+			break;
+		case ENEMY_TYPES::SOLDIER3:
+			enemies[i] = new Enemy_Soldier3(info.x, info.y);
 			enemies[i]->type = ENEMY_TYPES::ITEM2;
 			enemies[i]->Esperanza = true;
 			break;

@@ -20,6 +20,10 @@ enum ENEMY_TYPES
 	GRENADE,
 	ITEM1,
 	ITEM2,
+
+	SOLDIER1,
+	SOLDIER2,
+	SOLDIER3
 };
 
 class Enemy;

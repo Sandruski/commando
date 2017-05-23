@@ -111,6 +111,9 @@
     <ClInclude Include="Prisoner.h" />
     <ClInclude Include="PrisonerPoints.h" />
     <ClInclude Include="Soldier.h" />
+    <ClInclude Include="SoldierPath1.h" />
+    <ClInclude Include="SoldierPath2.h" />
+    <ClInclude Include="SoldierPath3.h" />
     <ClInclude Include="SoldierPrisoner.h" />
     <ClInclude Include="Soldier_Grenade.h" />
     <ClInclude Include="Soldier_Knife.h" />
@@ -156,6 +159,9 @@
     <ClCompile Include="Prisoner.cpp" />
     <ClCompile Include="PrisonerPoints.cpp" />
     <ClCompile Include="Soldier.cpp" />
+    <ClCompile Include="SoldierPath1.cpp" />
+    <ClCompile Include="SoldierPath2.cpp" />
+    <ClCompile Include="SoldierPath3.cpp" />
     <ClCompile Include="SoldierPrisoner.cpp" />
     <ClCompile Include="Soldier_Grenade.cpp" />
     <ClCompile Include="Soldier_Knife.cpp" />
