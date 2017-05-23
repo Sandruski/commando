@@ -14,7 +14,8 @@ private:
 	int original_x = 0;
 	int cont = 0;
 
-	Animation turn1, turn2, die;
+	Animation turn1, turn2, die, invisible;
+	Animation up;
 
 public:
 

@@ -13,7 +13,8 @@ private:
 	int original_y = 0;
 	int original_x = 0;
 
-	Animation turn, center, left, more_left, right, more_right, die;
+	Animation turn, center, left, more_left, right, more_right, die, invisible;
+	Animation up;
 	fPoint enemyplayer, enemyplayeru;
 	float module, angle;
 
@@ -30,6 +31,8 @@ public:
 	void Move();
 
 	int checking = 0, one = 0;
+
+	int contador = 0;
 };
 
 

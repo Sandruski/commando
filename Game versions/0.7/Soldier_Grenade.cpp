@@ -14,6 +14,11 @@
 
 Enemy_SoldierGrenade::Enemy_SoldierGrenade(int x, int y) : Enemy(x, y)
 {
+	invisible.PushBack({ 195, 161, 10, 10 });
+
+	up.PushBack({ 114, 82, 11, 21 });
+	up.PushBack({ 128, 82, 11, 22 });
+
 	//ANIMATION TURN1 (SOLDIER WHO THROWS GRENADES)
 	turn1.PushBack({ 56, 110, 16, 22 }); //normal
 

@@ -15,6 +15,11 @@
 
 Enemy_SoldierRifle::Enemy_SoldierRifle(int x, int y) : Enemy(x, y)
 {
+	invisible.PushBack({ 195, 161, 10, 10 });
+
+	up.PushBack({ 114, 82, 11, 21 });
+	up.PushBack({ 128, 82, 11, 22 });
+
 	//ANIMATION TURN (SOLDIER WITH RIFLE)
 	center.PushBack({ 107, 110, 18, 18 });
 	left.PushBack({ 142, 110, 18, 18 });
@@ -33,6 +38,7 @@ Enemy_SoldierRifle::Enemy_SoldierRifle(int x, int y) : Enemy(x, y)
 	die.PushBack({ 25, 111, 16, 27 });
 	die.PushBack({ 40, 104, 15, 27 });
 
+	contador = 0;
 
 	animation = &center;
 
@@ -99,6 +105,16 @@ void Enemy_SoldierRifle::Move()
 
 		}
 		*/
+
+		if (App->player->position.y <= position.y + 24) {
+			animation = &up;
+			contador++;
+			position.y--;
+		}
+
+		if (contador == 100) {
+			animation = &invisible;
+		}
 	}
 
 	if (dieB == true) {

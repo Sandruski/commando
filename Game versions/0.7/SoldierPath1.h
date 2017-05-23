@@ -14,7 +14,7 @@ private:
 
 	fPoint original_pos;
 	fPoint save_step;
-	Path path, path1, path2, path3, path_fb, path_fb1, path_fb2;
+	Path pathA, pathB;
 	int current_frame;
 
 	//Shot
