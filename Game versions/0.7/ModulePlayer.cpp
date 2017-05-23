@@ -80,6 +80,12 @@ ModulePlayer::~ModulePlayer()
 // Load assets
 bool ModulePlayer::Start()
 {
+
+	R.x = 0;
+	R.y = -2656;
+	R.w = 256;
+	R.h = 2880;
+
 	position.x = 130;
 	position.y = 110;
 
@@ -620,87 +626,94 @@ void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
 }
 
 void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
+	if (App->player2->twoplayerson == false) {
+		non_grenade = true;
+		App->ending->cont = 0;
+		play_ending = true;
 
-	non_grenade = true;
-	App->ending->cont = 0;
-	play_ending = true;
+		if (App->fade->IsFading() == false)
+		{
+			if (vides != 0) {
+				waterB = false;
+				if (timeW == true) {
+					vides--;
+					App->audio->pause_music();
+					App->audio->play_fx6();
+					App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
+					App->scene_1->start = false;
+					save_player_position = position.y;
 
-	if (App->fade->IsFading() == false)
-	{
+					if (save_player_position < 110 && save_player_position >= 2529 - 2656) {
+						App->scene_1->start = false;
+						App->scene_1->start1 = true;
+						App->scene_1->start2 = false;
+						App->scene_1->start3 = false;
+						App->scene_1->start4 = false;
+						App->scene_1->start5 = false;
+					}
+					else if (save_player_position < 2529 - 2656 && save_player_position >= 2003 - 2656) {
+						App->scene_1->start = false;
+						App->scene_1->start1 = false;
+						App->scene_1->start2 = true;
+						App->scene_1->start3 = false;
+						App->scene_1->start4 = false;
+						App->scene_1->start5 = false;
+					}
+					else if (save_player_position < 2003 - 2656 && save_player_position > 1235 - 2656) {
+						App->scene_1->start = false;
+						App->scene_1->start1 = false;
+						App->scene_1->start2 = false;
+						App->scene_1->start3 = true;
+						App->scene_1->start4 = false;
+						App->scene_1->start5 = false;
+					}
+					else if (save_player_position < 1235 - 2656 && save_player_position > 378 - 2656) {
+						App->scene_1->start = false;
+						App->scene_1->start1 = false;
+						App->scene_1->start2 = false;
+						App->scene_1->start3 = false;
+						App->scene_1->start4 = true;
+						App->scene_1->start5 = false;
+					}
+					else if (save_player_position < 378 - 2656 && save_player_position > -2656) {
+						App->scene_1->start = false;
+						App->scene_1->start1 = false;
+						App->scene_1->start2 = false;
+						App->scene_1->start3 = false;
+						App->scene_1->start4 = false;
+						App->scene_1->start5 = true;
+					}
+					else {
+						App->scene_1->start = true;
+						App->scene_1->start1 = false;
+						App->scene_1->start2 = false;
+						App->scene_1->start3 = false;
+						App->scene_1->start4 = false;
+						App->scene_1->start5 = false;
+					}
 
-		if (vides != 0) {
-			waterB = false;
-			if (timeW == true) {
-				vides--;
-				App->audio->pause_music();
-				App->audio->play_fx6();
-				App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
-				App->scene_1->start = false;
-				save_player_position = position.y;
-
-				if (save_player_position < 110 && save_player_position >= 2529 - 2656) {
-					App->scene_1->start = false;
-					App->scene_1->start1 = true;
-					App->scene_1->start2 = false;
-					App->scene_1->start3 = false;
-					App->scene_1->start4 = false;
-					App->scene_1->start5 = false;
+					App->fade->FadeToBlack(App->scene_1, App->scene_1);
 				}
-				else if (save_player_position < 2529 - 2656 && save_player_position >= 2003 - 2656) {
-					App->scene_1->start = false;
-					App->scene_1->start1 = false;
-					App->scene_1->start2 = true;
-					App->scene_1->start3 = false;
-					App->scene_1->start4 = false;
-					App->scene_1->start5 = false;
-				}
-				else if (save_player_position < 2003 - 2656 && save_player_position > 1235 - 2656) {
-					App->scene_1->start = false;
-					App->scene_1->start1 = false;
-					App->scene_1->start2 = false;
-					App->scene_1->start3 = true;
-					App->scene_1->start4 = false;
-					App->scene_1->start5 = false;
-				}
-				else if (save_player_position < 1235 - 2656 && save_player_position > 378 - 2656) {
-					App->scene_1->start = false;
-					App->scene_1->start1 = false;
-					App->scene_1->start2 = false;
-					App->scene_1->start3 = false;
-					App->scene_1->start4 = true;
-					App->scene_1->start5 = false;
-				}
-				else if (save_player_position < 378 - 2656 && save_player_position > -2656) {
-					App->scene_1->start = false;
-					App->scene_1->start1 = false;
-					App->scene_1->start2 = false;
-					App->scene_1->start3 = false;
-					App->scene_1->start4 = false;
-					App->scene_1->start5 = true;
-				}
-				else {
+			}
+			else if (vides == 0) {
+				waterB = false;
+				if (timeW == true) {
+					App->audio->pause_music();
+					App->audio->play_fx6();
+					App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
 					App->scene_1->start = true;
-					App->scene_1->start1 = false;
-					App->scene_1->start2 = false;
-					App->scene_1->start3 = false;
-					App->scene_1->start4 = false;
-					App->scene_1->start5 = false;
+					App->fade->FadeToBlack(App->scene_1, App->ending);
 				}
-
-				App->fade->FadeToBlack(App->scene_1, App->scene_1);
+				vides = 3;
 			}
 		}
-		else if (vides == 0) {
-			waterB = false;
-			if (timeW == true) {
-				App->audio->pause_music();
-				App->audio->play_fx6();
-				App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
-				App->scene_1->start = true;
-				App->fade->FadeToBlack(App->scene_1, App->ending);
-			}
-			vides = 3;
-		}
+	}
+	else {
+		vides = 0;
+		non_grenade = true;
+		play_ending = true;
+		waterB = false;
+		App->player2->checkwaterdead = true;
 	}
 }
 void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {

@@ -55,6 +55,11 @@ bool ModuleMenu::Start()
 	App->player->move2 = true;
 	App->player2->move2 = true;
 
+	App->player2->move2 = true;
+	App->player2->checkwaterdead = false;
+	App->player->move2 = true;
+
+
 	//Initialize audio
 	check_audio = true;
 

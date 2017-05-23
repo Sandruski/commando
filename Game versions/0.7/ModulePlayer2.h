@@ -65,6 +65,7 @@ public:
 	SDL_Rect  hpRev1, hpRev2, hpRev3, hpRev4;
 	bool contdead = 0;
 	bool detectionlive = 0;
+	bool checkwaterdead = false;
 };
 
 #endif

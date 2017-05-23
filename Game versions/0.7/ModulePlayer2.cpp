@@ -79,6 +79,7 @@ ModulePlayer2::~ModulePlayer2()
 // Load assets
 bool ModulePlayer2::Start()
 {
+
 	position.x = 130;
 	position.y = 135;
 
@@ -487,6 +488,14 @@ update_status ModulePlayer2::Update()
 
 	}
 
+	if ((vides == 0 || App->player->vides == 0) && (vides >= 0 || App->player->vides >= 0) && checkwaterdead == true) {
+		if (vides == 0)
+			App->player->vides == 0;
+		else if (App->player2->vides == 0)
+			vides == 0;
+	}
+
+
 	return UPDATE_CONTINUE;
 }
 
@@ -579,38 +588,46 @@ void ModulePlayer2::OnCollisionItem(Collider* c1, Collider* c2) {
 }
 
 void ModulePlayer2::OnCollisionWater(Collider* c1, Collider* c2) {
+	if (App->player2->twoplayerson == false) {
+		non_grenade = true;
+		App->ending->cont = 0;
+		play_ending = true;
+		if (twoplayerson == false) {
+			if (App->fade->IsFading() == false)
+			{
 
-	non_grenade = true;
-	App->ending->cont = 0;
-	play_ending = true;
-	if (twoplayerson == false) {
-		if (App->fade->IsFading() == false)
-		{
-
-			if (vides != 0) {
-				waterB = false;
-				if (timeW == true) {
-					vides--;
-					App->audio->pause_music();
-					App->audio->play_fx6();
-					App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
-					App->scene_1->start = false;
-					save_player_position = position.y;
-					App->fade->FadeToBlack(App->scene_1, App->scene_1);
+				if (vides != 0) {
+					waterB = false;
+					if (timeW == true) {
+						vides--;
+						App->audio->pause_music();
+						App->audio->play_fx6();
+						App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
+						App->scene_1->start = false;
+						save_player_position = position.y;
+						App->fade->FadeToBlack(App->scene_1, App->scene_1);
+					}
 				}
-			}
-			else if (vides == 0) {
-				waterB = false;
-				if (timeW == true) {
-					App->audio->pause_music();
-					App->audio->play_fx6();
-					App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
-					App->scene_1->start = true;
-					App->fade->FadeToBlack(App->scene_1, App->ending);
+				else if (vides == 0) {
+					waterB = false;
+					if (timeW == true) {
+						App->audio->pause_music();
+						App->audio->play_fx6();
+						App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
+						App->scene_1->start = true;
+						App->fade->FadeToBlack(App->scene_1, App->ending);
+					}
+					vides = 3;
 				}
-				vides = 3;
 			}
 		}
+	}
+	else {
+		vides = 0;
+		non_grenade = true;
+		play_ending = true;
+		waterB = false;
+		checkwaterdead = true;
 	}
 }
 void ModulePlayer2::OnCollisionEnemy(Collider* c1, Collider* c2) {

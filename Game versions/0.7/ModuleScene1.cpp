@@ -472,8 +472,11 @@ update_status ModuleScene1::Update()
 	//bottom screen = 110 - cont + 88
 	if ((App->player->position.y == (110 - cont) || App->player->position.y == (2294 - 2656 - cont) ||
 		App->player->position.y == (1836 - 2656 - cont) || App->player->position.y == (882 - 2656 - cont) ||
-		App->player->position.y == (379 - 2656 - cont))
-		&& App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
+		App->player->position.y == (379 - 2656 - cont)) ||
+		(App->player2->position.y == (110 - cont) || App->player2->position.y == (2294 - 2656 - cont) ||
+		App->player2->position.y == (1836 - 2656 - cont) || App->player2->position.y == (882 - 2656 - cont) ||
+		App->player2->position.y == (379 - 2656 - cont)
+		&& App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed)) {
 		cont++;
 		App->render->camera.y += speed;
 	}
