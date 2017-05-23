@@ -17,8 +17,8 @@ Enemy_SoldierRifle::Enemy_SoldierRifle(int x, int y) : Enemy(x, y)
 {
 	invisible.PushBack({ 195, 161, 10, 10 });
 
-	up.PushBack({ 114, 82, 11, 21 });
-	up.PushBack({ 128, 82, 11, 22 });
+	down.PushBack({ 80, 82, 13, 23 });
+	down.PushBack({ 228, 45, 13, 23 });
 
 	//ANIMATION TURN (SOLDIER WITH RIFLE)
 	center.PushBack({ 107, 110, 18, 18 });
@@ -83,8 +83,6 @@ void Enemy_SoldierRifle::Move()
 			enemyplayeru.x = enemyplayer.x / module;
 			enemyplayeru.y = enemyplayer.y / module;
 
-			//angle = atan(enemyplayer.x / enemyplayer.y); do not use. Only if needed
-
 			App->particlesenemies->bala.speed.x = enemyplayeru.x;
 			App->particlesenemies->bala.speed.y = enemyplayeru.y;
 
@@ -93,26 +91,23 @@ void Enemy_SoldierRifle::Move()
 				space = rand() % 10 + 5;
 			}
 
-			//App->particlesenemies->bala.position.x = (position.x + App->particlesenemies->bala.speed.x);
-			//App->particlesenemies->bala.position.y = ((position.y + 25) + App->particlesenemies->bala.speed.y);
-
 			space = 0;
 		}
 
-		//Change of behaviour. Soldier walks backwards
-		/*
-		if (App->player->position.y <= position.y - 24) {
-
-		}
-		*/
-
 		if (App->player->position.y <= position.y + 24) {
-			animation = &up;
-			contador++;
-			position.y--;
+			to_true = true;
 		}
 
-		if (contador == 100) {
+		if (to_true) {
+			animation = &down;
+			down.Start();
+			contador++;
+			position.y -= 0.7;
+		}
+
+		if (contador >= 50) {
+			collider->to_delete = true;
+			position.y += 0.7;
 			animation = &invisible;
 		}
 	}
@@ -144,5 +139,5 @@ void Enemy_SoldierRifle::OnCollision(Collider* c1, Collider* c2) {
 		}
 	}
 
-	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);	
+	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);
 }

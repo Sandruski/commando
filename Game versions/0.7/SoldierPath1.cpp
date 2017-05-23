@@ -59,21 +59,22 @@ Enemy_Soldier1::Enemy_Soldier1(int x, int y) : Enemy(x, y)
 
 	//PATHS
 	//fPoint speed, uint frames, Animation* animation = nullptr
-	pathA.PushBack({ -0.5f, +0.5f }, 50);
-	pathA.PushBack({ -0.5f, +0.0f }, 20);
-	pathA.PushBack({ -0.5f, -0.5f }, 40);
+	pathA.PushBack({ +0.5f, +0.0f }, 140);
+	pathA.PushBack({ -0.5f, +0.5f }, 40);
 	pathA.PushBack({ +0.0f, +0.5f }, 10);
-	pathA.PushBack({ -0.5f, +0.0f }, 50);
-	pathA.PushBack({ +0.0f, +0.5f }, 20);
-	pathA.PushBack({ -0.5f, +0.5f }, 70);
+	pathA.PushBack({ +0.5f, +0.0f }, 60);
+	pathA.PushBack({ +0.0f, +0.5f }, 110);
+	pathA.PushBack({ +0.5f, +0.0f }, 70);
+	pathA.PushBack({ +0.0f, +0.5f }, 30);
+	pathA.PushBack({ -0.5f, +0.0f }, 90);
 
-	pathB.PushBack({ -0.5f, +0.0f }, 20);
-	pathB.PushBack({ -0.5f, -0.5f }, 30);
-	pathB.PushBack({ -0.5f, +0.0f }, 20);
-	pathB.PushBack({ -0.5f, -0.5f }, 30);
-	pathB.PushBack({ -0.5f, +0.0f }, 40);
-	pathB.PushBack({ -0.5f, +0.5f }, 20);
-	pathB.PushBack({ -0.5f, +0.0f }, 50);
+	pathB.PushBack({ -0.5f, +0.0f }, 110);
+	pathB.PushBack({ +0.0f, +0.5f }, 40);
+	pathB.PushBack({ +0.5f, +0.0f }, 40);
+	pathB.PushBack({ +0.0f, +0.5f }, 50);
+	pathB.PushBack({ -0.5f, +0.0f }, 60);
+	pathB.PushBack({ +0.5f, +0.5f }, 30);
+	pathB.PushBack({ +0.5f, +0.0f }, 30);
 
 	animation = &up;
 
@@ -121,7 +122,7 @@ void Enemy_Soldier1::Move()
 		else {
 			anim2 = false;
 			anim1 = true;
-			
+
 			//DIFFERENT PATHS GO HERE
 
 			//Path A (left-right)
@@ -142,7 +143,7 @@ void Enemy_Soldier1::Move()
 					yeah = false;
 				}
 			}
-			
+
 
 			//Path B (right-left)
 			if (original_pos.x > SCREEN_WIDTH / 2) {
@@ -280,7 +281,7 @@ void Enemy_Soldier1::Move()
 	if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
 
 		enemyplayer.x = (App->player->position.x + 5) - position.x;
-		enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
+		enemyplayer.y = -fabs(position.y + 25) + fabs(App->player->position.y + 10);
 
 		module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
 		enemyplayeru.x = enemyplayer.x / module;

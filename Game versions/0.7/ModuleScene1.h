@@ -85,6 +85,9 @@ public:
 	int enemydiex, enemydiey;
 
 	bool dead = false, first = true;
+
+	int contenemy1 = 0, contenemy2 = 0;
+	bool E1 = false, E2 = false;
 };
 
 #endif // __MODULESCENE1_H__

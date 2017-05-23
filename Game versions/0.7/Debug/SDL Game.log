@@ -1,5 +1,12 @@
-﻿  ModulePlayer.cpp
-c:\users\aleixgm\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(67): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(72): warning C4305: '=': truncation from 'double' to 'float'
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  SoldierPath2.cpp
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(122): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(123): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(202): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(204): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(212): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  ModuleEnemies.cpp
+  Generating Code...
+cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+  LINK : C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe not found or not built by the last incremental link; performing full link
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)

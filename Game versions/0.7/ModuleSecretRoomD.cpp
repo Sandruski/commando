@@ -82,12 +82,12 @@ bool ModuleSecretRoomD::Start() {
 
 
 	//ENEMIES
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 20, 247);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 21, 232);
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER1, 20, 247);
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER1, 21, 232);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 214, 283);
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER1, 214, 278);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 213, 193);
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER1, 213, 193);
 
 	return true;
 }

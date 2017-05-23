@@ -15,7 +15,7 @@ private:
 	int cont = 0;
 
 	Animation turn1, turn2, die, invisible;
-	Animation up;
+	Animation down;
 
 public:
 
@@ -31,6 +31,9 @@ public:
 	void Move();
 
 	int checking = 0, one = 0;
+
+	int contador = 0;
+	bool to_true = false;
 };
 
 #endif

@@ -1,7 +1,6 @@
 #ifndef __SOLDIER_PATH2_H__
 #define __SOLDIER_PATH2_H__
 
-
 #include "Enemy.h"
 #include "Path.h"
 
@@ -15,7 +14,9 @@ private:
 
 	fPoint original_pos;
 	fPoint save_step;
-	Path path, path1, path2, path3, path_fb, path_fb1, path_fb2;
+	fPoint another;
+
+	Path pathA, pathA1, pathB, pathB1;
 	int current_frame;
 
 	//Shot
@@ -45,7 +46,6 @@ public:
 	bool one = true, two = true, three = true;
 
 	bool anim1, anim2;
-	fPoint another;
 	bool yeah = true;
 	bool NO1 = false, NO2 = false, NO3 = false, NO4 = false;
 	int NO_CONT = 0;

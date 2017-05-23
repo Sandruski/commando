@@ -370,8 +370,14 @@ void Enemy_Soldier::Move()
 
 	if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
 
-		enemyplayer.x = (App->player->position.x + 5) - position.x;
-		enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
+		if (App->player->position.y >= 0) {
+			enemyplayer.x = (App->player->position.x + 5) - position.x;
+			enemyplayer.y = -fabs(position.y + 25) + fabs(App->player->position.y + 10);
+		}
+		else {
+			enemyplayer.x = (App->player->position.x + 5) - position.x;
+			enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
+		}
 
 		module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
 		enemyplayeru.x = enemyplayer.x / module;

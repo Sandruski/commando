@@ -309,7 +309,6 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 227, 1449 - 2656);
 
 	//Soldier rifle behind stone
-
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 167, 1127 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 53, 1127 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 37, 1047 - 2656);
@@ -367,6 +366,7 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_KNIFE, 239, 2075 - 2656);
 
 	//SOLDIER
+	/*
 	//Path
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 62, 2506 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 240, 2550 - 2656);
@@ -379,16 +379,9 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 242, 699 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 240, 688 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 225, 538 - 2656);
+	*/
 
-	//Path1
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 232, 2763 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 228, 2678 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 109, 2465 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 200, 2332 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 240, 1865 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 228, 531 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 242, 283 - 2656);
-
+	/*
 	//Path2
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 14, 2579 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 6, 2245 - 2656);
@@ -403,7 +396,9 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 143, 1970 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 168, 1500 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 62, 812 - 2656);
+	*/
 
+	/*
 	//Path_Final_Battle
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 40, 111 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 170, 104 - 2656);
@@ -428,7 +423,7 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 124, 2 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 108, 7 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 130, 4 - 2656);
-	
+	*/
 	return true;
 
 }
@@ -462,6 +457,99 @@ bool ModuleScene1::CleanUp()
 update_status ModuleScene1::Update()
 {
 	update_status ret = UPDATE_CONTINUE;
+
+	///////////////////////////////////////////////////////////////////////////////
+	//ENEMIES
+
+	if (App->player->position.y <= 2720 - 2656 && App->player->position.y >= 2352 - 2656) {
+		E1 = true;
+	}
+	else {
+		E1 = false;
+	}
+
+	if (E1) {
+		contenemy1++;
+
+		if (contenemy1 == 20) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2498 - 2656);
+		}
+		else if (contenemy1 == 150) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2498 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2499 - 2656);
+		}
+		else if (contenemy1 == 300) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2498 - 2656);
+		}
+		else if (contenemy1 == 320) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2499 - 2656);
+		}
+		else if (contenemy1 == 420) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2499 - 2656);
+		}
+		else if (contenemy1 == 500) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2499 - 2656);
+		}
+		else if (contenemy1 == 600) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2499 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2498 - 2656);
+		}
+		else if (contenemy1 == 800) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2498 - 2656);
+		}
+
+		if (contenemy1 == 1000) {
+			contenemy1 = 0;
+		}
+	}
+
+
+	if (App->player->position.y <= 2516 - 2656 && App->player->position.y >= 2100 - 2656) {
+		E2 = true;
+	}
+	else {
+		E2 = false;
+	}
+
+
+	if (E2) {
+		contenemy2++;
+
+		if (contenemy2 == 20) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 5, 2272 - 2656);
+		}
+		else if (contenemy2 == 100) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 5, 2271 - 2656);
+		}
+		else if (contenemy2 == 300) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 5, 2272 - 2656);
+		}
+		else if (contenemy2 == 420) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 5, 2272 - 2656);
+		}
+		else if (contenemy2 == 500) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 5, 2271 - 2656);
+		}
+		else if (contenemy2 == 650) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 5, 2272 - 2656);
+		}
+		else if (contenemy2 == 800) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 5, 2271 - 2656);
+		}
+
+		if (contenemy2 == 1000) {
+			contenemy2 = 0;
+		}
+	}
+
+
+
+
+
+
+
+	///////////////////////////////////////////////////////////////////////////////
+
 
 	if (check_audio) {
 		App->audio->play_music2();

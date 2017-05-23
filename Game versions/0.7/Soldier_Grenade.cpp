@@ -16,13 +16,13 @@ Enemy_SoldierGrenade::Enemy_SoldierGrenade(int x, int y) : Enemy(x, y)
 {
 	invisible.PushBack({ 195, 161, 10, 10 });
 
-	up.PushBack({ 114, 82, 11, 21 });
-	up.PushBack({ 128, 82, 11, 22 });
+	down.PushBack({ 80, 82, 13, 23 });
+	down.PushBack({ 228, 45, 13, 23 });
 
 	//ANIMATION TURN1 (SOLDIER WHO THROWS GRENADES)
 	turn1.PushBack({ 56, 110, 16, 22 }); //normal
 
-	//ANIMATION TURN2 (SOLDIER WHO THROWS GRENADES)
+										 //ANIMATION TURN2 (SOLDIER WHO THROWS GRENADES)
 	turn2.PushBack({ 74, 110, 16, 22 }); //down
 	turn2.PushBack({ 91, 110, 16, 22 }); //MORE down
 
@@ -33,6 +33,8 @@ Enemy_SoldierGrenade::Enemy_SoldierGrenade(int x, int y) : Enemy(x, y)
 	die.PushBack({ 40, 104, 15, 27 });
 	die.PushBack({ 25, 111, 16, 27 });
 	die.PushBack({ 40, 104, 15, 27 });
+
+	contador = 0;
 
 	animation = &turn1;
 
@@ -69,8 +71,6 @@ void Enemy_SoldierGrenade::Move()
 		enemyplayeru.x = enemyplayer.x / module;
 		enemyplayeru.y = enemyplayer.y / module;
 
-		//angle = atan(enemyplayer.x / enemyplayer.y); do not use. Only if needed
-
 		App->particlesenemies->bala.speed.x = enemyplayeru.x;
 		App->particlesenemies->bala.speed.y = enemyplayeru.y;
 
@@ -79,14 +79,30 @@ void Enemy_SoldierGrenade::Move()
 			space = rand() % 10 + 5;
 		}
 
-		//App->particlesenemies->bala.position.x = (position.x + App->particlesenemies->bala.speed.x);
-		//App->particlesenemies->bala.position.y = ((position.y + 25) + App->particlesenemies->bala.speed.y);
-
 		space = 0;
+
 	}
 
-	if (dieB == false)
+	if (dieB == false) {
 		lastTime = SDL_GetTicks();
+
+		if (App->player->position.y <= position.y + 24) {
+			to_true = true;
+		}
+
+		if (to_true) {
+			animation = &down;
+			down.Start();
+			contador++;
+			position.y -= 0.7;
+		}
+
+		if (contador >= 50) {
+			collider->to_delete = true;
+			position.y += 0.7;
+			animation = &invisible;
+		}
+	}
 
 
 	if (dieB == true) {

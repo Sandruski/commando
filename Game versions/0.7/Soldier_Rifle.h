@@ -14,7 +14,12 @@ private:
 	int original_x = 0;
 
 	Animation turn, center, left, more_left, right, more_right, die, invisible;
-	Animation up;
+	Animation down;
+	Path back;
+
+	fPoint original_pos;
+	fPoint save_step;
+
 	fPoint enemyplayer, enemyplayeru;
 	float module, angle;
 
@@ -33,6 +38,7 @@ public:
 	int checking = 0, one = 0;
 
 	int contador = 0;
+	bool to_true = false;
 };
 
 
