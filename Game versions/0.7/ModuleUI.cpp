@@ -125,42 +125,56 @@ update_status ModuleUI::Update()
 		sprintf_s(str1, "%i", score);
 		sprintf_s(str2, "%i", grenade);
 		sprintf_s(str3, "%i", App->player->vides);
-		sprintf_s(str4, "%i", App->player2->vides);
 		App->render->Blit(Hud, 116, App->scene_1->current_start_pos + 213 - App->scene_1->cont, &MarcadorGranada);
-		App->render->Blit(Hud, 22, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida);
-		if (App->player2->twoplayerson == true) {
-			App->render->Blit(Hud, 212, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida2);
-			App->fonts->BlitText(212 + 13, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str4);
-		}
+		if (App->player2->twoplayerson == false)
+			App->render->Blit(Hud, 22, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida);
+		if (App->player2->twoplayerson == false)
 		App->fonts->BlitText(35, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str3);
 		App->fonts->BlitText(129, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str2);
 		cont = 0;
 		App->fonts->BlitText(37, App->scene_1->current_start_pos + 5 - App->scene_1->cont, App->savedata->font_score, str1);
-
-	}
-	else {
-		if (App->player->GOD == true) {
-			current_animation = &Inv1;
-			r = current_animation->GetCurrentFrame();
-			App->render->Blit(Inv, 110, App->scene_1->current_start_pos + 5 - App->scene_1->cont, &r);
-		}
-		cont = 1;
-		sprintf_s(str1, "%i", score);
-		sprintf_s(str2, "%i", grenade);
-		sprintf_s(str3, "%i", App->player->vides);
-		sprintf_s(str4, "%i", App->player2->vides);
-		App->render->Blit(Hud, 116, App->scene_1->current_start_pos + 213 - App->scene_1->cont, &MarcadorGranada);
-		App->render->Blit(Hud, 22, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida);
 		if (App->player2->twoplayerson == true) {
-			App->render->Blit(Hud, 212, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida2);
-			App->fonts->BlitText(212 + 13, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str4);
+			if (App->player2->torevive >= 1)
+				App->render->Blit(App->player2->graphics, 22, App->scene_1->current_start_pos + 214 - App->scene_1->cont, &App->player2->torevive2);
+			if (App->player2->torevive >= 2)
+				App->render->Blit(App->player2->graphics, 22 + 15, App->scene_1->current_start_pos + 214 - App->scene_1->cont, &App->player2->torevive2);
+			if (App->player2->torevive >= 3)
+				App->render->Blit(App->player2->graphics, 22 + 15 + 15, App->scene_1->current_start_pos + 214 - App->scene_1->cont, &App->player2->torevive2);
+			if (App->player2->torevive >= 4)
+				App->render->Blit(App->player2->graphics, 22 + 15 + 15 + 15, App->scene_1->current_start_pos + 214 - App->scene_1->cont, &App->player2->torevive2);
 		}
-		App->fonts->BlitText(35, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str3);
-		App->fonts->BlitText(129, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str2);
-		cont = 0;
-		App->fonts->BlitText(37, App->scene_1->current_start_pos + 5 - App->scene_1->cont, App->savedata->font_score, str1);
-
 	}
 
-	return UPDATE_CONTINUE;
-}
+		else {
+			if (App->player->GOD == true) {
+				current_animation = &Inv1;
+				r = current_animation->GetCurrentFrame();
+				App->render->Blit(Inv, 110, App->scene_1->current_start_pos + 5 - App->scene_1->cont, &r);
+			}
+			cont = 1;
+			sprintf_s(str1, "%i", score);
+			sprintf_s(str2, "%i", grenade);
+			sprintf_s(str3, "%i", App->player->vides);
+			App->render->Blit(Hud, 116, App->scene_1->current_start_pos + 213 - App->scene_1->cont, &MarcadorGranada);
+			if (App->player2->twoplayerson == false)
+				App->render->Blit(Hud, 22, App->scene_1->current_start_pos + 210 - App->scene_1->cont, &MarcadorVida);
+			if (App->player2->twoplayerson == false)
+			App->fonts->BlitText(35, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str3);
+			App->fonts->BlitText(129, App->scene_1->current_start_pos + 215 - App->scene_1->cont, App->savedata->font_score, str2);
+			cont = 0;
+			App->fonts->BlitText(37, App->scene_1->current_start_pos + 5 - App->scene_1->cont, App->savedata->font_score, str1);
+			if (App->player2->twoplayerson == true) {
+				if (App->player2->torevive >= 1)
+					App->render->Blit(App->player2->graphics, 22, App->scene_1->current_start_pos + 214 - App->scene_1->cont, &App->player2->torevive2);
+				if (App->player2->torevive >= 2)
+					App->render->Blit(App->player2->graphics, 22 + 15, App->scene_1->current_start_pos + 214 - App->scene_1->cont, &App->player2->torevive2);
+				if (App->player2->torevive >= 3)
+					App->render->Blit(App->player2->graphics, 22 + 15 + 15, App->scene_1->current_start_pos + 214 - App->scene_1->cont, &App->player2->torevive2);
+				if (App->player2->torevive >= 4)
+					App->render->Blit(App->player2->graphics, 22 + 15 + 15 + 15, App->scene_1->current_start_pos + 214 - App->scene_1->cont, &App->player2->torevive2);
+			}
+		}
+
+		return UPDATE_CONTINUE;
+	}
+

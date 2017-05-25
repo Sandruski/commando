@@ -81,6 +81,10 @@ public:
 
 	Animation drop1, drop2;
 	SDL_Rect r1;
+	bool torevivecheck1;
+	bool torevivecheck2;
+	bool torevivecheck3;
+	bool torevivecheck4;
 
 	int enemydiex, enemydiey;
 

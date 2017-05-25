@@ -1,6 +1,11 @@
-﻿  Application.cpp
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
-cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+﻿  ModulePlayer2.cpp
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(66): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(71): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(498): warning C4553: '==': operator has no effect; did you intend '='?
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(500): warning C4553: '==': operator has no effect; did you intend '='?
+  ModulePlayer.cpp
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(67): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(72): warning C4305: '=': truncation from 'double' to 'float'
+  Generating Code...
   SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
   SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)

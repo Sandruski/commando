@@ -965,7 +965,7 @@ void ModulePlayer::OnCollisionSecretRooms(Collider* c1, Collider* c2) {
 
 void ModulePlayer::OnCollisionRev(Collider* c1, Collider* c2)
 {
-	if (App->player2->vides != 0) {
+	if (App->player2->torevive != 0) {
 		if (App->input->keyboard[SDL_SCANCODE_9] == KEY_STATE::KEY_REPEAT || App->input->buttonX == KEY_STATE::KEY_REPEAT) {
 			App->player2->revTime++;
 
@@ -988,6 +988,7 @@ void ModulePlayer::OnCollisionRev(Collider* c1, Collider* c2)
 			if (App->player2->revTime >= 80) {
 				App->player2->move2 = true;
 				App->player2->revTime = 0;
+				App->player2->torevive--;
 
 			}
 		}

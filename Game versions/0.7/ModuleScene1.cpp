@@ -304,6 +304,16 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 121, 1056 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this);
 	App->collision->AddCollider({ 233, 522 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this);
 
+	//botiquins
+	App->collision->AddCollider({ 190, 150 ,9,9}, COLLIDER_TOREVIVE, this);
+	App->collision->AddCollider({ 102, 2212 - 2656,9,9 }, COLLIDER_TOREVIVE, this);
+	App->collision->AddCollider({ 84, 1502 - 2656,9,9}, COLLIDER_TOREVIVE, this);
+	App->collision->AddCollider({ 243, 708 - 2656,9,9}, COLLIDER_TOREVIVE, this);
+
+	App->render->Blit(App->player2->graphics, 198, 150, &App->player2->torevive2);
+	App->render->Blit(App->player2->graphics, 102, 2212 - 2656, &App->player2->torevive2);
+	App->render->Blit(App->player2->graphics, 84, 1502 - 2656, &App->player2->torevive2);
+	App->render->Blit(App->player2->graphics, 243, 708, &App->player2->torevive2);
 	//ENEMIES
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 150, 2366 - 2656); //positiony = 1375-2656
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 227, 1449 - 2656);
@@ -811,6 +821,17 @@ update_status ModuleScene1::Update()
 	}
 	//
 
+	//botiquin
+	if (App->player2->twoplayerson == true) {
+		if(torevivecheck1 == false)
+		App->render->Blit(App->player2->graphics, 190, 150, &App->player2->torevive2);
+		if (torevivecheck2 == false)
+		App->render->Blit(App->player2->graphics, 102, 2212 - 2656, &App->player2->torevive2);
+		if (torevivecheck3 == false)
+		App->render->Blit(App->player2->graphics, 84, 1502 - 2656, &App->player2->torevive2);
+		if (torevivecheck4 == false)
+		App->render->Blit(App->player2->graphics, 243, 708 - 2656, &App->player2->torevive2);
+	}
 	return ret;
 }
 
@@ -829,4 +850,18 @@ void ModuleScene1::OnCollision(Collider* c1, Collider* c2)
 		if (App->player->position.y < 630 - 2656 && App->player->position.y > 475 - 2656) 
 			roomE = true;
 		}
+
+	else if (c1->type == COLLIDER_TOREVIVE && c2->type == COLLIDER_PLAYER || c1->type == COLLIDER_TOREVIVE && c2->type == COLLIDER_PLAYER2) {
+		App->player2->torevive++;
+		if (App->player->position.y < 150 && App->player->position.y > 0)
+			torevivecheck1 = true;
+		if (App->player->position.y < 2212 - 2656 + 100 && App->player->position.y > 2212 - 2656 - 100)
+			torevivecheck2 = true;
+		if (App->player->position.y < 1502 - 2656 + 100 && App->player->position.y > 1502 - 2656 - 100)
+			torevivecheck3 = true;
+		if (App->player->position.y < 708 - 2656 + 100 && App->player->position.y > 708 - 2656 - 100)
+			torevivecheck4 = true;
+		App->collision->EraseCollider(c1);
+	}
 }
+

@@ -99,7 +99,6 @@ bool ModulePlayer2::Start()
 	p4.x = position.x;
 	p4.y = position.y + 30;
 
-
 	hpRev1.x = 241;
 	hpRev1.y = 47;
 	hpRev1.w = 3;
@@ -119,6 +118,12 @@ bool ModulePlayer2::Start()
 	hpRev4.y = 66;
 	hpRev4.w = 3;
 	hpRev4.h = 14;
+
+	torevive2.x = 81;
+	torevive2.y = 90;
+	torevive2.w = 9;
+	torevive2.h = 9;
+
 
 	LOG("Loading player textures");
 	graphics = App->textures->Load("Assets/Sprites/spritesheet_superjane.png");
@@ -672,7 +677,7 @@ void ModulePlayer2::OnCollisionEnemy(Collider* c1, Collider* c2) {
 
 void ModulePlayer2::OnCollisionRev(Collider* c1, Collider* c2)
 {
-	if (App->player->vides != 0) {
+	if (App->player2->torevive != 0) {	
 		if (App->input->keyboard[SDL_SCANCODE_0] == KEY_STATE::KEY_REPEAT || App->input->buttonX2 == KEY_REPEAT) {
 			revTime++;
 
@@ -695,7 +700,7 @@ void ModulePlayer2::OnCollisionRev(Collider* c1, Collider* c2)
 			if (revTime >= 80) {
 				App->player->move2 = true;
 				revTime = 0;
-
+				torevive--;
 			}
 		}
 		if (App->input->keyboard[SDL_SCANCODE_0] == KEY_STATE::KEY_UP || App->input->buttonX2 == KEY_UP)
