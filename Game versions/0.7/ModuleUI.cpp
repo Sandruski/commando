@@ -100,7 +100,7 @@ bool ModuleUI::CleanUp()
 	App->textures->Unload(Hud2);
 	App->textures->Unload(Inv);
 
-	return false;
+	return true;
 }
 
 update_status ModuleUI::Update()

@@ -133,7 +133,9 @@ bool Application::CleanUp()
 	bool ret = true;
 
 	for (int i = NUM_MODULES - 1; i >= 0 && ret == true; --i)
+	{
 		ret = modules[i]->CleanUp();
+	}		
 
 	return ret;
 }

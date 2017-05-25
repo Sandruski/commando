@@ -18,8 +18,9 @@ public:
 	bool CleanUp();
 
 public:
+
+
 	int savescore;
-	fstream scorefile;
 	int savescore2p;
 	int savescore_p1;
 	int font_score;

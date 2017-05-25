@@ -82,6 +82,7 @@ public:
 	SDL_Rect dead2player;
 	bool contdead = 0;
 	bool detectionlive = 0;
+	int torevive = 0;
 };
 
 #endif

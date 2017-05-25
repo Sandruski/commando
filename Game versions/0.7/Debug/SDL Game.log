@@ -1,12 +1,6 @@
-﻿  SoldierPath2.cpp
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(122): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(123): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(202): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(204): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(212): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  ModuleEnemies.cpp
-  Generating Code...
+﻿  Application.cpp
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
 cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-  LINK : C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe not found or not built by the last incremental link; performing full link
-  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)

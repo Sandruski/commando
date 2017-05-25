@@ -447,7 +447,7 @@ update_status ModuleInput::PreUpdate()
 
 
 	if (keyboard[SDL_SCANCODE_ESCAPE]) {
-		App->CleanUp();
+		//App->CleanUp();
 		return update_status::UPDATE_STOP;
 	}
 

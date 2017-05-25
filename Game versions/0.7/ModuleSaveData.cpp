@@ -12,25 +12,24 @@
 #include "ModuleFonts.h"
 #include "ModuleTextures.h"
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 
 ModuleSaveData::ModuleSaveData() : Module()
-{
-	savescore = 0;
-}
+{}
 
 ModuleSaveData::~ModuleSaveData()
-{
-
-}
+{}
 
 
 bool ModuleSaveData::Init()
 {
+	ifstream scorefile;
 	scorefile.open("score.txt");
 	scorefile >> savescore;
 	scorefile.close();
+	
 	Hud2 = App->textures->Load("Assets/Sprites/Alphabet&Numbers&Extra.png");
 	font_score = App->fonts->Load("Assets/fonts/Commando_font.png", "0123456789", 1);
 	font_score2 = App->fonts->Load("Assets/fonts/Commando_font2.png", "0123456789", 1);
@@ -41,7 +40,7 @@ bool ModuleSaveData::Init()
 update_status ModuleSaveData::Update()
 {	
 	if(savescore_p1 < App->UI->score)
-	savescore_p1 = App->UI->score;
+		savescore_p1 = App->UI->score;
 	if (savescore < App->UI -> score)
 		savescore = App->UI -> score;
 	if (App->player2->twoplayerson == true && App->fade->on == App->scene_1) {
@@ -53,9 +52,10 @@ update_status ModuleSaveData::Update()
 
 bool ModuleSaveData::CleanUp()
 {
-	scorefile.open("score.txt", std::ofstream::out | std::ofstream::trunc);
-	scorefile << savescore;
-	scorefile.close();
+	ofstream scorefile2;
+	scorefile2.open("score.txt", std::ofstream::out | std::ofstream::trunc);
+	scorefile2 << savescore;
+	scorefile2.close();
 	App->textures->Unload(Hud2);
 	App->fonts->UnLoad(font_score);
 	App->fonts->UnLoad(font_score2);

@@ -366,7 +366,7 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_KNIFE, 239, 2075 - 2656);
 
 	//SOLDIER
-	/*
+	
 	//Path
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 62, 2506 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 240, 2550 - 2656);
@@ -379,9 +379,9 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 242, 699 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 240, 688 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 225, 538 - 2656);
-	*/
+	
 
-	/*
+	
 	//Path2
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 14, 2579 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 6, 2245 - 2656);
@@ -396,9 +396,9 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 143, 1970 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 168, 1500 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 62, 812 - 2656);
-	*/
+	
 
-	/*
+	
 	//Path_Final_Battle
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 40, 111 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 170, 104 - 2656);
@@ -423,7 +423,7 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 124, 2 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 108, 7 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 130, 4 - 2656);
-	*/
+	
 	return true;
 
 }
@@ -431,9 +431,6 @@ bool ModuleScene1::Start()
 bool ModuleScene1::CleanUp()
 {
 	LOG("Unloading 1st scene");
-	App->savedata->scorefile.open("score.txt", std::ofstream::out | std::ofstream::trunc);
-	App->savedata->scorefile << App->savedata->savescore;
-	App->savedata->scorefile.close();
 	App->textures->Unload(graphics);
 	App->textures->Unload(moto);
 	App->textures->Unload(items);
