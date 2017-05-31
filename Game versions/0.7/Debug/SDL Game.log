@@ -1,11 +1,5 @@
-﻿  ModulePlayer2.cpp
-c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(66): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(71): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(498): warning C4553: '==': operator has no effect; did you intend '='?
-c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(500): warning C4553: '==': operator has no effect; did you intend '='?
-  ModulePlayer.cpp
-c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(67): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(72): warning C4305: '=': truncation from 'double' to 'float'
-  Generating Code...
-  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  ModulePlayer.cpp
+c:\users\aleixgm\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(67): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\aleixgm\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(72): warning C4305: '=': truncation from 'double' to 'float'
+  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
