@@ -114,6 +114,74 @@ Enemy_Soldier2::Enemy_Soldier2(int x, int y) : Enemy(x, y)
 	pathB1.PushBack({ -0.5f, +0.0f }, 600);
 	//
 
+	//Path C
+	//start of each path C
+	pathC.PushBack({ +0.5f, +0.0f }, 90);
+	pathC.PushBack({ +0.5f, -0.5f }, 30);
+	pathC.PushBack({ +0.5f, +0.5f }, 60);
+	pathC.PushBack({ +0.5f, +0.0f }, 30);
+	//
+	pathC.PushBack({ +0.5f, +0.0f }, 60);
+	pathC.PushBack({ +0.0f, +0.5f }, 40);
+	pathC.PushBack({ +0.5f, +0.0f }, 70);
+	pathC.PushBack({ +0.0f, +0.5f }, 100);
+	pathC.PushBack({ +0.5f, +0.0f }, 40);
+	pathC.PushBack({ +0.0f, +0.5f }, 700);
+	//
+
+	//Path C1
+	pathC1.PushBack({ +0.5f, +0.0f }, 90);
+	pathC1.PushBack({ +0.5f, -0.5f }, 30);
+	pathC1.PushBack({ +0.5f, +0.5f }, 60);
+	pathC1.PushBack({ +0.5f, +0.0f }, 30);
+	//
+	pathC1.PushBack({ +0.5f, +0.0f }, 10);
+	pathC1.PushBack({ +0.0f, +0.5f }, 70);
+	pathC1.PushBack({ +0.5f, +0.0f }, 50);
+	pathC1.PushBack({ +0.0f, +0.5f }, 40);
+	pathC1.PushBack({ -0.5f, +0.0f }, 200);
+	pathC1.PushBack({ +0.0f, +0.5f }, 70);
+	pathC1.PushBack({ -0.5f, +0.0f }, 80);
+	pathC1.PushBack({ +0.0f, -0.5f }, 90);
+	pathC1.PushBack({ -0.5f, +0.0f }, 70);
+	pathC1.PushBack({ +0.0f, +0.5f }, 20);
+	pathC1.PushBack({ -0.5f, +0.0f }, 300);
+	//
+
+	//Path D
+	//start of each path D
+	pathD.PushBack({ -0.5f, +0.0f }, 70);
+	pathD.PushBack({ -0.5f, -0.5f }, 30);
+	pathD.PushBack({ -0.5f, +0.5f }, 60);
+	pathD.PushBack({ -0.5f, +0.0f }, 30);
+	//
+	pathD.PushBack({ -0.5f, +0.0f }, 30);
+	pathD.PushBack({ +0.0f, -0.5f }, 50);
+	pathD.PushBack({ -0.5f, +0.0f }, 60);
+	pathD.PushBack({ +0.0f, +0.5f }, 20);
+	pathD.PushBack({ -0.5f, +0.0f }, 50);
+	pathD.PushBack({ +0.0f, +0.5f }, 40);
+	pathD.PushBack({ -0.5f, +0.0f }, 60);
+	pathD.PushBack({ +0.0f, +0.5f }, 50);
+	pathD.PushBack({ -0.5f, +0.0f }, 300);
+	//
+
+	//Path D1
+	pathD1.PushBack({ -0.5f, +0.0f }, 70);
+	pathD1.PushBack({ -0.5f, -0.5f }, 30);
+	pathD1.PushBack({ -0.5f, +0.5f }, 60);
+	pathD1.PushBack({ -0.5f, +0.0f }, 30);
+	//
+	pathD1.PushBack({ -0.5f, +0.0f }, 80);
+	pathD1.PushBack({ +0.0f, +0.5f }, 30);
+	pathD1.PushBack({ -0.5f, +0.0f }, 50);
+	pathD1.PushBack({ -0.5f, +0.0f }, 80);
+	pathD1.PushBack({ +0.0f, +0.5f }, 60);
+	pathD1.PushBack({ +0.5f, +0.0f }, 90);
+	pathD1.PushBack({ +0.0f, +0.5f }, 40);
+	pathD1.PushBack({ +0.5f, +0.0f }, 200);
+	pathD1.PushBack({ +0.0f, +0.5f }, 50);
+	pathD1.PushBack({ +0.5f, +0.0f }, 400);
 
 	animation = &up;
 
@@ -148,22 +216,25 @@ void Enemy_Soldier2::Move()
 		save_step = pathB1.GetCurrentPositionf();
 	}
 
-
-	/*
-	if (original_pos.y == 111 - 2656 || original_pos.y == 104 - 2656 || original_pos.y == -2 - 2656 || original_pos.y == -5 - 2656
-	|| original_pos.y == -8 - 2656 || original_pos.y == 0 - 2656 || original_pos.y == 120 - 2656) {
-
-	position = original_pos + pathB1.GetCurrentPositionfl(&animation);
-	save_step = pathB1.GetCurrentPositionf();
+	if (original_pos.y == 2000 - 2656) {
+		position = original_pos + pathC.GetCurrentPositionfl(&animation);
+		save_step = pathC.GetCurrentPositionf();
 	}
 
-	if (original_pos.y == 125 - 2656 || original_pos.y == 57 - 2656 || original_pos.y == 98 - 2656 || original_pos.y == 55 - 2656
-	|| original_pos.y == 42 - 2656 || original_pos.y == 20 - 2656 || original_pos.y == 30 - 2656) {
-
-	position = original_pos + pathB2.GetCurrentPositionfl(&animation);
-	save_step = pathB2.GetCurrentPositionf();
+	if (original_pos.y == 2001 - 2656) {
+		position = original_pos + pathC1.GetCurrentPositionfl(&animation);
+		save_step = pathC1.GetCurrentPositionf();
 	}
-	*/
+
+	if (original_pos.y == 1755 - 2656) {
+		position = original_pos + pathD.GetCurrentPositionfl(&animation);
+		save_step = pathD.GetCurrentPositionf();
+	}
+
+	if (original_pos.y == 1754 - 2656) {
+		position = original_pos + pathD1.GetCurrentPositionfl(&animation);
+		save_step = pathD1.GetCurrentPositionf();
+	}
 
 	//ANIMATION CHANGE FOR PATHS
 	if ((save_step.x == 0 && save_step.y > 0)) {

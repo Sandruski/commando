@@ -58,56 +58,208 @@ Enemy_Soldier3::Enemy_Soldier3(int x, int y) : Enemy(x, y)
 	down_right.speed = 0.1f;
 
 	//PATHS
-	//fPoint speed, uint frames, Animation* animation = nullptr
-	path.PushBack({ -0.5f, +0.5f }, 50);
-	path.PushBack({ -0.5f, +0.0f }, 20);
-	path.PushBack({ -0.5f, -0.5f }, 40);
-	path.PushBack({ +0.0f, +0.5f }, 10);
-	path.PushBack({ -0.5f, +0.0f }, 50);
-	path.PushBack({ +0.0f, +0.5f }, 20);
-	path.PushBack({ -0.5f, +0.5f }, 70);
+	//Path 1
+	path1.PushBack({ +0.0f, +0.6f }, 90 - 10);
+	path1.PushBack({ -0.6f, +0.6f }, 30 - 10);
+	path1.PushBack({ -0.6f, +0.0f }, 50 - 10);
 
-	path1.PushBack({ -0.5f, +0.0f }, 20);
-	path1.PushBack({ -0.5f, -0.5f }, 30);
-	path1.PushBack({ -0.5f, +0.0f }, 20);
-	path1.PushBack({ -0.5f, -0.5f }, 30);
-	path1.PushBack({ -0.5f, +0.0f }, 40);
-	path1.PushBack({ -0.5f, +0.5f }, 20);
+	path1.PushBack({ +0.0f, +0.6f }, 10 - 10);
+	path1.PushBack({ -0.6f, +0.0f }, 70 - 10);
+	path1.PushBack({ -0.6f, +0.6f }, 80 - 10);
+	path1.PushBack({ -0.6f, +0.0f }, 200 - 10);
+
+	//Path 2
+	path2.PushBack({ +0.0f, +0.6f }, 100 - 10);
+	path2.PushBack({ +0.6f, +0.0f }, 80 - 10);
+	path2.PushBack({ +0.0f, -0.6f }, 30 - 10);
+	path2.PushBack({ +0.6f, +0.0f }, 90 - 10);
+
+	path2.PushBack({ +0.0f, +0.6f }, 50 - 10);
+	path2.PushBack({ -0.6f, +0.0f }, 30 - 10);
+	path2.PushBack({ +0.0f, +0.6f }, 20 - 10);
+	path2.PushBack({ +0.6f, +0.0f }, 200 - 10);
+
+	//Path 3
+	path3.PushBack({ +0.0f, +0.6f }, 90 - 10);
+	path3.PushBack({ -0.6f, +0.6f }, 40 - 10);
+	path3.PushBack({ +0.0f, +0.6f }, 50 - 10);
+
+	path3.PushBack({ +0.6f, +0.0f }, 40 - 10);
+	path3.PushBack({ +0.6f, +0.6f }, 70 - 10);
+	path3.PushBack({ +0.0f, +0.6f }, 20 - 10);
+	path3.PushBack({ -0.6f, +0.0f }, 100 - 10);
+
+	path3.PushBack({ +0.0f, +0.6f }, 10 - 10);
+	path3.PushBack({ -0.6f, +0.0f }, 40 - 10);
+	path3.PushBack({ +0.0f, +0.6f }, 50 - 10);
+	path3.PushBack({ -0.6f, +0.6f }, 70 - 10);
+
+	path3.PushBack({ +0.0f, +0.6f }, 30 - 10);
+	path3.PushBack({ +0.6f, +0.6f }, 40 - 10);
+	path3.PushBack({ +0.6f, +0.0f }, 60 - 10);
+	path3.PushBack({ +0.0f, +0.6f }, 50 - 10);
+
+	path3.PushBack({ +0.6f, +0.0f }, 200 - 10);
+
+	//Path 4
+	path4.PushBack({ +0.0f, +0.6f }, 100 - 10);
+	path4.PushBack({ -0.6f, +0.0f }, 20 - 10);
+	path4.PushBack({ +0.0f, +0.6f }, 30 - 10);
+	path4.PushBack({ +0.6f, +0.0f }, 40 - 10);
+
+	path4.PushBack({ +0.6f, +0.6f }, 20 - 10);
+	path4.PushBack({ -0.6f, +0.6f }, 50 - 10);
+	path4.PushBack({ -0.6f, +0.0f }, 30 - 10);
+	path4.PushBack({ +0.0f, -0.6f }, 20 - 10);
+
+	path4.PushBack({ -0.6f, +0.0f }, 30 - 10);
+	path4.PushBack({ +0.0f, +0.6f }, 50 - 10);
+	path4.PushBack({ +0.6f, +0.0f }, 60 - 10);
+	path4.PushBack({ +0.0f, +0.6f }, 20 - 10);
+
+	path4.PushBack({ +0.6f, +0.0f }, 50 - 10);
+	path4.PushBack({ +0.6f, +0.6f }, 30 - 10);
+	path4.PushBack({ +0.0f, +0.6f }, 20 - 10);
+	path4.PushBack({ +0.6f, +0.0f }, 10 - 10);
+	path4.PushBack({ +0.0f, +0.6f }, 20 - 10);
+
+	path4.PushBack({ -0.6f, +0.6f }, 40 - 10);
+	path4.PushBack({ -0.6f, +0.0f }, 100 - 10);
+
+	//Path 5
+	path5.PushBack({ +0.0f, +0.6f }, 100 - 10);
+	path5.PushBack({ +0.6f, +0.6f }, 30 - 10);
+	path5.PushBack({ -0.6f, +0.6f }, 80 - 10);
+	path5.PushBack({ +0.0f, +0.6f }, 30 - 10);
+
+	path5.PushBack({ +0.6f, +0.0f }, 60 - 10);
+	path5.PushBack({ +0.0f, +0.6f }, 20 - 10);
+	path5.PushBack({ +0.6f, +0.0f }, 80 - 10);
+	path5.PushBack({ +0.6f, +0.6f }, 30 - 10);
+
+	path5.PushBack({ -0.6f, +0.0f }, 170 - 10);
+	path5.PushBack({ +0.0f, +0.6f }, 40 - 10);
+	path5.PushBack({ +0.6f, +0.0f }, 60 - 10);
+	path5.PushBack({ +0.0f, +0.6f }, 50 - 10);
+
+	path5.PushBack({ -0.6f, +0.0f }, 30 - 10);
+	path5.PushBack({ +0.0f, +0.6f }, 20 - 10);
+	path5.PushBack({ +0.6f, +0.0f }, 30 - 10);
+	path5.PushBack({ +0.0f, +0.6f }, 40 - 10);
+
+	path5.PushBack({ -0.6f, +0.0f }, 50 - 10);
+	path5.PushBack({ +0.0f, -0.6f }, 20 - 10);
+	path5.PushBack({ -0.6f, +0.0f }, 30 - 10);
+	path5.PushBack({ +0.0f, +0.6f }, 20 - 10);
+
+	path5.PushBack({ +0.6f, +0.0f }, 30 - 10);
+	path5.PushBack({ +0.0f, +0.6f }, 10 - 10);
+	path5.PushBack({ +0.6f, +0.0f }, 70 - 10);
+	path5.PushBack({ +0.0f, +0.6f }, 30 - 10);
+	path5.PushBack({ +0.6f, +0.0f }, 100 - 10);
+
+	//
+	/*
+	//Path 1
+	path1.PushBack({ +0.0f, +0.5f }, 90);
+	path1.PushBack({ -0.5f, +0.5f }, 30);
 	path1.PushBack({ -0.5f, +0.0f }, 50);
 
-	path2.PushBack({ +0.5f, +0.0f }, 60);
-	path2.PushBack({ +0.5f, -0.5f }, 10);
-	path2.PushBack({ +0.5f, +0.0f }, 20);
-	path2.PushBack({ +0.5f, -0.5f }, 30);
+	path1.PushBack({ +0.0f, +0.5f }, 10);
+	path1.PushBack({ -0.5f, +0.0f }, 70);
+	path1.PushBack({ -0.5f, +0.5f }, 80);
+	path1.PushBack({ -0.5f, +0.0f }, 200);
+
+	//Path 2
+	path2.PushBack({ +0.0f, +0.5f }, 100);
+	path2.PushBack({ +0.5f, +0.0f }, 80);
+	path2.PushBack({ +0.0f, -0.5f }, 30);
 	path2.PushBack({ +0.5f, +0.0f }, 90);
 
-	path3.PushBack({ +0.5f, +0.0f }, 50);
-	path3.PushBack({ -0.5f, +0.0f }, 40);
+	path2.PushBack({ +0.0f, +0.5f }, 50);
+	path2.PushBack({ -0.5f, +0.0f }, 30);
+	path2.PushBack({ +0.0f, +0.5f }, 20);
+	path2.PushBack({ +0.5f, +0.0f }, 200);
+
+	//Path 3
+	path3.PushBack({ +0.0f, +0.5f }, 90);
+	path3.PushBack({ -0.5f, +0.5f }, 40);
+	path3.PushBack({ +0.0f, +0.5f }, 50);
+
 	path3.PushBack({ +0.5f, +0.0f }, 40);
-	path3.PushBack({ +0.0f, -0.5f }, 50);
-	path3.PushBack({ +0.5f, +0.0f }, 20);
+	path3.PushBack({ +0.5f, +0.5f }, 70);
+	path3.PushBack({ +0.0f, +0.5f }, 20);
+	path3.PushBack({ -0.5f, +0.0f }, 100);
 
-	path_fb.PushBack({ +0.5f, +0.5f }, 20);
-	path_fb.PushBack({ +0.0f, +0.5f }, 10);
-	path_fb.PushBack({ +0.5f, +0.5f }, 30);
-	path_fb.PushBack({ -0.5f, +0.5f }, 30);
-	path_fb.PushBack({ -0.5f, +0.0f }, 20);
-	path_fb.PushBack({ +0.0f, +0.5f }, 50);
-	path_fb.PushBack({ -0.5f, +0.0f }, 10);
+	path3.PushBack({ +0.0f, +0.5f }, 10);
+	path3.PushBack({ -0.5f, +0.0f }, 40);
+	path3.PushBack({ +0.0f, +0.5f }, 50);
+	path3.PushBack({ -0.5f, +0.5f }, 70);
 
-	path_fb1.PushBack({ -0.5f, +0.5f }, 20);
-	path_fb1.PushBack({ +0.0f, +0.5f }, 10);
-	path_fb1.PushBack({ -0.5f, +0.5f }, 30);
-	path_fb1.PushBack({ +0.5f, +0.5f }, 30);
-	path_fb1.PushBack({ +0.0f, +0.5f }, 40);
-	path_fb1.PushBack({ +0.5f, +0.0f }, 10);
-	path_fb1.PushBack({ +0.5f, +0.0f }, 20);
-	path_fb1.PushBack({ +0.0f, +0.5f }, 30);
+	path3.PushBack({ +0.0f, +0.5f }, 30);
+	path3.PushBack({ +0.5f, +0.5f }, 40);
+	path3.PushBack({ +0.5f, +0.0f }, 60);
+	path3.PushBack({ +0.0f, +0.5f }, 50);
 
-	path_fb2.PushBack({ +0.0f, +0.5f }, 30);
-	path_fb2.PushBack({ +0.5f, +0.0f }, 10);
-	path_fb2.PushBack({ +0.5f, +0.5f }, 10);
-	path_fb2.PushBack({ +0.5f, +0.0f }, 10);
+	path3.PushBack({ +0.5f, +0.0f }, 200);
+
+	//Path 4
+	path4.PushBack({ +0.0f, +0.5f }, 100);
+	path4.PushBack({ -0.5f, +0.0f }, 20);
+	path4.PushBack({ +0.0f, +0.5f }, 30);
+	path4.PushBack({ +0.5f, +0.0f }, 40);
+
+	path4.PushBack({ +0.5f, +0.5f }, 20);
+	path4.PushBack({ -0.5f, +0.5f }, 50);
+	path4.PushBack({ -0.5f, +0.0f }, 30);
+	path4.PushBack({ +0.0f, -0.5f }, 10);
+
+	path4.PushBack({ -0.5f, +0.0f }, 30);
+	path4.PushBack({ +0.0f, +0.5f }, 50);
+	path4.PushBack({ +0.5f, +0.0f }, 60);
+	path4.PushBack({ +0.0f, +0.5f }, 20);
+
+	path4.PushBack({ +0.5f, +0.0f }, 50);
+	path4.PushBack({ +0.5f, +0.5f }, 30);
+	path4.PushBack({ +0.0f, +0.5f }, 20);
+	path4.PushBack({ +0.5f, +0.0f }, 10);
+	path4.PushBack({ +0.0f, +0.5f }, 20);
+
+	path4.PushBack({ -0.5f, +0.5f }, 40);
+	path4.PushBack({ -0.5f, +0.0f }, 100);
+
+	//Path 5
+	path5.PushBack({ +0.0f, +0.5f }, 100);
+	path5.PushBack({ +0.5f, +0.5f }, 30);
+	path5.PushBack({ -0.5f, +0.5f }, 80);
+	path5.PushBack({ +0.0f, +0.5f }, 30);
+
+	path5.PushBack({ +0.5f, +0.0f }, 60);
+	path5.PushBack({ +0.0f, +0.5f }, 20);
+	path5.PushBack({ +0.5f, +0.0f }, 80);
+	path5.PushBack({ +0.5f, +0.5f }, 30);
+
+	path5.PushBack({ -0.5f, +0.0f }, 170);
+	path5.PushBack({ +0.0f, +0.5f }, 40);
+	path5.PushBack({ +0.5f, +0.0f }, 60);
+	path5.PushBack({ +0.0f, +0.5f }, 50);
+
+	path5.PushBack({ -0.5f, +0.0f }, 30);
+	path5.PushBack({ +0.0f, +0.5f }, 20);
+	path5.PushBack({ +0.5f, +0.0f }, 30);
+	path5.PushBack({ +0.0f, +0.5f }, 40);
+
+	path5.PushBack({ -0.5f, +0.0f }, 50);
+	path5.PushBack({ +0.0f, -0.5f }, 20);
+	path5.PushBack({ -0.5f, +0.0f }, 30);
+	path5.PushBack({ +0.0f, +0.5f }, 20);
+
+	path5.PushBack({ +0.5f, +0.0f }, 30);
+	path5.PushBack({ +0.0f, +0.5f }, 10);
+	path5.PushBack({ +0.5f, +0.0f }, 70);
+	path5.PushBack({ +0.0f, +0.5f }, 30);
+	path5.PushBack({ +0.5f, +0.0f }, 100);
+	*/
 
 	animation = &up;
 
@@ -122,245 +274,56 @@ void Enemy_Soldier3::Move()
 	currentTime = SDL_GetTicks();
 	currentTime -= lastTime;
 
-	/*
-	if (original_pos.y == 2706 - 2656 || original_pos.y == 2460 - 2656 || original_pos.y == 2408 - 2656 || original_pos.y == 2154 - 2656
-	|| original_pos.y == 1693 - 2656 || original_pos.y == 1624 - 2656 || original_pos.y == 1023 - 2656 || original_pos.y == 896 - 2656
-	|| original_pos.y == 699 - 2656 || original_pos.y == 688 - 2656 || position.y == 538 - 2656) {
-	position = original_pos + path.GetCurrentPosition(&animation);
-	save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	if (original_pos.y == -10 - 2656) {
+		position = original_pos + path1.GetCurrentPositionfl(&animation);
+		save_step = path1.GetCurrentPositionf();
 	}
 
-	if (original_pos.y == 2763 - 2656 || original_pos.y == 2678 - 2656 || original_pos.y == 2465 - 2656 || original_pos.y == 2332 - 2656
-	|| original_pos.y == 1865 - 2656 || original_pos.y == 531 - 2656 || original_pos.y == 283 - 2656) {
-	position = original_pos + path1.GetCurrentPosition(&animation);
-	save_step = path1.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	if (original_pos.y == -11 - 2656) {
+		position = original_pos + path2.GetCurrentPositionfl(&animation);
+		save_step = path2.GetCurrentPositionf();
 	}
 
-	if (original_pos.y == 2579 - 2656 || original_pos.y == 2245 - 2656 || original_pos.y == 2212 - 2656 || original_pos.y == 1962 - 2656
-	|| original_pos.y == 1619 - 2656 || original_pos.y == 621 - 2656) {
-	position = original_pos + path2.GetCurrentPosition(&animation);
-	save_step = path2.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	if (original_pos.y == -12 - 2656) {
+		position = original_pos + path3.GetCurrentPositionfl(&animation);
+		save_step = path3.GetCurrentPositionf();
 	}
 
-	if (original_pos.y == 2348 - 2656 || original_pos.y == 2230 - 2656 || original_pos.y == 1970 - 2656 || original_pos.y == 1500 - 2656
-	|| original_pos.y == 812 - 2656) {
-	position = original_pos + path3.GetCurrentPosition(&animation);
-	save_step = path3.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+	if (original_pos.y == -13 - 2656) {
+		position = original_pos + path4.GetCurrentPositionfl(&animation);
+		save_step = path4.GetCurrentPositionf();
 	}
 
-	if (original_pos.y == 111 - 2656 || original_pos.y == 104 - 2656 || original_pos.y == -2 - 2656 || original_pos.y == -5 - 2656
-	|| original_pos.y == -8 - 2656 || original_pos.y == 0 - 2656 || original_pos.y == 120 - 2656) {
-
-	position = original_pos + path_fb.GetCurrentPosition(&animation);
-	save_step = path_fb.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-	}
-
-	if (original_pos.y == 125 - 2656 || original_pos.y == 57 - 2656 || original_pos.y == 98 - 2656 || original_pos.y == 55 - 2656
-	|| original_pos.y == 42 - 2656 || original_pos.y == 20 - 2656 || original_pos.y == 30 - 2656) {
-
-	position = original_pos + path_fb1.GetCurrentPosition(&animation);
-	save_step = path_fb1.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-	}
-
-	if (original_pos.y == 35 - 2656 || original_pos.y == 1 - 2656 || original_pos.y == 2 - 2656 || original_pos.y == 7 - 2656
-	|| original_pos.y == 4 - 2656) {
-
-	position = original_pos + path_fb2.GetCurrentPosition(&animation);
-	save_step = path_fb2.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-	}
-	*/
-
-	/*
-	if (path.Path1Finished() == false) {
-	position = original_pos + path.GetCurrentPosition(&animation);
-	save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-	}
-	else {
-	//MOVEMENT
-	enemyplayer2.x = (App->player->p1.x) - position.x;
-	enemyplayer2.y = abs(position.y) - abs(App->player->p1.y);
-
-	module = sqrt((pow(enemyplayer2.x, 2) + pow(enemyplayer2.y, 2)));
-
-	enemyplayeru2.x = enemyplayer2.x / module;
-	enemyplayeru2.y = enemyplayer2.y / module;
-
-	position.x = (position.x + enemyplayeru2.x);
-	position.y = ((position.y + 25) + enemyplayeru2.y);
-	}
-	//end_of_movement
-	*/
-
-	/*
-	//SHOT CODE
-	enemyplayer.x = (App->player->position.x + 5) - position.x;
-	enemyplayer.y = abs(position.y + 25) - abs(App->player->position.y + 10);
-
-	module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
-	enemyplayeru.x = enemyplayer.x / module;
-	enemyplayeru.y = enemyplayer.y / module;
-
-	//angle = atan(enemyplayer.x / enemyplayer.y); do not use. Only if needed
-
-	App->particlesenemies->bala.speed.x = enemyplayeru.x;
-	App->particlesenemies->bala.speed.y = enemyplayeru.y;
-	*/
-
-	if (dont_move && !NO1) {
-		if (hi) {
-			one = false;
-
-			anim1 = false;
-			anim2 = true;
-
-			if (App->player->position.y >= 0) {
-				enemyplayer2.x = App->player->position.x - position.x;
-				enemyplayer2.y = -fabs(position.y) + (App->player->position.y);
-			}
-			else {
-				enemyplayer2.x = App->player->position.x - position.x;
-				enemyplayer2.y = fabs(position.y) - fabs(App->player->position.y);
-			}
-
-			module = sqrt((pow(enemyplayer2.x, 2) + pow(enemyplayer2.y, 2)));
-
-			enemyplayeru2.x = enemyplayer2.x / module;
-			enemyplayeru2.y = enemyplayer2.y / module;
-
-			position.x += enemyplayeru2.x / 1.5;
-			position.y += enemyplayeru2.y / 1.5;
-
-			another.x = position.x;
-			another.y = position.y;
-
-			yeah = true;
-
-		}
-		else {
-			anim2 = false;
-			anim1 = true;
-
-			if (one) {
-				position = original_pos + path.GetCurrentPositionfl(&animation);
-				save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-			}
-			else if (!one && two) {
-
-				if (yeah) {
-					path.accumulated_speed = { 0.0f, 0.0f };
-					path.current_frame = 0;
-				}
-
-				position = another + path.GetCurrentPositionfl(&animation);
-				save_step = path.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-				yeah = false;
-			}
-		}
-	}
-	else {
-		if (hi && !NO1) {
-			one = false;
-
-			anim1 = false;
-			anim2 = true;
-
-			if (App->player->position.y >= 0) {
-				enemyplayer2.x = App->player->position.x - position.x;
-				enemyplayer2.y = -fabs(position.y) + (App->player->position.y);
-			}
-			else {
-				enemyplayer2.x = App->player->position.x - position.x;
-				enemyplayer2.y = fabs(position.y) - fabs(App->player->position.y);
-			}
-
-			module = sqrt((pow(enemyplayer2.x, 2) + pow(enemyplayer2.y, 2)));
-
-			enemyplayeru2.x = enemyplayer2.x / module;
-			enemyplayeru2.y = enemyplayer2.y / module;
-
-			position.x += enemyplayeru2.x / 1.5;
-			position.y += enemyplayeru2.y / 1.5;
-
-			another.x = position.x;
-			another.y = position.y;
-
-			yeah = true;
-		}
-	}
-
-
-	if (collW) {
-		NO1 = true;
-		position.y++;
-	}
-	else if (collA) {
-		NO1 = true;
-		position.x++;
-	}
-	else if (collS) {
-		NO1 = true;
-		position.y--;
-	}
-	else if (collD) {
-		NO1 = true;
-		position.x--;
+	if (original_pos.y == -14 - 2656) {
+		position = original_pos + path5.GetCurrentPositionfl(&animation);
+		save_step = path5.GetCurrentPositionf();
 	}
 
 	//ANIMATION CHANGE FOR PATHS
-	if (anim1) {
-		if ((save_step.x == 0 && save_step.y > 0)) {
-			animation = &down;
-		}
-		else if ((save_step.x == 0 && save_step.y < 0)) {
-			animation = &up;
-		}
-		else if ((save_step.x > 0 && save_step.y == 0)) {
-			animation = &right;
-		}
-		else if ((save_step.x < 0 && save_step.y == 0)) {
-			animation = &left;
-		}
-		else if ((save_step.x > 0 && save_step.y > 0)) {
-			animation = &down_right;
-		}
-		else if ((save_step.x < 0 && save_step.y > 0)) {
-			animation = &down_left;
-		}
-		else if ((save_step.x > 0 && save_step.y < 0)) {
-			animation = &up_right;
-		}
-		else if ((save_step.x < 0 && save_step.y < 0)) {
-			animation = &up_left;
-		}
-	}
-	//
 
-	//ANIMATION CHANGE FOR FOLLOW
-	if (anim2) {
-		if ((enemyplayeru2.x == 0 && enemyplayeru.y > 0)) {
-			animation = &down;
-		}
-		else if ((enemyplayeru2.x == 0 && enemyplayeru.y < 0)) {
-			animation = &up;
-		}
-		else if ((enemyplayeru2.x > 0 && enemyplayeru.y == 0)) {
-			animation = &right;
-		}
-		else if ((enemyplayeru2.x < 0 && enemyplayeru.y == 0)) {
-			animation = &left;
-		}
-		else if ((enemyplayeru2.x > 0 && enemyplayeru.y > 0)) {
-			animation = &down_right;
-		}
-		else if ((enemyplayeru2.x < 0 && enemyplayeru.y > 0)) {
-			animation = &down_left;
-		}
-		else if ((enemyplayeru2.x > 0 && enemyplayeru.y < 0)) {
-			animation = &up_right;
-		}
-		else if ((enemyplayeru2.x < 0 && enemyplayeru.y < 0)) {
-			animation = &up_left;
-		}
+	if ((save_step.x == 0 && save_step.y > 0)) {
+		animation = &down;
+	}
+	else if ((save_step.x == 0 && save_step.y < 0)) {
+		animation = &up;
+	}
+	else if ((save_step.x > 0 && save_step.y == 0)) {
+		animation = &right;
+	}
+	else if ((save_step.x < 0 && save_step.y == 0)) {
+		animation = &left;
+	}
+	else if ((save_step.x > 0 && save_step.y > 0)) {
+		animation = &down_right;
+	}
+	else if ((save_step.x < 0 && save_step.y > 0)) {
+		animation = &down_left;
+	}
+	else if ((save_step.x > 0 && save_step.y < 0)) {
+		animation = &up_right;
+	}
+	else if ((save_step.x < 0 && save_step.y < 0)) {
+		animation = &up_left;
 	}
 	//
 
@@ -377,13 +340,8 @@ void Enemy_Soldier3::Move()
 		enemyplayeru.x = enemyplayer.x / module;
 		enemyplayeru.y = enemyplayer.y / module;
 
-		//angle = atan(enemyplayer.x / enemyplayer.y); do not use. Only if needed
-
 		App->particlesenemies->bala.speed.x = enemyplayeru.x;
 		App->particlesenemies->bala.speed.y = enemyplayeru.y;
-
-		//App->particlesenemies->bala.position.x = (position.x + App->particlesenemies->bala.speed.x);
-		//App->particlesenemies->bala.position.y = ((position.y + 25) + App->particlesenemies->bala.speed.y);
 
 		for (int i = 0; i <= num_shots; i++) {
 			App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
@@ -401,17 +359,6 @@ void Enemy_Soldier3::Move()
 		if (currentTime > 800)
 			Esperanza = false;
 	}
-
-	hi = false;
-
-	dont_move = true;
-
-	collW = false;
-	collA = false;
-	collS = false;
-	collD = false;
-
-	NO1 = false;
 }
 
 void Enemy_Soldier3::OnCollision(Collider* c1, Collider* c2) {

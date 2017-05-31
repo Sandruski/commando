@@ -229,17 +229,17 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::SOLDIER1:
 			enemies[i] = new Enemy_Soldier1(info.x, info.y);
-			enemies[i]->type = ENEMY_TYPES::ITEM2;
+			enemies[i]->type = ENEMY_TYPES::SOLDIER1;
 			enemies[i]->Esperanza = true;
 			break;
 		case ENEMY_TYPES::SOLDIER2:
 			enemies[i] = new Enemy_Soldier2(info.x, info.y);
-			enemies[i]->type = ENEMY_TYPES::ITEM2;
+			enemies[i]->type = ENEMY_TYPES::SOLDIER2;
 			enemies[i]->Esperanza = true;
 			break;
 		case ENEMY_TYPES::SOLDIER3:
 			enemies[i] = new Enemy_Soldier3(info.x, info.y);
-			enemies[i]->type = ENEMY_TYPES::ITEM2;
+			enemies[i]->type = ENEMY_TYPES::SOLDIER3;
 			enemies[i]->Esperanza = true;
 			break;
 		}
@@ -280,7 +280,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 		if (c2->type == COLLIDER_WALL && c1->type == COLLIDER_ENEMY) {
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
-				if (enemies[i]->type == ENEMY_TYPES::SOLDIER) {
+				if (enemies[i]->type == ENEMY_TYPES::SOLDIER || enemies[i]->type == ENEMY_TYPES::SOLDIER1 || enemies[i]->type == ENEMY_TYPES::SOLDIER2 || enemies[i]->type == ENEMY_TYPES::SOLDIER3) {
 					enemies[i]->OnCollision(c1, c2);
 				}
 			}
@@ -307,14 +307,14 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER  && c2->type != COLLIDER_PLAYER2  && c2->type != COLLIDER_FOLLOW  && c2->type != COLLIDER_REVIVE  && c2->type != COLLIDER_REVIVE2) {
 					if (c2->type == COLLIDER_PLAYER_SHOT) {
-						if (enemies[i]->type == ENEMY_TYPES::SOLDIER)
+						if (enemies[i]->type == ENEMY_TYPES::SOLDIER || enemies[i]->type == ENEMY_TYPES::SOLDIER1 || enemies[i]->type == ENEMY_TYPES::SOLDIER2 || enemies[i]->type == ENEMY_TYPES::SOLDIER3)
 							App->UI->score += 150;
 						else
 							App->UI->score += 75;
 					}
 				
 					else {
-						if (enemies[i]->type == ENEMY_TYPES::SOLDIER)
+						if (enemies[i]->type == ENEMY_TYPES::SOLDIER || enemies[i]->type == ENEMY_TYPES::SOLDIER1 || enemies[i]->type == ENEMY_TYPES::SOLDIER2 || enemies[i]->type == ENEMY_TYPES::SOLDIER3)
 							App->UI->score += 300;
 						else
 							App->UI->score += 150;

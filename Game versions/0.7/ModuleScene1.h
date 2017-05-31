@@ -65,6 +65,8 @@ public:
 	bool roomE = false;
 	int current_start_pos = 0;
 
+	bool yeee = false;
+
 	void OnCollision(Collider* c1, Collider* c2);
 
 	//Enemies drop items
@@ -80,8 +82,8 @@ public:
 
 	bool dead = false, first = true, first2 = true;
 
-	int contenemy1 = 0, contenemy2 = 0;
-	bool E1 = false, E2 = false;
+	int contenemy1 = 0, contenemy2 = 0, contenemy3 = 0, contenemy4 = 0, contenemy5 = 0;
+	bool E1 = false, E2 = false, E3 = false, E4 = false, E5 = false;
 };
 
 #endif // __MODULESCENE1_H__

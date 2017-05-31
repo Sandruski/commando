@@ -14,7 +14,7 @@ private:
 
 	fPoint original_pos;
 	fPoint save_step;
-	Path path, path1, path2, path3, path_fb, path_fb1, path_fb2;
+	Path path1, path2, path3, path4, path5;
 	int current_frame;
 
 	//Shot
@@ -43,7 +43,7 @@ public:
 	bool hi = false;
 	bool one = true, two = true, three = true;
 
-	bool anim1, anim2;
+	bool anim1 = true, anim2;
 	fPoint another;
 	bool yeah = true;
 	bool NO1 = false, NO2 = false, NO3 = false, NO4 = false;

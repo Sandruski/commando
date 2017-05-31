@@ -1,12 +1,3 @@
-﻿  ModulePlayer2.cpp
-c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(66): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(71): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(550): warning C4553: '==': operator has no effect; did you intend '='?
-c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(552): warning C4553: '==': operator has no effect; did you intend '='?
-  ModuleParticlesGrenade1.cpp
-c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade1.cpp(19): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade1.cpp(23): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade1.cpp(27): warning C4305: '=': truncation from 'double' to 'float'
-  Generating Code...
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  Soldier_Shield.cpp
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)

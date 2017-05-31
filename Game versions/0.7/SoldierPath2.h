@@ -16,7 +16,7 @@ private:
 	fPoint save_step;
 	fPoint another;
 
-	Path pathA, pathA1, pathB, pathB1;
+	Path pathA, pathA1, pathB, pathB1, pathC, pathC1, pathD, pathD1;
 	int current_frame;
 
 	//Shot

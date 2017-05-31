@@ -98,7 +98,7 @@ void Enemy_SoldierShield::Move()
 		}
 	}
 
-	if ((dieB == true || contt > 900) && App->render->camera.y == ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - App->scene_1->speed) {
+	if ((dieB == true || contt > 2000) && App->render->camera.y == ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - App->scene_1->speed) {
 		animation = &surrender;
 		collider->to_delete = true;
 		App->player->coll->to_delete = true;
