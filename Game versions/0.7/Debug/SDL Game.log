@@ -1,4 +1,9 @@
-﻿cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-  ModuleWindow.cpp
+﻿  ModuleCinematicRadio.cpp
+c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(116): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(124): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(131): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(142): warning C4804: '<': unsafe use of type 'bool' in operation
+c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(186): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(199): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
   SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)

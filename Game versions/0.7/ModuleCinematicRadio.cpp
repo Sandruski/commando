@@ -12,6 +12,7 @@
 #include "ModuleAudio.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
+#include "ModuleEndinglvl1.h"
 #include "ModuleCinematicRadio.h"
 
 
@@ -198,6 +199,9 @@ update_status ModuleCinematicRadio::Update()
 		App->render->Blit(helicopter, 128 - 80, helialtura - 10, &r);
 		helialtura -= 1.5;
 	}
+
+	if (helicont >= 1600)
+		App->fade->FadeToBlack(this, App->EndingLvl1, 1);
 
 
 

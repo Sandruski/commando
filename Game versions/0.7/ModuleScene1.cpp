@@ -44,6 +44,12 @@ ModuleScene1::ModuleScene1()
 	ammo_grenades_colours.PushBack({ 179, 298, 33, 18 });
 	ammo_grenades_colours.speed = 0.2f;
 
+
+	radio.PushBack({ 67,155,16,15});
+	radio.PushBack({ 90,155,16,15 });
+	radio.PushBack({ 111,155,16,15 });
+	radio.PushBack({ 132,155,16,15 });
+
 	win1.PushBack({ 0, 0, 27, 11 });
 
 	ammo_specialgrenade1.PushBack({ 76, 228, 13, 14 });
@@ -747,7 +753,8 @@ update_status ModuleScene1::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_L] == 1 && KEY_DOWN) {
 		App->fade->FadeToBlack(this, App->CinematicRadio, 1);
-
+		/*CleanUp();
+		App->CinematicRadio->Enable();*/
 	}
 
 	
