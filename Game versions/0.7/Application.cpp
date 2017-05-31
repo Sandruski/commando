@@ -28,6 +28,7 @@
 #include "ModuleSecretRoomE.h"
 #include "ModulePlayer2.h"
 #include "ModuleEndingLvl1.h"
+#include "ModuleCinematicRadio.h"
 
 
 Application::Application()
@@ -52,6 +53,7 @@ Application::Application()
 	modules[index_module++] = roomD = new ModuleSecretRoomD();
 	modules[index_module++] = roomE = new ModuleSecretRoomE();
 	modules[index_module++] = EndingLvl1 = new ModuleEndingLvl1();
+	modules[index_module++] = CinematicRadio = new ModuleCinematicRadio();
 
 	modules[index_module++] = player = new ModulePlayer();
 	modules[index_module++] = player2 = new ModulePlayer2();
@@ -96,6 +98,7 @@ bool Application::Init()
 	roomC->Disable();
 	roomD->Disable();
 	EndingLvl1->Disable();
+	CinematicRadio->Disable();
 
 	// Player will be enabled on the first update of a new scene
 

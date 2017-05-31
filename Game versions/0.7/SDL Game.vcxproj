@@ -81,6 +81,7 @@
     <ClInclude Include="Module.h" />
     <ClInclude Include="ModuleAudio.h" />
     <ClInclude Include="ModuleCinematic.h" />
+    <ClInclude Include="ModuleCinematicRadio.h" />
     <ClInclude Include="ModuleCollision.h" />
     <ClInclude Include="ModuleEnding.h" />
     <ClInclude Include="ModuleEndinglvl1.h" />
@@ -131,6 +132,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ModuleAudio.cpp" />
     <ClCompile Include="ModuleCinematic.cpp" />
+    <ClCompile Include="ModuleCinematicRadio.cpp" />
     <ClCompile Include="ModuleCollision.cpp" />
     <ClCompile Include="ModuleEnding.cpp" />
     <ClCompile Include="ModuleEndinglvl1.cpp" />

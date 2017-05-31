@@ -3,7 +3,7 @@
 
 #include "Globals.h"
 
-#define NUM_MODULES 27
+#define NUM_MODULES 28
 
 class ModuleWindow;
 class ModuleInput;
@@ -34,6 +34,7 @@ class ModuleSecretRoomC;
 class ModuleSecretRoomD;
 class ModuleSecretRoomE;
 class ModuleEndingLvl1;
+class ModuleCinematicRadio;
 
 
 
@@ -70,6 +71,7 @@ public:
 	ModuleSecretRoomD * roomD;
 	ModuleSecretRoomE* roomE;
 	ModuleEndingLvl1* EndingLvl1;
+	ModuleCinematicRadio* CinematicRadio;
 
 public:
 

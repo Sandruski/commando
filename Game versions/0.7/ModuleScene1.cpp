@@ -30,6 +30,7 @@
 #include <fstream>
 #include <iostream>
 #include "ModuleEndinglvl1.h"
+#include "ModuleCinematicRadio.h"
 
 using namespace std;
 
@@ -609,6 +610,8 @@ update_status ModuleScene1::Update()
 	App->render->Blit(items, 185, 1149 - 2656, &r);
 
 
+
+
 	if(roomA == true)
 		App->render->Blit(items, 150, 2372 - 2656, &Secret_Room);
 	if (roomB == true)
@@ -740,6 +743,10 @@ update_status ModuleScene1::Update()
 		start5 = true;
 		App->render->UP = false;
 		App->fade->FadeToBlack(this, this, 1);
+
+	}
+	if (App->input->keyboard[SDL_SCANCODE_L] == 1 && KEY_DOWN) {
+		App->fade->FadeToBlack(this, App->CinematicRadio, 1);
 
 	}
 

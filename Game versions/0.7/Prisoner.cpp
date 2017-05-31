@@ -16,11 +16,11 @@ Enemy_Prisoner::Enemy_Prisoner(int x, int y) : Enemy(x, y)
 	animated.PushBack({ 96, 195, 15, 22 });
 
 	//ANIMATION STAND1 (PRISONER)
-	stand1.PushBack({ 151, 195, 16, 22 });
+	stand1.PushBack({ 151, 179, 16, 22 });
 
 	//ANIMATION STAND2 (PRISONER)
-	stand2.PushBack({ 151, 195, 16, 22 });
-	stand2.PushBack({ 169, 195, 16, 22 });
+	stand2.PushBack({ 151, 179, 16, 22 });
+	stand2.PushBack({ 169, 179, 16, 22 });
 
 	//ANIMATION RUN (PRISONER)
 	run.PushBack({ 114, 195, 16, 32 });

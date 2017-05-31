@@ -15,7 +15,7 @@
 
 Enemy_SoldierRifle::Enemy_SoldierRifle(int x, int y) : Enemy(x, y)
 {
-	invisible.PushBack({ 195, 161, 10, 10 });
+	invisible.PushBack({1,1,1,1 });
 
 	down.PushBack({ 80, 82, 13, 23 });
 	down.PushBack({ 228, 45, 13, 23 });
