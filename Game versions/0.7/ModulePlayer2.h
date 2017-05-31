@@ -21,6 +21,7 @@ public:
 	void OnCollisionWater(Collider* c1, Collider* c2);
 	void OnCollisionEnemy(Collider* c1, Collider* c2);
 	void OnCollisionRev(Collider* c1, Collider* c2);
+	void Shot();
 
 	update_status Update();
 	bool CleanUp();
@@ -34,7 +35,8 @@ public:
 	Collider* coll;
 	Collider* collrev;
 	Collider* feetC;
-	SDL_Rect r;
+	Collider* grenadeC;
+	SDL_Rect r, R;
 
 	int vides = 3;
 	bool move = true;
@@ -49,9 +51,13 @@ public:
 	bool collS = false;
 	bool collD = false;
 	bool twoplayerson = false;
+	bool granade = false;
+	bool granadeUp = false;
+	bool GunPowerUp = false;
+	int SoldierPowerUp = 0;
 
 	bool cooldown = false;
-	uint lastTime, currentTime;
+	uint lastTime, currentTime, allTime, finalTime;
 
 	bool non_grenade = false;
 	bool play_ending = false;

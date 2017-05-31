@@ -49,9 +49,8 @@ private:
 	uint last_particle = 0;
 
 public:
-	Particle bala;
-	Particle bala2;
-	Particle balaUp;
+	Particle bala, bala2;
+	Particle balaUp, balaUp2;
 	Particle explosion;
 	Particle dieEnemie;
 };

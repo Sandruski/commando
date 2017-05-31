@@ -3,6 +3,7 @@
 #include "ModuleCollision.h"
 #include "ModuleUI.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleSecretRoomE.h"
 #include "ModuleFadeToBlack.h"
 
@@ -58,6 +59,7 @@ void Enemy_Prisoner::Move()
 		if (App->player->SoldierPowerUp == 1 || App->player->SoldierPowerUp == 2) {
 			animation = &runPowerUp;
 			App->player->GunPowerUp = true;
+			App->player2->GunPowerUp = true;
 			App->player->SoldierPowerUp = 2;
 
 		}

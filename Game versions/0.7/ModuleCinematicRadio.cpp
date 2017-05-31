@@ -68,6 +68,7 @@ bool ModuleCinematicRadio::Start()
 	helicont = 0;
 	sj_y = 86, sj_x = 260;
 	pjcont = 0;
+	App->render->camera.y = 0;
 
 	//Initialize audio
 	check_audio = true;

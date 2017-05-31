@@ -1,9 +1,12 @@
-﻿  ModuleCinematicRadio.cpp
-c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(116): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(124): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(131): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(142): warning C4804: '<': unsafe use of type 'bool' in operation
-c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(186): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\gets-name-\game versions\0.7\modulecinematicradio.cpp(199): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  ModulePlayer2.cpp
+c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(66): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(71): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(550): warning C4553: '==': operator has no effect; did you intend '='?
+c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(552): warning C4553: '==': operator has no effect; did you intend '='?
+  ModuleParticlesGrenade1.cpp
+c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade1.cpp(19): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade1.cpp(23): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade1.cpp(27): warning C4305: '=': truncation from 'double' to 'float'
+  Generating Code...
+  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\0.7\Debug\SDL5 Handout.pdb (Full PDB)

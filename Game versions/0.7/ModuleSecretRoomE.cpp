@@ -9,6 +9,7 @@
 #include "ModuleSecretRoomE.h"
 #include "ModuleMenu.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleInput.h"
 #include "SDL/include/SDL.h"
 #include "ModuleEND.h"
@@ -41,6 +42,7 @@ bool ModuleSecretRoomE::Start() {
 	background.w = 256;
 	background.h = 224;
 
+	PowerUp.Reset();
 	PowerUp.PushBack({ 15, 8, 128, 32 });
 	PowerUp.PushBack({ 15, 51, 128, 32 });
 	PowerUp.PushBack({ 1, 1, 1, 1 });
@@ -52,6 +54,8 @@ bool ModuleSecretRoomE::Start() {
 	App->particlesgrenade->Enable();
 	App->particlesgrenade1->Enable();
 	App->player->Enable();
+	if (App->player2->twoplayerson == true)
+	App->player2->Enable();
 	App->enemies->Enable();
 	App->UI->Enable();
 
@@ -63,6 +67,7 @@ bool ModuleSecretRoomE::Start() {
 	//Camera and player parametres
 	App->player->position.x = SCREEN_WIDTH / 2;
 	App->player->position.y = 185;
+	App->player2->position.y = 160;
 	App->scene_1->current_start_pos = 0;
 	App->render->camera.y = 0;
 	App->scene_1->cont = 0;
@@ -89,7 +94,7 @@ update_status ModuleSecretRoomE::Update() {
 		lastTime = SDL_GetTicks();
 	else if (App->player->SoldierPowerUp == 2 && App->player->stairsUp == true) {
 		App->player->move = false;
-		App->player->current_animation = &App->player->idleF;
+		App->player2->move = false;
 		App->scene_1->current_animation = &PowerUp;
 		App->scene_1->r = App->scene_1->current_animation->GetCurrentFrame();
 		App->render->Blit(GunUp, 65, 55, &App->scene_1->r);
@@ -100,8 +105,10 @@ update_status ModuleSecretRoomE::Update() {
 
 	if (currentTime > 3500 && App->player->stairsUp == true) {
 		App->player->move = true;
+		App->player2->move = true;
 		PowerUp.speed = 0;
 		App->player->SoldierPowerUp = 1;
+		App->player2->SoldierPowerUp = 1;
 	}
 
 
@@ -150,6 +157,8 @@ bool ModuleSecretRoomE::CleanUp() {
 	App->UI->Disable();
 	App->enemies->Disable();
 	App->player->Disable();
+	if (App->player2->twoplayerson == true)
+	App->player2->Disable();
 	App->particlesgrenade1->Disable();
 	App->particlesgrenade->Disable();
 	App->particlesenemies->Disable();

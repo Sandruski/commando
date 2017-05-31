@@ -22,6 +22,7 @@
 #include "ModuleParticlesGrenade.h"
 #include "ModuleParticlesGrenade1.h"
 #include "SDL/include/SDL_timer.h"
+#include "ModuleCinematicRadio.h"
 
 //We have to change the position of the end of the bullet and the end of the grenade!
 
@@ -529,6 +530,7 @@ update_status ModulePlayer::Update()
 	}
 	App->render->Blit(graphics, position.x, position.y, &r);
 
+	
 
 	collW = false;
 	collA = false;
@@ -551,6 +553,9 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_N] == KEY_STATE::KEY_DOWN)
 		App->UI->grenade++;
+
+	else if (App->input->keyboard[SDL_SCANCODE_M] == KEY_STATE::KEY_DOWN)
+		App->player2->torevive++;
 
 	return UPDATE_CONTINUE;
 }
@@ -631,8 +636,10 @@ void ModulePlayer::OnCollisionItem(Collider* c1, Collider* c2) {
 		detectionitem[7] = true;
 		App->UI->grenade++;
 	}
-	if (position.y < 1826 - 2656 && position.y > 1621 - 2656)
-		detectionitem[8] = true;
+	else if (App->player->position.y < 1836 - 2656 && App->player->position.y > 1621 - 2656) {
+		App->fade->FadeToBlack(App->scene_1, App->CinematicRadio, 1);
+		move = false;
+	}
 	App->UI->grenade++;
 	c2->to_delete = true;
 
@@ -949,6 +956,7 @@ void ModulePlayer::OnCollisionSecretRooms(Collider* c1, Collider* c2) {
 		}
 
 	}
+
 }
 
 void ModulePlayer::OnCollisionRev(Collider* c1, Collider* c2)

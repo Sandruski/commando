@@ -78,7 +78,7 @@ public:
 
 	int enemydiex, enemydiey;
 
-	bool dead = false, first = true;
+	bool dead = false, first = true, first2 = true;
 
 	int contenemy1 = 0, contenemy2 = 0;
 	bool E1 = false, E2 = false;

@@ -126,14 +126,14 @@ update_status ModuleMenu::Update()
 	App->render->Blit(grenade, 71, move_y, &grenades, 0.75f);
 
 
-	if ((App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && move_y == 118) {
+	if ((App->input->keyboard[SDL_SCANCODE_RETURN] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && move_y == 118) {
 		App->render->UP = false;
 		App->player2->twoplayerson = false;
 		App->fade->FadeToBlack(this, App->scene_1, 3);
 		App->player2->twoplayerson = false;
 	}
 
-	if ((App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && move_y == 118 + 16) {
+	if ((App->input->keyboard[SDL_SCANCODE_RETURN] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && move_y == 118 + 16) {
 		App->render->UP = false;
 		App->player2->twoplayerson = true;
 		App->fade->FadeToBlack(this, App->scene_1, 3);

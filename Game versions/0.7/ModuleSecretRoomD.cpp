@@ -9,6 +9,7 @@
 #include "ModuleSecretRoomE.h"
 #include "ModuleMenu.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleInput.h"
 #include "SDL/include/SDL.h"
 #include "ModuleEND.h"
@@ -46,6 +47,8 @@ bool ModuleSecretRoomD::Start() {
 	App->particlesgrenade->Enable();
 	App->particlesgrenade1->Enable();
 	App->player->Enable();
+	if (App->player2->twoplayerson == true)
+	App->player2->Enable();
 	App->enemies->Enable();
 	App->UI->Enable();
 
@@ -58,6 +61,7 @@ bool ModuleSecretRoomD::Start() {
 	//Camera and player parametres
 	App->player->position.x = SCREEN_WIDTH / 2;
 	App->player->position.y = 410;
+	App->player2->position.y = 385;
 	App->scene_1->current_start_pos = SCREEN_HEIGHT;
 	App->render->camera.y = -3 * SCREEN_HEIGHT;
 	App->scene_1->cont = 0;
@@ -177,6 +181,8 @@ bool ModuleSecretRoomD::CleanUp() {
 	App->UI->Disable();
 	App->enemies->Disable();
 	App->player->Disable();
+	if (App->player2->twoplayerson == true)
+	App->player2->Disable();
 	App->particlesgrenade1->Disable();
 	App->particlesgrenade->Disable();
 	App->particlesenemies->Disable();

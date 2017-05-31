@@ -50,6 +50,7 @@ private:
 
 public:
 	Particle2 grenade;
+	Particle2 grenade2;
 	Particle2 explosion;
 };
 

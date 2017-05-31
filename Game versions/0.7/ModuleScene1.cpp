@@ -49,6 +49,7 @@ ModuleScene1::ModuleScene1()
 	radio.PushBack({ 90,155,16,15 });
 	radio.PushBack({ 111,155,16,15 });
 	radio.PushBack({ 132,155,16,15 });
+	radio.speed = 0.15f;
 
 	win1.PushBack({ 0, 0, 27, 11 });
 
@@ -90,6 +91,7 @@ bool ModuleScene1::Start()
 
 	dead = false;
 	first = true;
+	App->player2->torevive = 0;
 
 	Secret_Room.x = 110;
 	Secret_Room.y = 125;
@@ -140,8 +142,12 @@ bool ModuleScene1::Start()
 		start3 = false;
 		start4 = false;
 		start5 = false;
-		App->player->position.x = 130;
+		if(App->player2->twoplayerson == false)
+			App->player->position.x = 130;
+		else 
+			App->player->position.x = 112;
 		App->player->position.y = 110;
+		App->player2->position.y = 110 + 20;
 		current_start_pos = 0;
 
 		App->render->camera.y = 0;
@@ -152,8 +158,12 @@ bool ModuleScene1::Start()
 		start3 = false;
 		start4 = false;
 		start5 = false;
-		App->player->position.x = 114;
+		if (App->player2->twoplayerson == false)
+			App->player->position.x = 114;
+		else
+			App->player->position.x = 112;
 		App->player->position.y = 2294 - 2656;
+		App->player2->position.y = 2294 - 2656 + 20;
 		current_start_pos = 2294 - 2656 - 114;
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
@@ -164,8 +174,15 @@ bool ModuleScene1::Start()
 		start3 = true;
 		start4 = false;
 		start5 = false;
-		App->player->position.x = 127;
-		App->player->position.y = 1836 - 2656;
+		if (App->player2->twoplayerson == false) {
+			App->player->position.x = 127;
+			App->player->position.y = 1836 - 2656;
+		}
+		else {
+			App->player->position.x = 147;
+			App->player->position.y = 1836 - 2656;
+			App->player2->position.y = 1836 - 2656;
+		}
 		current_start_pos = 1836 - 2656 - 114;
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
@@ -176,8 +193,13 @@ bool ModuleScene1::Start()
 		start3 = false;
 		start4 = true;
 		start5 = false;
-		App->player->position.x = 122;
+		if (App->player2->twoplayerson == false)
+			App->player->position.x = 127;
+		else
+			App->player->position.x = 112;
 		App->player->position.y = 882 - 2656;
+		App->player2->position.y = 882 - 2656 + 20;
+		
 		current_start_pos = 882 - 2656 - 114;
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
@@ -188,8 +210,12 @@ bool ModuleScene1::Start()
 		start3 = false;
 		start4 = false;
 		start5 = true;
-		App->player->position.x = 122;
+		if (App->player2->twoplayerson == false)
+			App->player->position.x = 122;
+		else
+			App->player->position.x = 112;
 		App->player->position.y = 395 - 2656;
+		App->player2->position.y = 395 - 2656 + 20;
 		current_start_pos = 395 - 2656 - 114;
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
@@ -310,6 +336,9 @@ bool ModuleScene1::Start()
 	App->collision->AddCollider({ 217, 1426 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this);
 	App->collision->AddCollider({ 121, 1056 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this);
 	App->collision->AddCollider({ 233, 522 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this);
+	// Radio
+	App->collision->AddCollider({ 225, 1731 - 2656,16,16 }, COLLIDER_SECRET_ROOM, this);
+
 
 	//botiquins
 	App->collision->AddCollider({ 190, 150 ,9,9}, COLLIDER_TOREVIVE, this);
@@ -615,6 +644,10 @@ update_status ModuleScene1::Update()
 	if (App->player->detectionitem[3] == false)
 	App->render->Blit(items, 185, 1149 - 2656, &r);
 
+	current_animation = &radio;
+	r = current_animation->GetCurrentFrame();
+	if (App->player->detectionitem[8] == true)
+		App->render->Blit(items, 225, 1731 - 2656, &r);
 
 
 
@@ -752,9 +785,9 @@ update_status ModuleScene1::Update()
 
 	}
 	if (App->input->keyboard[SDL_SCANCODE_L] == 1 && KEY_DOWN) {
-		App->fade->FadeToBlack(this, App->CinematicRadio, 1);
-		/*CleanUp();
-		App->CinematicRadio->Enable();*/
+//		App->fade->FadeToBlack(this, App->CinematicRadio, 1);
+		CleanUp();
+		App->CinematicRadio->Enable();
 	}
 
 	
@@ -833,6 +866,33 @@ update_status ModuleScene1::Update()
 			App->player->forward.Start();
 		}
 	}
+	//player2 walks towards the end door
+	if (dead && App->player2->move2) {
+
+		if (first2) {
+			if (App->player2->position.x < SCREEN_WIDTH / 2) {
+				App->player2->current_animation = &App->player2->right;
+				App->player2->right.Start();
+
+				App->player2->position.x++;
+			}
+			else if (App->player2->position.x > SCREEN_WIDTH / 2) {
+				App->player2->current_animation = &App->player2->left;
+				App->player2->left.Start();
+
+				App->player2->position.x--;
+			}
+
+			if (App->player2->position.x == SCREEN_WIDTH / 2)
+				first2 = false;
+		}
+
+		if (!first2) {
+			App->player2->position.y--;
+			App->player2->current_animation = &App->player2->forward;
+			App->player2->forward.Start();
+		}
+	}
 	//
 
 	//botiquin
@@ -853,6 +913,11 @@ update_status ModuleScene1::Update()
 void ModuleScene1::OnCollision(Collider* c1, Collider* c2)
 {
 	if (c1->type == COLLIDER_SECRET_ROOM && c2->type == COLLIDER_END_OF_GRENADE){
+		if (App->player->position.y < 1836 - 2656 && App->player->position.y > 1621 - 2656) {
+			App->player->detectionitem[8] = true; // radio
+			App->collision->AddCollider({ 225, 1731 - 2656,16,16 }, COLLIDER_ITEM, this);
+			c1->to_delete = true;
+		}
 		if (App->player->position.y < 2480 - 2656 && App->player->position.y > 2350 - 2656)
 			roomA= true;
 		if (App->player->position.y < 2145 - 2656 && App->player->position.y > 2000 - 2656) 

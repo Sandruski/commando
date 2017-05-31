@@ -6,6 +6,7 @@
 #include "ModuleMenu.h"
 #include "ModuleEnding.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleInput.h"
 #include "ModuleFadeToBlack.h"
 #include "SDL/include/SDL.h"
@@ -67,6 +68,11 @@ update_status ModuleEnding::Update()
 		yeah = false;
 	}
 
+	if (App->player2->twoplayerson){
+		App->player->move2 = true;
+		App->player2->move2 = true;
+	}
+
 	cont++;
 
 	//win
@@ -82,7 +88,10 @@ update_status ModuleEnding::Update()
 	}
 
 	if (cont == 205) {
-		App->fade->FadeToBlack(this, App->EndingLvl1, 1);
+		if(App->scene_1->play_win == false)
+		App->fade->FadeToBlack(this, App->Menu, 1);
+		else
+			App->fade->FadeToBlack(this, App->EndingLvl1, 1);
 		yeah = true;
 	}
 

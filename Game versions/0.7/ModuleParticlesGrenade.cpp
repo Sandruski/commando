@@ -18,6 +18,10 @@ ModuleParticlesGrenade::ModuleParticlesGrenade()
 	grenade.anim.PushBack({ 139, 16, 5, 6 });
 	grenade.anim.speed = 0.04;
 
+	grenade2.anim.PushBack({ 126, 24, 5, 6 });
+	grenade2.anim.PushBack({ 139, 24, 5, 6 });
+	grenade2.anim.speed = 0.04;
+
 	explosion.anim.PushBack({ 24, 117, 15, 14 });
 	explosion.anim.PushBack({ 62, 112, 25, 24 });
 
@@ -35,6 +39,7 @@ bool ModuleParticlesGrenade::Start()
 	graphics = App->textures->Load("Assets/Sprites/particles.png");
 
 	grenade.life = 900;
+	grenade2.life = 900;
 
 	return true;
 }
