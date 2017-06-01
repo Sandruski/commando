@@ -166,9 +166,9 @@ update_status ModulePlayer2::Update()
 
 	speed = 1;
 
-	if ((App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN || App->input->buttonBack2 == KEY_DOWN) && GOD == false)
+	if ((App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN || App->input->buttonStart2 == KEY_DOWN) && GOD == false)
 		GOD = true;
-	if ((App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN || App->input->buttonStart2 == KEY_DOWN) && GOD == true)
+	if ((App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN || App->input->buttonBack2 == KEY_DOWN) && GOD == true)
 		GOD = false;
 
 	if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666) {
@@ -379,7 +379,8 @@ update_status ModulePlayer2::Update()
 	{
 		diagWD.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadLeft2 == KEY_STATE::KEY_REPEAT || App->input->joy_left2 == KEY_STATE::KEY_REPEAT)) && move == true && check_grenade == 1 && move2 == true) {
+
+	if ((App->input->keyboard[SDL_SCANCODE_UP] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadLeft2 == KEY_STATE::KEY_REPEAT || App->input->joy_left2 == KEY_STATE::KEY_REPEAT))) && move == true && check_grenade == 1 && move2 == true) {
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
@@ -392,7 +393,8 @@ update_status ModulePlayer2::Update()
 	{
 		diagWA.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_REPEAT || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadRight2 == KEY_STATE::KEY_REPEAT || App->input->joy_right2 == KEY_STATE::KEY_REPEAT)) && move == true && check_grenade == 1 && move2 == true) {
+
+	if ((App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_REPEAT || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadRight2 == KEY_STATE::KEY_REPEAT || App->input->joy_right2 == KEY_STATE::KEY_REPEAT))) && move == true && check_grenade == 1 && move2 == true) {
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
@@ -405,7 +407,8 @@ update_status ModulePlayer2::Update()
 	{
 		diagSD.Stop();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadLeft2 == KEY_STATE::KEY_REPEAT || App->input->joy_left2 == KEY_STATE::KEY_REPEAT)) && move == true && check_grenade == 1 && move2 == true) {
+
+	if ((App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadLeft2 == KEY_STATE::KEY_REPEAT || App->input->joy_left2 == KEY_STATE::KEY_REPEAT))) && move == true && check_grenade == 1 && move2 == true) {
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
@@ -536,7 +539,7 @@ update_status ModulePlayer2::Update()
 		contdead = 0;
 	}
 
-	if ((move2 == false && App->player->move2 == false && twoplayerson == true) || (twoplayerson == true && App->player->vides == 0 && App->player2->vides == 0)) {
+	if ((move2 == false && App->player->move2 == false && twoplayerson == true) || (twoplayerson == true && App->player->vides == 0 && App->player2->vides == 0) || ((checkwaterdead && App->player->move2 == false) && (checkwaterdead && move2 == false))) {
 		//if (timeW == true) {
 		App->audio->pause_music();
 		App->audio->play_fx6();
@@ -732,7 +735,7 @@ void ModulePlayer2::OnCollisionEnemy(Collider* c1, Collider* c2) {
 void ModulePlayer2::OnCollisionRev(Collider* c1, Collider* c2)
 {
 	if (App->player2->torevive != 0) {	
-		if (App->input->keyboard[SDL_SCANCODE_0] == KEY_STATE::KEY_REPEAT || App->input->buttonX2 == KEY_REPEAT) {
+		if (App->input->keyboard[SDL_SCANCODE_KP_0] == KEY_STATE::KEY_REPEAT || App->input->buttonX2 == KEY_REPEAT) {
 			revTime++;
 
 			if (revTime <= 20 && revTime >= 1) {
