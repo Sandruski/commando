@@ -88,7 +88,7 @@ bool ModuleMenu::Start()
 bool ModuleMenu::CleanUp()
 {
 
-	App->savedata->savescore_p1= 0;
+	//App->savedata->savescore_p1= 0;
 	//App->player->Enable();
 	//App->player->destroyed = false;
 	//find both things in ModuleCinematic
