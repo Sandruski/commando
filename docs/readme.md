@@ -32,7 +32,8 @@ The plot is about a soldier named Super Joe who starts being dropped off in a ju
 ![](fotogrup.png)
 
 
-Sandra Alvarez responsability and GitHub account:
+### Sandra Alvarez  
+responsability and GitHub account:
 
 •	Management.
 
@@ -40,7 +41,8 @@ Sandra Alvarez responsability and GitHub account:
 
 ![](MiiSandra.png)
 
-Aleix Castillo responsability and GitHub account:
+### Aleix Castillo 
+responsability and GitHub account:
 
 •	QA.
 
@@ -48,7 +50,8 @@ Aleix Castillo responsability and GitHub account:
 
 ![](MiiAleix3.png)
 
-Guillem Costa responsability and GitHub account:
+### Guillem Costa 
+responsability and GitHub account:
 
 •	Art.
 
@@ -56,7 +59,8 @@ Guillem Costa responsability and GitHub account:
 
 ![](MiiGuillem.png)
 
-Aleix Gabarró responsability and GitHub account:
+###Aleix Gabarró 
+responsability and GitHub account:
 
 •	Code.
 
