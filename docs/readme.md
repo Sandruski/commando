@@ -115,8 +115,8 @@ JOISTICK: move players
 B: throw grenade
 A: shoot the sub-machine gun
 X: revive ally
-Y: god mode
-
+START : god mode on
+BACK: god mode off
 ~~~~~~~~~~~~
 
 
