@@ -101,7 +101,7 @@ RIGHT CONTROL: throw grenades foward
 
 Gamepad inputs(xbos 360):
 
-JOISTICK: MOVE PLAYERS
+JOISTICK: move players
 B: throw grenade
 A: shoot the sub-machine gun
 X: revive ally
