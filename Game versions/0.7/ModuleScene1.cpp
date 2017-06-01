@@ -1166,7 +1166,7 @@ update_status ModuleScene1::Update()
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2011 - 2656);
 		}
 
-		if (spawn2 == 400) {
+		if (spawn2 == 480) {
 			spawn2 = 0;
 		}
 	}
@@ -1196,7 +1196,7 @@ update_status ModuleScene1::Update()
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1840 - 2656);
 		}
 
-		if (spawn3 == 220) {
+		if (spawn3 == 320) {
 			spawn3 = 0;
 		}
 	}
@@ -1224,7 +1224,7 @@ update_status ModuleScene1::Update()
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1035 - 2656);
 		}
 
-		if (spawn4 == 200) {
+		if (spawn4 == 350) {
 			spawn4 = 0;
 		}
 	}
@@ -1254,7 +1254,7 @@ update_status ModuleScene1::Update()
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -4, 836 - 2656);
 		}
 
-		if (spawn5 == 700) {
+		if (spawn5 == 800) {
 			spawn5 = 0;
 		}
 	}
@@ -1299,7 +1299,9 @@ update_status ModuleScene1::Update()
 	if ((App->player->position.y == (110 - cont) || App->player->position.y == (2294 - 2656 - cont) ||
 		App->player->position.y == (1836 - 2656 - cont) || App->player->position.y == (882 - 2656 - cont) ||
 		App->player->position.y == (379 - 2656 - cont))
-		&& App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
+		&& (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT || App->input->joy_up == KEY_STATE::KEY_REPEAT || App->input->dpadUp == KEY_STATE::KEY_REPEAT)
+
+		&& App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
 		contcamera1++;
 		App->render->camera.y += speed;
 	}
@@ -1307,10 +1309,11 @@ update_status ModuleScene1::Update()
 	else if ((App->player2->position.y == (110 - cont) || App->player2->position.y == (2294 - 2656 - cont) ||
 		App->player2->position.y == (1836 - 2656 - cont) || App->player2->position.y == (882 - 2656 - cont) ||
 		App->player2->position.y == (379 - 2656 - cont))
-		&& App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT && App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
+		&& (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT || App->input->dpadUp2 == KEY_STATE::KEY_REPEAT) && App->render->camera.y < ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - speed) {
 		contcamera2++;
 		App->render->camera.y += speed;
 	}
+
 	cont = contcamera2 + contcamera1;
 	//Animation* current_animation = &moto_stop;
 

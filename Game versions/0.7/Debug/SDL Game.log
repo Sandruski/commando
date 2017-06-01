@@ -1,75 +1,75 @@
 ﻿  Soldier_Shield.cpp
   Soldier_Rifle.cpp
-c:\users\aleixgm\desktop\0.7\soldier_rifle.cpp(80): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier_rifle.cpp(82): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier_rifle.cpp(90): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier_rifle.cpp(105): warning C4305: '-=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\soldier_rifle.cpp(110): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\soldier_rifle.cpp(129): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier_rifle.cpp(130): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_rifle.cpp(80): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_rifle.cpp(82): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_rifle.cpp(90): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_rifle.cpp(105): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_rifle.cpp(110): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_rifle.cpp(129): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_rifle.cpp(130): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Soldier_Knife.cpp
-c:\users\aleixgm\desktop\0.7\soldier_knife.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier_knife.cpp(78): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_knife.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_knife.cpp(78): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Soldier_Grenade.cpp
-c:\users\aleixgm\desktop\0.7\soldier_grenade.cpp(68): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier_grenade.cpp(70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier_grenade.cpp(78): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier_grenade.cpp(97): warning C4305: '-=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\soldier_grenade.cpp(102): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\soldier_grenade.cpp(124): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier_grenade.cpp(125): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_grenade.cpp(68): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_grenade.cpp(70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_grenade.cpp(78): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_grenade.cpp(97): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_grenade.cpp(102): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_grenade.cpp(124): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier_grenade.cpp(125): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   SoldierPrisoner.cpp
   SoldierPath3.cpp
-c:\users\aleixgm\desktop\0.7\soldierpath3.cpp(268): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath3.cpp(269): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath3.cpp(337): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath3.cpp(339): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath3.cpp(347): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath3.cpp(268): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath3.cpp(269): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath3.cpp(337): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath3.cpp(339): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath3.cpp(347): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   SoldierPath2.cpp
-c:\users\aleixgm\desktop\0.7\soldierpath2.cpp(190): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath2.cpp(191): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath2.cpp(273): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath2.cpp(275): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath2.cpp(283): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(190): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(191): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(273): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(275): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath2.cpp(283): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   SoldierPath1.cpp
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(83): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(84): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(101): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(105): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(108): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(113): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(114): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(179): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(183): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(186): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(191): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(192): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(284): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(286): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldierpath1.cpp(294): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(83): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(84): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(101): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(105): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(108): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(113): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(114): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(179): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(183): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(186): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(191): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(192): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(284): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(286): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldierpath1.cpp(294): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Soldier.cpp
-c:\users\aleixgm\desktop\0.7\soldier.cpp(120): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(121): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(138): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(142): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(145): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(150): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(151): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(293): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(297): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(300): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(305): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(306): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(409): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(413): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(416): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\soldier.cpp(429): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(120): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(121): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(138): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(142): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(145): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(150): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(151): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(293): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(297): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(300): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(305): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(306): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(409): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(413): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(416): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\soldier.cpp(429): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   PrisonerPoints.cpp
   Prisoner.cpp
   ModuleWindow.cpp
   ModuleUI.cpp
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
-c:\users\aleixgm\desktop\0.7\moduleui.cpp(41): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleui.cpp(41): warning C4305: '=': truncation from 'double' to 'float'
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
   ModuleTextures.cpp
   ModuleSecretRoomE.cpp
@@ -84,40 +84,40 @@ c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): w
   Compiling...
   ModuleSaveData.cpp
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
-c:\users\aleixgm\desktop\0.7\modulesavedata.cpp(44): warning C4018: '<': signed/unsigned mismatch
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\modulesavedata.cpp(44): warning C4018: '<': signed/unsigned mismatch
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
   ModuleRender.cpp
   ModulePlayer2.cpp
-c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(68): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(73): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(555): warning C4553: '==': operator has no effect; did you intend '='?
-c:\users\aleixgm\desktop\0.7\moduleplayer2.cpp(557): warning C4553: '==': operator has no effect; did you intend '='?
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleplayer2.cpp(68): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleplayer2.cpp(73): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleplayer2.cpp(555): warning C4553: '==': operator has no effect; did you intend '='?
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleplayer2.cpp(557): warning C4553: '==': operator has no effect; did you intend '='?
   ModulePlayer.cpp
-c:\users\aleixgm\desktop\0.7\moduleplayer.cpp(69): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\moduleplayer.cpp(74): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleplayer.cpp(69): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleplayer.cpp(74): warning C4305: '=': truncation from 'double' to 'float'
   ModuleParticlesGrenade1.cpp
-c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade1.cpp(19): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade1.cpp(23): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade1.cpp(27): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesgrenade1.cpp(19): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesgrenade1.cpp(23): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesgrenade1.cpp(27): warning C4305: '=': truncation from 'double' to 'float'
   ModuleParticlesGrenade.cpp
-c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade.cpp(19): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aleixgm\desktop\0.7\moduleparticlesgrenade.cpp(23): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesgrenade.cpp(19): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesgrenade.cpp(23): warning C4305: '=': truncation from 'double' to 'float'
   ModuleParticlesEnemies.cpp
-c:\users\aleixgm\desktop\0.7\moduleparticlesenemies.cpp(88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\moduleparticlesenemies.cpp(110): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\moduleparticlesenemies.cpp(111): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\aleixgm\desktop\0.7\moduleparticlesenemies.cpp(130): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\moduleparticlesenemies.cpp(167): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\moduleparticlesenemies.cpp(171): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\moduleparticlesenemies.cpp(186): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesenemies.cpp(88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesenemies.cpp(110): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesenemies.cpp(111): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesenemies.cpp(130): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesenemies.cpp(167): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesenemies.cpp(171): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\moduleparticlesenemies.cpp(186): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   ModuleParticles.cpp
   ModuleMenu.cpp
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
   ModuleInput.cpp
   ModuleFonts.cpp
-c:\users\aleixgm\desktop\0.7\modulefonts.cpp(55): warning C4018: '<': signed/unsigned mismatch
-c:\users\aleixgm\desktop\0.7\modulefonts.cpp(125): warning C4018: '<': signed/unsigned mismatch
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\modulefonts.cpp(55): warning C4018: '<': signed/unsigned mismatch
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\modulefonts.cpp(125): warning C4018: '<': signed/unsigned mismatch
   ModuleFadeToBlack.cpp
   ModuleEnemies.cpp
   ModuleEndinglvl1.cpp
@@ -126,31 +126,32 @@ c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): w
   ModuleEnding.cpp
   ModuleCollision.cpp
   ModuleCinematicRadio.cpp
-c:\users\aleixgm\desktop\0.7\modulecinematicradio.cpp(117): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\modulecinematicradio.cpp(125): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\modulecinematicradio.cpp(132): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\modulecinematicradio.cpp(143): warning C4804: '<': unsafe use of type 'bool' in operation
-c:\users\aleixgm\desktop\0.7\modulecinematicradio.cpp(187): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\modulecinematicradio.cpp(200): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\modulecinematicradio.cpp(117): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\modulecinematicradio.cpp(125): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\modulecinematicradio.cpp(132): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\modulecinematicradio.cpp(143): warning C4804: '<': unsafe use of type 'bool' in operation
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\modulecinematicradio.cpp(187): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\modulecinematicradio.cpp(200): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   ModuleCinematic.cpp
-c:\users\aleixgm\desktop\0.7\modulecinematic.cpp(156): warning C4804: '<': unsafe use of type 'bool' in operation
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\modulecinematic.cpp(156): warning C4804: '<': unsafe use of type 'bool' in operation
   ModuleAudio.cpp
   Main.cpp
-c:\users\aleixgm\desktop\0.7\main.cpp(29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\main.cpp(29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
   Compiling...
   ItemsEnemies2.cpp
   ItemsEnemies.cpp
   GrenadesB.cpp
   Enemy.cpp
-c:\users\aleixgm\desktop\0.7\enemy.cpp(8): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-c:\users\aleixgm\desktop\0.7\enemy.cpp(24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\enemy.cpp(27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\aleixgm\desktop\0.7\enemy.cpp(32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\enemy.cpp(8): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\enemy.cpp(24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\enemy.cpp(27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sandraag3\documents\github\gets-name-\game versions\0.7\enemy.cpp(32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Crazy_Green.cpp
   Application.cpp
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
   Generating Code...
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+  LINK : C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe not found or not built by the last incremental link; performing full link
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
