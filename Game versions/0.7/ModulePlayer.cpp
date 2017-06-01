@@ -845,9 +845,9 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 		move2 = false;
 		randomsound = rand() % 2;
 		if (randomsound == 1)
-			App->audio->play_fx12();
+			App->audio->play_fx16();
 		else
-			App->audio->play_fx15();
+			App->audio->play_fx19();
 		//vides--;
 		if (vides != 0) {
 			vides--;
@@ -971,27 +971,33 @@ void ModulePlayer::OnCollisionRev(Collider* c1, Collider* c2)
 		if (App->input->keyboard[SDL_SCANCODE_9] == KEY_STATE::KEY_REPEAT || App->input->buttonX == KEY_STATE::KEY_REPEAT) {
 			App->player2->revTime++;
 
-			if (App->player2->revTime <= 20 && App->player2->revTime >= 1) {
-
+			if (App->player2->revTime <= 30 && App->player2->revTime >= 1) {
+				//if (revTime == 2)
+					App->audio->play_fx11();
 				App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev1);
 			}
-			else if (App->player2->revTime <= 40 && App->player2->revTime > 20) {
-
+			else if (App->player2->revTime <= 60 && App->player2->revTime > 30) {
+				//if(revTime ==32)
+					App->audio->play_fx12();
 				App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev2);
 			}
-			else if (App->player2->revTime <= 60 && App->player2->revTime > 40) {
+			else if (App->player2->revTime <= 100 && App->player2->revTime > 60) {
+				//if(revTime == 62)
+					App->audio->play_fx13();
 
 				App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev3);
 			}
-			else if (App->player2->revTime <= 80 && App->player2->revTime > 60) {
+			else if (App->player2->revTime <= 130 && App->player2->revTime > 100) {
+			//	if(revTime == 102)
+					App->audio->play_fx14();
 
 				App->render->Blit(App->player2->graphics, App->player2->position.x - 5, App->player2->position.y, &App->player2->hpRev4);
 			}
-			if (App->player2->revTime >= 80) {
+			if (App->player2->revTime >= 130) {
 				App->player2->move2 = true;
 				App->player2->revTime = 0;
 				App->player2->torevive--;
-				App->audio->play_fx13();
+				App->audio->play_fx17();
 				
 			}
 		}

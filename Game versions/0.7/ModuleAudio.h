@@ -43,6 +43,11 @@ public:
 	bool play_fx13();
 	bool play_fx14();
 	bool play_fx15();
+	bool play_fx16();
+	bool play_fx17();
+	bool play_fx18();
+	bool play_fx19();
+	bool play_fx20();
 
 public:
 	Mix_Music* music[MAX_MUSIC];

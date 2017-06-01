@@ -43,11 +43,15 @@ bool ModuleAudio::Init() {
 	fx[7] = Mix_LoadWAV("Assets/Audio/Commando_Effect-11-Bonus-Prisoner.wav"); //when you free a prisoner
 	fx[8] = Mix_LoadWAV("Assets/Audio/Commando_Sound-13-Vehicle.wav"); //moto right-centre
 	fx[9] = Mix_LoadWAV("Assets/Audio/Commando_Sound-14-Vehicle-Decreasing.wav"); //moto centre-left
-	fx[10] = Mix_LoadWAV("Assets/Audio/ineedhealingtracer.wav"); //dead 2players
-	fx[11] = Mix_LoadWAV("Assets/Audio/ineedhealing.wav"); //dead 2players
-	fx[12] = Mix_LoadWAV("Assets/Audio/heroesneverdie.wav"); //dead 2players
-	fx[13] = Mix_LoadWAV("Assets/Audio/ineedhelptracer.wav"); //dead 2players
-	fx[14] = Mix_LoadWAV("Assets/Audio/ineedhelpgenji.wav"); //dead 2players
+	fx[10] = Mix_LoadWAV("Assets/Audio/Commando_Sound-15-Revive1.wav"); //dead 2players
+	fx[11] = Mix_LoadWAV("Assets/Audio/Commando_Sound-16-Revive2.wav");  //dead 2players
+	fx[12] = Mix_LoadWAV("Assets/Audio/Commando_Sound-17-Revive3.wav");  //dead 2players
+	fx[13] = Mix_LoadWAV("Assets/Audio/Commando_Sound-18-Revive4.wav");  //dead 2players
+	fx[14] = Mix_LoadWAV("Assets/Audio/Commando_Sound-21-Health2.wav"); //dead 2players
+	fx[15] = Mix_LoadWAV("Assets/Audio/Commando_Sound-20-Health1.wav"); //dead 2players
+	fx[16] = Mix_LoadWAV("Assets/Audio/Commando_Sound-19-Revive5.wav"); //dead 2players
+	fx[17] = Mix_LoadWAV("Assets/Audio/Commando_Sound-22-Help2.wav"); //dead 2players
+	fx[18] = Mix_LoadWAV("Assets/Audio/Commando_Sound-22-Help1.wav"); //dead 2players
 	return true;
 }
 
@@ -163,6 +167,26 @@ bool ModuleAudio::play_fx14() {
 }
 bool ModuleAudio::play_fx15() {
 	Mix_PlayChannel(-1, fx[14], 0);
+	return true;
+}
+bool ModuleAudio::play_fx16() {
+	Mix_PlayChannel(-1, fx[15], 0);
+	return true;
+}
+bool ModuleAudio::play_fx17() {
+	Mix_PlayChannel(-1, fx[16], 0);
+	return true;
+}
+bool ModuleAudio::play_fx18() {
+	Mix_PlayChannel(-1, fx[17], 0);
+	return true;
+}
+bool ModuleAudio::play_fx19() {
+	Mix_PlayChannel(-1, fx[18], 0);
+	return true;
+}
+bool ModuleAudio::play_fx20() {
+	Mix_PlayChannel(-1, fx[19], 0);
 	return true;
 }
 

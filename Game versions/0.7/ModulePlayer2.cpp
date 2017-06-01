@@ -719,9 +719,9 @@ void ModulePlayer2::OnCollisionEnemy(Collider* c1, Collider* c2) {
 		move2 = false;
 		randomsound = rand() % 2;
 		if (randomsound == 1)
-			App->audio->play_fx11();
+			App->audio->play_fx15();
 		else
-			App->audio->play_fx14();
+			App->audio->play_fx18();
 		if (vides != 0) {
 			vides--;
 		}
@@ -736,25 +736,32 @@ void ModulePlayer2::OnCollisionRev(Collider* c1, Collider* c2)
 			revTime++;
 
 			if (revTime <= 20 && revTime >= 1) {
-
+				if (revTime == 1)
+					App->audio->play_fx11();
 				App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev1);
 			}
 			else if (revTime <= 40 && revTime > 20) {
+				if (revTime == 21)
+					App->audio->play_fx12();
 
 				App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev2);
 			}
 			else if (revTime <= 60 && revTime > 40) {
+				if (revTime == 41)
+					App->audio->play_fx13();
 
 				App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev3);
 			}
 			else if (revTime <= 80 && revTime > 60) {
+				if (revTime == 61)
+					App->audio->play_fx14();
 
 				App->render->Blit(graphics, App->player->position.x - 5, App->player->position.y, &hpRev4);
 			}
 			if (revTime >= 80) {
 				App->player->move2 = true;
 				revTime = 0;
-				App->audio->play_fx13();
+				App->audio->play_fx17();
 				if (torevive >= 4)
 					torevive = 3;
 				else
