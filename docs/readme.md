@@ -1,7 +1,7 @@
 
 # Commando 
 
-## By gets-name-
+### By gets-name-
 
 Commando is a shoot and run, vertically scrolling arcade game released in 1985. It’s one of the most influenceable games of this genre. This game was realized in various home consoles and home computers. The game was very famous when it was released and it appears on different known consoles as Capcom Classics Collection, Activision Anthology, and on the Wii Virtual Console Arcade, as well as Capcom Classics Collection Arcade Cabinet for Play Station 3 and Xbox 360.
 
