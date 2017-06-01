@@ -50,7 +50,7 @@ Guillem Costa responsability and GitHub account:
 
 •	GitHub: [DatBeQuiet](https://github.com/DatBeQuiet)
 
-![](20170312145403 - copia.png) width="100">
+![](20170312145403 - copia.png)
 
 Aleix Gabarró responsability and GitHub account:
 
