@@ -70,6 +70,8 @@ Although each has its function, we have all helped in the game code.
 
 # Game controls
 ~~~~~~~~~~
+Keyboard inputs
+
 Player 1:
 
 W: move foward
@@ -78,18 +80,36 @@ S: move backward
 D: move right
 
 SPACE: shoot the sub-machine gun
-SHIFT: throw grenades foward
+LETFT SHIFT: throw grenades foward
 
-Playe 2:
+8: revive ally
 
-W: move foward
-A: move left
-S: move backward
-D: move right
 
-SPACE: shoot the sub-machine gun
-SHIFT: throw grenades foward
+Player 2:
+
+UP ARROW ⬆: move foward
+LEFT ARROW ⬅: move left
+DOWN ARROW ⬇: move backward
+RIGHT ARROW ➡: move right
+
+INTRO KEYPAD: shoot the sub-machine gun
+RIGHT CONTROL: throw grenades foward
+
+0 KEYPAD: revive ally
+
+
+
+Gamepad inputs(xbos 360):
+
+JOISTICK: MOVE PLAYERS
+B: throw grenade
+A: shoot the sub-machine gun
+X: revive ally
+Y: god mode
+
 ~~~~~~~~~~~~
+
+
 
 
 
