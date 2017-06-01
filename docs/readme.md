@@ -60,6 +60,10 @@ Aleix Gabarró responsability and GitHub account:
 
 ![](MiiAleix2.png)
 
+
+Although each has its function, we have all helped in the game code.
+
+
 # Game controls
 ~~~~~~~~~~
 Player 1:
@@ -90,6 +94,6 @@ SHIFT: throw grenades foward
 
 # Download the lastet version of Commando [here](https://github.com/Sandruski/gets-name-/releases)!
 
-# Check our Github Repositorie [here](https://github.com/Sandruski/gets-name-)!
+# Check our Github Repository [here](https://github.com/Sandruski/gets-name-)!
 
 # See more information in the [Commando Wiki](https://github.com/Sandruski/gets-name-/wiki)! 
