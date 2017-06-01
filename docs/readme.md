@@ -27,6 +27,8 @@ video.
 
 # Compilation gets(name);
 
+![](fotogrup.png)
+
 
 Sandra Alvarez responsability and GitHub account:
 
