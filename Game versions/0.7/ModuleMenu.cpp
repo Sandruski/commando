@@ -36,6 +36,10 @@ ModuleMenu::ModuleMenu()
 	grenades.y = 225;
 	grenades.w = 20;
 	grenades.h = 20;
+
+	newmode.PushBack({118, 125, 22, 5 });
+	newmode.PushBack({ 118, 133, 22, 5 });
+	newmode.speed = 0.2f;
 }
 
 ModuleMenu::~ModuleMenu()
@@ -48,6 +52,7 @@ bool ModuleMenu::Start()
 
 	graphics = App->textures->Load("Assets/Background/menu.png");
 	grenade = App->textures->Load("Assets/Sprites/items&HUD&snake.png");
+	newmodetxt = App->textures->Load("Assets/Sprites/spritesheet_superjane.png");
 
 	App->player->vides = 3;
 	App->player2->vides = 3;
@@ -122,6 +127,9 @@ update_status ModuleMenu::Update()
 			move_y -= 16 * 4;
 		}
 	}
+	current_animation = &newmode;
+	r = current_animation->GetCurrentFrame();
+	App->render->Blit(newmodetxt, 161, 134, &r);
 
 	App->render->Blit(grenade, 71, move_y, &grenades, 0.75f);
 

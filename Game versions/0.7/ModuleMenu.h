@@ -20,12 +20,15 @@ public:
 public:
 	SDL_Texture* graphics = nullptr;
 	SDL_Texture* grenade = nullptr;
+	SDL_Texture* newmodetxt = nullptr;
 	SDL_Rect foreground;
 	SDL_Rect background;
 	SDL_Rect grenades;
 	int font_score1 = -1;
 	int font_score2 = -1;
-
+	Animation newmode;
+	SDL_Rect r;
+	Animation* current_animation = nullptr;
 	int move_y = 118;
 	bool check_audio = true;
 };
