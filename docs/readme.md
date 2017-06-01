@@ -59,7 +59,7 @@ responsability and GitHub account:
 
 ![](MiiGuillem.png)
 
-###Aleix Gabarró 
+### Aleix Gabarró 
 responsability and GitHub account:
 
 •	Code.
