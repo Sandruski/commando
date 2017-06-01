@@ -1,6 +1,7 @@
-﻿  Soldier_Shield.cpp
+﻿  ModuleSecretRoom1A.cpp
+  ModulePlayer.cpp
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(69): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer.cpp(74): warning C4305: '=': truncation from 'double' to 'float'
   Generating Code...
-  Skipping... (no relevant changes detected)
-  ModuleEnemies.cpp
-  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)

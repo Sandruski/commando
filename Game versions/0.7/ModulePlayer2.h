@@ -55,6 +55,7 @@ public:
 	bool granadeUp = false;
 	bool GunPowerUp = false;
 	int SoldierPowerUp = 0;
+	int randomsound;
 
 	bool cooldown = false;
 	uint lastTime, currentTime, allTime, finalTime;

@@ -23,7 +23,8 @@
 #include "ModuleParticlesGrenade1.h"
 #include "SDL/include/SDL_timer.h"
 #include "ModuleCinematicRadio.h"
-
+#include <time.h>
+#include <stdlib.h>
 //We have to change the position of the end of the bullet and the end of the grenade!
 
 ModulePlayer::ModulePlayer()
@@ -842,6 +843,11 @@ void ModulePlayer::OnCollisionEnemy(Collider* c1, Collider* c2) {
 	}
 	else {
 		move2 = false;
+		randomsound = rand() % 2;
+		if (randomsound == 1)
+			App->audio->play_fx12();
+		else
+			App->audio->play_fx15();
 		//vides--;
 		if (vides != 0) {
 			vides--;
@@ -985,7 +991,8 @@ void ModulePlayer::OnCollisionRev(Collider* c1, Collider* c2)
 				App->player2->move2 = true;
 				App->player2->revTime = 0;
 				App->player2->torevive--;
-
+				App->audio->play_fx13();
+				
 			}
 		}
 		if (App->input->keyboard[SDL_SCANCODE_9] == KEY_STATE::KEY_UP || App->input->buttonX == KEY_STATE::KEY_UP)

@@ -84,9 +84,6 @@ public:
 
 	int contenemy1 = 0, contenemy2 = 0, contenemy3 = 0, contenemy4 = 0, contenemy5 = 0;
 	bool E1 = false, E2 = false, E3 = false, E4 = false, E5 = false;
-	int spawn1 = 0, spawn2 = 0, spawn3 = 0, spawn4 = 0, spawn5 = 0, spawn6 = 0;
-	bool B1 = false, B2 = false, B3 = false, B4 = false, B5 = false, B6 = false;
-	bool TE = true;
 };
 
 #endif // __MODULESCENE1_H__

@@ -98,10 +98,6 @@ void Enemy_SoldierShield::Move()
 		}
 	}
 
-	if (contt > 1800) {
-		App->scene_1->TE = false;
-	}
-
 	if ((dieB == true || contt > 2000) && App->render->camera.y == ((2880 - SCREEN_HEIGHT)*SCREEN_SIZE) - App->scene_1->speed) {
 		animation = &surrender;
 		collider->to_delete = true;
@@ -123,8 +119,8 @@ void Enemy_SoldierShield::Move()
 
 void Enemy_SoldierShield::OnCollision(Collider* c1, Collider* c2) {
 
-	if (dieB == false)
-		App->UI->score += 150;
-	dieB = true;
+		if (dieB == false)
+			App->UI->score += 150;
+		dieB = true;
 
 }

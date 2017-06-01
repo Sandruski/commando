@@ -25,6 +25,7 @@ public:
 	bool play_music10();
 	bool play_music11();
 
+
 	bool pause_music();
 
 	bool play_fx1();
@@ -37,6 +38,11 @@ public:
 	bool play_fx8();
 	bool play_fx9();
 	bool play_fx10();
+	bool play_fx11();
+	bool play_fx12();
+	bool play_fx13();
+	bool play_fx14();
+	bool play_fx15();
 
 public:
 	Mix_Music* music[MAX_MUSIC];

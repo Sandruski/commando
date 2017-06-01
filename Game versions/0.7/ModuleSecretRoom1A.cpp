@@ -78,7 +78,7 @@ bool ModuleSecretRoom1A::Start() {
 	App->collision->AddCollider({ 0,216, 255, 8 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 224,30, 16, 112 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 240,141, 16, 74 }, COLLIDER_WALL, this);
-	App->collision->AddCollider({ 32,26, 132, 17 }, COLLIDER_WALL, this);
+	App->collision->AddCollider({ 32,31, 132, 12 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 189,26, 35, 17 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 167, 24, 15, 8 }, COLLIDER_SECRET_ROOM, this);
 

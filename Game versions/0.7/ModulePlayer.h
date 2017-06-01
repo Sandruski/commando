@@ -73,7 +73,7 @@ public:
 	int check_grenade = 1, check_nonshoot = 1, update_position_grenade = 0;
 
 	int count = 0;
-
+	int randomsound;
 	//Save position where player died
 	int save_player_position = 0;
 	int revTime = 0;
