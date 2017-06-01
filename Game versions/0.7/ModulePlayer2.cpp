@@ -419,7 +419,7 @@ update_status ModulePlayer2::Update()
 
 
 
-	if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagSA) //Esquerra Abaix
+	if ((App->input->keyboard[SDL_SCANCODE_KP_ENTER] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagSA && move2) //Esquerra Abaix
 	{
 		App->particles->bala2.speed.y = +6;
 		App->particles->bala2.speed.x = -6;
@@ -427,7 +427,7 @@ update_status ModulePlayer2::Update()
 		App->particles->balaUp2.speed.x = -6;
 		Shot();
 	}
-	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagSD)//Dreta Abaix
+	else if ((App->input->keyboard[SDL_SCANCODE_KP_ENTER] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagSD && move2)//Dreta Abaix
 	{
 		App->particles->bala2.speed.y = +6;
 		App->particles->bala2.speed.x = +6;
@@ -435,7 +435,7 @@ update_status ModulePlayer2::Update()
 		App->particles->balaUp2.speed.x = +6;
 		Shot();
 	}
-	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagWD)//Dreta Adalt
+	else if ((App->input->keyboard[SDL_SCANCODE_KP_ENTER] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagWD && move2)//Dreta Adalt
 	{
 		App->particles->bala2.speed.y = -6;
 		App->particles->bala2.speed.x = +6;
@@ -443,7 +443,7 @@ update_status ModulePlayer2::Update()
 		App->particles->balaUp2.speed.x = +6;
 		Shot();
 	}
-	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagWA) //Esquerra Adalt
+	else if ((App->input->keyboard[SDL_SCANCODE_KP_ENTER] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &diagWA && move2) //Esquerra Adalt
 	{
 		App->particles->bala2.speed.y = -6;
 		App->particles->bala2.speed.y = -6;
@@ -451,7 +451,7 @@ update_status ModulePlayer2::Update()
 		App->particles->balaUp2.speed.y = -6;
 		Shot();
 	}
-	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &forward) //Adalt
+	else if ((App->input->keyboard[SDL_SCANCODE_KP_ENTER] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &forward && move2) //Adalt
 	{
 		App->particles->bala2.speed.y = -6;
 		App->particles->bala2.speed.x = 0;
@@ -460,7 +460,7 @@ update_status ModulePlayer2::Update()
 		Shot();
 	}
 
-	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &backward) //Abaix
+	else if ((App->input->keyboard[SDL_SCANCODE_KP_ENTER] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &backward && move2) //Abaix
 	{
 		App->particles->bala2.speed.y = +6;
 		App->particles->bala2.speed.x = 0;
@@ -468,7 +468,7 @@ update_status ModulePlayer2::Update()
 		App->particles->balaUp2.speed.x = 0;
 		Shot();
 	}
-	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &right) //Dreta
+	else if ((App->input->keyboard[SDL_SCANCODE_KP_ENTER] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &right && move2) //Dreta
 	{
 		App->particles->bala2.speed.x = +6;
 		App->particles->bala2.speed.y = 0;
@@ -476,7 +476,7 @@ update_status ModulePlayer2::Update()
 		App->particles->balaUp2.speed.y = 0;
 		Shot();
 	}
-	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &left) //Esquer0a
+	else if ((App->input->keyboard[SDL_SCANCODE_KP_ENTER] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && current_animation == &left && move2) //Esquer0a
 	{
 		App->particles->bala2.speed.x = -6;
 		App->particles->bala2.speed.y = 0;
@@ -484,7 +484,7 @@ update_status ModulePlayer2::Update()
 		App->particles->balaUp2.speed.y = 0;
 		Shot();
 	}
-	else if ((App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && move == true && move2 == true)
+	else if ((App->input->keyboard[SDL_SCANCODE_KP_ENTER] == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && move == true && move2 == true)
 	{
 		Shot();
 	}

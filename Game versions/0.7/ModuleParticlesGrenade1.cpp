@@ -22,7 +22,7 @@ ModuleParticlesGrenade1::ModuleParticlesGrenade1()
 	grenade2.anim.PushBack({ 139, 24, 5, 6 });
 	grenade2.anim.speed = 0.1;
 
-	explosion.anim.PushBack({ 24, 117, 15, 14 });
+	explosion.anim.PushBack({ 22, 115, 20, 20 });
 	explosion.anim.PushBack({ 62, 112, 25, 24 });
 	explosion.anim.speed = 0.07;
 	

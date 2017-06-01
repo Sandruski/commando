@@ -1,3 +1,7 @@
-﻿  Soldier_Shield.cpp
-  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  ModulePlayer2.cpp
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(66): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(71): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(550): warning C4553: '==': operator has no effect; did you intend '='?
+c:\users\guillemcm3\desktop\gets-name-\game versions\0.7\moduleplayer2.cpp(552): warning C4553: '==': operator has no effect; did you intend '='?
+  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\guillemcm3\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
