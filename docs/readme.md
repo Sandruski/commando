@@ -76,6 +76,9 @@ Although each has its function, we have all helped in the game code.
 ~~~~~~~~~~
 Keyboard inputs
 
+O: to move options in start menu
+ENTER: to select option
+
 Player 1:
 
 W: move foward
@@ -104,6 +107,9 @@ RIGHT CONTROL: throw grenades foward
 
 
 Gamepad inputs(xbos 360):
+
+B: move options in start menu
+A: to select option
 
 JOISTICK: move players
 B: throw grenade
