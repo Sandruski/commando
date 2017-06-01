@@ -450,6 +450,13 @@ update_status ModuleInput::PreUpdate()
 		//App->CleanUp();
 		return update_status::UPDATE_STOP;
 	}
+	
+	SDL_Event event;
+	while (SDL_PollEvent(&event)) {
+		if (event.type == SDL_QUIT) {
+			return update_status::UPDATE_STOP;
+		}
+	}
 
 	return update_status::UPDATE_CONTINUE;
 }

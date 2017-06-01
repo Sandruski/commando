@@ -29,7 +29,7 @@ typedef unsigned int uint;
 #define WIN_BORDERLESS 0
 #define WIN_RESIZABLE 0
 #define REN_VSYNC 1
-#define MAX_MUSIC 8
+#define MAX_MUSIC 11
 #define MAX_FX 10
 #define MAX_ACTIVE_PARTICLES 2500
 
