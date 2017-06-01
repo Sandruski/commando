@@ -1,4 +1,6 @@
-﻿  ModuleInput.cpp
-cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\aleixgm\Desktop\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
+﻿  Soldier_Shield.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  ModuleEnemies.cpp
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\sandraag3\Documents\GitHub\gets-name-\Game versions\0.7\Debug\SDL5 Handout.pdb (Full PDB)
