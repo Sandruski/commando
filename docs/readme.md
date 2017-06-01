@@ -25,6 +25,8 @@ The plot is about a soldier named Super Joe who starts being dropped off in a ju
 
 
 
+
+
 # Compilation gets(name);
 
 ![](fotogrup.png)
