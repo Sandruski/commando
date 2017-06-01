@@ -5,8 +5,8 @@
 
 Commando is a shoot and run, vertically scrolling arcade game released in 1985. It’s one of the most influenceable games of this genre. This game was realized in various home consoles and home computers. The game was very famous when it was released and it appears on different known consoles as Capcom Classics Collection, Activision Anthology, and on the Wii Virtual Console Arcade, as well as Capcom Classics Collection Arcade Cabinet for Play Station 3 and Xbox 360.
 
-![](https://github.com/Sandruski/gets-name-/blob/gh-pages/NES-commando.gif)
-<br><I>Commando</I><br><br>
+![](NES-commando.gif)
+
 
 
 The plot is about a soldier named Super Joe who starts being dropped off in a jungle by helicopter, and has to fight his way out singlehandedly, fending off a massive assault of enemy soldiers.
@@ -34,7 +34,7 @@ Sandra Alvarez responsability and GitHub account:
 
 •	GitHub: [Sandruski](https://github.com/Sandruski)
 
-<img src="https://github.com/Sandruski/gets-name-/blob/gh-pages/Miis/Sandra_Mii.jpg" width="100">
+![](Sandra_Mii.png)
 
 Aleix Castillo responsability and GitHub account:
 
@@ -42,7 +42,7 @@ Aleix Castillo responsability and GitHub account:
 
 •	GitHub: [AleixCas95](https://github.com/AleixCas95)
 
-<img src="https://github.com/Sandruski/gets-name-/blob/gh-pages/Miis/miialeix.jpg" width="100">
+![](Mmiialeix.png)
 
 Guillem Costa responsability and GitHub account:
 
@@ -50,7 +50,7 @@ Guillem Costa responsability and GitHub account:
 
 •	GitHub: [DatBeQuiet](https://github.com/DatBeQuiet)
 
-<img src="https://github.com/Sandruski/gets-name-/blob/gh-pages/Miis/20170312145403%20-%20copia.png" width="100">
+![](20170312145403 - copia.png) width="100">
 
 Aleix Gabarró responsability and GitHub account:
 
@@ -58,7 +58,7 @@ Aleix Gabarró responsability and GitHub account:
 
 •	GitHub: [AleixGab](https://github.com/aleixgab)
 
-<img src="https://github.com/Sandruski/gets-name-/blob/gh-pages/Miis/MII%20Aleix2.jpeg" width="100"><br><br>
+![](MII Aleix2.png)
 
 # Game controls
 ~~~~~~~~~~
