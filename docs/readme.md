@@ -11,7 +11,7 @@ Commando is a shoot and run, vertically scrolling arcade game released in 1985. 
 
 The plot is about a soldier named Super Joe who starts being dropped off in a jungle by helicopter, and has to fight his way out singlehandedly, fending off a massive assault of enemy soldiers.
 
-Gets(name); had created a version of the original Commando Nes level 1-1 full implemented.
+# Gets(name); had created a version of the original Commando Nes level 1-1 full implemented.
 
 
 
