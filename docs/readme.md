@@ -90,7 +90,7 @@ SHIFT: throw grenades foward
 ~~~~~~~~~~~~
 
 
-~~~~~~~~~~~~~~~~
+
 
 # [CHECK GAMEPLAY VIDEO](https://www.youtube.com/watch?v=0fKg7e37bQE)
 
@@ -100,4 +100,3 @@ SHIFT: throw grenades foward
 
 # See more information in the [Commando Wiki](https://github.com/Sandruski/gets-name-/wiki)! 
 
-~~~~~~~~~~~~~~~~
