@@ -86,7 +86,7 @@ SHIFT: throw grenades foward
 
 
 
-# [CKHECK GAMEPLAY VIDEO](https://www.youtube.com/watch?v=0fKg7e37bQE)
+# [CHECK GAMEPLAY VIDEO](https://www.youtube.com/watch?v=0fKg7e37bQE)
 
 # Download the lastet version of Commando [here](https://github.com/Sandruski/gets-name-/releases)!
 
