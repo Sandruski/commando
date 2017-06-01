@@ -34,7 +34,7 @@ Sandra Alvarez responsability and GitHub account:
 
 •	GitHub: [Sandruski](https://github.com/Sandruski)
 
-![](Sandra_Mii.png)
+![](Sandra_Mii.jpg)
 
 Aleix Castillo responsability and GitHub account:
 
@@ -42,7 +42,7 @@ Aleix Castillo responsability and GitHub account:
 
 •	GitHub: [AleixCas95](https://github.com/AleixCas95)
 
-![](Mmiialeix.png)
+![](miialeix.jpg)
 
 Guillem Costa responsability and GitHub account:
 
@@ -58,7 +58,7 @@ Aleix Gabarró responsability and GitHub account:
 
 •	GitHub: [AleixGab](https://github.com/aleixgab)
 
-![](MII Aleix2.png)
+![](MII Aleix2.jpeg)
 
 # Game controls
 ~~~~~~~~~~
