@@ -18,6 +18,12 @@ Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
 	down.PushBack({ 199, 219, 18, 18 }); //abaix
 	down.PushBack({ 225, 219, 13, 23 }); //abaix
 
+	down_left.PushBack({ 91, 229, 15, 22 }); //abaix
+	down_left.PushBack({ 113, 229, 15, 22 }); //abaix
+
+	down_right.PushBack({ 47, 229, 15, 22 }); //abaix
+	down_right.PushBack({ 69, 229, 15, 22 }); //abaix
+
 	right.speed = 0.05f;
 	left.speed = 0.05f;
 	down.speed = 0.05f;
@@ -27,19 +33,46 @@ Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
 	die.PushBack({ 25, 111, 16, 27 });
 	die.PushBack({ 40, 104, 15, 27 });
 
-	/*//animation = &right;
-	path.PushBack({ +0.5f, +0.0f }, 50);
-	//animation = &down;
-	path.PushBack({ +0.0f, -0.5f }, 25);
-	//animation = &right;
-	path.PushBack({ +0.5f, +0.0f }, 25);
+	path.PushBack({ +0.9f, +0.0f }, 140);
+	path.PushBack({ +0.01f, +0.0f }, 15);
+	path.PushBack({ +0.9f, +0.9f }, 20);
+	path.PushBack({ +0.01f, +0.01f }, 15);
+	path.PushBack({ +0.9f, +0.0f }, 30);
+	path.PushBack({ +0.01f, +0.0f }, 15);
+	path.PushBack({ +0.0f, +0.9f }, 20);
+	path.PushBack({ +0.0f, +0.01f }, 15);
+	path.PushBack({ -0.9f, +0.0f }, 60);
+	path.PushBack({ -0.01f, +0.0f }, 15);
+	path.PushBack({ +0.0f, +0.9f }, 20);
+	path.PushBack({ +0.0f, +0.01f }, 15);
+	path.PushBack({ -0.9f, +0.0f }, 30);
+	path.PushBack({ -0.01f, +0.0f }, 15);
+	path.PushBack({ -0.9f, +0.9f }, 30);
+	path.PushBack({ -0.1f, +0.1f }, 15);
+	path.PushBack({ +0.9f, +0.9f }, 40);
+	path.PushBack({ +0.1f, +0.1f }, 15);
+	path.PushBack({ +0.0f, +0.9f }, 10);
+	path.PushBack({ +0.0f, +0.1f }, 15);
+	path.PushBack({ +0.9f, +0.0f }, 300);
 
-	//animation = &left;
-	path1.PushBack({ -0.5f, +0.0f }, 50);
-	//animation = &down;
-	path1.PushBack({ +0.0f, -0.5f }, 25);
-	//animation = &left;
-	path1.PushBack({ -0.5f, +0.0f }, 25);*/
+	path1.PushBack({ -0.9f, +0.0f }, 80);
+	path1.PushBack({ -0.01f, +0.0f }, 15);
+	path1.PushBack({ +0.0f, +0.9f }, 10);
+	path1.PushBack({ +0.0f, +0.01f }, 15);
+	path1.PushBack({ -0.9f, +0.9f }, 30);
+	path1.PushBack({ -0.01f, +0.01f }, 15);
+	path1.PushBack({ -0.9f, +0.0f }, 90);
+	path1.PushBack({ -0.01f, +0.0f }, 15);
+	path1.PushBack({ +0.0f, +0.9f }, 20);
+	path1.PushBack({ +0.0f, +0.01f }, 15);
+	path1.PushBack({ +0.9f, +0.0f }, 100);
+	path1.PushBack({ +0.01f, +0.0f }, 15);
+	path1.PushBack({ +0.9f, +0.9f }, 20);
+	path1.PushBack({ +0.01f, +0.01f }, 15);
+	path1.PushBack({ +0.9f, +0.0f }, 50);
+	path1.PushBack({ +0.01f, +0.0f }, 15);
+	path1.PushBack({ +0.0f, +0.9f }, 10);
+	path1.PushBack({ +0.0f, +0.01f }, 15);
 
 	original_pos.x = x;
 	original_pos.y = y;
@@ -51,47 +84,48 @@ Enemy_SoldierKnife::Enemy_SoldierKnife(int x, int y) : Enemy(x, y)
 
 void Enemy_SoldierKnife::Move()
 {
-	/*if (original_pos.x <= 100) {
-	animation = &right;
-	position = original_pos + path.GetCurrentPosition(&animation);
-	}
-	if (original_pos.x >= 100) {
-	animation = &left;
-	position = original_pos + path1.GetCurrentPosition(&animation);
-	}*/
-
-
 	currentTime = SDL_GetTicks();
 	currentTime -= lastTime;
 
 	if (dieB == false) {
 		lastTime = SDL_GetTicks();
 
-		if (App->player->position.y <= -450 || move == true) {
-			if (position.x <= 240 && cont == 0) {
-				position.x--;
-				animation = &left;
-				move = true;
-				if (position.x == 150)
-					cont = 1;
-			}
-			if (position.y >= -581 && cont == 1) {
-				animation = &down;
-				position.y++;
 
-				if (position.y == -525)
-					cont = 3;
 
-			}
-			if (position.x >= 150 && cont == 3) {
-				position.x++;
-				animation = &right;
-				if (position.x == 240)
-					cont = 0;
-			}
+		if (original_pos.x < SCREEN_WIDTH / 2) {
+
+			position = original_pos + path.GetCurrentPositionfl(&animation);
+			save_step = path.GetCurrentPositionf();
+		}
+
+		if (original_pos.x > SCREEN_WIDTH / 2) {
+
+			position = original_pos + path1.GetCurrentPositionfl(&animation);
+			save_step = path1.GetCurrentPositionf();
 		}
 
 	}
+
+	//ANIMATION CHANGE FOR PATHS
+	if ((save_step.x == 0 && save_step.y > 0)) {
+		animation = &down;
+	}
+	else if ((save_step.x == 0 && save_step.y < 0)) {
+		animation = &up;
+	}
+	else if ((save_step.x > 0 && save_step.y == 0)) {
+		animation = &right;
+	}
+	else if ((save_step.x < 0 && save_step.y == 0)) {
+		animation = &left;
+	}
+	else if ((save_step.x > 0 && save_step.y > 0)) {
+		animation = &down_right;
+	}
+	else if ((save_step.x < 0 && save_step.y > 0)) {
+		animation = &down_left;
+	}
+	//
 
 	if (dieB == true) {
 		animation = &die;
@@ -104,6 +138,6 @@ void Enemy_SoldierKnife::Move()
 
 void Enemy_SoldierKnife::OnCollision(Collider* c1, Collider* c2) {
 
-	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_ENEMYDIE, NULL);
 
 }

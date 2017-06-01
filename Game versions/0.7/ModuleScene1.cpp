@@ -226,6 +226,8 @@ bool ModuleScene1::Start()
 
 	App->player->move2 = true;
 
+	TE = true;
+
 	//Colliders
 	App->collision->AddCollider({ 133,2817 - 2656,20,23 }, COLLIDER_WALL, this);
 	App->collision->AddCollider({ 153,2802 - 2656,18,17 }, COLLIDER_WALL, this);
@@ -350,45 +352,8 @@ bool ModuleScene1::Start()
 	App->render->Blit(App->player2->graphics, 102, 2212 - 2656, &App->player2->torevive2);
 	App->render->Blit(App->player2->graphics, 84, 1502 - 2656, &App->player2->torevive2);
 	App->render->Blit(App->player2->graphics, 243, 708, &App->player2->torevive2);
+
 	//ENEMIES
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 150, 2366 - 2656); //positiony = 1375-2656
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 227, 1449 - 2656);
-
-	//Soldier rifle behind stone
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 167, 1127 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 53, 1127 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 37, 1047 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 118, 1015 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 182, 983 - 2656);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 166, 919 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 117, 835 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 7, 835 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 234, 835 - 2656);
-
-
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 6, 405 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 70, 359 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 134, 327 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 199, 295 - 2656);
-
-	//Soldier rifle behind barricade
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 89, 736 - 2656);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 154, 657 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 184, 657 - 2656);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 23, 624 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 119, 559 - 2656);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 19, 497 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 55, 497 - 2656);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 152, 279 - 2656);
-
-	//Soldier grenade behind barricade
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 213, 1065 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 21, 984 - 2656);
 
 	//Soldier shield
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_SHIELD, 111, 35 - 2656);
@@ -408,54 +373,479 @@ bool ModuleScene1::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIERPRISONER, 72, 1665 - 2656);
 
 	//SoldierKnife
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_KNIFE, 34, 2072 - 2656);
+	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_KNIFE, 0, 2072 - 2656);
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_KNIFE, 239, 2075 - 2656);
 
-	//SOLDIER
-	//Patha	
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 2708 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1915 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 914 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 892 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 348 - 2656);
+	if (start1) {
+		//SOLDIER
+		//Patha	
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 2708 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1915 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 914 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 892 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 348 - 2656);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 49, 2584 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 85, 2094 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 110, 1437 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 62, 628 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 45, 407 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 85, 2094 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 110, 1437 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 45, 407 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 54, 114 - 2656); //
 
-	//Pathb
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 2708 - 2599);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 1915 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 507 - 2656);
+																	  //Pathb
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 2708 - 2599);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 1915 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 507 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 226, 2285 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 92, 1527 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 181, 124 - 2656); //
+
+																	   //Pathc
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2152 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 1669 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 684 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2588 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 201, 1618 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 241, 517 - 2656);
+
+		//Pathd
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 2362 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 1503 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 819 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 334 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 83, 1444 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 48, 928 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 50, 184 - 2656); //
+
+																	  //PathA
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 693 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 1301 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2346 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2077 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2615 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 87, 161 - 2656); //
+
+																	  //PathB
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1720 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1303 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 595 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 98, 1311 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 150, 2366 - 2656); //positiony = 1375-2656
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 227, 1449 - 2656);
+
+		//Soldier rifle behind stone
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 167, 1127 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 53, 1127 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 37, 1047 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 118, 1015 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 182, 983 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 166, 919 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 117, 835 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 7, 835 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 234, 835 - 2656);
 
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 226, 2285 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 92, 1527 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 161, 747 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 184, 102 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 6, 405 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 70, 359 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 134, 327 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 199, 295 - 2656);
 
-	//Pathc
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2152 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 1669 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 1315 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 684 - 2656);
+		//Soldier rifle behind barricade
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 89, 736 - 2656);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 201, 1618 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 98, 657 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 241, 517 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 154, 657 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 184, 657 - 2656);
 
-	//Pathd
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 2362 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 1503 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 819 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 334 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 23, 624 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 119, 559 - 2656);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 83, 1444 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 48, 928 - 2656);
-	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 50, 104 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 19, 497 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 55, 497 - 2656);
 
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 152, 279 - 2656);
+
+		//Soldier grenade behind barricade
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 213, 1065 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 21, 984 - 2656);
+	}
+	else if (start2) { //2294 - 2656
+					   //SOLDIER
+					   //Patha
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 2708 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1915 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 914 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 892 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 348 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 85, 2094 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 110, 1437 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 62, 628 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 45, 407 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 54, 114 - 2656); //
+
+																	  //Pathb
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 2708 - 2599);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 1915 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 92, 1527 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 131, 124 - 2656); //
+
+																	   //Pathc
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 1669 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 684 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2588 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 201, 1618 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 241, 517 - 2656);
+
+		//Pathd
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 1503 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 819 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 334 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 83, 1444 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 48, 928 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 50, 184 - 2656); //
+
+																	  //PathA
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 693 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 1301 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2077 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 87, 161 - 2656); //
+
+																	  //PathB
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1720 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1303 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 595 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 98, 1311 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 180, 116 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 227, 1449 - 2656);
+
+		//Soldier rifle behind stone
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 167, 1127 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 53, 1127 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 37, 1047 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 118, 1015 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 182, 983 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 166, 919 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 117, 835 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 7, 835 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 234, 835 - 2656);
+
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 6, 405 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 70, 359 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 134, 327 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 199, 295 - 2656);
+
+		//Soldier rifle behind barricade
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 89, 736 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 154, 657 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 184, 657 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 23, 624 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 119, 559 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 19, 497 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 55, 497 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 152, 279 - 2656);
+
+		//Soldier grenade behind barricade
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 213, 1065 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 21, 984 - 2656);
+	}
+	else if (start3) { // 1836
+					   //SOLDIER
+					   //Patha	
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 2708 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 914 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 892 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 348 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 85, 2094 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 110, 1437 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 45, 407 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 54, 114 - 2656); //
+
+																	  //Pathb
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 2708 - 2599);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 507 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 226, 2285 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 92, 1527 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 161, 747 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 180, 116 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 131, 124 - 2656); //
+
+																	   //Pathc
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2152 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 1669 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2588 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 201, 1618 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 98, 657 - 2656);
+
+		//Pathd
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 2362 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 1503 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 819 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 334 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 83, 1444 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 48, 928 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 50, 184 - 2656); //
+
+																	  //PathA
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 693 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 1301 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2346 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2077 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 87, 161 - 2656); //
+
+																	  //PathB
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 2324 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1720 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1303 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 98, 1311 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 150, 2366 - 2656); //positiony = 1375-2656
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 227, 1449 - 2656);
+
+		//Soldier rifle behind stone
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 167, 1127 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 53, 1127 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 37, 1047 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 118, 1015 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 182, 983 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 166, 919 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 117, 835 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 7, 835 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 234, 835 - 2656);
+
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 6, 405 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 70, 359 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 134, 327 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 199, 295 - 2656);
+
+		//Soldier rifle behind barricade
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 89, 736 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 154, 657 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 184, 657 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 23, 624 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 119, 559 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 19, 497 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 55, 497 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 152, 279 - 2656);
+
+		//Soldier grenade behind barricade
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 213, 1065 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 21, 984 - 2656);
+	}
+	else if (start4) { // 882
+					   //SOLDIER
+					   //Patha	
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 2708 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1915 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 348 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 54, 114 - 2656); //
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 85, 2094 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 110, 1437 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 45, 407 - 2656);
+
+		//Pathb
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 2708 - 2599);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 1915 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 507 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 164, 147 - 2656); //
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 226, 2285 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 92, 1527 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 161, 747 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 131, 102 - 2656);
+
+		//Pathc
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2152 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 1669 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 684 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2588 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 201, 1618 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 98, 657 - 2656);
+
+		//Pathd
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 2362 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 1503 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 334 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 83, 1444 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 50, 184 - 2656); //
+
+																	  //PathA
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 693 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 1301 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2346 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2077 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 87, 161 - 2656); //
+
+																	  //PathB
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 2324 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1720 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1303 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 98, 1311 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 180, 116 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 150, 2366 - 2656); //positiony = 1375-2656
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 227, 1449 - 2656);
+
+		//Soldier rifle behind stone
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 167, 1127 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 53, 1127 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 37, 1047 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 117, 835 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 7, 835 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 234, 835 - 2656);
+
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 6, 405 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 70, 359 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 134, 327 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 199, 295 - 2656);
+
+		//Soldier rifle behind barricade
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 89, 736 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 154, 657 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 184, 657 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 23, 624 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 119, 559 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 19, 497 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 55, 497 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 152, 279 - 2656);
+
+		//Soldier grenade behind barricade
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 213, 1065 - 2656);
+
+	}
+	else if (start5) { // 395
+					   //SOLDIER
+					   //Patha	
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 2708 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1915 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 914 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 892 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 54, 114 - 2656); //
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 85, 2094 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 110, 1437 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 45, 407 - 2656);
+
+		//Pathb
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 2708 - 2599);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 1915 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 507 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 226, 2285 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 92, 1527 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 161, 747 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 180, 116 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 131, 124 - 2656); //
+
+																	   //Pathc
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2152 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 1669 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 684 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2588 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 201, 1618 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 241, 517 - 2656);
+
+		//Pathd
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 2362 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 1503 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 819 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 83, 1444 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 48, 928 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 50, 184 - 2656); //
+
+																	  //PathA
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 693 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 1301 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2346 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2077 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 87, 161 - 2656); //
+
+																	  //PathB
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 2324 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1720 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1303 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 98, 1311 - 2656);
+
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 150, 2366 - 2656); //positiony = 1375-2656
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 227, 1449 - 2656);
+
+		//Soldier rifle behind stone
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 167, 1127 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 53, 1127 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 37, 1047 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 118, 1015 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 182, 983 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 166, 919 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 117, 835 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 7, 835 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 234, 835 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 70, 359 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 134, 327 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 199, 295 - 2656);
+
+		//Soldier rifle behind barricade
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 89, 736 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 154, 657 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 184, 657 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 23, 624 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 119, 559 - 2656);
+
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_RIFLE, 152, 279 - 2656);
+
+		//Soldier grenade behind barricade
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 213, 1065 - 2656);
+		App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_GRENADE, 21, 984 - 2656);
+	}
 	return true;
 
 }
@@ -516,11 +906,7 @@ update_status ModuleScene1::Update()
 		else if (contenemy1 == 420) {
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2499 - 2656);
 		}
-		else if (contenemy1 == 500) {
-			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2499 - 2656);
-		}
 		else if (contenemy1 == 600) {
-			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2499 - 2656);
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER2, 247, 2498 - 2656);
 		}
 		else if (contenemy1 == 800) {
@@ -647,7 +1033,7 @@ update_status ModuleScene1::Update()
 
 	//Path3 - Final battle
 
-	if (App->player->position.y <= 195 - 2656) {
+	if ((App->player->position.y <= 195 - 2656) && TE) {
 		E5 = true;
 	}
 	else {
@@ -676,42 +1062,231 @@ update_status ModuleScene1::Update()
 		else if (contenemy5 == 280) {
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 129, -14 - 2656);
 		}
-		else if (contenemy5 == 350) {
+		else if (contenemy5 == 300) {
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 125, -12 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 130, -13 - 2656);
 		}
-		else if (contenemy5 == 500) {
+		else if (contenemy5 == 380) {
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 142, -11 - 2656);
 		}
-		else if (contenemy5 == 600) {
+		else if (contenemy5 == 400) {
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 109, -10 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 129, -14 - 2656);
 		}
-		else if (contenemy5 == 750) {
+		else if (contenemy5 == 500) {
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 141, -11 - 2656);
 		}
-		else if (contenemy5 == 800) {
+		else if (contenemy5 == 550) {
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 125, -13 - 2656);
 		}
-		else if (contenemy5 == 1150) {
+		else if (contenemy5 == 800) {
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 120, -12 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 129, -14 - 2656);
 		}
-		else if (contenemy5 == 1250) {
+		else if (contenemy5 == 920) {
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 132, -14 - 2656);
 		}
-		else if (contenemy5 == 1300) {
+		else if (contenemy5 == 990) {
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 127, -13 - 2656);
 		}
-		else if (contenemy5 == 1450) {
+		else if (contenemy5 == 1070) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 109, -10 - 2656);
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER3, 129, -12 - 2656);
 		}
 
-		if (contenemy5 == 1500) {
+		if (contenemy5 == 1100) {
 			contenemy5 = 0;
 		}
 	}
 
 
-	///////////////////////////////////////////////////////////////////////////////
 
+	//SOLDIER BUCLES (FOLLOW)
+	//Spawn1 B1
+	if (App->player->position.y <= 2650 - 2656 && App->player->position.y >= 2253 - 2656) {
+		B1 = true;
+	}
+	else {
+		B1 = false;
+	}
+
+	if (B1) {
+		spawn1++;
+
+		if (spawn1 == 10) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2540 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 2565 - 2656);
+		}
+		else if (spawn1 == 100) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 2396 - 2656);
+		}
+		else if (spawn1 == 200) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 2362 - 2656);
+		}
+		else if (spawn1 == 250) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 2557 - 2656);
+		}
+
+		if (spawn1 == 300) {
+			spawn1 = 0;
+		}
+	}
+
+
+	//Spawn2 B2
+	if (App->player->position.y <= 2375 - 2656 && App->player->position.y >= 1823 - 2656) {
+		B2 = true;
+	}
+	else {
+		B2 = false;
+	}
+
+	if (B2) {
+		spawn2++;
+
+		if (spawn2 == 30) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 1915 - 2656);
+		}
+		else if (spawn2 == 70) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2069 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2152 - 2656);
+		}
+		else if (spawn2 == 110) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1915 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 2167 - 2656);
+		}
+		else if (spawn2 == 200) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 2081 - 2656);
+		}
+		else if (spawn2 == 260) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 2069 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 2145 - 2656);
+		}
+		else if (spawn2 == 380) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2011 - 2656);
+		}
+
+		if (spawn2 == 400) {
+			spawn2 = 0;
+		}
+	}
+
+	//Spawn3 B3
+	if (App->player->position.y <= 1922 - 2656 && App->player->position.y >= 1444 - 2656) {
+		B3 = true;
+	}
+	else {
+		B3 = false;
+	}
+
+	if (B3) {
+		spawn3++;
+
+		if (spawn3 == 30) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 1805 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 1669 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 1830 - 2656);
+		}
+		else if (spawn3 == 100) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 1503 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1868 - 2656);
+		}
+		else if (spawn3 == 180) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 1485 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1840 - 2656);
+		}
+
+		if (spawn3 == 220) {
+			spawn3 = 0;
+		}
+	}
+
+	//Spawn4 B4
+	if (App->player->position.y <= 1445 - 2656 && App->player->position.y >= 1026 - 2656) {
+		B4 = true;
+	}
+	else {
+		B4 = false;
+	}
+
+	if (B4) {
+		spawn4++;
+
+		if (spawn4 == 30) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 1166 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 1113 - 2656);
+		}
+		else if (spawn4 == 110) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 1137 - 2656);
+		}
+		else if (spawn4 == 180) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 1310 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1035 - 2656);
+		}
+
+		if (spawn4 == 200) {
+			spawn4 = 0;
+		}
+	}
+
+	//Spawn5 B5
+	if (App->player->position.y <= 1027 - 2656 && App->player->position.y >= 528 - 2656) {
+		B5 = true;
+	}
+	else {
+		B5 = false;
+	}
+
+	if (B5) {
+		spawn5++;
+
+		if (spawn5 == 30) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 914 - 2656);
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 591 - 2656);
+		}
+		else if (spawn5 == 210) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 600 - 2656);
+		}
+		else if (spawn5 == 430) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -5, 542 - 2656);
+		}
+		else if (spawn5 == 600) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -4, 836 - 2656);
+		}
+
+		if (spawn5 == 700) {
+			spawn5 = 0;
+		}
+	}
+
+
+	//Spawn6 B6
+	if (App->player->position.y <= 529 - 2656 && App->player->position.y >= 230 - 2656) {
+		B6 = true;
+	}
+	else {
+		B6 = false;
+	}
+
+	if (B6) {
+		spawn6++;
+
+		if (spawn6 == 10) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 257, 540 - 2656);
+		}
+		else if (spawn6 == 300) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -2, 334 - 2656);
+		}
+		else if (spawn6 == 400) {
+			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 257 - 2656);
+		}
+
+		if (spawn6 == 600) {
+			spawn6 = 0;
+		}
+	}
+
+	///////////////////////////////////////////////////////////////////////////////
 
 	if (check_audio) {
 		App->audio->play_music2();

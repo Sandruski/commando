@@ -298,8 +298,6 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->audio->play_fx4();
 				}
 
-				else if (c2->type == COLLIDER_PLAYER_SHOT && enemies[i]->type == ENEMY_TYPES::SOLDIER_SHIELD){}
-
 				else if (c2->type == COLLIDER_FOLLOW && enemies[i]->type == ENEMY_TYPES::SOLDIER) {
 					enemies[i]->OnCollision(c1, c2);
 				}
@@ -307,22 +305,24 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 				else if (c1->type == COLLIDER_ENEMY  && c2->type != COLLIDER_PLAYER  && c2->type != COLLIDER_PLAYER2  && c2->type != COLLIDER_FOLLOW  && c2->type != COLLIDER_REVIVE  && c2->type != COLLIDER_REVIVE2) {
 					if (c2->type == COLLIDER_PLAYER_SHOT) {
-						if (enemies[i]->type == ENEMY_TYPES::SOLDIER || enemies[i]->type == ENEMY_TYPES::SOLDIER1 || enemies[i]->type == ENEMY_TYPES::SOLDIER2 || enemies[i]->type == ENEMY_TYPES::SOLDIER3)
+						if ((enemies[i]->type == ENEMY_TYPES::SOLDIER || enemies[i]->type == ENEMY_TYPES::SOLDIER1 || enemies[i]->type == ENEMY_TYPES::SOLDIER2 || enemies[i]->type == ENEMY_TYPES::SOLDIER3) && enemies[i]->type != ENEMY_TYPES::SOLDIER_SHIELD)
 							App->UI->score += 150;
 						else
 							App->UI->score += 75;
 					}
-				
+
 					else {
 						if (enemies[i]->type == ENEMY_TYPES::SOLDIER || enemies[i]->type == ENEMY_TYPES::SOLDIER1 || enemies[i]->type == ENEMY_TYPES::SOLDIER2 || enemies[i]->type == ENEMY_TYPES::SOLDIER3)
 							App->UI->score += 300;
 						else
 							App->UI->score += 150;
 					}
-					enemies[i]->OnCollision(c1, c2);
-					delete enemies[i];
-					enemies[i] = nullptr;
-					break;
+					if (enemies[i]->type != ENEMY_TYPES::SOLDIER_SHIELD) {
+						enemies[i]->OnCollision(c1, c2);
+						delete enemies[i];
+						enemies[i] = nullptr;
+						break;
+					}
 					App->audio->play_fx4();
 				}
 				/*if (dieE == true) {
@@ -334,16 +334,15 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		}
 
 		/*else if (c2->type == COLLIDER_WALL && c1->type == COLLIDER_ENEMY) {
-			if (enemies[i] != nullptr) {
-				if (enemies[i]->type == ENEMY_TYPES::SOLDIER)
-					enemies[i]->OnCollision(c1, c2);
-			}
+		if (enemies[i] != nullptr) {
+		if (enemies[i]->type == ENEMY_TYPES::SOLDIER)
+		enemies[i]->OnCollision(c1, c2);
+		}
 		}*/
-	
+
 
 
 	}
-	
 
 		
 

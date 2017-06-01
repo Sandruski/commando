@@ -10,7 +10,7 @@ private:
 	float wave = -1.0f;
 	bool going_up = true;
 
-	Animation die, up_left, up_right, down_left, down_right, up, down, left, right;
+	Animation invisible, die, up_left, up_right, down_left, down_right, up, down, left, right;
 
 	fPoint original_pos;
 	fPoint save_step;

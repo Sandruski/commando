@@ -3,6 +3,8 @@
 #include "ModuleCollision.h"
 #include "ModuleUI.h"
 #include "Path.h"
+#include "ModuleFadeToBlack.h"
+#include "ModuleSecretRoomD.h"
 #include "ModuleEnemies.h"
 #include <stdlib.h>
 #include <time.h>
@@ -17,6 +19,8 @@ Enemy_Soldier::Enemy_Soldier(int x, int y) : Enemy(x, y)
 	//ANIMATION MOVE (normal SOLDIER)
 	//first sprite of an animation: soldier standing
 	//second sprite of an animation: soldier walking
+
+	invisible.PushBack({ 1,1,1,1 });
 
 	up.PushBack({ 114, 82, 11, 21 });
 	up.PushBack({ 128, 82, 11, 22 });
@@ -157,8 +161,8 @@ void Enemy_Soldier::Move()
 			anim1 = true;
 
 			//Patha
-			if (original_pos.x == -3 || original_pos.x == 49 || original_pos.x == 85 || original_pos.x == 110 || original_pos.x == 62
-				|| original_pos.x == 45) {
+			if (original_pos.x == 98 || original_pos.x == -3 || original_pos.x == 49 || original_pos.x == 85 || original_pos.x == 110 || original_pos.x == 62
+				|| original_pos.x == 45 || original_pos.x == 54) {
 				if (one) {
 					position = original_pos + patha.GetCurrentPositionfl(&animation);
 					save_step = patha.GetCurrentPositionf();
@@ -178,7 +182,8 @@ void Enemy_Soldier::Move()
 
 
 			//Pathb
-			if (original_pos.x == 257 || original_pos.x == 226 || original_pos.x == 92 || original_pos.x == 161 || original_pos.x == 184) {
+			if (original_pos.x == 257 || original_pos.x == 226 || original_pos.x == 92 || original_pos.x == 161 || original_pos.x == 124
+				|| original_pos.x == 181) {
 				if (one) {
 					position = original_pos + pathb.GetCurrentPositionfl(&animation);
 					save_step = pathb.GetCurrentPositionf();
@@ -235,52 +240,44 @@ void Enemy_Soldier::Move()
 				}
 			}
 
-
-
-
-
-			/*
 			//Path A (left-right)
-			if (original_pos.x < SCREEN_WIDTH / 2) {
-			if (one) {
-			position = original_pos + pathA.GetCurrentPositionfl(&animation);
-			save_step = pathA.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-			}
-			else if (!one && two) {
+			if (original_pos.x == -5 || original_pos.x == 87 || (App->fade->on == App->roomD && original_pos.x < SCREEN_WIDTH / 2)) {
+				if (one) {
+					position = original_pos + pathA.GetCurrentPositionfl(&animation);
+					save_step = pathA.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+				}
+				else if (!one && two) {
 
-			if (yeah) {
-			pathA.accumulated_speed = { 0.0f, 0.0f };
-			pathA.current_frame = 0;
-			}
+					if (yeah) {
+						pathA.accumulated_speed = { 0.0f, 0.0f };
+						pathA.current_frame = 0;
+					}
 
-			position = another + pathA.GetCurrentPositionfl(&animation);
-			save_step = pathA.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-			yeah = false;
+					position = another + pathA.GetCurrentPositionfl(&animation);
+					save_step = pathA.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+					yeah = false;
+				}
 			}
-			}
-
 
 			//Path B (right-left)
-			if (original_pos.x > SCREEN_WIDTH / 2) {
-			if (one) {
-			position = original_pos + pathB.GetCurrentPositionfl(&animation);
-			save_step = pathB.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-			}
-			else if (!one && two) {
+			if (original_pos.x == 180 || original_pos.x == 164 || original_pos.x == 131 || original_pos.x == 258 || (App->fade->on == App->roomD && original_pos.x > SCREEN_WIDTH / 2)) {
+				if (one) {
+					position = original_pos + pathB.GetCurrentPositionfl(&animation);
+					save_step = pathB.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+				}
+				else if (!one && two) {
 
-			if (yeah) {
-			pathB.accumulated_speed = { 0.0f, 0.0f };
-			pathB.current_frame = 0;
-			}
+					if (yeah) {
+						pathB.accumulated_speed = { 0.0f, 0.0f };
+						pathB.current_frame = 0;
+					}
 
-			position = another + pathB.GetCurrentPositionfl(&animation);
-			save_step = pathB.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
-			yeah = false;
-			}
+					position = another + pathB.GetCurrentPositionfl(&animation);
+					save_step = pathB.GetCurrentPositionf(); //it returns an fPoint of the speed of the current step
+					yeah = false;
+				}
 			}
 			//end_of_different_paths
-			*/
-
 
 		}
 	}
@@ -335,58 +332,68 @@ void Enemy_Soldier::Move()
 
 	//ANIMATION CHANGE FOR PATHS
 	if (anim1) {
-		if ((save_step.x == 0 && save_step.y > 0)) {
-			animation = &down;
+		if (position.y <= 1405 - 2656 && position.y >= 1338 - 2666) {
+			animation = &invisible;
 		}
-		else if ((save_step.x == 0 && save_step.y < 0)) {
-			animation = &up;
-		}
-		else if ((save_step.x > 0 && save_step.y == 0)) {
-			animation = &right;
-		}
-		else if ((save_step.x < 0 && save_step.y == 0)) {
-			animation = &left;
-		}
-		else if ((save_step.x > 0 && save_step.y > 0)) {
-			animation = &down_right;
-		}
-		else if ((save_step.x < 0 && save_step.y > 0)) {
-			animation = &down_left;
-		}
-		else if ((save_step.x > 0 && save_step.y < 0)) {
-			animation = &up_right;
-		}
-		else if ((save_step.x < 0 && save_step.y < 0)) {
-			animation = &up_left;
+		else {
+			if ((save_step.x == 0 && save_step.y > 0)) {
+				animation = &down;
+			}
+			else if ((save_step.x == 0 && save_step.y < 0)) {
+				animation = &up;
+			}
+			else if ((save_step.x > 0 && save_step.y == 0)) {
+				animation = &right;
+			}
+			else if ((save_step.x < 0 && save_step.y == 0)) {
+				animation = &left;
+			}
+			else if ((save_step.x > 0 && save_step.y > 0)) {
+				animation = &down_right;
+			}
+			else if ((save_step.x < 0 && save_step.y > 0)) {
+				animation = &down_left;
+			}
+			else if ((save_step.x > 0 && save_step.y < 0)) {
+				animation = &up_right;
+			}
+			else if ((save_step.x < 0 && save_step.y < 0)) {
+				animation = &up_left;
+			}
 		}
 	}
 	//
 
 	//ANIMATION CHANGE FOR FOLLOW
 	if (anim2) {
-		if ((enemyplayeru2.x == 0 && enemyplayeru.y > 0)) {
-			animation = &down;
+		if (position.y <= 1405 - 2656 && position.y >= 1338 - 2666) {
+			animation = &invisible;
 		}
-		else if ((enemyplayeru2.x == 0 && enemyplayeru.y < 0)) {
-			animation = &up;
-		}
-		else if ((enemyplayeru2.x > 0 && enemyplayeru.y == 0)) {
-			animation = &right;
-		}
-		else if ((enemyplayeru2.x < 0 && enemyplayeru.y == 0)) {
-			animation = &left;
-		}
-		else if ((enemyplayeru2.x > 0 && enemyplayeru.y > 0)) {
-			animation = &down_right;
-		}
-		else if ((enemyplayeru2.x < 0 && enemyplayeru.y > 0)) {
-			animation = &down_left;
-		}
-		else if ((enemyplayeru2.x > 0 && enemyplayeru.y < 0)) {
-			animation = &up_right;
-		}
-		else if ((enemyplayeru2.x < 0 && enemyplayeru.y < 0)) {
-			animation = &up_left;
+		else {
+			if ((enemyplayeru2.x == 0 && enemyplayeru.y > 0)) {
+				animation = &down;
+			}
+			else if ((enemyplayeru2.x == 0 && enemyplayeru.y < 0)) {
+				animation = &up;
+			}
+			else if ((enemyplayeru2.x > 0 && enemyplayeru.y == 0)) {
+				animation = &right;
+			}
+			else if ((enemyplayeru2.x < 0 && enemyplayeru.y == 0)) {
+				animation = &left;
+			}
+			else if ((enemyplayeru2.x > 0 && enemyplayeru.y > 0)) {
+				animation = &down_right;
+			}
+			else if ((enemyplayeru2.x < 0 && enemyplayeru.y > 0)) {
+				animation = &down_left;
+			}
+			else if ((enemyplayeru2.x > 0 && enemyplayeru.y < 0)) {
+				animation = &up_right;
+			}
+			else if ((enemyplayeru2.x < 0 && enemyplayeru.y < 0)) {
+				animation = &up_left;
+			}
 		}
 	}
 	//
@@ -480,7 +487,7 @@ void Enemy_Soldier::OnCollision(Collider* c1, Collider* c2) {
 		else {
 
 			hi = false;
-			App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+			App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_ENEMYDIE, NULL);
 		}
 	}
 }

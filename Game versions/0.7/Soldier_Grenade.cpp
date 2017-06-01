@@ -119,7 +119,7 @@ void Enemy_SoldierGrenade::Move()
 }
 
 void Enemy_SoldierGrenade::OnCollision(Collider* c1, Collider* c2) {
-	if (c1->type == COLLIDER_ENEMY && c2->type == COLLIDER_END_OF_GRENADE) {
+	if (c1->type == COLLIDER_ENEMY && c2->type == COLLIDER_ENEMYDIE) {
 
 		App->scene_1->enemydiex = position.x;
 		App->scene_1->enemydiey = position.y;
@@ -134,5 +134,5 @@ void Enemy_SoldierGrenade::OnCollision(Collider* c1, Collider* c2) {
 		}
 	}
 
-	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_ENEMYDIE, NULL);
 }

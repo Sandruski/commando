@@ -394,7 +394,7 @@ void Enemy_Soldier3::OnCollision(Collider* c1, Collider* c2) {
 		else {
 
 			hi = false;
-			App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_END_OF_GRENADE, NULL);
+			App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_ENEMYDIE, NULL);
 		}
 	}
 }
