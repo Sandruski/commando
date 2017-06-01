@@ -42,6 +42,8 @@ bool ModuleSecretRoomE::Start() {
 	background.w = 256;
 	background.h = 224;
 
+	check_audio = true;
+
 	PowerUp.Reset();
 	PowerUp.PushBack({ 15, 8, 128, 32 });
 	PowerUp.PushBack({ 15, 51, 128, 32 });
@@ -89,6 +91,12 @@ bool ModuleSecretRoomE::Start() {
 }
 update_status ModuleSecretRoomE::Update() {
 	App->render->Blit(RoomE, w, h, &background);
+
+	if (check_audio) {
+		App->audio->play_music10();
+		check_audio = false;
+	}
+
 
 	if (App->player->SoldierPowerUp == 1)
 		lastTime = SDL_GetTicks();

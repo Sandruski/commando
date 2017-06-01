@@ -20,7 +20,8 @@ public:
 	update_status Update();
 	bool CleanUp();
 
-public:
+	bool check_audio = true;
+
 	SDL_Texture* RoomE;
 	SDL_Texture* GunUp = nullptr;
 	SDL_Rect background;

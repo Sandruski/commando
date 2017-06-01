@@ -41,6 +41,8 @@ bool ModuleSecretRoomC::Start() {
 	background.w = 256;
 	background.h = 448;
 
+	check_audio = true;
+
 	App->collision->Enable();
 	App->particles->Enable();
 	App->particlesenemies->Enable();
@@ -94,6 +96,11 @@ bool ModuleSecretRoomC::Start() {
 }
 update_status ModuleSecretRoomC::Update() {
 	App->render->Blit(RoomC, w, h, &background);
+	if (check_audio) {
+		App->audio->play_music10();
+		check_audio = false;
+	}
+
 
 	//Move camera UP
 	if (App->player->position.y <= 220 && App->render->camera.y < 0) {

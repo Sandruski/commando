@@ -4,6 +4,7 @@
 #include "ModulePlayer.h"
 #include "ModuleEnemies.h"
 #include "ModuleUI.h"
+#include "ModuleAudio.h"
 
 Enemy_PrisonerPoints::Enemy_PrisonerPoints(int x, int y) : Enemy(x, y)
 {
@@ -37,8 +38,10 @@ void Enemy_PrisonerPoints::Move()
 	if (App->enemies->dieE == 2) {
 		animation = &move2;
 		position.x++;
-		if (bonus == false)
+		if (bonus == false) {
 			App->UI->score += 1000;
+			App->audio->play_fx8();
+		}
 		bonus = true;
 		move = false;
 	}

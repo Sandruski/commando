@@ -29,6 +29,8 @@ bool ModuleAudio::Init() {
 	music[6] = Mix_LoadMUS("Assets/Audio/Commando_Sound-08-Fortress.ogg"); //final battle
 	music[7] = Mix_LoadMUS("Assets/Audio/Commando_Sound-02-Start.ogg"); //helicopter animation
 	music[8] = Mix_LoadMUS("Assets/Audio/Area 2 Presentation.ogg"); // print leters end level
+	music[9] = Mix_LoadMUS("Assets/Audio/Commando_Sound-05-Secret Room 1.ogg"); //Secret Room A-B-C-E
+	music[10] = Mix_LoadMUS("Assets/Audio/Commando_Sound-06-Secret Room 2.ogg"); //Secret Room D
 
 														   //Load FX
 	fx[0] = Mix_LoadWAV("Assets/Audio/Commando_Effect-02-Principal-Shoot.wav");
@@ -38,7 +40,7 @@ bool ModuleAudio::Init() {
 	fx[4] = Mix_LoadWAV("Assets/Audio/Commando_Effect-04-Grenade.wav"); //when a grenade explodes sound
 	fx[5] = Mix_LoadWAV("Assets/Audio/Commando_Effect-09-Life-lost.wav"); //when an enemy kills you sound
 	fx[6] = Mix_LoadWAV("Assets/Audio/Commando_Effect-10-Bonus.wav"); //when you pick an item
-	fx[7] = Mix_LoadWAV("Assets/Audio/Commando_Effect-10-Bonus-Prisoner.wav"); //when you free a prisoner
+	fx[7] = Mix_LoadWAV("Assets/Audio/Commando_Effect-11-Bonus-Prisoner.wav"); //when you free a prisoner
 	fx[8] = Mix_LoadWAV("Assets/Audio/Commando_Sound-13-Vehicle.wav"); //moto right-centre
 	fx[9] = Mix_LoadWAV("Assets/Audio/Commando_Sound-14-Vehicle-Decreasing.wav"); //moto centre-left
 
@@ -81,7 +83,15 @@ bool ModuleAudio::play_music8() {
 	return true;
 }
 bool ModuleAudio::play_music9() {
-	Mix_FadeInMusic(music[7], -1, 2000);
+	Mix_FadeInMusic(music[8], -1, 2000);
+	return true;
+}
+bool ModuleAudio::play_music10() {
+	Mix_FadeInMusic(music[9], -1, 2000);
+	return true;
+}
+bool ModuleAudio::play_music11() {
+	Mix_FadeInMusic(music[10], -1, 2000);
 	return true;
 }
 
@@ -120,7 +130,7 @@ bool ModuleAudio::play_fx7() {
 	return true;
 }
 bool ModuleAudio::play_fx8() {
-	Mix_PlayChannel(-1, fx[7], 0);
+	Mix_PlayChannel(0, fx[7], 0);
 	return true;
 }
 bool ModuleAudio::play_fx9() {

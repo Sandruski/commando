@@ -43,6 +43,8 @@ bool ModuleSecretRoom1A::Start() {
 	background.w = 256;
 	background.h = 224;
 
+	check_audio = true;
+
 	App->collision->Enable();
 	App->particles->Enable();
 	App->particlesenemies->Enable();
@@ -91,6 +93,13 @@ bool ModuleSecretRoom1A::Start() {
 update_status ModuleSecretRoom1A::Update() {
 
 	App->render->Blit(Room1A, w, h, &background);
+
+
+	if (check_audio) {
+		App->audio->play_music10();
+		check_audio = false;
+	}
+
 
 	current_animation = &item;
 	r = current_animation->GetCurrentFrame();

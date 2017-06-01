@@ -18,7 +18,7 @@ public:
 	update_status Update();
 	bool CleanUp();
 
-public:
+
 	SDL_Texture* Room1A;
 	SDL_Texture* items;
 	SDL_Rect background;
@@ -28,6 +28,7 @@ public:
 	Animation* current_animation = nullptr;
 	Animation item;
 	bool not_blit = false;
+	bool check_audio = true;
 
 	void OnCollision(Collider* c1, Collider* c2);
 	int hits = 0;

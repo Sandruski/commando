@@ -41,6 +41,8 @@ bool ModuleSecretRoomB::Start(){
 	background.w = 256;
 	background.h = 224;
 
+	check_audio = true;
+
 	App->collision->Enable();
 	App->particles->Enable();
 	App->particlesenemies->Enable();
@@ -100,6 +102,12 @@ bool ModuleSecretRoomB::Start(){
 }
 update_status ModuleSecretRoomB::Update(){
 	App->render->Blit(RoomB, w, h, &background);
+
+	if (check_audio) {
+		App->audio->play_music10();
+		check_audio = false;
+	}
+
 
 	if (App->input->keyboard[SDL_SCANCODE_1] == 1 && KEY_DOWN) {
 		App->render->UP = false;
