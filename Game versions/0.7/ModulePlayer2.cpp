@@ -166,9 +166,9 @@ update_status ModulePlayer2::Update()
 
 	speed = 1;
 
-	if ((App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN || App->input->buttonStart2 == KEY_DOWN) && GOD == false)
+	if ((App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN || App->input->buttonBack2 == KEY_DOWN) && GOD == false)
 		GOD = true;
-	if ((App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN || App->input->buttonBack2 == KEY_DOWN) && GOD == true)
+	if ((App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN || App->input->buttonStart2 == KEY_DOWN) && GOD == true)
 		GOD = false;
 
 	if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666) {
@@ -275,7 +275,7 @@ update_status ModulePlayer2::Update()
 		position.y -= speed;
 	}
 
-	else if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_UP || App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT)
+	else if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_UP || App->input->dpadUp2 == KEY_STATE::KEY_UP || App->input->joy_up2 == KEY_STATE::KEY_UP)
 	{
 		forward.Stop();
 	}
@@ -328,7 +328,7 @@ update_status ModulePlayer2::Update()
 
 	}
 
-	else if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_UP || App->input->dpadDown2 == KEY_STATE::KEY_REPEAT || App->input->joy_down2 == KEY_STATE::KEY_REPEAT)
+	else if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_UP || App->input->dpadDown2 == KEY_STATE::KEY_UP || App->input->joy_down2 == KEY_STATE::KEY_UP)
 	{
 		backward.Stop();
 	}
@@ -345,11 +345,11 @@ update_status ModulePlayer2::Update()
 		revTime = 0;
 	}
 
-	else if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_UP || App->input->dpadRight2 == KEY_STATE::KEY_REPEAT || App->input->joy_right2 == KEY_STATE::KEY_REPEAT)
+	else if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_UP || App->input->dpadRight2 == KEY_STATE::KEY_UP || App->input->joy_right2 == KEY_STATE::KEY_UP)
 	{
 		right.Stop();
 	}
-	if (((App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT || App->input->dpadRight2 == KEY_STATE::KEY_REPEAT || App->input->joy_right2 == KEY_STATE::KEY_REPEAT)) && position.x > 0 && move == true && check_grenade == 1 && collA == false && move2 == true)
+	if (((App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT || App->input->dpadLeft2 == KEY_STATE::KEY_REPEAT || App->input->joy_left2 == KEY_STATE::KEY_REPEAT)) && position.x > 0 && move == true && check_grenade == 1 && collA == false && move2 == true)
 	{
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
@@ -360,7 +360,7 @@ update_status ModulePlayer2::Update()
 		position.x -= speed;
 		revTime = 0;
 	}
-	else if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_UP || App->input->dpadRight2 == KEY_STATE::KEY_REPEAT || App->input->joy_right2 == KEY_STATE::KEY_REPEAT)
+	else if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_UP || App->input->dpadLeft2 == KEY_STATE::KEY_UP || App->input->joy_left2 == KEY_STATE::KEY_UP)
 	{
 		left.Stop();
 	}
@@ -375,7 +375,7 @@ update_status ModulePlayer2::Update()
 
 
 	}
-	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_UP && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_UP || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadRight2 == KEY_STATE::KEY_REPEAT || App->input->joy_right2 == KEY_STATE::KEY_REPEAT)))
+	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_UP && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_UP || ((App->input->dpadUp2 == KEY_STATE::KEY_UP || App->input->joy_up2 == KEY_STATE::KEY_UP) && (App->input->dpadRight2 == KEY_STATE::KEY_UP || App->input->joy_right2 == KEY_STATE::KEY_UP)))
 	{
 		diagWD.Stop();
 	}
@@ -389,12 +389,12 @@ update_status ModulePlayer2::Update()
 		diagWA.Start();
 
 	}
-	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_UP && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_UP || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadLeft2 == KEY_STATE::KEY_REPEAT || App->input->joy_left2 == KEY_STATE::KEY_REPEAT)))
+	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_UP && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_UP || ((App->input->dpadUp2 == KEY_STATE::KEY_UP || App->input->joy_up2 == KEY_STATE::KEY_UP) && (App->input->dpadLeft2 == KEY_STATE::KEY_UP || App->input->joy_left2 == KEY_STATE::KEY_UP)))
 	{
 		diagWA.Stop();
 	}
 
-	if ((App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_REPEAT || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadRight2 == KEY_STATE::KEY_REPEAT || App->input->joy_right2 == KEY_STATE::KEY_REPEAT))) && move == true && check_grenade == 1 && move2 == true) {
+	if ((App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_REPEAT || ((App->input->dpadDown2 == KEY_STATE::KEY_REPEAT || App->input->joy_down2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadRight2 == KEY_STATE::KEY_REPEAT || App->input->joy_right2 == KEY_STATE::KEY_REPEAT))) && move == true && check_grenade == 1 && move2 == true) {
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
@@ -403,12 +403,12 @@ update_status ModulePlayer2::Update()
 		diagSD.Start();
 
 	}
-	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_UP && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_UP || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadRight2 == KEY_STATE::KEY_REPEAT || App->input->joy_right2 == KEY_STATE::KEY_REPEAT)))
+	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_UP && App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_UP || ((App->input->dpadDown2 == KEY_STATE::KEY_UP || App->input->joy_down2 == KEY_STATE::KEY_UP) && (App->input->dpadRight2 == KEY_STATE::KEY_UP || App->input->joy_right2 == KEY_STATE::KEY_UP)))
 	{
 		diagSD.Stop();
 	}
 
-	if ((App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadLeft2 == KEY_STATE::KEY_REPEAT || App->input->joy_left2 == KEY_STATE::KEY_REPEAT))) && move == true && check_grenade == 1 && move2 == true) {
+	if ((App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_REPEAT && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_REPEAT || ((App->input->dpadDown2 == KEY_STATE::KEY_REPEAT || App->input->joy_down2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadLeft2 == KEY_STATE::KEY_REPEAT || App->input->joy_left2 == KEY_STATE::KEY_REPEAT))) && move == true && check_grenade == 1 && move2 == true) {
 		if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666)
 			current_animation = &invisible;
 		else {
@@ -416,7 +416,7 @@ update_status ModulePlayer2::Update()
 		}
 		diagSA.Start();
 	}
-	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_UP && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_UP || ((App->input->dpadUp2 == KEY_STATE::KEY_REPEAT || App->input->joy_up2 == KEY_STATE::KEY_REPEAT) && (App->input->dpadLeft2 == KEY_STATE::KEY_REPEAT || App->input->joy_left2 == KEY_STATE::KEY_REPEAT)))
+	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_UP && App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_UP || ((App->input->dpadDown2 == KEY_STATE::KEY_UP || App->input->joy_down2 == KEY_STATE::KEY_UP) && (App->input->dpadLeft2 == KEY_STATE::KEY_UP || App->input->joy_left2 == KEY_STATE::KEY_UP)))
 	{
 		diagSA.Stop();
 	}

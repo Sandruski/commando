@@ -118,7 +118,7 @@ update_status ModuleMenu::Update()
 	if (!App->render->Blit(graphics, 0, SCREEN_HEIGHT - 224, &background, 0.75f))
 		ret = UPDATE_ERROR;
 
-	if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN || App->input->buttonB == KEY_STATE::KEY_DOWN) {
+	if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN || App->input->buttonB == KEY_STATE::KEY_DOWN || App->input->buttonB2 == KEY_STATE::KEY_DOWN) {
 
 		App->audio->play_fx2();
 		move_y += 16;
@@ -134,14 +134,14 @@ update_status ModuleMenu::Update()
 	App->render->Blit(grenade, 71, move_y, &grenades, 0.75f);
 
 
-	if ((App->input->keyboard[SDL_SCANCODE_RETURN] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && move_y == 118) {
+	if ((App->input->keyboard[SDL_SCANCODE_RETURN] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && move_y == 118) {
 		App->render->UP = false;
 		App->player2->twoplayerson = false;
 		App->fade->FadeToBlack(this, App->scene_1, 3);
 		App->player2->twoplayerson = false;
 	}
 
-	if ((App->input->keyboard[SDL_SCANCODE_RETURN] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN) && move_y == 118 + 16) {
+	if ((App->input->keyboard[SDL_SCANCODE_RETURN] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && move_y == 118 + 16) {
 		App->render->UP = false;
 		App->player2->twoplayerson = true;
 		App->fade->FadeToBlack(this, App->scene_1, 3);
