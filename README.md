@@ -85,7 +85,7 @@ Every member of the team had his part of the work, event that everyone helped in
 -Implemented the secret staris.<br>
 -Implemented the entrance to the rooms.<br>
 -Implmented the fast acces to the new rooms.<br>
--Ficed some general bugs.
+-Fixed some general bugs.
 
 ### Version 0.7
 -Implemented the 2nd player mode.<br>
@@ -95,7 +95,7 @@ Every member of the team had his part of the work, event that everyone helped in
 -Fixed some general bugs.<br>
 -Implemented soldier paths.<br>
 -Implemented revive mode.<br>
--Implemented all items of the game(not the radio).<br>
+-Implemented all items of the game including first aid kids(not the radio).<br>
 -Implemented all power ups.<br>
 -Now we shoot with space and throw grenades with the left shift.<br>
 -Camera is only working for 1st player.
@@ -154,6 +154,7 @@ BACK: god mode off.<br>
 F1: Show coliders.<br>
 F2: God mode on.<br>
 F3: God mode off.<br>
+F9: Going to main menu.<br>
 1: Secret Room A.<br>
 2: Secret Room B.<br>
 3: Secret Room C.<br>
@@ -169,5 +170,5 @@ B: Respawn 5.<br>
 M: Add First Aid Kit.<br>
 N: Add grenade.
 
-8: Go to start menu.
+8: Go to Ending level 1.
 
