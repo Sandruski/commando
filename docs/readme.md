@@ -89,7 +89,7 @@ D: move right
 SPACE: shoot the sub-machine gun
 LETFT SHIFT: throw grenades foward
 
-8: revive ally
+9: revive ally
 
 
 Player 2:
