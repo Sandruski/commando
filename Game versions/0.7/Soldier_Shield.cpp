@@ -108,8 +108,12 @@ void Enemy_SoldierShield::Move()
 		collider->to_delete = true;
 		App->player->coll->to_delete = true;
 		App->player->feetC->to_delete = true;
-		App->player2->coll->to_delete = true;
-		App->player2->feetC->to_delete = true;
+
+		if (App->player2->twoplayerson) {
+			App->player2->coll->to_delete = true;
+			App->player2->feetC->to_delete = true;
+		}
+
 		App->scene_1->winB = true;
 		/*animation = &die;
 		die.speed = 0.1f;
