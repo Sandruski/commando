@@ -9,7 +9,6 @@ Every member of the team had his part of the work, event that everyone helped in
 ## Commando v.1.0 (Beta!) ##Changelist:
 
 
-
 Keyboard inputs
 
 O: to move options in start menu
