@@ -919,6 +919,7 @@ void ModulePlayer::OnCollisionSecretRooms(Collider* c1, Collider* c2) {
 		else if (App->fade->on == App->roomB) {
 			App->fade->FadeToBlack(App->roomB, App->scene_1, 1);
 			stairsUp = false;
+			position.x = 216;
 			position.y = 65;
 			App->scene_1->start = false;
 			App->scene_1->start1 = false;
