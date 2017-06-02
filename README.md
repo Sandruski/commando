@@ -9,68 +9,68 @@ Every member of the team had his part of the work, event that everyone helped in
 ## Commando v.1.0 (Beta!) ##Changelist:
 
 
-Keyboard inputs
+### Keyboard inputs
 
 O: to move options in start menu
 ENTER: to select option
 
-Player 1:
+### Player 1:
 
-W: move foward
-A: move left
-S: move backward
-D: move right
+W: move foward<br>
+A: move left<br>
+S: move backward<br>
+D: move right<br>
 
-SPACE: shoot the sub-machine gun
-LETFT SHIFT: throw grenades foward
+SPACE: shoot the sub-machine gun<br>
+LETFT SHIFT: throw grenades foward<br>
 
 9: revive ally
 
 
-Player 2:
+### Player 2:
 
-UP ARROW ⬆: move foward
-LEFT ARROW ⬅: move left
-DOWN ARROW ⬇: move backward
-RIGHT ARROW ➡: move right
+UP ARROW ⬆: move foward<br>
+LEFT ARROW ⬅: move left<br>
+DOWN ARROW ⬇: move backward<br>
+RIGHT ARROW ➡: move right<br>
 
-INTRO KEYPAD: shoot the sub-machine gun
-RIGHT CONTROL: throw grenades foward
+INTRO KEYPAD: shoot the sub-machine gun<br>
+RIGHT CONTROL: throw grenades foward<br>
 
 0 KEYPAD: revive ally
 
 
 
-Gamepad inputs(xbos 360):
+### Gamepad inputs(xbos 360):
 
-B: move options in start menu
-A: to select option
+B: move options in start menu<br>
+A: to select option<br>
 
-JOISTICK: move players
-B: throw grenade
-A: shoot the sub-machine gun
-X: revive ally
-START : god mode on
-BACK: god mode off
+JOISTICK: move players<br>
+B: throw grenade<br>
+A: shoot the sub-machine gun<br>
+X: revive ally<br>
+START : god mode on<br>
+BACK: god mode off<br>
 
 "Spacebar": jump from Menu screen to play.
 
-F1: Coliders
-F2: God mode on
-F3: God mode off
-1: Secret Room A
-2: Secret Room B
-3: Secret Room C
-4: Secret Room D
-5: Secret Room E
+F1: Coliders<br>
+F2: God mode on<br>
+F3: God mode off<br>
+1: Secret Room A<br>
+2: Secret Room B<br>
+3: Secret Room C<br>
+4: Secret Room D<br>
+5: Secret Room E<br>
 
-Z: Respawn 1
-X: Respawn 2
-C: Respawn 3
-V: Respawn 4
-B: Respawn 5
+Z: Respawn 1<br>
+X: Respawn 2<br>
+C: Respawn 3<br>
+V: Respawn 4<br>
+B: Respawn 5<br>
 
-M: Add First Aid Kit
+M: Add First Aid Kit<br>
 N: Add grenade
 
 8: Go to start menu
