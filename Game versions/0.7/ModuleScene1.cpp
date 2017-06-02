@@ -1627,13 +1627,25 @@ void ModuleScene1::OnCollision(Collider* c1, Collider* c2)
 			roomA= true;
 		if (App->player->position.y < 2145 - 2656 && App->player->position.y > 2000 - 2656) 
 			roomB = true;
-		if (App->player->position.y < 1520 - 2656 && App->player->position.y > 1400 - 2656) 
+		if (App->player->position.y < 1520 - 2656 && App->player->position.y > 1400 - 2656 && App->roomC->loop == false) 
 			roomC = true;
 		if (App->player->position.y < 1160 - 2656 && App->player->position.y > 1000 - 2656) 
 			roomD = true;
 		if (App->player->position.y < 630 - 2656 && App->player->position.y > 475 - 2656) 
 			roomE = true;
+
+		if (App->player->position.y < -410)
+			roomA = false;
+		if (App->player->position.y < 1520 - 2656)
+			roomB = false;
+		if (App->player->position.y < 1160 - 2656)
+			roomC = false;
+		if (App->player->position.y < 630 - 2656)
+			roomD = false;
 		}
+
+
+	
 
 	else if (c1->type == COLLIDER_TOREVIVE && c2->type == COLLIDER_PLAYER || c1->type == COLLIDER_TOREVIVE && c2->type == COLLIDER_PLAYER2) {
 		App->player2->torevive++;

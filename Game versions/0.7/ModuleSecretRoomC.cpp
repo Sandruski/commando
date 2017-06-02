@@ -192,6 +192,7 @@ bool ModuleSecretRoomC::CleanUp() {
 	App->particlesenemies->Disable();
 	App->particles->Disable();
 	App->collision->Disable();
+	loop = true;
 
 	return true;
 }

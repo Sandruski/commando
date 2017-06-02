@@ -321,8 +321,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 						delete enemies[i];
 						enemies[i] = nullptr;
 						break;
+						App->audio->play_fx4();
 					}
-					App->audio->play_fx4();
+
 				}
 				/*if (dieE == true) {
 				delete enemies[i];
