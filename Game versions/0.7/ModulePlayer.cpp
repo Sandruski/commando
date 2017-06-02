@@ -737,6 +737,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 		play_ending = true;
 		waterB = false;
 		App->player2->checkwaterdead = true;
+		App->player2->checkwaterdead3 = true;
 	}
 	GunPowerUp = false;
 }

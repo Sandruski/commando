@@ -73,6 +73,8 @@ public:
 	bool contdead = 0;
 	bool detectionlive = 0;
 	bool checkwaterdead = false;
+	bool checkwaterdead2 = false;
+	bool checkwaterdead3 = false;
 
 	SDL_Rect torevive2;
 	int torevive = 0;

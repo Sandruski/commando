@@ -685,6 +685,7 @@ void ModulePlayer2::OnCollisionWater(Collider* c1, Collider* c2) {
 		play_ending = true;
 		waterB = false;
 		checkwaterdead = true;
+		checkwaterdead2 = true;
 	}
 }
 void ModulePlayer2::OnCollisionEnemy(Collider* c1, Collider* c2) {

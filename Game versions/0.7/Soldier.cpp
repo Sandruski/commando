@@ -458,7 +458,7 @@ void Enemy_Soldier::Move()
 
 	}
 
-	else if (App->player->move2 == false && App->player2->move2) {
+	else if ((App->player->move2 == false ||App->player2->checkwaterdead3 == true) && App->player2->move2) {
 
 
 		if (dont_move && !NO1) {

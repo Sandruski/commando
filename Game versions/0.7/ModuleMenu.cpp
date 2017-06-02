@@ -62,6 +62,8 @@ bool ModuleMenu::Start()
 
 	App->player2->move2 = true;
 	App->player2->checkwaterdead = false;
+	App->player2->checkwaterdead2 = false;
+	App->player2->checkwaterdead3 = false;
 	App->player->move2 = true;
 
 	App->UI->grenade = 3;
@@ -80,6 +82,10 @@ bool ModuleMenu::Start()
 	App->player->position.x = App->fade->start_x;
 	App->player->position.y = App->fade->start_y;
 
+	if (App->player2->twoplayerson) {
+		App->player2->position.x = 130;
+		App->player2->position.y = 135;
+	}
 	App->scene_1->start1 = true;
 	App->scene_1->start2 = false;
 	App->scene_1->start3 = false;
@@ -137,14 +143,14 @@ update_status ModuleMenu::Update()
 	if ((App->input->keyboard[SDL_SCANCODE_RETURN] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && move_y == 118) {
 		App->render->UP = false;
 		App->player2->twoplayerson = false;
-		App->fade->FadeToBlack(this, App->scene_1, 3);
+		App->fade->FadeToBlack(this, App->cinematic, 3);
 		App->player2->twoplayerson = false;
 	}
 
 	if ((App->input->keyboard[SDL_SCANCODE_RETURN] == 1 && KEY_DOWN || App->input->buttonA == KEY_STATE::KEY_DOWN || App->input->buttonA2 == KEY_STATE::KEY_DOWN) && move_y == 118 + 16) {
 		App->render->UP = false;
 		App->player2->twoplayerson = true;
-		App->fade->FadeToBlack(this, App->scene_1, 3);
+		App->fade->FadeToBlack(this, App->cinematic, 3);
 	}
 
 	sprintf_s(App->UI->str1, "%i", App->savedata->savescore_p1);
