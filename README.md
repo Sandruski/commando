@@ -80,6 +80,27 @@ Every member of the team had his part of the work, event that everyone helped in
 -Some bugs fixed.<br>
 -Final victory and lose scene implemented with music.
 
+### Version 0.6
+-Implemented the Secret Rooms.<br>
+-Implemented the secret staris.<br>
+-Implemented the entrance to the rooms.<br>
+-Implmented the fast acces to the new rooms.<br>
+-Ficed some general bugs.
+
+### Version 0.7
+-Implemented the 2nd player mode.<br>
+-Full implemented secret rooms.<br>
+-Implemented win cinematic.<br>
+-Fixed some soldier bugs.<br>
+-Fixed some general bugs.<br>
+-Implemented soldier paths.<br>
+-Implemented revive mode.<br>
+-Implemented all items of the game(not the radio).<br>
+-Implemented all power ups.<br>
+-Now we shoot with space and throw grenades with the left shift.<br>
+-Camera is only working for 1st player.
+
+
 
 
 
