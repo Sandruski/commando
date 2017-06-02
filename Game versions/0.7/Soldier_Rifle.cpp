@@ -2,6 +2,7 @@
 #include "Soldier_Rifle.h"
 #include "ModuleCollision.h"
 #include "ModuleUI.h"
+#include "ModuleAudio.h"
 #include "ModuleParticlesGrenade1.h"
 #include "ModulePlayer.h"
 #include "ModuleScene1.h"
@@ -218,6 +219,8 @@ void Enemy_SoldierRifle::OnCollision(Collider* c1, Collider* c2) {
 			}
 		}
 	}
+
+	App->audio->play_fx4();
 
 	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_ENEMYDIE, NULL);
 }

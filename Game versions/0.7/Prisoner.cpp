@@ -74,8 +74,8 @@ void Enemy_Prisoner::Move()
 
 void Enemy_Prisoner::OnCollision(Collider* c1, Collider* c2) {
 	if (move == false) {
-		App->UI->score += 1000;
 		App->audio->play_fx8();
+		App->UI->score += 1000;
 	}
 	move = true;
 }

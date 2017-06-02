@@ -3,6 +3,7 @@
 #include "ModulePlayer2.h"
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
+#include "ModuleAudio.h"
 #include "ModuleRender.h"
 #include "SDL/include/SDL_timer.h"
 #include <stdlib.h>
@@ -132,7 +133,8 @@ void Enemy_SoldierShield::Move()
 void Enemy_SoldierShield::OnCollision(Collider* c1, Collider* c2) {
 
 	if (dieB == false)
-		App->UI->score += 150;
+		App->audio->play_fx4();
+		App->UI->score += 300;
 	dieB = true;
 
 }

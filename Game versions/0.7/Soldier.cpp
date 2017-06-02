@@ -3,6 +3,7 @@
 #include "ModuleCollision.h"
 #include "ModuleUI.h"
 #include "Path.h"
+#include "ModuleAudio.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleSecretRoomD.h"
 #include "ModuleEnemies.h"
@@ -823,6 +824,7 @@ void Enemy_Soldier::OnCollision(Collider* c1, Collider* c2) {
 		else {
 
 			hi = false;
+			App->audio->play_fx4();
 			App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_ENEMYDIE, NULL);
 		}
 	}

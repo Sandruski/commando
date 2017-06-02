@@ -274,7 +274,6 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		if (c1->type == COLLIDER_PRISONER) { //PRISONERS
 			if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
 				enemies[i]->OnCollision(c2, c1);
-				App->audio->play_fx8();
 			}
 		}
 

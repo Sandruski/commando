@@ -2,6 +2,7 @@
 #include "Soldier_Knife.h"
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
+#include "ModuleAudio.h"
 #include "ModuleUI.h"
 #include "SDL/include/SDL_timer.h"
 #include "Path.h"
@@ -137,7 +138,7 @@ void Enemy_SoldierKnife::Move()
 }
 
 void Enemy_SoldierKnife::OnCollision(Collider* c1, Collider* c2) {
-
+	App->audio->play_fx4();
 	App->particles->AddParticle(App->particles->dieEnemie, c1->rect.x, c1->rect.y, COLLIDER_ENEMYDIE, NULL);
 
 }

@@ -166,7 +166,7 @@ bool ModuleScene1::Start()
 		App->player2->position.y = 2294 - 2656 + 20;
 		current_start_pos = 2294 - 2656 - 114;
 
-		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
+		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 1;
 	}
 	else if (start3) {
 		start1 = false;
@@ -185,7 +185,7 @@ bool ModuleScene1::Start()
 		}
 		current_start_pos = 1836 - 2656 - 114;
 
-		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
+		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 1;
 	}
 	else if (start4) {
 		start1 = false;
@@ -202,7 +202,7 @@ bool ModuleScene1::Start()
 		
 		current_start_pos = 882 - 2656 - 114;
 
-		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
+		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 1;
 	}
 	else if (start5) {
 		start1 = false;
@@ -218,7 +218,7 @@ bool ModuleScene1::Start()
 		App->player2->position.y = 395 - 2656 + 20;
 		current_start_pos = 395 - 2656 - 114;
 
-		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 3;
+		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 1;
 	}
 
 	App->render->camera.x = 0;
@@ -343,16 +343,17 @@ bool ModuleScene1::Start()
 
 
 	//botiquins
-	App->collision->AddCollider({ 190, 150 ,9,9}, COLLIDER_TOREVIVE, this);
-	App->collision->AddCollider({ 102, 2212 - 2656,9,9 }, COLLIDER_TOREVIVE, this);
-	App->collision->AddCollider({ 84, 1502 - 2656,9,9}, COLLIDER_TOREVIVE, this);
-	App->collision->AddCollider({ 243, 708 - 2656,9,9}, COLLIDER_TOREVIVE, this);
+	if (App->player2->twoplayerson == true) {
+		App->collision->AddCollider({ 190, 150 ,9,9 }, COLLIDER_TOREVIVE, this);
+		App->collision->AddCollider({ 102, 2212 - 2656,9,9 }, COLLIDER_TOREVIVE, this);
+		App->collision->AddCollider({ 84, 1502 - 2656,9,9 }, COLLIDER_TOREVIVE, this);
+		App->collision->AddCollider({ 243, 708 - 2656,9,9 }, COLLIDER_TOREVIVE, this);
 
-	App->render->Blit(App->player2->graphics, 198, 150, &App->player2->torevive2);
-	App->render->Blit(App->player2->graphics, 102, 2212 - 2656, &App->player2->torevive2);
-	App->render->Blit(App->player2->graphics, 84, 1502 - 2656, &App->player2->torevive2);
-	App->render->Blit(App->player2->graphics, 243, 708, &App->player2->torevive2);
-
+		App->render->Blit(App->player2->graphics, 198, 150, &App->player2->torevive2);
+		App->render->Blit(App->player2->graphics, 102, 2212 - 2656, &App->player2->torevive2);
+		App->render->Blit(App->player2->graphics, 84, 1502 - 2656, &App->player2->torevive2);
+		App->render->Blit(App->player2->graphics, 243, 708, &App->player2->torevive2);
+	}
 	//ENEMIES
 
 	//Soldier shield

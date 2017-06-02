@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "ModuleParticlesEnemies.h"
+#include "ModuleAudio.h"
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
@@ -321,6 +322,7 @@ void Enemy_Soldier3::OnCollision(Collider* c1, Collider* c2) {
 		else {
 
 			hi = false;
+			App->audio->play_fx4();
 			App->particles->AddParticle(App->particles->dieEnemie, collider->rect.x, collider->rect.y, COLLIDER_ENEMYDIE, NULL);
 		}
 	}

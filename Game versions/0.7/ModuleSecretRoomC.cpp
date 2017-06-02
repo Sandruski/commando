@@ -65,7 +65,7 @@ bool ModuleSecretRoomC::Start() {
 	App->player->position.y = 410;
 	App->player2->position.y = 385;
 	App->scene_1->current_start_pos = SCREEN_HEIGHT;
-	App->render->camera.y = -3 * SCREEN_HEIGHT;
+	App->render->camera.y = -1 * SCREEN_HEIGHT;
 	App->scene_1->cont = 0;
 
 	//COLLIDERS
@@ -111,10 +111,10 @@ update_status ModuleSecretRoomC::Update() {
 		}
 
 		App->player->move = false;
-		App->scene_1->cont += 2;
+		App->scene_1->cont += 3;
 		App->player->current_animation = &App->player->forward;
 		App->player->forward.Start();
-		App->render->camera.y += 6;
+		App->render->camera.y += 3;
 	}
 	else if (App->player->position.x == 121 && App->player->position.y == 80) {
 		App->player->move = false;
@@ -126,7 +126,7 @@ update_status ModuleSecretRoomC::Update() {
 	//
 
 	//Move camera DOWN
-	if (App->player->position.y > 220 && App->render->camera.y > -3 * SCREEN_HEIGHT) {
+	if (App->player->position.y > 220 && App->render->camera.y > -1 * SCREEN_HEIGHT) {
 		check_player++;
 
 		if (check_player % 2 == 0) {
@@ -134,10 +134,10 @@ update_status ModuleSecretRoomC::Update() {
 		}
 
 		App->player->move = false;
-		App->scene_1->cont -= 2;
+		App->scene_1->cont -= 3;
 		App->player->current_animation = &App->player->backward;
 		App->player->backward.Start();
-		App->render->camera.y -= 6;
+		App->render->camera.y -= 3;
 	}
 	else {
 		App->player->backward.Stop();

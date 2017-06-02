@@ -42,7 +42,7 @@ public:
 
 	bool check_audio = true, check_audio1 = true, check_audio2 = true, check_audio3 = true;
 	//Camera parameters
-	int cont = 0, speed = 3;
+	int cont = 0, speed = 1;
 
 	bool play_win = false;
 	int tempo1 = 0;
