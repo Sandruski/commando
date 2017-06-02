@@ -55,7 +55,7 @@ BACK: god mode off<br>
 
 "Spacebar": jump from Menu screen to play.
 
-F1: Coliders<br>
+F1: Show coliders<br>
 F2: God mode on<br>
 F3: God mode off<br>
 1: Secret Room A<br>
