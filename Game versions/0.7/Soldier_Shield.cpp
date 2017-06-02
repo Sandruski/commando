@@ -1,5 +1,6 @@
 #include "Application.h"
 #include "Soldier_Shield.h"
+#include "ModulePlayer2.h"
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
 #include "ModuleRender.h"
@@ -107,6 +108,8 @@ void Enemy_SoldierShield::Move()
 		collider->to_delete = true;
 		App->player->coll->to_delete = true;
 		App->player->feetC->to_delete = true;
+		App->player2->coll->to_delete = true;
+		App->player2->feetC->to_delete = true;
 		App->scene_1->winB = true;
 		/*animation = &die;
 		die.speed = 0.1f;
@@ -116,6 +119,7 @@ void Enemy_SoldierShield::Move()
 
 		//player walks towards the door
 		App->player->move = false;
+		App->player2->move = false;
 		App->scene_1->dead = true;
 	}
 

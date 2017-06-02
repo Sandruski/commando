@@ -488,18 +488,20 @@ update_status ModulePlayer::Update()
 	collrev->SetPos(position.x - 12, position.y - 10);
 	coll->SetPos(position.x + 2, position.y + 4);
 	feetC->SetPos(position.x + 4, position.y + 19);
-	follow_p->SetPos(position.x - 50, position.y - 50);
-	follow_p1->SetPos(position.x + 20, position.y - 50);
-	follow_p2->SetPos(position.x - 50, position.y - 50);
-	follow_p3->SetPos(position.x - 50, position.y + 25);
-	/*
-	follow_p = App->collision->AddCollider({ 300 - 16, 300 - 19, 50, 100 }, COLLIDER_FOLLOW, this);
-	follow_p1 = App->collision->AddCollider({ 300 - 16, 300 - 19, 50, 100 }, COLLIDER_FOLLOW, this);
-	follow_p2 = App->collision->AddCollider({ 300 - 16, 300 - 19, 100, 50 }, COLLIDER_FOLLOW, this);
-	follow_p3 = App->collision->AddCollider({ 300 - 16, 300 - 19, 100, 50 }, COLLIDER_FOLLOW, this);
-	
-	
-	*/
+
+	if (move2) {
+		follow_p->SetPos(position.x - 50, position.y - 50);
+		follow_p1->SetPos(position.x + 20, position.y - 50);
+		follow_p2->SetPos(position.x - 50, position.y - 50);
+		follow_p3->SetPos(position.x - 50, position.y + 25);
+	}
+	else if (move2 == false && App->player2->move2) {
+		follow_p->SetPos(App->player2->position.x - 50, App->player2->position.y - 50);
+		follow_p1->SetPos(App->player2->position.x + 20, App->player2->position.y - 50);
+		follow_p2->SetPos(App->player2->position.x - 50, App->player2->position.y - 50);
+		follow_p3->SetPos(App->player2->position.x - 50, App->player2->position.y + 25);
+	}
+
 	if (stairsUp == false) {
 		current_animation = &stairsRoom;
 		move = false;

@@ -9,6 +9,7 @@
 #include "ModuleParticlesEnemies.h"
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 
 #include "SDL/include/SDL_timer.h"
 
@@ -158,109 +159,6 @@ Enemy_Soldier3::Enemy_Soldier3(int x, int y) : Enemy(x, y)
 	path5.PushBack({ +0.0f, +0.6f }, 30 - 10);
 	path5.PushBack({ +0.6f, +0.0f }, 100 - 10);
 
-	//
-	/*
-	//Path 1
-	path1.PushBack({ +0.0f, +0.5f }, 90);
-	path1.PushBack({ -0.5f, +0.5f }, 30);
-	path1.PushBack({ -0.5f, +0.0f }, 50);
-
-	path1.PushBack({ +0.0f, +0.5f }, 10);
-	path1.PushBack({ -0.5f, +0.0f }, 70);
-	path1.PushBack({ -0.5f, +0.5f }, 80);
-	path1.PushBack({ -0.5f, +0.0f }, 200);
-
-	//Path 2
-	path2.PushBack({ +0.0f, +0.5f }, 100);
-	path2.PushBack({ +0.5f, +0.0f }, 80);
-	path2.PushBack({ +0.0f, -0.5f }, 30);
-	path2.PushBack({ +0.5f, +0.0f }, 90);
-
-	path2.PushBack({ +0.0f, +0.5f }, 50);
-	path2.PushBack({ -0.5f, +0.0f }, 30);
-	path2.PushBack({ +0.0f, +0.5f }, 20);
-	path2.PushBack({ +0.5f, +0.0f }, 200);
-
-	//Path 3
-	path3.PushBack({ +0.0f, +0.5f }, 90);
-	path3.PushBack({ -0.5f, +0.5f }, 40);
-	path3.PushBack({ +0.0f, +0.5f }, 50);
-
-	path3.PushBack({ +0.5f, +0.0f }, 40);
-	path3.PushBack({ +0.5f, +0.5f }, 70);
-	path3.PushBack({ +0.0f, +0.5f }, 20);
-	path3.PushBack({ -0.5f, +0.0f }, 100);
-
-	path3.PushBack({ +0.0f, +0.5f }, 10);
-	path3.PushBack({ -0.5f, +0.0f }, 40);
-	path3.PushBack({ +0.0f, +0.5f }, 50);
-	path3.PushBack({ -0.5f, +0.5f }, 70);
-
-	path3.PushBack({ +0.0f, +0.5f }, 30);
-	path3.PushBack({ +0.5f, +0.5f }, 40);
-	path3.PushBack({ +0.5f, +0.0f }, 60);
-	path3.PushBack({ +0.0f, +0.5f }, 50);
-
-	path3.PushBack({ +0.5f, +0.0f }, 200);
-
-	//Path 4
-	path4.PushBack({ +0.0f, +0.5f }, 100);
-	path4.PushBack({ -0.5f, +0.0f }, 20);
-	path4.PushBack({ +0.0f, +0.5f }, 30);
-	path4.PushBack({ +0.5f, +0.0f }, 40);
-
-	path4.PushBack({ +0.5f, +0.5f }, 20);
-	path4.PushBack({ -0.5f, +0.5f }, 50);
-	path4.PushBack({ -0.5f, +0.0f }, 30);
-	path4.PushBack({ +0.0f, -0.5f }, 10);
-
-	path4.PushBack({ -0.5f, +0.0f }, 30);
-	path4.PushBack({ +0.0f, +0.5f }, 50);
-	path4.PushBack({ +0.5f, +0.0f }, 60);
-	path4.PushBack({ +0.0f, +0.5f }, 20);
-
-	path4.PushBack({ +0.5f, +0.0f }, 50);
-	path4.PushBack({ +0.5f, +0.5f }, 30);
-	path4.PushBack({ +0.0f, +0.5f }, 20);
-	path4.PushBack({ +0.5f, +0.0f }, 10);
-	path4.PushBack({ +0.0f, +0.5f }, 20);
-
-	path4.PushBack({ -0.5f, +0.5f }, 40);
-	path4.PushBack({ -0.5f, +0.0f }, 100);
-
-	//Path 5
-	path5.PushBack({ +0.0f, +0.5f }, 100);
-	path5.PushBack({ +0.5f, +0.5f }, 30);
-	path5.PushBack({ -0.5f, +0.5f }, 80);
-	path5.PushBack({ +0.0f, +0.5f }, 30);
-
-	path5.PushBack({ +0.5f, +0.0f }, 60);
-	path5.PushBack({ +0.0f, +0.5f }, 20);
-	path5.PushBack({ +0.5f, +0.0f }, 80);
-	path5.PushBack({ +0.5f, +0.5f }, 30);
-
-	path5.PushBack({ -0.5f, +0.0f }, 170);
-	path5.PushBack({ +0.0f, +0.5f }, 40);
-	path5.PushBack({ +0.5f, +0.0f }, 60);
-	path5.PushBack({ +0.0f, +0.5f }, 50);
-
-	path5.PushBack({ -0.5f, +0.0f }, 30);
-	path5.PushBack({ +0.0f, +0.5f }, 20);
-	path5.PushBack({ +0.5f, +0.0f }, 30);
-	path5.PushBack({ +0.0f, +0.5f }, 40);
-
-	path5.PushBack({ -0.5f, +0.0f }, 50);
-	path5.PushBack({ +0.0f, -0.5f }, 20);
-	path5.PushBack({ -0.5f, +0.0f }, 30);
-	path5.PushBack({ +0.0f, +0.5f }, 20);
-
-	path5.PushBack({ +0.5f, +0.0f }, 30);
-	path5.PushBack({ +0.0f, +0.5f }, 10);
-	path5.PushBack({ +0.5f, +0.0f }, 70);
-	path5.PushBack({ +0.0f, +0.5f }, 30);
-	path5.PushBack({ +0.5f, +0.0f }, 100);
-	*/
-
 	animation = &up;
 
 	collider = App->collision->AddCollider({ 0, 0, 18, 18 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
@@ -327,30 +225,59 @@ void Enemy_Soldier3::Move()
 	}
 	//
 
-	//SHOT
-	rand1 = rand() % 300;
-	num_shots = rand() % 4;
+	if (App->player->move2) {
+		//SHOT
+		rand1 = rand() % 300;
+		num_shots = rand() % 4;
 
-	if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
+		if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
 
-		enemyplayer.x = (App->player->position.x + 5) - position.x;
-		enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
+			enemyplayer.x = (App->player->position.x + 5) - position.x;
+			enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
 
-		module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
-		enemyplayeru.x = enemyplayer.x / module;
-		enemyplayeru.y = enemyplayer.y / module;
+			module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
+			enemyplayeru.x = enemyplayer.x / module;
+			enemyplayeru.y = enemyplayer.y / module;
 
-		App->particlesenemies->bala.speed.x = enemyplayeru.x;
-		App->particlesenemies->bala.speed.y = enemyplayeru.y;
+			App->particlesenemies->bala.speed.x = enemyplayeru.x;
+			App->particlesenemies->bala.speed.y = enemyplayeru.y;
 
-		for (int i = 0; i <= num_shots; i++) {
-			App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
-			space = rand() % 10 + 5;
+			for (int i = 0; i <= num_shots; i++) {
+				App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
+				space = rand() % 10 + 5;
+			}
+
+			space = 0;
 		}
-
-		space = 0;
+		//end_of_shot
 	}
-	//end_of_shot
+	else if (App->player->move2 == false && App->player2->move2) {
+
+		//SHOT
+		rand1 = rand() % 300;
+		num_shots = rand() % 4;
+
+		if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
+
+			enemyplayer.x = (App->player2->position.x + 5) - position.x;
+			enemyplayer.y = fabs(position.y + 25) - fabs(App->player2->position.y + 10);
+
+			module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
+			enemyplayeru.x = enemyplayer.x / module;
+			enemyplayeru.y = enemyplayer.y / module;
+
+			App->particlesenemies->bala.speed.x = enemyplayeru.x;
+			App->particlesenemies->bala.speed.y = enemyplayeru.y;
+
+			for (int i = 0; i <= num_shots; i++) {
+				App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
+				space = rand() % 10 + 5;
+			}
+
+			space = 0;
+		}
+		//end_of_shot
+	}
 
 	if (dieB == true) {
 

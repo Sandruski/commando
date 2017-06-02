@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "ModuleParticlesEnemies.h"
+#include "ModulePlayer2.h"
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
 
@@ -263,30 +264,63 @@ void Enemy_Soldier2::Move()
 	}
 	//
 
-	//SHOT
-	rand1 = rand() % 300;
-	num_shots = rand() % 4;
+	if (App->player->move2) {
 
-	if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
+		//SHOT
+		rand1 = rand() % 300;
+		num_shots = rand() % 4;
 
-		enemyplayer.x = (App->player->position.x + 5) - position.x;
-		enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
+		if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
 
-		module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
-		enemyplayeru.x = enemyplayer.x / module;
-		enemyplayeru.y = enemyplayer.y / module;
+			enemyplayer.x = (App->player->position.x + 5) - position.x;
+			enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
 
-		App->particlesenemies->bala.speed.x = enemyplayeru.x;
-		App->particlesenemies->bala.speed.y = enemyplayeru.y;
+			module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
+			enemyplayeru.x = enemyplayer.x / module;
+			enemyplayeru.y = enemyplayer.y / module;
 
-		for (int i = 0; i <= num_shots; i++) {
-			App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
-			space = rand() % 10 + 5;
+			App->particlesenemies->bala.speed.x = enemyplayeru.x;
+			App->particlesenemies->bala.speed.y = enemyplayeru.y;
+
+			for (int i = 0; i <= num_shots; i++) {
+				App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
+				space = rand() % 10 + 5;
+			}
+
+			space = 0;
 		}
-
-		space = 0;
+		//end_of_shot
 	}
-	//end_of_shot
+
+	else if (App->player->move2 == false && App->player2->move2) {
+
+
+		//SHOT
+		rand1 = rand() % 300;
+		num_shots = rand() % 4;
+
+		if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
+
+			enemyplayer.x = (App->player2->position.x + 5) - position.x;
+			enemyplayer.y = fabs(position.y + 25) - fabs(App->player2->position.y + 10);
+
+			module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
+			enemyplayeru.x = enemyplayer.x / module;
+			enemyplayeru.y = enemyplayer.y / module;
+
+			App->particlesenemies->bala.speed.x = enemyplayeru.x;
+			App->particlesenemies->bala.speed.y = enemyplayeru.y;
+
+			for (int i = 0; i <= num_shots; i++) {
+				App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
+				space = rand() % 10 + 5;
+			}
+
+			space = 0;
+		}
+		//end_of_shot
+
+	}
 
 	if (dieB == true) {
 

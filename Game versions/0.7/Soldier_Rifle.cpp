@@ -5,6 +5,7 @@
 #include "ModuleParticlesGrenade1.h"
 #include "ModulePlayer.h"
 #include "ModuleScene1.h"
+#include "ModulePlayer2.h"
 #include "ModuleParticlesEnemies.h"
 #include <stdlib.h>
 #include <time.h>
@@ -15,7 +16,7 @@
 
 Enemy_SoldierRifle::Enemy_SoldierRifle(int x, int y) : Enemy(x, y)
 {
-	invisible.PushBack({1,1,1,1 });
+	invisible.PushBack({ 1,1,1,1 });
 
 	down.PushBack({ 80, 82, 13, 23 });
 	down.PushBack({ 228, 45, 13, 23 });
@@ -50,78 +51,157 @@ void Enemy_SoldierRifle::Move()
 	currentTime = SDL_GetTicks();
 	currentTime -= lastTime;
 
-	if (dieB == false) {
-		lastTime = SDL_GetTicks();
 
-		//MOVEMENT
-		if (App->player->position.x <= position.x - 22) {
-			animation = &more_left;
-		}
-		else if (App->player->position.x >= position.x + 22) {
-			animation = &more_right;
-		}
-		else if (App->player->position.x > position.x - 22 && App->player->position.x < position.x - 2) {
-			animation = &left;
-		}
-		else if (App->player->position.x < position.x + 22 && App->player->position.x > position.x + 2) {
-			animation = &right;
-		}
-		else if (App->player->position.x >= position.x - 2 && App->player->position.x <= position.x + 2) {
-			animation = &center;
-		}
+	if (App->player->move2) {
+		if (dieB == false) {
+			lastTime = SDL_GetTicks();
 
-		//SHOT
-		num_shots = rand() % 4;
-		rand1 = rand() % 500;
-
-		if (rand1 == 3 && App->player->position.y > position.y + 24) {
-
-			enemyplayer.x = (App->player->position.x + 5) - position.x;
-			enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
-
-			module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
-			enemyplayeru.x = enemyplayer.x / module;
-			enemyplayeru.y = enemyplayer.y / module;
-
-			App->particlesenemies->bala.speed.x = enemyplayeru.x;
-			App->particlesenemies->bala.speed.y = enemyplayeru.y;
-
-			for (int i = 0; i <= num_shots; i++) {
-				App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
-				space = rand() % 10 + 5;
+			//MOVEMENT
+			if (App->player->position.x <= position.x - 22) {
+				animation = &more_left;
+			}
+			else if (App->player->position.x >= position.x + 22) {
+				animation = &more_right;
+			}
+			else if (App->player->position.x > position.x - 22 && App->player->position.x < position.x - 2) {
+				animation = &left;
+			}
+			else if (App->player->position.x < position.x + 22 && App->player->position.x > position.x + 2) {
+				animation = &right;
+			}
+			else if (App->player->position.x >= position.x - 2 && App->player->position.x <= position.x + 2) {
+				animation = &center;
 			}
 
-			space = 0;
+			//SHOT
+			num_shots = rand() % 4;
+			rand1 = rand() % 500;
+
+			if (rand1 == 3 && App->player->position.y > position.y + 24) {
+
+				enemyplayer.x = (App->player->position.x + 5) - position.x;
+				enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
+
+				module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
+				enemyplayeru.x = enemyplayer.x / module;
+				enemyplayeru.y = enemyplayer.y / module;
+
+				App->particlesenemies->bala.speed.x = enemyplayeru.x;
+				App->particlesenemies->bala.speed.y = enemyplayeru.y;
+
+				for (int i = 0; i <= num_shots; i++) {
+					App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
+					space = rand() % 10 + 5;
+				}
+
+				space = 0;
+			}
+
+			if (App->player->position.y <= position.y + 24) {
+				to_true = true;
+			}
+
+			if (to_true) {
+				animation = &down;
+				down.Start();
+				contador++;
+				position.y -= 0.7;
+			}
+
+			if (contador >= 50) {
+				collider->to_delete = true;
+				position.y += 0.7;
+				animation = &invisible;
+			}
 		}
 
-		if (App->player->position.y <= position.y + 24) {
-			to_true = true;
+		if (dieB == true) {
+
+			animation = &die;
+			die.speed = 0.1f;
+			if (currentTime > 800)
+				Esperanza = false;
 		}
 
-		if (to_true) {
-			animation = &down;
-			down.Start();
-			contador++;
-			position.y -= 0.7;
-		}
-
-		if (contador >= 50) {
-			collider->to_delete = true;
-			position.y += 0.7;
-			animation = &invisible;
-		}
+		checking++;
+		one = rand() % 100;
 	}
 
-	if (dieB == true) {
+	else if (App->player->move2 == false && App->player2->move2) {
+		if (dieB == false) {
+			lastTime = SDL_GetTicks();
 
-		animation = &die;
-		die.speed = 0.1f;
-		if (currentTime > 800)
-			Esperanza = false;
+			//MOVEMENT
+			if (App->player2->position.x <= position.x - 22) {
+				animation = &more_left;
+			}
+			else if (App->player2->position.x >= position.x + 22) {
+				animation = &more_right;
+			}
+			else if (App->player2->position.x > position.x - 22 && App->player2->position.x < position.x - 2) {
+				animation = &left;
+			}
+			else if (App->player2->position.x < position.x + 22 && App->player2->position.x > position.x + 2) {
+				animation = &right;
+			}
+			else if (App->player2->position.x >= position.x - 2 && App->player2->position.x <= position.x + 2) {
+				animation = &center;
+			}
+
+			//SHOT
+			num_shots = rand() % 4;
+			rand1 = rand() % 500;
+
+			if (rand1 == 3 && App->player2->position.y > position.y + 24) {
+
+				enemyplayer.x = (App->player2->position.x + 5) - position.x;
+				enemyplayer.y = fabs(position.y + 25) - fabs(App->player2->position.y + 10);
+
+				module = sqrt((pow(enemyplayer.x, 2) + pow(enemyplayer.y, 2)));
+				enemyplayeru.x = enemyplayer.x / module;
+				enemyplayeru.y = enemyplayer.y / module;
+
+				App->particlesenemies->bala.speed.x = enemyplayeru.x;
+				App->particlesenemies->bala.speed.y = enemyplayeru.y;
+
+				for (int i = 0; i <= num_shots; i++) {
+					App->particlesenemies->AddParticle(App->particlesenemies->bala, position.x, (position.y + 25), COLLIDER_ENEMY_SHOT, NULL, enemyplayeru); //position.y+30+space
+					space = rand() % 10 + 5;
+				}
+
+				space = 0;
+			}
+
+			if (App->player2->position.y <= position.y + 24) {
+				to_true = true;
+			}
+
+			if (to_true) {
+				animation = &down;
+				down.Start();
+				contador++;
+				position.y -= 0.7;
+			}
+
+			if (contador >= 50) {
+				collider->to_delete = true;
+				position.y += 0.7;
+				animation = &invisible;
+			}
+		}
+
+		if (dieB == true) {
+
+			animation = &die;
+			die.speed = 0.1f;
+			if (currentTime > 800)
+				Esperanza = false;
+		}
+
+		checking++;
+		one = rand() % 100;
+
 	}
-
-	checking++;
-	one = rand() % 100;
 }
 
 void Enemy_SoldierRifle::OnCollision(Collider* c1, Collider* c2) {
