@@ -22,6 +22,7 @@ public:
 	SDL_Rect background2;
 	SDL_Rect r;
 	Animation* current_animation = nullptr;
+	SDL_Texture* Gameover = nullptr;
 
 	int cont;
 	bool yeah;

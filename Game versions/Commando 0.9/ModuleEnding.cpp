@@ -29,7 +29,7 @@ ModuleEnding::ModuleEnding()
 	background2.x = 0;
 	background2.y = 0;
 	background2.w = 256;
-	background2.h = 2880;
+	background2.h = 224;
 }
 
 ModuleEnding::~ModuleEnding()
@@ -39,6 +39,8 @@ ModuleEnding::~ModuleEnding()
 bool ModuleEnding::Start()
 {
 	LOG("Loading ending scene");
+	App->render->camera.y = 0;
+	Gameover = App->textures->Load("Assets/Sprites/gameover.png");
 
 	//Initialize audio
 	check_audio = true;
@@ -54,6 +56,7 @@ bool ModuleEnding::CleanUp()
 
 	App->player->play_ending = false;
 	App->scene_1->play_win = false;
+	App->textures->Unload(Gameover);
 
 	return true;
 }
@@ -62,6 +65,7 @@ bool ModuleEnding::CleanUp()
 update_status ModuleEnding::Update()
 {
 	update_status ret = UPDATE_CONTINUE;
+
 
 	if (App->fade->on == this && yeah == true) {
 		cont = 0;
@@ -76,10 +80,10 @@ update_status ModuleEnding::Update()
 	cont++;
 
 	//win
-	if (check_audio && App->scene_1->play_win == true) {
+/*	if (check_audio && App->scene_1->play_win == true) {
 		App->audio->play_music4();
 		check_audio = false;
-	}
+	}*/
 
 	//lose
 	if (check_audio1 && App->player->play_ending == true) {
@@ -94,6 +98,8 @@ update_status ModuleEnding::Update()
 			App->fade->FadeToBlack(this, App->EndingLvl1, 1);
 		yeah = true;
 	}
+
+	App->render->Blit(Gameover, 0, 0, &background2);
 
 	return ret;
 }
