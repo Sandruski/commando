@@ -15,7 +15,7 @@
     <Filter Include="Modules\Enemies">
       <UniqueIdentifier>{76d291b1-94f4-4f57-a65f-016dcd36012c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Modules\NewFilter1">
+    <Filter Include="Modules\SecretRooms">
       <UniqueIdentifier>{33d2b11d-1771-4fb3-82df-bc20dddc6f94}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -132,19 +132,19 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="ModuleSecretRoomB.h">
-      <Filter>Modules\NewFilter1</Filter>
+      <Filter>Modules\SecretRooms</Filter>
     </ClInclude>
     <ClInclude Include="ModuleSecretRoom1A.h">
-      <Filter>Modules\NewFilter1</Filter>
+      <Filter>Modules\SecretRooms</Filter>
     </ClInclude>
     <ClInclude Include="ModuleSecretRoomE.h">
-      <Filter>Modules\NewFilter1</Filter>
+      <Filter>Modules\SecretRooms</Filter>
     </ClInclude>
     <ClInclude Include="ModuleSecretRoomC.h">
-      <Filter>Modules\NewFilter1</Filter>
+      <Filter>Modules\SecretRooms</Filter>
     </ClInclude>
     <ClInclude Include="ModuleSecretRoomD.h">
-      <Filter>Modules\NewFilter1</Filter>
+      <Filter>Modules\SecretRooms</Filter>
     </ClInclude>
     <ClInclude Include="GrenadesB.h">
       <Filter>Modules\Enemies</Filter>
@@ -278,19 +278,19 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="ModuleSecretRoomB.cpp">
-      <Filter>Modules\NewFilter1</Filter>
+      <Filter>Modules\SecretRooms</Filter>
     </ClCompile>
     <ClCompile Include="ModuleSecretRoom1A.cpp">
-      <Filter>Modules\NewFilter1</Filter>
+      <Filter>Modules\SecretRooms</Filter>
     </ClCompile>
     <ClCompile Include="ModuleSecretRoomE.cpp">
-      <Filter>Modules\NewFilter1</Filter>
+      <Filter>Modules\SecretRooms</Filter>
     </ClCompile>
     <ClCompile Include="ModuleSecretRoomC.cpp">
-      <Filter>Modules\NewFilter1</Filter>
+      <Filter>Modules\SecretRooms</Filter>
     </ClCompile>
     <ClCompile Include="ModuleSecretRoomD.cpp">
-      <Filter>Modules\NewFilter1</Filter>
+      <Filter>Modules\SecretRooms</Filter>
     </ClCompile>
     <ClCompile Include="GrenadesB.cpp">
       <Filter>Modules\Enemies</Filter>
