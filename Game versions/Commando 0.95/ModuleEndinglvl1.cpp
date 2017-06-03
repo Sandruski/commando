@@ -187,6 +187,7 @@ ModuleEndingLvl1::~ModuleEndingLvl1()
 bool ModuleEndingLvl1::Start()
 {
 	time = 0;
+	contador = 0;
 
 	App->audio->play_music9();
 	alphabet = App->textures->Load("Assets/Sprites/Alphabet&num.png");
