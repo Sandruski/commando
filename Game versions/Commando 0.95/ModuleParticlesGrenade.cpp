@@ -24,9 +24,6 @@ ModuleParticlesGrenade::ModuleParticlesGrenade()
 
 	explosion.anim.PushBack({ 22, 115, 20, 20 });
 	explosion.anim.PushBack({ 62, 112, 25, 24 });
-
-
-
 }
 
 ModuleParticlesGrenade::~ModuleParticlesGrenade()
@@ -88,12 +85,8 @@ update_status ModuleParticlesGrenade::Update()
 			{
 				p->fx_played = true;
 
-
 			}
 		}
-
-
-
 	}
 
 	return UPDATE_CONTINUE;

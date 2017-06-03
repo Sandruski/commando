@@ -229,6 +229,22 @@ bool ModuleScene1::Start()
 
 		App->render->camera.y = ((abs(App->player->position.y)) + 114) * 1;
 	}
+	else {
+		start1 = true;
+		start2 = false;
+		start3 = false;
+		start4 = false;
+		start5 = false;
+		if (App->player2->twoplayerson == false)
+			App->player->position.x = 130;
+		else
+			App->player->position.x = 112;
+		App->player->position.y = 110;
+		App->player2->position.y = 110 + 20;
+		current_start_pos = 0;
+
+		App->render->camera.y = 0;
+	}
 
 	App->render->camera.x = 0;
 	cont = 0;
