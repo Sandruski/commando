@@ -48,6 +48,7 @@ ModuleMenu::~ModuleMenu()
 // Load assets
 bool ModuleMenu::Start()
 {
+
 	LOG("Loading menu scene");
 
 	graphics = App->textures->Load("Assets/Background/menu.png");

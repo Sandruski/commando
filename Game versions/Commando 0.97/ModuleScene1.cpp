@@ -74,6 +74,11 @@ ModuleScene1::~ModuleScene1()
 // Load assets
 bool ModuleScene1::Start()
 {
+	roomA = false;
+	roomB = false;
+	roomC = false;
+	roomD = false;
+	roomE = false;
 
 	LOG("Loading 1st scene");
 	moto = App->textures->Load("Assets/Sprites/vehicles.png");
@@ -1296,7 +1301,7 @@ update_status ModuleScene1::Update()
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 256, 2011 - 2656);
 		}
 
-		if (spawn2 == 480) {
+		if (spawn2 == 580) {
 			spawn2 = 0;
 		}
 	}
@@ -1326,7 +1331,7 @@ update_status ModuleScene1::Update()
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1840 - 2656);
 		}
 
-		if (spawn3 == 320) {
+		if (spawn3 == 400) {
 			spawn3 = 0;
 		}
 	}
@@ -1354,7 +1359,7 @@ update_status ModuleScene1::Update()
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, -3, 1035 - 2656);
 		}
 
-		if (spawn4 == 350) {
+		if (spawn4 == 450) {
 			spawn4 = 0;
 		}
 	}
@@ -1411,7 +1416,7 @@ update_status ModuleScene1::Update()
 			App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER, 258, 257 - 2656);
 		}
 
-		if (spawn6 == 600) {
+		if (spawn6 == 650) {
 			spawn6 = 0;
 		}
 	}

@@ -186,6 +186,7 @@ update_status ModuleSecretRoomD::Update() {
 bool ModuleSecretRoomD::CleanUp() {
 	App->textures->Unload(RoomD);
 
+	//App->scene_1->cont = 0;
 	App->UI->Disable();
 	App->enemies->Disable();
 	App->player->Disable();

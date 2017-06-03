@@ -15,6 +15,7 @@
 #include "ModuleAudio.h"
 #include "ModuleEnemies.h"
 #include "ModuleCollision.h"
+#include "ModuleSecretRoomD.h"
 #include "ModuleParticlesEnemies.h"
 #include "ModuleParticlesGrenade.h"
 #include "ModuleParticlesGrenade1.h"
@@ -42,7 +43,7 @@ bool ModuleEnding::Start()
 	LOG("Loading ending scene");
 	App->render->camera.y = 0;
 	Gameover = App->textures->Load("Assets/Sprites/gameover.png");
-
+	App->roomD->Disable();
 	//Initialize audio
 	check_audio = true;
 	check_audio1 = true;
