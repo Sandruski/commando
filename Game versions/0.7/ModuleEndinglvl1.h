@@ -72,6 +72,8 @@ public:
 	SDL_Rect pone;
 	Animation guy;
 
+	int contador = 0;
+
 	float time = 0;
 
 };

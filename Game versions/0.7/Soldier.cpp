@@ -403,7 +403,7 @@ void Enemy_Soldier::Move()
 		//
 
 		//SHOT
-		rand1 = rand() % 300;
+		rand1 = rand() % 600;
 		num_shots = rand() % 4;
 
 		if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
@@ -735,7 +735,7 @@ void Enemy_Soldier::Move()
 		//
 
 		//SHOT
-		rand1 = rand() % 300;
+		rand1 = rand() % 600;
 		num_shots = rand() % 4;
 
 		if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {

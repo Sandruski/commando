@@ -10,17 +10,22 @@ private:
 	float wave = -1.0f;
 	bool going_up = true;
 
-	int original_y = 0;
-	int original_x = 0;
+	Path path;
 
-	Animation run1, run2;
+
+	fPoint original_pos;
+	fPoint save_step;
+	Animation left, right;
 	Animation die;
 	int cont = 0;
 
 public:
+	
+	uint lastTime, currentTime;
+	bool dieB = false;
 
 	Enemy_CrazyGreen(int x, int y);
-
+	void OnCollision(Collider* c1, Collider* c2);
 	void Move();
 };
 

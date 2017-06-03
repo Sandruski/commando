@@ -107,7 +107,6 @@ update_status ModuleCinematic::Update()
 	App->render->Blit(playerhelicopter, 160 , 160, &r);
 	*/
 
-
 	if (helicont < 350) {
 		current_animation = &helicopter1;
 		r = current_animation->GetCurrentFrame();
@@ -145,7 +144,6 @@ update_status ModuleCinematic::Update()
 		helialtura--;
 	}
 
-
 	if (helicont >= 370 && helicont < 480) {
 		if (pjcont == 0 || pjcont == 1)
 			current_animation = &playerjump;
@@ -179,7 +177,6 @@ update_status ModuleCinematic::Update()
 			sj_x--;
 
 	}
-
 
 	if (sj_x == 125) {
 		App->render->UP = false;

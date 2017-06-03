@@ -44,6 +44,8 @@ public:
 	//Camera parameters
 	int cont = 0, speed = 1;
 
+	bool crazy = true;
+
 	bool play_win = false;
 	int tempo1 = 0;
 	bool check_UI = true;

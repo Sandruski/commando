@@ -210,6 +210,7 @@ bool ModuleEndingLvl1::CleanUp()
 	//App->audio->Disable();
 
 	App->textures->Unload(alphabet);
+	App->textures->Unload(animation);
 
 	return true;
 }
@@ -222,10 +223,12 @@ update_status ModuleEndingLvl1::Update()
 	App->render->Blit(alphabet, 110, 19 - (App->render->camera.y / 3), &highsc);// hsc
 	App->render->Blit(alphabet, 20, 19 - (App->render->camera.y / 3), &pone);// pone
 
-
+	contador++;
 	time += 0.02f;
 
-
+	if (contador == 400) {
+		App->audio->pause_music();
+	}
 
 	// Draw everything --------------------------------------
 	App->render->Blit(animation, 104, 105, &(guy.GetCurrentFrame()), 1.0f); // guy animation

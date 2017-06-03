@@ -9,6 +9,7 @@
 #include "ModuleInput.h"
 #include "SDL/include/SDL.h"
 #include "ModuleEND.h"
+#include "ModuleEndinglvl1.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleAudio.h"
 #include "ModuleEnding.h"
@@ -97,6 +98,8 @@ bool ModuleScene1::Start()
 	Secret_Room.y = 125;
 	Secret_Room.w = 16;
 	Secret_Room.h = 16;
+
+	crazy = true;
 
 	App->collision->Enable();
 	App->particles->Enable();
@@ -225,6 +228,8 @@ bool ModuleScene1::Start()
 	cont = 0;
 
 	App->player->move2 = true;
+	App->player2->move2 = true;
+	App->player2->move = true;
 
 	TE = true;
 
@@ -358,9 +363,6 @@ bool ModuleScene1::Start()
 
 	//Soldier shield
 	App->enemies->AddEnemy(ENEMY_TYPES::SOLDIER_SHIELD, 111, 35 - 2656);
-
-	//Crazy green soldier
-	App->enemies->AddEnemy(ENEMY_TYPES::CRAZY_GREEN, 121, 70 - 2656);
 
 	//Prisoners
 	App->enemies->AddEnemy(ENEMY_TYPES::PRISONER, 15, 752 - 2656);
@@ -881,6 +883,12 @@ update_status ModuleScene1::Update()
 	///////////////////////////////////////////////////////////////////////////////
 	//ENEMIES
 
+	if (App->player->position.y == 150 - 2656 && crazy) {
+		//Crazy green soldier
+		App->enemies->AddEnemy(ENEMY_TYPES::CRAZY_GREEN, 121, 0 - 2656);
+		crazy = false;
+	}
+
 	if (App->player->position.y <= 2720 - 2656 && App->player->position.y >= 2352 - 2656) {
 		E1 = true;
 	}
@@ -1365,7 +1373,7 @@ update_status ModuleScene1::Update()
 	//-2656
 	if (App->player->position.y <= 1550 - 2656 && contador < 120) { /* && App->player->position.y >= 1300 - 2656 */
 		if (w_m > 105) {
-			if (check_audio1) {
+			if (check_audio1 && App->player->position.y == 1550 - 2656) {
 				App->audio->play_fx9();
 				check_audio1 = false;
 			}
@@ -1384,7 +1392,7 @@ update_status ModuleScene1::Update()
 	}
 
 	else if (contador >= 120) {
-		if (check_audio2) {
+		if (check_audio2 && check_audio1 == false) {
 			App->audio->play_fx10();
 			check_audio2 = false;
 		}
@@ -1496,7 +1504,7 @@ update_status ModuleScene1::Update()
 		App->fade->FadeToBlack(this, App->Menu, 3);
 	}
 
-	if (App->player->position.y <= 60 - 2656 && winB == true) 
+	if (App->player->position.y <= 60 - 2656 && winB == true)
 		cont6 = true;
 	
 	if (cont6 == true) {
@@ -1514,8 +1522,7 @@ update_status ModuleScene1::Update()
 	}
 	cont8 = true;
 
-	if (App->player->position.y == 119 - 2565) {
-		App->audio->pause_music();
+	if (App->player->position.y <= 218 - 2656) {
 		if (check_audio3) {
 			App->audio->play_music7();
 			check_audio3 = false;
@@ -1541,8 +1548,6 @@ update_status ModuleScene1::Update()
 
 		App->render->Blit(end_door, 88, -2656, &reee);
 	}
-
-
 
 	//player walks towards the end door
 	if (dead) {
@@ -1643,9 +1648,6 @@ void ModuleScene1::OnCollision(Collider* c1, Collider* c2)
 		if (App->player->position.y < 630 - 2656)
 			roomD = false;
 		}
-
-
-	
 
 	else if (c1->type == COLLIDER_TOREVIVE && c2->type == COLLIDER_PLAYER || c1->type == COLLIDER_TOREVIVE && c2->type == COLLIDER_PLAYER2) {
 		App->player2->torevive++;

@@ -189,19 +189,19 @@ update_status ModuleCinematicRadio::Update()
 		
 	}
 
-	if (helicont >= 350 && helicont <= 1477) {
-		App->render->camera.y += 4;
+	if (helicont >= 350 && helicont <= 1850) {
+		App->render->camera.y += 1;
 		
 		}
-	if (helicont >= 410 && helicont <= 1600) {
+	if (helicont >= 410 && helicont <= 2100) {
 		helicont++;
 		current_animation = &helicopter1;
 		r = current_animation->GetCurrentFrame();
 		App->render->Blit(helicopter, 128 - 80, helialtura - 10, &r);
-		helialtura -= 1.5;
+		helialtura -= 1;
 	}
 
-	if (helicont >= 1600)
+	if (helicont >= 2000)
 		App->fade->FadeToBlack(this, App->EndingLvl1, 1);
 
 

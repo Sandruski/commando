@@ -228,7 +228,7 @@ void Enemy_Soldier3::Move()
 
 	if (App->player->move2) {
 		//SHOT
-		rand1 = rand() % 300;
+		rand1 = rand() % 600;
 		num_shots = rand() % 4;
 
 		if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
@@ -255,7 +255,7 @@ void Enemy_Soldier3::Move()
 	else if (App->player->move2 == false && App->player2->move2) {
 
 		//SHOT
-		rand1 = rand() % 300;
+		rand1 = rand() % 600;
 		num_shots = rand() % 4;
 
 		if (rand1 == 3 && position.x > 0 && position.x < SCREEN_WIDTH) {
