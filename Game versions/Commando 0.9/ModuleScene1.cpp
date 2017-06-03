@@ -1638,7 +1638,7 @@ void ModuleScene1::OnCollision(Collider* c1, Collider* c2)
 			roomA= true;
 		if (App->player->position.y < 2145 - 2656 && App->player->position.y > 2000 - 2656) 
 			roomB = true;
-		if (App->player->position.y < 1520 - 2656 && App->player->position.y > 1400 - 2656 && App->roomC->loop == false) 
+		if (App->player->position.y < 1560 - 2656 && App->player->position.y > 1400 - 2656 && App->roomC->loop == false) 
 			roomC = true;
 		if (App->player->position.y < 1160 - 2656 && App->player->position.y > 1000 - 2656) 
 			roomD = true;
@@ -1647,7 +1647,7 @@ void ModuleScene1::OnCollision(Collider* c1, Collider* c2)
 
 		if (App->player->position.y < -410)
 			roomA = false;
-		if (App->player->position.y < 1520 - 2656)
+		if (App->player->position.y < 1560 - 2656)
 			roomB = false;
 		if (App->player->position.y < 1160 - 2656)
 			roomC = false;

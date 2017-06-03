@@ -105,7 +105,7 @@ update_status ModuleCinematicRadio::Update()
 
 
 	if (check_audio) {
-		App->audio->play_fx3();
+		App->audio->play_fx12();
 		check_audio = false;
 	}
 

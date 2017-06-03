@@ -31,6 +31,7 @@ bool ModuleAudio::Init() {
 	music[8] = Mix_LoadMUS("Assets/Audio/Area 2 Presentation.ogg"); // print leters end level
 	music[9] = Mix_LoadMUS("Assets/Audio/Commando_Sound-05-Secret Room 1.ogg"); //Secret Room A-B-C-E
 	music[10] = Mix_LoadMUS("Assets/Audio/Commando_Sound-06-Secret Room 2.ogg"); //Secret Room D
+	music[11] = Mix_LoadMUS("Assets/Audio/Commando-Effect-13-Radio.ogg"); //Cinematic radio
 
 														   //Load FX
 	fx[0] = Mix_LoadWAV("Assets/Audio/Commando_Effect-02-Principal-Shoot.wav");
@@ -100,6 +101,10 @@ bool ModuleAudio::play_music10() {
 }
 bool ModuleAudio::play_music11() {
 	Mix_FadeInMusic(music[10], -1, 2000);
+	return true;
+}
+bool ModuleAudio::play_music12() {
+	Mix_FadeInMusic(music[11], -1, 2000);
 	return true;
 }
 
