@@ -190,11 +190,13 @@ update_status ModulePlayer::Update()
 		App->particlesgrenade->grenade.speed.y = -2;
 
 		App->particlesgrenade->AddParticle(App->particlesgrenade->grenade, position.x, position.y, COLLIDER_PLAYER_GRENADE, NULL);
+		GOD = true;
 	}
 
 	update_position_grenade += App->particlesgrenade->grenade.speed.y;
 
 	if (update_position_grenade == -110) {
+		GOD = false;
 		App->particlesgrenade1->grenade.speed.x = 0;
 		App->particlesgrenade1->grenade.speed.y = +1;
 		App->particlesgrenade1->AddParticle(App->particlesgrenade1->grenade, position.x, position.y - 110, COLLIDER_PLAYER_GRENADE, NULL);

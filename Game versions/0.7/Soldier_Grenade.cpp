@@ -65,7 +65,7 @@ void Enemy_SoldierGrenade::Move()
 		rand1 = rand() % 500;
 		num_shots = rand() % 4;
 
-		if (rand1 == 3 && App->player->position.y > position.y + 24) {
+		if (rand1 == 3 && App->player->position.y > position.y + 24 && animation != &invisible) {
 
 			enemyplayer.x = (App->player->position.x + 5) - position.x;
 			enemyplayer.y = fabs(position.y + 25) - fabs(App->player->position.y + 10);
@@ -138,7 +138,7 @@ void Enemy_SoldierGrenade::Move()
 		rand1 = rand() % 500;
 		num_shots = rand() % 4;
 
-		if (rand1 == 3 && App->player2->position.y > position.y + 24) {
+		if (rand1 == 3 && App->player2->position.y > position.y + 24 && animation != &invisible) {
 
 			enemyplayer.x = (App->player2->position.x + 5) - position.x;
 			enemyplayer.y = fabs(position.y + 25) - fabs(App->player2->position.y + 10);
