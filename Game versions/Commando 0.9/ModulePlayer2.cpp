@@ -166,20 +166,13 @@ update_status ModulePlayer2::Update()
 
 	speed = 1;
 
-	if ((App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN || App->input->buttonBack2 == KEY_DOWN) && GOD == false) {
+	if ((App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN || App->input->buttonBack2 == KEY_DOWN) && GOD == false)
 		GOD = true;
-		App->player->checkgod = true;
-	}
-	if ((App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN || App->input->buttonStart2 == KEY_DOWN) && GOD == true) {
+	if ((App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN || App->input->buttonStart2 == KEY_DOWN) && GOD == true)
 		GOD = false;
-		App->player->checkgod = false;
-	}
+
 	if (App->player2->position.y <= 1405 - 2656 && App->player2->position.y >= 1338 - 2666) {
 		current_animation = &invisible;
-		if (position.y == 1405 - 2656)
-			GOD = true;
-		else if (position.y == 1338 - 2666)
-			GOD = false;
 	}
 
 	//GRENADE

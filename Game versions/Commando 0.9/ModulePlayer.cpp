@@ -159,22 +159,14 @@ update_status ModulePlayer::Update()
 
 	speed = 1;
 
-	if ((App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN || App->input->buttonBack == KEY_DOWN) && GOD == false) {
+	if ((App->input->keyboard[SDL_SCANCODE_F2] == KEY_DOWN || App->input->buttonBack == KEY_DOWN) && GOD == false)
 		GOD = true;
-		checkgod = true;
-	}
-	if ((App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN || App->input->buttonStart == KEY_DOWN) && GOD == true) {
+	if ((App->input->keyboard[SDL_SCANCODE_F3] == KEY_DOWN || App->input->buttonStart == KEY_DOWN) && GOD == true)
 		GOD = false;
-		checkgod = false;
-	}
+
 	if (App->player->position.y <= 1405 - 2656 && App->player->position.y >= 1338 - 2666) {
 		current_animation = &invisible;
-		if (position.y == 1405 - 2656)
-			GOD = true;
-		else if (position.y == 1338 - 2666)
-			GOD = false;
 	}
-
 
 	//GRENADE
 	//Grenades must be retouched because now if player throws 2 grenades, only kills the last one

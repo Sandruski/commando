@@ -116,7 +116,7 @@ update_status ModuleUI::Update()
 		App->player->position.y == (882 - App->scene_1->cont) ||
 		App->player->position.y == (395 - App->scene_1->cont))
 		&& App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT) {
-		if (App->player->GOD == true && App->player->checkgod == true) {
+		if (App->player->GOD == true) {
 			current_animation = &Inv1;
 			r = current_animation->GetCurrentFrame();
 			App->render->Blit(Inv, 110, App->scene_1->current_start_pos + 5 - App->scene_1->cont, &r);
@@ -146,7 +146,7 @@ update_status ModuleUI::Update()
 	}
 
 		else {
-			if (App->player->GOD == true && App->player->checkgod == true) {
+			if (App->player->GOD == true) {
 				current_animation = &Inv1;
 				r = current_animation->GetCurrentFrame();
 				App->render->Blit(Inv, 110, App->scene_1->current_start_pos + 5 - App->scene_1->cont, &r);

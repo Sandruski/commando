@@ -185,6 +185,10 @@ bool ModuleAudio::play_fx19() {
 	Mix_PlayChannel(-1, fx[18], 0);
 	return true;
 }
+bool ModuleAudio::play_fx20() {
+	Mix_PlayChannel(-1, fx[19], 0);
+	return true;
+}
 
 bool ModuleAudio::CleanUp() {
 

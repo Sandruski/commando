@@ -85,7 +85,7 @@ bool Application::Init()
 	ending->Disable();
 	cinematic->Disable();
 	scene_1->Disable();
-	enemies->Disable();
+
 	particles->Disable();
 	player->Disable();
 	player2->Disable();

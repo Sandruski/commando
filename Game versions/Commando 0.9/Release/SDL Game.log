@@ -9,6 +9,7 @@ Enemy.cpp(8): warning C4244: 'argument': conversion from 'int' to 'const float',
 Enemy.cpp(24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 Enemy.cpp(27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 Enemy.cpp(32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Globals.cpp
   GrenadesB.cpp
   ItemsEnemies.cpp
   ItemsEnemies2.cpp
@@ -39,6 +40,7 @@ ModuleFonts.cpp(125): warning C4018: '<': signed/unsigned mismatch
 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\exception(359): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
   ModuleParticles.cpp
+  Compiling...
   ModuleParticlesEnemies.cpp
 ModuleParticlesEnemies.cpp(88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 ModuleParticlesEnemies.cpp(110): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
@@ -47,7 +49,6 @@ ModuleParticlesEnemies.cpp(130): warning C4244: 'argument': conversion from 'flo
 ModuleParticlesEnemies.cpp(167): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 ModuleParticlesEnemies.cpp(171): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 ModuleParticlesEnemies.cpp(186): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Compiling...
   ModuleParticlesGrenade.cpp
 ModuleParticlesGrenade.cpp(19): warning C4305: '=': truncation from 'double' to 'float'
 ModuleParticlesGrenade.cpp(23): warning C4305: '=': truncation from 'double' to 'float'
@@ -61,8 +62,8 @@ ModulePlayer.cpp(74): warning C4305: '=': truncation from 'double' to 'float'
   ModulePlayer2.cpp
 ModulePlayer2.cpp(68): warning C4305: '=': truncation from 'double' to 'float'
 ModulePlayer2.cpp(73): warning C4305: '=': truncation from 'double' to 'float'
-ModulePlayer2.cpp(564): warning C4553: '==': operator has no effect; did you intend '='?
-ModulePlayer2.cpp(566): warning C4553: '==': operator has no effect; did you intend '='?
+ModulePlayer2.cpp(557): warning C4553: '==': operator has no effect; did you intend '='?
+ModulePlayer2.cpp(559): warning C4553: '==': operator has no effect; did you intend '='?
   ModuleRender.cpp
   ModuleSaveData.cpp
 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocale(341): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
@@ -131,6 +132,7 @@ SoldierPath1.cpp(192): warning C4244: '+=': conversion from 'double' to 'float',
 SoldierPath1.cpp(284): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 SoldierPath1.cpp(286): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 SoldierPath1.cpp(294): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Compiling...
   SoldierPath2.cpp
 SoldierPath2.cpp(192): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 SoldierPath2.cpp(193): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
@@ -140,7 +142,6 @@ SoldierPath2.cpp(287): warning C4244: 'argument': conversion from 'float' to 'in
 SoldierPath2.cpp(306): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 SoldierPath2.cpp(308): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 SoldierPath2.cpp(316): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Compiling...
   SoldierPath3.cpp
 SoldierPath3.cpp(167): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 SoldierPath3.cpp(168): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
@@ -182,9 +183,9 @@ Soldier_Rifle.cpp(210): warning C4244: '=': conversion from 'float' to 'int', po
 Soldier_Rifle.cpp(211): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Soldier_Shield.cpp
   Generating code
-  2 of 568 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+  562 of 568 functions (98.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  SDL Game.vcxproj -> C:\Users\disob\Desktop\Commando 0.9\Release\SDL5 Handout.exe
-  SDL Game.vcxproj -> C:\Users\disob\Desktop\Commando 0.9\Release\SDL5 Handout.pdb (Full PDB)
+  SDL Game.vcxproj -> C:\Users\disob\Desktop\0.7\Release\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\disob\Desktop\0.7\Release\SDL5 Handout.pdb (Full PDB)
