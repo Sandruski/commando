@@ -253,6 +253,9 @@ bool ModuleScene1::Start()
 	App->player2->move2 = true;
 	App->player2->move = true;
 
+	App->player->play_ending = false;
+	play_win = false;
+
 	TE = true;
 
 	//Colliders

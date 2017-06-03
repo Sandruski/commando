@@ -83,12 +83,16 @@ update_status ModuleEnding::Update()
 	if (check_audio && App->scene_1->play_win == true) {
 		App->audio->play_music4();
 		check_audio = false;
+		App->player->GunPowerUp = false;
 	}
 
 	//lose
-	if (check_audio1 && App->player->play_ending == true) {
-		App->audio->play_music5();
-		check_audio1 = false;
+	else if (App->player->play_ending == true) {
+		if (check_audio1) {
+			App->audio->play_music5();
+			check_audio1 = false;
+		}
+		App->render->Blit(Gameover, 0, 0, &background2);
 	}
 
 	if (cont == 205) {
@@ -99,7 +103,6 @@ update_status ModuleEnding::Update()
 		yeah = true;
 	}
 
-	App->render->Blit(Gameover, 0, 0, &background2);
 
 	return ret;
 }

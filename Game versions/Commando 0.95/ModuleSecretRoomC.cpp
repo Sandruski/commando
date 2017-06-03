@@ -57,6 +57,7 @@ bool ModuleSecretRoomC::Start() {
 	App->player->current_animation = &App->player->forward;
 	App->player->stairsDown = true;
 	App->player->move = true;
+	loop = true;
 
 	check_player = 0;
 
@@ -192,7 +193,7 @@ bool ModuleSecretRoomC::CleanUp() {
 	App->particlesenemies->Disable();
 	App->particles->Disable();
 	App->collision->Disable();
-	loop = true;
+
 
 	return true;
 }
