@@ -101,10 +101,10 @@ bool ModuleScene1::Start()
 
 	crazy = true;
 
-	torevivecheck1 = true;
-	torevivecheck2 = true;
-	torevivecheck3 = true;
-	torevivecheck4 = true;
+	torevivecheck1 = false;
+	torevivecheck2 = false;
+	torevivecheck3 = false;
+	torevivecheck4 = false;
 
 	App->collision->Enable();
 	App->particles->Enable();
