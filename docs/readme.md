@@ -60,6 +60,7 @@ responsability and GitHub account:
 
 Although each has its function, we have all helped in the game code.
 
+<br>
 
 # Game controls
 ~~~~~~~~~~
@@ -100,7 +101,7 @@ Gamepad inputs(xbos 360):
 B: move options in start menu
 A: to select option
 
-JOISTICK: move players
+JOYSTICK: move players
 B: throw grenade
 A: shoot the sub-machine gun
 X: revive ally
