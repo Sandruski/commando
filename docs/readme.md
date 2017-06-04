@@ -15,10 +15,7 @@ The plot is about a soldier named Super Joe who starts being dropped off in a ju
 
 
 
-
-
-
-<iframe width="740" height="590" src="https://www.youtube.com/embed/0fKg7e37bQE" frameborder="0" allowfullscreen></iframe>
+<iframe width="740" height="590" src="https://www.youtube.com/embed/4v4mFhaUTOI?ecver=1" frameborder="0" allowfullscreen></iframe>
 
 
 
@@ -124,7 +121,7 @@ BACK: god mode off
 
 
 
-# [CHECK GAMEPLAY VIDEO](https://www.youtube.com/watch?v=0fKg7e37bQE)
+# [CHECK GAMEPLAY VIDEO](https://www.youtube.com/watch?v=4v4mFhaUTOI)
 
 # Download the lastet version of Commando [here](https://github.com/Sandruski/gets-name-/releases)!
 
