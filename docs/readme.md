@@ -60,8 +60,6 @@ responsability and GitHub account:
 ![](MiiAleix2.png)
 
 
-Although each has its function, we have all helped in the game code.
-
 <br>
 <br>
 
