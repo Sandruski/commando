@@ -1,8 +1,6 @@
 
 # Commando 
 
-### By gets-name-
-
 Commando is a shoot and run, vertically scrolling arcade game, which was released in 1985. Many versions of the game were released for consoles and home computers. The game also appears on Capcom Classics Collection, Activision Anthology, and on the Wii Virtual Console Arcade, as well as Capcom Classics Collection Arcade Cabinet for Play Station 3 and Xbox 360.
 
 ![](NES-commando.gif)
@@ -12,9 +10,11 @@ The plot is about a soldier named Super Joe who starts being dropped off in a ju
 <br>
 <br>
 
-# Our tribute to the original Commando NES. Level 1-1 fully implemented
+# Our version of the original Commando NES. Level 1-1 fully implemented
 
 <iframe width="740" height="590" src="https://www.youtube.com/embed/4v4mFhaUTOI?ecver=1" frameborder="0" allowfullscreen></iframe>
+
+Have fun!
 
 <br>
 <br>
@@ -22,7 +22,6 @@ The plot is about a soldier named Super Joe who starts being dropped off in a ju
 # Compilation gets(name);
 
 ![](fotogrup.png)
-
 
 ### Sandra Alvarez  
 responsability and GitHub account:
@@ -66,51 +65,45 @@ Although each has its function, we have all helped in the game code.
 <br>
 <br>
 
-# Game controls
+# Basic game controls
 ~~~~~~~~~~
-Keyboard inputs
+## Keyboard inputs
 
-O: to move options in start menu
-ENTER: to select option
+O: change between game modes in the menu
+ENTER: select an option
 
-Player 1:
+### Player 1:
 
-W: move foward
+W: move forward
 A: move left
 S: move backward
 D: move right
 
 SPACE: shoot the sub-machine gun
-LETFT SHIFT: throw grenades foward
-
+SHIFT: throw a grenade
 9: revive ally
 
+### Player 2:
 
-Player 2:
-
-UP ARROW ⬆: move foward
+UP ARROW ⬆: move forward
 LEFT ARROW ⬅: move left
 DOWN ARROW ⬇: move backward
 RIGHT ARROW ➡: move right
 
 INTRO KEYPAD: shoot the sub-machine gun
-RIGHT CONTROL: throw grenades foward
+CTRL: throw grenades forward
 
 0 KEYPAD: revive ally
 
+## Gamepad inputs(xbos 360):
 
+B: change between game modes in the menu
+A: select an option
 
-Gamepad inputs(xbos 360):
-
-B: move options in start menu
-A: to select option
-
-JOYSTICK: move players
-B: throw grenade
+JOYSTICK: move player (forward, backward, left and right)
+B: throw a grenade
 A: shoot the sub-machine gun
 X: revive ally
-START : god mode on
-BACK: god mode off
 ~~~~~~~~~~~~
 <br>
 <br>
