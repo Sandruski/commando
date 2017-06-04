@@ -19,7 +19,7 @@ Have fun!
 <br>
 <br>
 
-# Compilation gets(name);
+# gets(name); team
 
 ![](fotogrup.png)
 
