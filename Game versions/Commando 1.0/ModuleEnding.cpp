@@ -59,9 +59,6 @@ bool ModuleEnding::CleanUp()
 {
 	LOG("Unloading ending scene");
 
-	App->player->play_ending = false;
-	App->scene_1->play_win = false;
-
 
 	return true;
 }

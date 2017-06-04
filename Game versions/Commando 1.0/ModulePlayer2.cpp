@@ -570,7 +570,7 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		OnCollisionWall(c1, c2);
 	if ((c1->type == COLLIDER_PLAYER2 || c1->type == COLLIDER_PLAYER_FEET) && c2->type == COLLIDER_WATER && GOD == false)
 		OnCollisionWater(c1, c2);
-	if ((c1->type == COLLIDER_PLAYER_FEET || c1->type == COLLIDER_PLAYER2) && c2->type == COLLIDER_ITEM)
+	if ((c1->type == COLLIDER_PLAYER_FEET || c1->type == COLLIDER_PLAYER2) && c2->type == COLLIDER_ITEM  && App->fade->on == App->scene_1)
 		OnCollisionItem(c1, c2);
 	if ((c1->type == COLLIDER_PLAYER2 && (c2->type == COLLIDER_ENEMY || c2->type == COLLIDER_ENEMY_SHOT) && GOD == false) && detectionlive == 0)
 		OnCollisionEnemy(c1, c2);

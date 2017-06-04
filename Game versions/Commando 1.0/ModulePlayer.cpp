@@ -726,6 +726,7 @@ void ModulePlayer::OnCollisionWater(Collider* c1, Collider* c2) {
 					App->particles->AddParticle(App->particles->explosion, position.x + 3, position.y + 5, COLLIDER_END_OF_BULLET, NULL);
 					App->scene_1->start = true;
 					App->fade->FadeToBlack(App->scene_1, App->ending);
+					play_ending = true;
 				}
 				vides = 3;
 			}

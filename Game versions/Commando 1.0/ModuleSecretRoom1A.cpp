@@ -163,7 +163,7 @@ void ModuleSecretRoom1A::OnCollision(Collider* c1, Collider* c2)
 		hits++;
 	}
 
-	if (hits >= 30 && c1->type == COLLIDER_ITEM && c2->type == COLLIDER_PLAYER) {
+	if (hits >= 30 && c1->type == COLLIDER_ITEM && (c2->type == COLLIDER_PLAYER || c2->type == COLLIDER_PLAYER2)) {
 		c1->to_delete = true;
 		not_blit = true;
 		App->UI->score += 10000;
