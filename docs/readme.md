@@ -3,26 +3,18 @@
 
 ### By gets-name-
 
-Commando is a shoot and run, vertically scrolling arcade game released in 1985. It’s one of the most influenceable games of this genre. This game was realized in various home consoles and home computers. The game was very famous when it was released and it appears on different known consoles as Capcom Classics Collection, Activision Anthology, and on the Wii Virtual Console Arcade, as well as Capcom Classics Collection Arcade Cabinet for Play Station 3 and Xbox 360.
+Commando is a shoot and run, vertically scrolling arcade game, which was released in 1985. Many versions of the game were released for consoles and home computers. The game also appears on Capcom Classics Collection, Activision Anthology, and on the Wii Virtual Console Arcade, as well as Capcom Classics Collection Arcade Cabinet for Play Station 3 and Xbox 360.
 
 ![](NES-commando.gif)
 
+The plot is about a soldier named Super Joe who starts being dropped off in a jungle by helicopter, and has to fight his way out singlehandedly, fending off a massive assault of enemy soldiers. In the game, you have a sub-machine gun with unlimited ammunition as well as a limited supply of hand grenades. Use wisely your skills if you don't want to be killed and DESTROY THE ENEMY ARMY!!!
 
 
-The plot is about a soldier named Super Joe who starts being dropped off in a jungle by helicopter, and has to fight his way out singlehandedly, fending off a massive assault of enemy soldiers.
-
-# Gets(name); had created a version of the original Commando Nes level 1-1 full implemented.
-
-
+# Our tribute to the original Commando NES. Level 1-1 fully implemented
 
 <iframe width="740" height="590" src="https://www.youtube.com/embed/4v4mFhaUTOI?ecver=1" frameborder="0" allowfullscreen></iframe>
 
-
-
-
-
-
-
+<br>
 
 # Compilation gets(name);
 
