@@ -102,7 +102,7 @@ update_status ModuleCinematicRadio::Update()
 
 
 	if (check_audio) {
-		App->audio->play_fx12();
+		App->audio->play_music12();
 		check_audio = false;
 	}
 
@@ -201,7 +201,8 @@ update_status ModuleCinematicRadio::Update()
 	if (helicont >= 2000)
 		App->fade->FadeToBlack(this, App->EndingLvl1, 1);
 
-
+	if (helicont >= 1240)
+		App->audio->pause_music();
 
 
 	return ret;
