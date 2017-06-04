@@ -26,6 +26,9 @@ ModuleSaveData::~ModuleSaveData()
 
 bool ModuleSaveData::Init()
 {
+
+	savescore2p = 0;
+	savescore_p1 = 0;
 	ifstream scorefile;
 	scorefile.open("score.txt");
 	scorefile >> savescore;
