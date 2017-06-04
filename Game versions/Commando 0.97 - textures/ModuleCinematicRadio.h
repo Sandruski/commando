@@ -19,9 +19,6 @@ public:
 
 public:
 
-	SDL_Texture* graphics2 = nullptr;
-	SDL_Texture* helicopter = nullptr;
-	SDL_Texture* playerhelicopter = nullptr;
 	SDL_Rect foreground;
 	Animation playerenter;
 	Animation helicopter1;

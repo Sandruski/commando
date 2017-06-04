@@ -20,7 +20,6 @@ public:
 
 	bool check_audio = true;
 
-	SDL_Texture* RoomB;
 	SDL_Rect background;
 	int w = 0, h = 0;
 };

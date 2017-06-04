@@ -79,10 +79,6 @@ bool ModuleUI::Start()
 
 	LOG("Loading screen UI");
 
-	if (Hud == nullptr) {
-		LOG("Cannot load the texture");
-		ret = false;
-	}
 	gate = false;
 	var = 0;
 	var2 = 0;

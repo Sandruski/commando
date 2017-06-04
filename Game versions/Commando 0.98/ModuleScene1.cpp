@@ -1630,7 +1630,7 @@ update_status ModuleScene1::Update()
 		App->fade->FadeToBlack(this, App->Menu, 3);
 	}
 
-	if (App->player->position.y <= 60 - 2656 && winB == true)
+	if (App->player->position.y <= 20 - 2656 && winB == true)
 		cont6 = true;
 	
 	if (cont6 == true) {
@@ -1643,7 +1643,7 @@ update_status ModuleScene1::Update()
 		play_win = true;
 		App->ending->cont = 0;
 		start = true;
-		App->fade->FadeToBlack(this, App->ending, 3);
+		App->fade->FadeToBlack(this, App->EndingLvl1, 3);
 		App->player->vides = 3;
 	}
 	cont8 = true;

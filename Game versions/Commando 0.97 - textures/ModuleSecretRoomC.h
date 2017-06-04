@@ -20,7 +20,7 @@ public:
 
 	bool check_audio = true;
 	bool loop = false;
-	SDL_Texture* RoomC;
+
 	SDL_Rect background;
 	int w = 0, h = 0;
 

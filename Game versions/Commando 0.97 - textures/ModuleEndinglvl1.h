@@ -20,8 +20,7 @@ public:
 
 public:
 
-	SDL_Texture* alphabet = nullptr;
-	SDL_Texture* animation = nullptr;
+
 	SDL_Rect a;
 	SDL_Rect b;
 	SDL_Rect c;

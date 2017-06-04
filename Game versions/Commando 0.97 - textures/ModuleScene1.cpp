@@ -78,6 +78,7 @@ bool ModuleScene1::Start()
 
 	LOG("Loading 1st scene");
 	
+	melasuda = false;
 
 	background.x = 0;
 	background.y = 0;
@@ -373,10 +374,10 @@ bool ModuleScene1::Start()
 		App->collision->AddCollider({ 84, 1502 - 2656,9,9 }, COLLIDER_TOREVIVE, this);
 		App->collision->AddCollider({ 243, 708 - 2656,9,9 }, COLLIDER_TOREVIVE, this);
 
-		App->render->Blit(App->player2->graphics, 198, 150, &App->player2->torevive2);
-		App->render->Blit(App->player2->graphics, 102, 2212 - 2656, &App->player2->torevive2);
-		App->render->Blit(App->player2->graphics, 84, 1502 - 2656, &App->player2->torevive2);
-		App->render->Blit(App->player2->graphics, 243, 708, &App->player2->torevive2);
+		App->render->Blit(App->TEX->JANE, 198, 150, &App->player2->torevive2);
+		App->render->Blit(App->TEX->JANE, 102, 2212 - 2656, &App->player2->torevive2);
+		App->render->Blit(App->TEX->JANE, 84, 1502 - 2656, &App->player2->torevive2);
+		App->render->Blit(App->TEX->JANE, 243, 708, &App->player2->torevive2);
 	}
 	//ENEMIES
 
@@ -972,16 +973,18 @@ bool ModuleScene1::CleanUp()
 {
 	LOG("Unloading 1st scene");
 
-	App->UI->Disable();
-	App->enemies->Disable();
-	App->player->Disable();
-	App->player2->Disable();
-	App->particlesgrenade1->Disable();
-	App->particlesgrenade->Disable();
-	App->particlesenemies->Disable();
-	App->particles->Disable();
-	App->collision->Disable();
-
+	if  (melasuda  == false) {
+		melasuda = true;
+		App->UI->Disable();
+		App->enemies->Disable();
+		App->player->Disable();
+		App->player2->Disable();
+		App->particlesgrenade1->Disable();
+		App->particlesgrenade->Disable();
+		App->particlesenemies->Disable();
+		App->particles->Disable();
+		App->collision->Disable();
+	}
 	return true;
 }
 

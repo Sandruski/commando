@@ -23,10 +23,7 @@ public:
 
 public:
 
-	SDL_Texture* Hud = nullptr;
-	SDL_Texture* Hud2 = nullptr;
-	SDL_Texture* level = nullptr;
-	SDL_Texture* Inv = nullptr;
+
 	Animation Inv1;
 	SDL_Rect MarcadorVida, MarcadorVida2;
 	SDL_Rect vida0;

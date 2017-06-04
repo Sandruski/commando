@@ -19,11 +19,7 @@ public:
 
 public:
 	
-	SDL_Texture* graphics = nullptr;
-	SDL_Texture* end_door = nullptr;
-	SDL_Texture* moto = nullptr;
-	SDL_Texture* items = nullptr;
-	SDL_Texture* win = nullptr;
+
 	//SDL_Texture* level = nullptr;
 	Animation ammo_grenades_colours, ammo_specialgrenade1, door, moto_go, lvl1, win1, moto_stop, radio;
 	SDL_Rect background, Secret_Room, r, reee, foreground;
@@ -50,6 +46,7 @@ public:
 	int tempo1 = 0;
 	bool check_UI = true;
 	bool winB = false;
+	bool melasuda = false;
 
 	//Starting y positions of the player (for respawns)
 	bool start = true; //initial position (when player appears for the first time) -> 110

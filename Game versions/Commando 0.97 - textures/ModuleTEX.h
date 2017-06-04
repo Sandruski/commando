@@ -4,58 +4,50 @@
 #include "Module.h"
 #include "Globals.h"
 
-#define MAX_TEXTURES 50
-
 class ModuleTEX : public Module
 {
 public:
 	ModuleTEX();
 	~ModuleTEX();
 
-	SDL_Texture* A;
-	SDL_Texture* B;
-	SDL_Texture* C;
-	SDL_Texture* D;
+	SDL_Texture* A = nullptr;
+	SDL_Texture* B = nullptr;
+	SDL_Texture* C = nullptr;
+	SDL_Texture* D = nullptr;
 
-	SDL_Texture* E;
-	SDL_Texture* F;
-	SDL_Texture* G;
-	SDL_Texture* H;
+	SDL_Texture* E = nullptr;
+	SDL_Texture* F = nullptr;
+	SDL_Texture* G = nullptr;
+	SDL_Texture* H = nullptr;
 
-	SDL_Texture* I;
-	SDL_Texture* J;
-	SDL_Texture* K;
-	SDL_Texture* L;
+	SDL_Texture* graphics2 = nullptr;
+	SDL_Texture* helicopter = nullptr;
+	SDL_Texture* playerhelicopter = nullptr;
 
-	SDL_Texture* graphics2;
-	SDL_Texture* helicopter;
-	SDL_Texture* playerhelicopter;
+	SDL_Texture* Gameover = nullptr;
 
-	SDL_Texture* Gameover;
+	SDL_Texture* alphabet = nullptr;
+	SDL_Texture* animation = nullptr;
 
-	SDL_Texture* alphabet;
-	SDL_Texture* animation;
+	SDL_Texture* sprites = nullptr;
 
-	SDL_Texture* sprites;
+	SDL_Texture* graphics = nullptr;
+	SDL_Texture* grenade = nullptr;
+	SDL_Texture* newmodetxt = nullptr;
 
-	SDL_Texture* graphics;
-	SDL_Texture* grenade;
-	SDL_Texture* newmodetxt;
+	SDL_Texture* JANE = nullptr;
 
-	SDL_Texture* JANE;
+	SDL_Texture* Hud2 = nullptr;
 
-	SDL_Texture* Hud2;
+	SDL_Texture* moto1 = nullptr;
+	SDL_Texture* items1 = nullptr;
+	SDL_Texture* graphics1 = nullptr;
+	SDL_Texture* win1 = nullptr;
+	SDL_Texture* end_door1 = nullptr;
 
-	SDL_Texture* moto1;
-	SDL_Texture* items1;
-	SDL_Texture* graphics1;
-	SDL_Texture* win1;
-	SDL_Texture* end_door1;
+	SDL_Texture* Hud = nullptr;
 
-	SDL_Texture* Hud;
-
-	SDL_Texture* Inv;
-
+	SDL_Texture* Inv = nullptr;
 
 	bool Init();
 	bool CleanUp();

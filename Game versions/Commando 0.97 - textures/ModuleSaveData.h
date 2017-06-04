@@ -25,7 +25,7 @@ public:
 	int savescore_p1;
 	int font_score;
 	int font_score2;
-	SDL_Texture* Hud2 = nullptr;
+
 };
 
 #endif //__ModuleSaveData_H__

@@ -4,7 +4,7 @@
 #include "Module.h"
 #include "Globals.h"
 
-#define MAX_TEXTURES 50
+#define MAX_TEXTURES 1000
 
 struct SDL_Surface;
 struct SDL_Texture;

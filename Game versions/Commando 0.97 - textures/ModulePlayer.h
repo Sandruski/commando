@@ -29,8 +29,6 @@ public:
 	update_status Update();
 	bool CleanUp();
 
-	SDL_Texture* graphics = nullptr;
-	SDL_Texture* bullets = nullptr;
 	Animation idleF;
 	Animation forward, right, backward, left, diagWD, diagWA, diagSD, diagSA, invisible, grenade, die, waterDie, stairsRoom;
 	iPoint position;

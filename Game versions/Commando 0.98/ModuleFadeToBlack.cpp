@@ -48,12 +48,8 @@ update_status ModuleFadeToBlack::Update()
 		{
 			off->Disable();
 			on->Enable();
-			if ((App->fade->on == App->Menu) || (App->fade->on == App->scene_1)) {
-				//App->render->camera.y = 0;
-				//App->player->position.x = start_x;
-				//App->player->position.y = start_y;
-				App->audio->pause_music();
-			}
+			if (App->fade->on == App->scene_1 || App->fade->on == App->Menu)
+			App->audio->pause_music();
 
 			total_time += total_time;
 			start_time = SDL_GetTicks();

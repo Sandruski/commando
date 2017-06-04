@@ -18,9 +18,6 @@ public:
 	update_status Update();
 	bool CleanUp();
 
-
-	SDL_Texture* Room1A;
-	SDL_Texture* items;
 	SDL_Rect background;
 	int w = 0, h = 0;
 

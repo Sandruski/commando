@@ -72,45 +72,85 @@ bool ModuleTEX::Init()
 // Called before quitting
 bool ModuleTEX::CleanUp()
 {
+	if (Hud != nullptr) 
+		App->textures->Unload(Hud);
 
-	App->textures->Unload(Hud);
+	if (Inv != nullptr)
 	App->textures->Unload(Inv);
 
+	if (moto1 != nullptr)
 	App->textures->Unload(moto1);
+
+	if (items1 != nullptr)
 	App->textures->Unload(items1);
+
+	if (graphics1 != nullptr)
 	App->textures->Unload(graphics1);
+
+	if (win1 != nullptr)
 	App->textures->Unload(win1);
 
+	if (end_door1 != nullptr)
 	App->textures->Unload(end_door1);
 
-
-
-
-
-
+	if (Hud2 != nullptr)
 	App->textures->Unload(Hud2);
+
+	if (alphabet != nullptr)
 	App->textures->Unload(alphabet);
+
+	if (H != nullptr)
 	App->textures->Unload(H);
+
+	if (animation != nullptr)
 	App->textures->Unload(animation);
 
+	if (JANE != nullptr)
 	App->textures->Unload(JANE);
 
+	if (sprites != nullptr)
 	App->textures->Unload(sprites);
+
+	if (graphics != nullptr)
 	App->textures->Unload(graphics);
+
+	if (grenade != nullptr)
 	App->textures->Unload(grenade);
+
+	if (newmodetxt != nullptr)
 	App->textures->Unload(newmodetxt);
+
+	if (graphics2 != nullptr)
 	App->textures->Unload(graphics2);
+
+	if (helicopter != nullptr)
 	App->textures->Unload(helicopter);
+
+	if (playerhelicopter != nullptr)
 	App->textures->Unload(playerhelicopter);
 
+	if (Gameover != nullptr)
 	App->textures->Unload(Gameover);
 
+	if (A != nullptr)
 	App->textures->Unload(A);
+
+	if (B != nullptr)
 	App->textures->Unload(B);
+
+	if (C != nullptr)
 	App->textures->Unload(C);
+
+	if (D != nullptr)
 	App->textures->Unload(D);
+
+	if (E != nullptr)
 	App->textures->Unload(E);
+
+	if (F != nullptr)
 	App->textures->Unload(F);
+
+	if (G != nullptr)
 	App->textures->Unload(G);
 
 	return true;
