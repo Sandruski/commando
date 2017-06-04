@@ -180,7 +180,6 @@ update_status ModulePlayer2::Update()
 
 	if ((cooldown == false && non_grenade == false && App->input->keyboard[SDL_SCANCODE_RCTRL] == KEY_STATE::KEY_DOWN || App->input->buttonB2 == KEY_STATE::KEY_DOWN) && App->UI->grenade > 0 && (position.y >= 1405 - 2656 || App->player2->position.y <= 1338 - 2666))
 	{
-		GOD = true;
 		cooldown = true;
 		non_grenade = false;
 		check_grenade = 0;
@@ -206,7 +205,6 @@ update_status ModulePlayer2::Update()
 	update_position_grenade += App->particlesgrenade->grenade2.speed.y;
 
 	if (update_position_grenade == -110) {
-		GOD = false;
 		App->particlesgrenade1->grenade2.speed.x = 0;
 		App->particlesgrenade1->grenade2.speed.y = +1;
 		App->particlesgrenade1->AddParticle(App->particlesgrenade1->grenade2, position.x, position.y - 110, COLLIDER_PLAYER_GRENADE, NULL);
@@ -572,7 +570,7 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		OnCollisionWater(c1, c2);
 	if ((c1->type == COLLIDER_PLAYER_FEET || c1->type == COLLIDER_PLAYER2) && c2->type == COLLIDER_ITEM  && App->fade->on == App->scene_1)
 		OnCollisionItem(c1, c2);
-	if ((c1->type == COLLIDER_PLAYER2 && (c2->type == COLLIDER_ENEMY || c2->type == COLLIDER_ENEMY_SHOT) && GOD == false) && detectionlive == 0)
+	if ((c1->type == COLLIDER_PLAYER2 && (c2->type == COLLIDER_ENEMY || c2->type == COLLIDER_ENEMY_SHOT) && GOD == false) && detectionlive == 0 && cooldown == false)
 		OnCollisionEnemy(c1, c2);
 	if (c1->type == COLLIDER_PLAYER2 && c2->type == COLLIDER_REVIVE && App->player->move2 == false)
 		OnCollisionRev(c1, c2);

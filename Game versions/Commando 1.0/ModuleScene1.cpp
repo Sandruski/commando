@@ -90,6 +90,7 @@ bool ModuleScene1::Start()
 
 	dead = false;
 	first = true;
+	first2 = true;
 	
 
 	Secret_Room.x = 110;
