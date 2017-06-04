@@ -147,6 +147,8 @@ bool ModuleScene1::Start()
 	App->player->play_ending = false;
 	App->scene_1->play_win = false;
 
+	yeee = false;
+
 	//Initialize moto
 	w = 0;
 	h = SCREEN_HEIGHT - 2880;
