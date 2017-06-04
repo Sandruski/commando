@@ -109,15 +109,11 @@ BACK: god mode off
 ~~~~~~~~~~~~
 
 
-
-
-
-
 # [CHECK GAMEPLAY VIDEO](https://www.youtube.com/watch?v=4v4mFhaUTOI)
 
-# Download the lastet version of Commando [here](https://github.com/Sandruski/gets-name-/releases)!
+# Download the latest version of Commando [here](https://github.com/Sandruski/gets-name-/releases)!
 
 # Check our Github Repository [here](https://github.com/Sandruski/gets-name-)!
 
-# See more information in the [Commando Wiki](https://github.com/Sandruski/gets-name-/wiki)! 
+# For more information, check our wiki: [Commando Wiki](https://github.com/Sandruski/gets-name-/wiki)
 
