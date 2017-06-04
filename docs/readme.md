@@ -93,7 +93,7 @@ RIGHT CTRL: throw grenades forward
 
 0 KEYPAD: revive ally
 
-## Gamepad inputs(xbos 360):
+## Gamepad inputs (Xbox 360)
 
 B: change between game modes in the menu
 A: select an option
