@@ -81,6 +81,7 @@ Every member of the team had his part of the work, event that everyone helped in
 -Final victory and lose scene implemented with music.
 
 ### Version 0.6
+
 -Implemented the Secret Rooms.<br>
 -Implemented the secret staris.<br>
 -Implemented the entrance to the rooms.<br>
@@ -88,9 +89,10 @@ Every member of the team had his part of the work, event that everyone helped in
 -Fixed some general bugs.
 
 ### Version 0.7
+
 -Implemented the 2nd player mode.<br>
 -Full implemented secret rooms.<br>
--Implemented win cinematic.<br>
+-Added win cinematic.<br>
 -Fixed some soldier bugs.<br>
 -Fixed some general bugs.<br>
 -Implemented soldier paths.<br>
@@ -98,9 +100,42 @@ Every member of the team had his part of the work, event that everyone helped in
 -Implemented all items of the game including first aid kids(not the radio).<br>
 -Implemented all power ups.<br>
 -Now we shoot with space and throw grenades with the left shift.<br>
--Camera is only working for 1st player.
+-Camera is only working for 1st player.<br>
+-Implemented the ending scene.<br>
+-Implemented the radio cinematic.<br>
+-The enemies soldiers also follow the main character.<br>
+-HUD is working well and the save data is fixed.
 
 
+### Version 0.81
+
+-Fixed grenades bugs.<br>
+-Implemented the radio item with the cinematic.<br>
+-The enemies also follow the second player when the 1st player dies.<br>
+-Some audio bugs fixed.
+
+### Version 0.82
+
+-Fixed secret rooms bugs.<br>
+-All audios fixed.<br>
+-All the cinematics fixed.<br>
+-Added Game Over screen.
+
+
+### Version 0.9
+
+-Implemented the way to entrance to the secret rooms.<br>
+-Added the blocked entrance to the rooms if you entered before.<br>
+-All the items fixed and working well.
+
+
+
+### Version 1.0
+
+-Final scene fixed and working well.<br>
+-Win condicion fixed.<br>
+-Lose condition fixed.<br>
+-2players mode working well.
 
 
 
