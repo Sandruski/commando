@@ -9,6 +9,8 @@ Commando is a shoot and run, vertically scrolling arcade game, which was release
 
 The plot is about a soldier named Super Joe who starts being dropped off in a jungle by helicopter, and has to fight his way out singlehandedly, fending off a massive assault of enemy soldiers. In the game, you have a sub-machine gun with unlimited ammunition as well as a limited supply of hand grenades. Use wisely your skills if you don't want to be killed and DESTROY THE ENEMY ARMY!!!
 
+<br>
+<br>
 
 # Our tribute to the original Commando NES. Level 1-1 fully implemented
 
@@ -62,6 +64,7 @@ responsability and GitHub account:
 Although each has its function, we have all helped in the game code.
 
 <br>
+<br>
 
 # Game controls
 ~~~~~~~~~~
@@ -109,7 +112,8 @@ X: revive ally
 START : god mode on
 BACK: god mode off
 ~~~~~~~~~~~~
-
+<br>
+<br>
 
 # [CHECK GAMEPLAY VIDEO](https://www.youtube.com/watch?v=4v4mFhaUTOI)
 
