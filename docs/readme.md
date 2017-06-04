@@ -78,7 +78,7 @@ S: move backward
 D: move right
 
 SPACE: shoot the sub-machine gun
-SHIFT: throw a grenade
+LEFT SHIFT: throw a grenade
 9: revive ally
 
 ### Player 2:
@@ -89,7 +89,7 @@ DOWN ARROW ⬇: move backward
 RIGHT ARROW ➡: move right
 
 INTRO KEYPAD: shoot the sub-machine gun
-CTRL: throw grenades forward
+RIGHT CTRL: throw grenades forward
 
 0 KEYPAD: revive ally
 
